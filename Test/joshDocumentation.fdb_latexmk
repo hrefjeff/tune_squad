@@ -1,0 +1,11 @@
+# Fdb version 3
+["pdflatex"] 1421991007 "joshDocumentation.tex" "joshDocumentation.pdf" "joshDocumentation" 1421991007
+  "/home/eljeffeh/texmf/tex/latex/docxx.sty" 980228835 30195 1c530265b2b20ecc9c63f5f52b6eef7c ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/article.cls" 1254151887 20571 b8bd218bf2e18b4f5817ee643cd9c515 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo" 1254151887 9042 248dfba326a1b8733d6bb8e0a3ac1e49 ""
+  "joshDocumentation.aux" 1421991007 364 891e7594ce56eb5906dfa267ee3c6a1f ""
+  "joshDocumentation.tex" 1421991004 2433 0c0567a92ca5ac586b90ecbdce92056c ""
+  (generated)
+  "joshDocumentation.aux"
+  "joshDocumentation.log"
+  "joshDocumentation.pdf"

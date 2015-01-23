@@ -1,0 +1,141 @@
+\documentclass{article}
+\usepackage{docxx}
+\begin{document}
+\pagebreak
+\sloppy
+\begin{cxxContents}
+\cxxContentsEntry{1}{main}{}
+\cxxContentsEntry{2}{TestClass}{Common base class}
+\cxxContentsEntry{}{Class Graph}{}\end{cxxContents}
+\begin{cxxfunction}
+{int}
+        {main}
+        {()}
+        {}
+        {1}
+\begin{cxxdoc}
+
+
+Author  : Joshua Ford \& Jeffrey Allen
+
+Purpose : Testing github and doc++
+
+Date    : 1/21/2014
+
+blahblahblah
+
+\end{cxxdoc}
+\end{cxxfunction}
+\begin{cxxclass}
+{class\ }
+        {TestClass}
+        {}
+        {Common base class}
+        {2}
+\begin{cxxpublic}
+\cxxitem{bool}
+        {testPublic\_1}
+        {}
+        {1\_publicComment}
+        {2.7}
+\cxxitem{bool}
+        {testPublic\_2}
+        {}
+        {2\_publicComment}
+        {2.8}
+\cxxitem{bool}
+        {testPublic\_3}
+        {}
+        {3\_publicComment}
+        {2.9}
+\end{cxxpublic}
+\begin{cxxprotected}
+\cxxitem{char}
+        {testProtected\_1}
+        {}
+        {Double message?}
+        {2.4}
+\cxxitem{char}
+        {testProtected\_2}
+        {}
+        {2\_protectedComment}
+        {2.5}
+\cxxitem{char}
+        {testProtected\_3}
+        {}
+        {3\_protectedComment}
+        {2.6}
+\end{cxxprotected}
+\begin{cxxdoc}
+Common base class
+
+First class using doc++
+
+\end{cxxdoc}
+\begin{cxxvariable}
+{bool}
+        {testPublic\_1}
+        {}
+        {1\_publicComment}
+        {2.7}
+\begin{cxxdoc}
+1\_publicComment
+\end{cxxdoc}
+\end{cxxvariable}
+\begin{cxxvariable}
+{bool}
+        {testPublic\_2}
+        {}
+        {2\_publicComment}
+        {2.8}
+\begin{cxxdoc}
+2\_publicComment
+\end{cxxdoc}
+\end{cxxvariable}
+\begin{cxxvariable}
+{bool}
+        {testPublic\_3}
+        {}
+        {3\_publicComment}
+        {2.9}
+\begin{cxxdoc}
+3\_publicComment
+\end{cxxdoc}
+\end{cxxvariable}
+\begin{cxxvariable}
+{char}
+        {testProtected\_1}
+        {}
+        {Double message?}
+        {2.4}
+\begin{cxxdoc}
+Double message?
+\end{cxxdoc}
+\end{cxxvariable}
+\begin{cxxvariable}
+{char}
+        {testProtected\_2}
+        {}
+        {2\_protectedComment}
+        {2.5}
+\begin{cxxdoc}
+2\_protectedComment
+\end{cxxdoc}
+\end{cxxvariable}
+\begin{cxxvariable}
+{char}
+        {testProtected\_3}
+        {}
+        {3\_protectedComment}
+        {2.6}
+\begin{cxxdoc}
+3\_protectedComment
+\end{cxxdoc}
+\end{cxxvariable}
+\end{cxxclass}
+\begin{cxxClassGraph}
+\label{cxx.}
+\strut\\[5pt]\goodbreak
+\cxxClassGraphEntry{}{2}{TestClass}{}
+\end{cxxClassGraph}
+\end{document}

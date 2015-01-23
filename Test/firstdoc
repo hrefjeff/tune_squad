@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{docxx}
+\begin{document}
+\pagebreak
+\sloppy
+\begin{cxxContents}
+\cxxContentsEntry{1}{main}{}
+\end{cxxContents}
+\begin{cxxfunction}
+{int}
+        {main}
+        {()}
+        {}
+        {1}
+\begin{cxxdoc}
+
+
+Author  : Joshua Ford \& Jeffrey Allen
+
+Purpose : Testing github and doc++
+
+Date    : 1/21/2014
+
+blahblahblah
+
+\end{cxxdoc}
+\end{cxxfunction}
+\end{document}
