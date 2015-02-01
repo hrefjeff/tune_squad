@@ -35,5 +35,7 @@ Folder Structure:
 |    
 |    
 /Code   --- Source code for project
-|
-|
+|   |
+|   |
+|   /Tests
+|   |
