@@ -38,4 +38,4 @@ Folder Structure:
 |   |
 |   |
 |   /Tests
-|   |
+|   /TrashCan
