@@ -1,2 +1,5 @@
 # Ignore .DS_store from Mac OS
 .DS_Store
+/Mockups/JavaFXApplication4/nbproject/private/
+/Mockups/JavaFXApplication4/build/
+/Mockups/JavaFXApplication4/dist/
