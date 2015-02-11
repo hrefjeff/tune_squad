@@ -1,7 +1,12 @@
-.menu .label{     -fx-text-fill: gold;
+
+.menu .label{     
+	-fx-text-fill: gold;
 
 }
 .label{
+	/*-fx-font-family: "Times New Roman";*/
+	/*-fx-font-family: "Arial";*/
+	/*-fx-font-family: "Seriff";*/
 	-fx-font-size: 12px;
 	
 
