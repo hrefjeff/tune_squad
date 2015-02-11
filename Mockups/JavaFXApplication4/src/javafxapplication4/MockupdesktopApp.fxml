@@ -8,16 +8,11 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="376.0" prefWidth="626.0" stylesheets="@test.css" VBox.vgrow="ALWAYS">
       <children>
-        <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="Drag components from Library here…" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
-          <font>
-            <Font size="18.0" />
-          </font>
-        </Label>
-            <TableView layoutX="52.0" layoutY="62.0" prefHeight="257.0" prefWidth="550.0">
+            <TableView editable="true" layoutX="46.0" layoutY="67.0" prefHeight="257.0" prefWidth="550.0">
               <columns>
                 <TableColumn prefWidth="99.0" text="Day 1" />
                 <TableColumn prefWidth="85.0" text="Day 2" />
@@ -26,9 +21,9 @@
                   <TableColumn prefWidth="144.0" text="Day 5" />
               </columns>
             </TableView>
-          <MenuBar layoutY="-2.0" prefHeight="32.0" prefWidth="640.0" style="-fx-background-color: purple;">
+          <MenuBar id="menu" layoutX="-4.0" prefHeight="37.2" prefWidth="318.0" style="-fx-background-color: purple;" stylesheets="@test.css">
             <menus>
-              <Menu mnemonicParsing="false" text="File" >
+              <Menu mnemonicParsing="false" text="File">
                 <items>
                   <MenuItem mnemonicParsing="false" text="New" />
                   <MenuItem mnemonicParsing="false" text="Open…" />
@@ -63,6 +58,14 @@
               </Menu>
             </menus>
           </MenuBar>
+            <Label layoutX="314.0" prefHeight="38.0" prefWidth="327.0" snapToPixel="false" style="-fx-background-color: purple;" text="UNA" textFill="gold">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <Button layoutX="544.0" layoutY="360.0" mnemonicParsing="false" text="Schedule" />
+            <Button layoutX="457.0" layoutY="360.0" mnemonicParsing="false" text="Reschedule" />
+            <Button layoutX="20.0" layoutY="360.0" mnemonicParsing="false" text="Log out" />
       </children>
     </AnchorPane>
   </children>
