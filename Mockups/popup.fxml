@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="155.0" prefWidth="539.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField layoutX="280.0" layoutY="24.0" />
+      <TextField layoutX="280.0" layoutY="62.0" />
+      <Label layoutX="39.0" layoutY="29.0" prefHeight="21.0" prefWidth="179.0" text=" Previou semester Data" />
+      <Label layoutX="39.0" layoutY="67.0" prefHeight="21.0" prefWidth="160.0" text="Days to schedule for" />
+      <Button layoutX="434.0" layoutY="102.0" mnemonicParsing="false" text="OK" />
+      <Button layoutX="341.0" layoutY="102.0" mnemonicParsing="false" text="cancel" />
+   </children>
+</Pane>
