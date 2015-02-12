@@ -1,8 +1,6 @@
-.menu .label{     -fx-text-fill: gold;
-
-}
-.label{
-	-fx-font-size: 12px;
-	
-
+#pane {
+	-fx-background-image: url("lion_logo.png");
+	-fx-background-repeat: stretch; 
+	-fx-background-size: 900 506;
+    -fx-background-position: center center;
 }

@@ -11,9 +11,9 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="376.0" prefWidth="626.0" stylesheets="@test.css" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="376.0" prefWidth="626.0" style="-fx-background-color: white; -fx-border-color: gold;" stylesheets="@test.css" VBox.vgrow="ALWAYS">
       <children>
-            <TableView editable="true" layoutX="46.0" layoutY="67.0" prefHeight="257.0" prefWidth="550.0" AnchorPane.bottomAnchor="156.0" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="67.0">
+            <TableView editable="true" layoutX="46.0" layoutY="67.0" prefHeight="257.0" prefWidth="550.0" style="-fx-border-color: purple;" AnchorPane.bottomAnchor="156.0" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="67.0">
               <columns>
                 <TableColumn prefWidth="99.0" text="Day 1" />
                 <TableColumn prefWidth="85.0" text="Day 2" />
@@ -21,6 +21,9 @@
                   <TableColumn prefWidth="93.0" text="Day 4" />
                   <TableColumn prefWidth="144.0" text="Day 5" />
               </columns>
+               <effect>
+                  <DropShadow />
+               </effect>
             </TableView>
           <MenuBar id="menu" layoutX="-4.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="37.2" prefWidth="318.0" style="-fx-background-color: purple;" stylesheets="@test.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="327.0" AnchorPane.topAnchor="0.0">
             <menus>
@@ -59,14 +62,28 @@
               </Menu>
             </menus>
           </MenuBar>
-            <Label layoutX="314.0" prefHeight="38.0" prefWidth="327.0" snapToPixel="false" style="-fx-background-color: purple;" text="UNA" textFill="gold" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Label layoutX="314.0" prefHeight="38.0" prefWidth="327.0" snapToPixel="false" style="-fx-background-color: purple;" textFill="gold" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Label>
             <Button layoutX="530.0" layoutY="379.0" mnemonicParsing="false" text="Schedule" AnchorPane.bottomAnchor="76.0" AnchorPane.rightAnchor="45.0" />
             <Button layoutX="400.0" layoutY="379.0" mnemonicParsing="false" text="Reschedule" AnchorPane.bottomAnchor="76.0" AnchorPane.rightAnchor="163.0" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="430.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="38.0" fitWidth="77.0" layoutX="612.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+               <image>
+                  <Image url="@North%20Alabama.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="32.0" layoutX="502.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="110.73148155212402" AnchorPane.topAnchor="0.0">
+               <image>
+                  <Image url="@logo.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="14.0">
+               <image>
+                  <Image url="@gold-logo.png" />
+               </image>
+            </ImageView>
       </children>
     </AnchorPane>
   </children>
