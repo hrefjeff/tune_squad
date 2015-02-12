@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
 <?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -13,7 +12,7 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="376.0" prefWidth="626.0" stylesheets="@test.css" VBox.vgrow="ALWAYS">
       <children>
-            <TableView editable="true" layoutX="46.0" layoutY="67.0" prefHeight="257.0" prefWidth="550.0" AnchorPane.bottomAnchor="156.0" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="67.0">
+            <TableView editable="true" layoutX="46.0" layoutY="67.0" prefHeight="257.0" prefWidth="550.0">
               <columns>
                 <TableColumn prefWidth="99.0" text="Day 1" />
                 <TableColumn prefWidth="85.0" text="Day 2" />
@@ -22,7 +21,7 @@
                   <TableColumn prefWidth="144.0" text="Day 5" />
               </columns>
             </TableView>
-          <MenuBar id="menu" layoutX="-4.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="37.2" prefWidth="318.0" style="-fx-background-color: purple;" stylesheets="@test.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="327.0" AnchorPane.topAnchor="0.0">
+          <MenuBar id="menu" layoutX="-4.0" prefHeight="37.2" prefWidth="318.0" style="-fx-background-color: purple;" stylesheets="@test.css">
             <menus>
               <Menu mnemonicParsing="false" text="File">
                 <items>
@@ -59,14 +58,14 @@
               </Menu>
             </menus>
           </MenuBar>
-            <Label layoutX="314.0" prefHeight="38.0" prefWidth="327.0" snapToPixel="false" style="-fx-background-color: purple;" text="UNA" textFill="gold" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Label layoutX="314.0" prefHeight="38.0" prefWidth="327.0" snapToPixel="false" style="-fx-background-color: purple;" text="UNA" textFill="gold">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Label>
-            <Button layoutX="530.0" layoutY="379.0" mnemonicParsing="false" text="Schedule" AnchorPane.bottomAnchor="76.0" AnchorPane.rightAnchor="45.0" />
-            <Button layoutX="400.0" layoutY="379.0" mnemonicParsing="false" text="Reschedule" AnchorPane.bottomAnchor="76.0" AnchorPane.rightAnchor="163.0" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="430.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" />
+            <Button layoutX="544.0" layoutY="360.0" mnemonicParsing="false" text="Schedule" />
+            <Button layoutX="457.0" layoutY="360.0" mnemonicParsing="false" text="Reschedule" />
+            <Button layoutX="20.0" layoutY="360.0" mnemonicParsing="false" text="Log out" />
       </children>
     </AnchorPane>
   </children>
