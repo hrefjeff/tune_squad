@@ -1,8 +1,12 @@
 # Team Tune Squad
 UNA CS455 Team Tune Squad
 
+......................Naming descriptions.......................
 
-Folder Structure:
+	{VariableDescription} - How to name items when there are
+	                        multiple files.
+
+======================Folder Structure==========================
 
 /tune_squad
 |
@@ -15,24 +19,28 @@ Folder Structure:
 |    /ClassAssignments
 |    /Meetings
 |    |     |
-|    |     |
+|    |     /{month}_{day}_{year}
+|    |     /{month}_{day}_{year}_ClientMeeting_{MeetingNumber}
 |    |     /MeetingTemplate
 |    |     |    |        
 |    |     |    |        
-|    |     |    .temp_agenda.docx
-|    |     |    .temp_minutes.docx
+|    |     |    .{temp}_agenda.docx
+|    |     |    .{temp}_minutes.docx
 |    |     
 |    /Worklogs
 |    |     |
 |    |     |
-|    |     .temp_worklog.xslx
+|    |     .{temp}_worklog.xslx
 |    |      
 |    /ClientQuestions
 |    /LanguageProposal
 |    /SpecDoc
 |    /CodingStandards
 |    /DesignDocuments
-|    
+|    |    |
+|    |    |
+|    |    /Mockpups
+|
 |    
 /Code   --- Source code for project
 |   |
