@@ -11,7 +11,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="376.0" prefWidth="626.0" style="-fx-background-color: purple;" stylesheets="@test.css" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="376.0" prefWidth="626.0" style="-fx-background-color: #46166b;" stylesheets="@test.css" VBox.vgrow="ALWAYS">
       <children>
             <TableView editable="true" layoutX="46.0" layoutY="67.0" prefHeight="296.0" prefWidth="549.0" style="-fx-border-color: purple;" AnchorPane.bottomAnchor="117.0" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="67.0">
               <columns>
@@ -22,7 +22,7 @@
                   <DropShadow />
                </effect>
             </TableView>
-          <MenuBar id="menu" layoutX="-4.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="640.0" style="-fx-background-color: gold;" stylesheets="@test.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <MenuBar id="menu" layoutX="-4.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="640.0" style="-fx-background-color: #db9f11;" stylesheets="@test.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <menus>
               <Menu mnemonicParsing="false" text="File">
                 <items>
