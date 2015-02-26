@@ -17,22 +17,27 @@ UNA CS455 Team Tune Squad
 |    |
 |    /ClassAssignments
 |    /Meetings
-|    |     |
-|    |     /{month}_{day}_{year}
-|    |     /{month}_{day}_{year}_ClientMeeting_{MeetingNumber}
-|    |     /MeetingTemplate
-|    |     |    |        
-|    |     |    |        
-|    |     |    .{temp}_agenda.docx
-|    |     |    .{temp}_minutes.docx
-|    |     |
-|    |     |
+|    |    |
+|    |    /{month}_{day}_{year}
+|    |    /{month}_{day}_{year}_ClientMeeting_{MeetingNumber}
+|    |    /MeetingTemplate
+|    |    |    |        
+|    |    |    |        
+|    |    |    .{temp}_agenda.docx
+|    |    |    .{temp}_minutes.docx
+|    |    |
+|    |    |
 |    /Worklogs
-|    |     |
-|    |     |
-|    |     .{temp}_worklog.xslx
+|    |    |
+|    |    |
+|    |    .{temp}_worklog.xslx
 |    |      
 |    /ClientQuestions
+|    |    |
+|    |    /Questions
+|    |    /AnswersToQuestions
+|    |
+|    |
 |    /Proposals
 |    /SpecDoc
 |    /CodingStandards
@@ -40,7 +45,6 @@ UNA CS455 Team Tune Squad
 |    |    |
 |    |    |
 |    |    /Mockpups
-|    |    
 |
 |    
 /Code   --- Source code for project
