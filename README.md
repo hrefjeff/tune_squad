@@ -11,7 +11,6 @@ UNA CS455 Team Tune Squad
 /tune_squad
 |
 |
-.CS455Spring2015ProgrammingProject.docx
 /Test      --- Initial github testing
 /Documents --- Noncode-like documents
 |    |
@@ -26,20 +25,22 @@ UNA CS455 Team Tune Squad
 |    |     |    |        
 |    |     |    .{temp}_agenda.docx
 |    |     |    .{temp}_minutes.docx
-|    |     
+|    |     |
+|    |     |
 |    /Worklogs
 |    |     |
 |    |     |
 |    |     .{temp}_worklog.xslx
 |    |      
 |    /ClientQuestions
-|    /LanguageProposal
+|    /Proposals
 |    /SpecDoc
 |    /CodingStandards
 |    /DesignDocuments
 |    |    |
 |    |    |
 |    |    /Mockpups
+|    |    
 |
 |    
 /Code   --- Source code for project
