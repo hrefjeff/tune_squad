@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="506.0" prefWidth="685.0" style="-fx-background-color: #5f6062;" stylesheets="@test.css" VBox.vgrow="ALWAYS">
+      <children>
+            <ImageView fitHeight="109.0" fitWidth="182.0" layoutX="2.0" layoutY="372.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="529.0">
+               <image>
+                  <Image url="@lion_logo.png" />
+               </image>
+            </ImageView>
+            <TableView editable="true" layoutX="57.0" layoutY="132.0" opacity="0.63" prefHeight="251.0" prefWidth="529.0" style="-fx-border-color: #46166b;" AnchorPane.bottomAnchor="98.0" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="131.0">
+              <columns>
+                <TableColumn prefWidth="261.0" text="Class Time" />
+                <TableColumn prefWidth="261.0" text="Exam Time" />
+              </columns>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </TableView>
+          <MenuBar id="menu" layoutX="2.0" layoutY="2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="668.0" style="-fx-background-color: #46166B;" stylesheets="@test.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="0.0">
+            <menus>
+              <Menu mnemonicParsing="false" text="File">
+                <items>
+                  <MenuItem mnemonicParsing="false" text="New" />
+                  <MenuItem mnemonicParsing="false" text="Open…" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Close" />
+                  <MenuItem mnemonicParsing="false" text="Save" />
+                  <MenuItem mnemonicParsing="false" text="Save As…" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Preferences…" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Quit" />
+                </items>
+              </Menu>
+              <Menu mnemonicParsing="false" text="Login">
+                <items>
+                  <MenuItem mnemonicParsing="false" text="Undo" />
+                  <MenuItem mnemonicParsing="false" text="Redo" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Cut" />
+                  <MenuItem mnemonicParsing="false" text="Copy" />
+                  <MenuItem mnemonicParsing="false" text="Paste" />
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Select All" />
+                  <MenuItem mnemonicParsing="false" text="Unselect All" />
+                </items>
+              </Menu>
+              <Menu mnemonicParsing="false" text="Help">
+                <items>
+                  <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+                </items>
+              </Menu>
+            </menus>
+          </MenuBar>
+            <Label layoutX="314.0" layoutY="2.0" prefHeight="38.0" prefWidth="55.0" snapToPixel="false" style="-fx-background-color: #46166b;" textFill="#46166b" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <Button layoutX="520.0" layoutY="414.0" mnemonicParsing="false" text="Schedule" AnchorPane.bottomAnchor="41.0" AnchorPane.rightAnchor="55.0">
+               <effect>
+                  <InnerShadow color="#46166b" />
+               </effect></Button>
+            <Button layoutX="407.0" layoutY="414.0" mnemonicParsing="false" text="Reschedule" AnchorPane.bottomAnchor="41.0" AnchorPane.rightAnchor="156.0" />
+            <ImageView fitHeight="46.0" fitWidth="65.0" layoutX="685.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <image>
+                  <Image url="@North%20Alabama.jpg" />
+               </image>
+            </ImageView>
+            <Button layoutX="52.0" layoutY="77.0" mnemonicParsing="false" text="Select First Input File" />
+            <Button layoutX="197.0" layoutY="77.0" mnemonicParsing="false" text="Select Second Input File" />
+            <Button layoutX="294.0" layoutY="414.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Swap" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
