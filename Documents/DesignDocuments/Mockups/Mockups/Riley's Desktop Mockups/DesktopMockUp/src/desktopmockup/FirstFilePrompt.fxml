@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="324.0" prefWidth="401.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="54.0" layoutY="49.0" mnemonicParsing="false" text="Choose File" />
+      <TextField layoutX="199.0" layoutY="107.0" prefHeight="25.0" prefWidth="158.0" />
+      <TextField layoutX="199.0" layoutY="150.0" prefHeight="25.0" prefWidth="158.0" />
+      <TextField layoutX="199.0" layoutY="188.0" prefHeight="25.0" prefWidth="158.0" />
+      <TextField layoutX="199.0" layoutY="227.0" prefHeight="25.0" prefWidth="158.0" />
+      <TextField layoutX="199.0" layoutY="267.0" prefHeight="25.0" prefWidth="158.0" promptText="Enter 0 for no lunch period" />
+      <Label layoutX="54.0" layoutY="111.0" text="Number of Days of Exams" />
+      <Label layoutX="54.0" layoutY="154.0" text="Time of First Exam" />
+      <Label layoutX="54.0" layoutY="192.0" text="Lenght of Exams" />
+      <Label layoutX="54.0" layoutY="231.0" text="Lenght Between Exams" />
+      <Label layoutX="54.0" layoutY="271.0" text="Lenght of Lunch Peroid" />
+   </children>
+</AnchorPane>
