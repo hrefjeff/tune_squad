@@ -1,0 +1,9 @@
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\Test\VisualStudioTest\FirstJeffreyTest\FirstJeffreyTest\bin\Debug\FirstJeffreyTest.exe.config
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\Test\VisualStudioTest\FirstJeffreyTest\FirstJeffreyTest\bin\Debug\FirstJeffreyTest.exe
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\Test\VisualStudioTest\FirstJeffreyTest\FirstJeffreyTest\bin\Debug\FirstJeffreyTest.pdb
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\Test\VisualStudioTest\FirstJeffreyTest\FirstJeffreyTest\obj\Debug\FirstJeffreyTest.csprojResolveAssemblyReference.cache
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\Test\VisualStudioTest\FirstJeffreyTest\FirstJeffreyTest\obj\Debug\FirstJeffreyTest.Form1.resources
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\Test\VisualStudioTest\FirstJeffreyTest\FirstJeffreyTest\obj\Debug\FirstJeffreyTest.Properties.Resources.resources
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\Test\VisualStudioTest\FirstJeffreyTest\FirstJeffreyTest\obj\Debug\FirstJeffreyTest.csproj.GenerateResource.Cache
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\Test\VisualStudioTest\FirstJeffreyTest\FirstJeffreyTest\obj\Debug\FirstJeffreyTest.exe
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\Test\VisualStudioTest\FirstJeffreyTest\FirstJeffreyTest\obj\Debug\FirstJeffreyTest.pdb
