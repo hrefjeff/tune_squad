@@ -1,4 +1,4 @@
-﻿namespace LIFES
+﻿namespace LIFES.UserInterfaces
 {
     partial class Form1
     {
