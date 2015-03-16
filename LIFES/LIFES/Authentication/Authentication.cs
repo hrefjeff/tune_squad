@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace LIFES.Authentication
 {
-    class Class1
+    class Authentication
+    {
+    }
+
+    class User 
+    { 
+    }
+
+    class Encryption
     {
     }
 }
