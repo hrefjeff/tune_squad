@@ -12,7 +12,7 @@ namespace LIFES
         /// The main entry point for the application.
         /// </summary>
         /// This is working!
-        /// You suck!!!
+        /// You suck giant donkey cock.
         [STAThread]
         static void Main()
         {
