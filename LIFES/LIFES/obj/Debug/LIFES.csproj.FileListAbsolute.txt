@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\LIFES.exe.config
+=======
+C:\Users\Scott\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\LIFES.exe.config
+>>>>>>> fff4a581f5a647c8d669b1c3033c821dad203f8e
