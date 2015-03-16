@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LIFES.Authentication
+namespace LIFES.FileIO
 {
-    class Class1
+    class FileInput
     {
+    }
+    class FileOutput
+    {
+
     }
 }
