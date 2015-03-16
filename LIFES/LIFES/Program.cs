@@ -13,6 +13,7 @@ namespace LIFES
         /// </summary>
         /// This is working!
         /// This is jeffreys change.
+        /// scotts  comment
         [STAThread]
         static void Main()
         {
