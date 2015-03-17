@@ -3,3 +3,12 @@ C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\LIFES.exe.co
 =======
 C:\Users\Scott\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\LIFES.exe.config
 >>>>>>> fff4a581f5a647c8d669b1c3033c821dad203f8e
+C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\LIFES.exe.config
+C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\LIFES.exe
+C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\LIFES.pdb
+C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.csprojResolveAssemblyReference.cache
+C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.Properties.Resources.resources
+C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.Form1.resources
+C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.csproj.GenerateResource.Cache
+C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.exe
+C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.pdb
