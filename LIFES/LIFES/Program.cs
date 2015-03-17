@@ -10,7 +10,7 @@ namespace LIFES
     {
         /// <summary>
         /// The main entry point for the application.
-        /// </summary>
+        /// </summary>asdf
         /// This is working!
         /// This is jeffreys change another change
         /// scotts  comment
