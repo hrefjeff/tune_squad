@@ -19,20 +19,34 @@ namespace LIFES.UserInterfaces
             Reschedule.Click += Reschedule_Click;
             timeConstraintsButton.Click += timeConstraintsButton_Click;
             enrollmentButton.Click += enrollmentButton_Click;
+            helpToolStripMenuItem.Click += helpToolStripMenuItem_Click;
+        }
+
+        void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
 
         void enrollmentButton_Click(object sender, EventArgs e)
         {
+            EnrollmentForm enrollment = new EnrollmentForm();
+            enrollment.ShowDialog();
             textTest.Text = "Clicked Total Enrollment Button";
         }
 
         void timeConstraintsButton_Click(object sender, EventArgs e)
         {
+            TimeConstraintsForm timeConstraints = new TimeConstraintsForm();
+            timeConstraints.ShowDialog();
+
             textTest.Text = "Clicked Time Constraints Button";
         }
 
         void Reschedule_Click(object sender, EventArgs e)
         {
+            examTable.Rows[0].Cells[0].Value = "Rescheduled First Class Time";
+            examTable.Rows[0].Cells[1].Value = "Rescheduled  First Exam Time";
+
             textTest.Text = "Clicked Reschedule Button";
         }
 
