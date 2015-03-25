@@ -27,6 +27,8 @@ namespace LIFES.FileIO
          * This method will output the final exam schedule to a pdf. 
          * This method uses the open source PDFSharp library by MigraDoc Foundation
          * nore information here: http://www.pdfsharp.net/.
+         * This will read the data structure returned from the schedule
+         * function and insert the data into a pdf.
          * 
          * Sources: http://csharp.net-informations.com/file/create-pdf.htm
          * 
