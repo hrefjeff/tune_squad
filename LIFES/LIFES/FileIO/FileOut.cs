@@ -10,7 +10,7 @@ namespace LIFES.FileIO
 {
     /*
      * Class Name: FileOut.cs
-     * Author: Scott Smoke
+     * Created By: Scott Smoke
      * Date: 3/24/2015
      * Modified by: Scott Smoke
      * This class will output the created final exam in the requested
@@ -23,11 +23,11 @@ namespace LIFES.FileIO
          * Method: FileOut
          * Parameters: String filename
          * Output: N/A
-         * Author: Scott Smoke
+         * Created By: Scott Smoke
          * Date: 3/24/2015
          * Modified By: Scott Smoke
          * This constructs an object. 
-         */ 
+         */
         public FileOut(string file)
         {
             filename = file;
@@ -37,7 +37,7 @@ namespace LIFES.FileIO
          * Method: WriteToPDF
          * Parameters: String filename
          * Output: Saved file of the pdf format
-         * Author: Scott Smoke
+         * Created By: Scott Smoke
          * Date: 3/24/2015
          * Modified By: Scott Smoke
          * This method will output the final exam schedule to a pdf. 
@@ -66,7 +66,7 @@ namespace LIFES.FileIO
          * Method: WriteToCSV
          * Parameters: N/A
          * Output: Saved file in the CSV format
-         * Author: Scott Smoke
+         * Created By: Scott Smoke
          * Date: 3/24/2015
          * Modified By: Scott Smoke
          * This will write the data that is returned from the scheduler
@@ -78,7 +78,10 @@ namespace LIFES.FileIO
             {
                 System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
                 //code to write goes here
-                file.WriteLine(filename);
+                file.WriteLine(Globals.semester);
+                file.WriteLine(Globals.totalEnrollemntsFileName);
+                file.WriteLine(Globals.timeConstraints.ToString());
+                //place exam schedule
                 file.Close();
             }
 
@@ -88,7 +91,7 @@ namespace LIFES.FileIO
          * Method: WriteToText
          * Parameters: N/A
          * Output: A saved file in plain text
-         * Author: Scott Smoke
+         * Created By: Scott Smoke
          * Date: 3/24/2015
          * Modified By: Scott Smoke
          * This will write the data that is returned from the scheduler
@@ -100,7 +103,10 @@ namespace LIFES.FileIO
             {
                 System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
                 //code to write goes here
-                file.WriteLine(filename);
+                file.WriteLine(Globals.semester);
+                file.WriteLine(Globals.totalEnrollemntsFileName);
+                file.WriteLine(Globals.timeConstraints.ToString());
+                //place exam schedule
                 file.Close();
             }
             

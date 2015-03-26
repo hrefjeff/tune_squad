@@ -151,10 +151,10 @@ namespace LIFES.UserInterfaces
             "Comma Sperateve Values (*.csv) |*.csv| pdf (*.pdf) |*.pdf";
             saveFile.ShowDialog();
             FileOut outFile = new FileOut(saveFile.FileName);
+            //getting the filter the user selected from the menu
             switch(saveFile.FilterIndex)
             {
                 case 1:
-                    //write to text file
                     outFile.WriteToText();
                     break;
                 case 2:
@@ -166,8 +166,6 @@ namespace LIFES.UserInterfaces
                 default:
                     //error
                     break;
-
-
             }
 
         }
@@ -202,8 +200,6 @@ namespace LIFES.UserInterfaces
             {
                 docToPrint.Print();
             }
-           
-
         }
         /*
          * Method:  DocumentPrintPage
