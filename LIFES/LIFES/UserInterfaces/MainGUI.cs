@@ -52,16 +52,11 @@ namespace LIFES.UserInterfaces
          */
         void TimeConstraintsButton_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             TimeConstraintsForm timeConstraintsGUI = new TimeConstraintsForm();
             timeConstraintsGUI.ShowDialog();
             TimeConstraints tc = timeConstraintsGUI.GetTimeConstraints();
-=======
-            TimeConstraintsForm timeConstraints = new TimeConstraintsForm();
-            timeConstraints.ShowDialog();
 
-            TimeConstraints tc = timeConstraints.GetTimeConstraints();
->>>>>>> parent of f9ed20d... Revert "added headers"
             //Testing
             if (tc != null)
             {
