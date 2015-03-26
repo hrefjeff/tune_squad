@@ -42,6 +42,7 @@ namespace LIFES
             timeBetweenExams = timeBetween;
             lunchPeriod = lunchLength; 
         }
+
         /*
          * Method: GetNumberOfDays
          * Parameters: N/A
@@ -55,6 +56,7 @@ namespace LIFES
         {
             return numberOfDaysToSchedule;
         }
+
         /*
          * Method: GetStartTime
          * Parameters: N/A
@@ -68,6 +70,7 @@ namespace LIFES
         {
             return beginingTimeForExams;
         }
+
         /*
          * Method: GetLengthOfExams
          * Parameters: N/A
@@ -81,6 +84,7 @@ namespace LIFES
         {
             return lengthOfTimeOfExam;
         }
+
         /*
          * Method: GetTimeBetweenExams
          * Parameters: N/A
@@ -94,6 +98,7 @@ namespace LIFES
         {
             return timeBetweenExams;
         }
+
         /* 
          * Method: GetLunchPeriod
          * Parameters: N/A
