@@ -31,7 +31,7 @@ namespace LIFES.UserInterfaces
 
         void TimeConstraintsButton_Click(object sender, EventArgs e)
         {
-            TimeConstraintsForm timeConstraintsGUI = new TimeConstraintsForm()
+            TimeConstraintsForm timeConstraintsGUI = new TimeConstraintsForm();
             timeConstraintsGUI.ShowDialog();
 
             textTest.Text = "Clicked Time Constraints Button";
