@@ -78,7 +78,10 @@ namespace LIFES.FileIO
             {
                 System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
                 //code to write goes here
-                file.WriteLine(filename);
+                file.WriteLine(Globals.semester);
+                file.WriteLine(Globals.totalEnrollemntsFileName);
+                file.WriteLine(Globals.timeConstraints.ToString());
+                //place exam schedule
                 file.Close();
             }
 
@@ -100,7 +103,10 @@ namespace LIFES.FileIO
             {
                 System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
                 //code to write goes here
-                file.WriteLine(filename);
+                file.WriteLine(Globals.semester);
+                file.WriteLine(Globals.totalEnrollemntsFileName);
+                file.WriteLine(Globals.timeConstraints.ToString());
+                //place exam schedule
                 file.Close();
             }
             
