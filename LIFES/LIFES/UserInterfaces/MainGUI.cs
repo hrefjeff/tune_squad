@@ -40,9 +40,7 @@ namespace LIFES.UserInterfaces
         {
             TimeConstraintsForm timeConstraintsGUI = new TimeConstraintsForm();
             timeConstraintsGUI.ShowDialog();
-            TimeConstraintsForm timeConstraints = new TimeConstraintsForm();
-            timeConstraints.ShowDialog();
-            TimeConstraints tc = timeConstraints.GetTimeConstraints();
+            TimeConstraints tc = timeConstraintsGUI.GetTimeConstraints();
             //Testing
             if (tc != null)
             {

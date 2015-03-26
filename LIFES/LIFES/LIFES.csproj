@@ -74,7 +74,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PdfSharp">
-      <HintPath>..\PDFSharp-MigraDocFoundation-1_32\PDFsharp\code\PdfSharp\bin\Debug\PdfSharp.dll</HintPath>
+      <HintPath>..\PDFsharp\code\PdfSharp\bin\Debug\PdfSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -147,7 +147,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
