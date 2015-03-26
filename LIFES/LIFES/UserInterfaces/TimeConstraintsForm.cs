@@ -17,8 +17,23 @@ namespace LIFES.UserInterfaces
         public TimeConstraintsForm()
         {
             InitializeComponent();
-        
+
+            getData.Click += GetData_Click;
         }
+
+        void GetData_Click(object sender, EventArgs e)
+        {
+
+            if (tc != null)
+            {
+                textBox6.Text = tc.GetNumberOfDays().ToString();
+                textBox7.Text = tc.GetStartTime().ToString();
+                textBox8.Text = tc.GetLengthOfExams().ToString();
+                textBox9.Text = tc.GetTimeBetweenExams().ToString();
+                textBox10.Text = tc.GetLunchPeriod().ToString();
+            }
+        }
+      
         /*
          * Method: GetTimeConstraints
          * Parameters: N/A
@@ -33,6 +48,7 @@ namespace LIFES.UserInterfaces
         {
             return tc;
         }
+
         /*
          * Method: button_2Click (update TimeConstraints)
          * Paramters: object Sender, EventArgs e
@@ -63,5 +79,6 @@ namespace LIFES.UserInterfaces
                  tc = t;
             }
         }
+
     }
 }

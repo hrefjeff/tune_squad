@@ -19,50 +19,20 @@ namespace LIFES.UserInterfaces
             Reschedule.Click += Reschedule_Click;
             timeConstraintsButton.Click += timeConstraintsButton_Click;
             enrollmentButton.Click += enrollmentButton_Click;
-            helpToolStripMenuItem.Click += helpToolStripMenuItem_Click;
-        }
-
-        void helpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
         }
 
         void enrollmentButton_Click(object sender, EventArgs e)
         {
-            EnrollmentForm enrollment = new EnrollmentForm();
-            enrollment.ShowDialog();
             textTest.Text = "Clicked Total Enrollment Button";
         }
-        /*
-         * Method: TimeConstraintsButton
-         * Parameters: object sender, EventArgs e
-         * Output: N/A
-         * Created By: Riley Smith
-         * Date: 3/24/2015
-         * Modified By: Scott Smoke
-         * 
-         */ 
+
         void timeConstraintsButton_Click(object sender, EventArgs e)
         {
-            TimeConstraintsForm timeConstraints = new TimeConstraintsForm();
-            timeConstraints.ShowDialog();
-            TimeConstraints tc = timeConstraints.GetTimeConstraints();
-            //Testing
-            if (tc != null)
-            {
-                textTest.Text = tc.GetNumberOfDays().ToString();
-            }
-            else
-            {
-                textTest.Text = "Error getting data";
-            }
+            textTest.Text = "Clicked Time Constraints Button";
         }
 
         void Reschedule_Click(object sender, EventArgs e)
         {
-            examTable.Rows[0].Cells[0].Value = "Rescheduled First Class Time";
-            examTable.Rows[0].Cells[1].Value = "Rescheduled  First Exam Time";
-
             textTest.Text = "Clicked Reschedule Button";
         }
 
@@ -70,6 +40,7 @@ namespace LIFES.UserInterfaces
         {
             examTable.Rows[0].Cells[0].Value = "First Class Time";
             examTable.Rows[0].Cells[1].Value = "First Exam Time";
+ 
             textTest.Text = "Clicked Schedule Button";
         }
 
