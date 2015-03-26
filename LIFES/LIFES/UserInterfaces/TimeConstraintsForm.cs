@@ -94,16 +94,16 @@ namespace LIFES.UserInterfaces
         }
 
         /*
-       * Method: button1_Click (Open file)
-       * Paramters: object Sender, EventArgs e
-       * Output: N/A
-       * Created By: Scott Smoke
-       * Date: 3/25/2015
-       * Modified By: Scott Smoke
-       * When this button is clicked an open file dialog will open and allow
-       * the user to enter a file name or select a file.
-       * Sources: msdn.Microsoft.com
-       */
+        * Method: button1_Click (Open file)
+        * Paramters: object Sender, EventArgs e
+        * Output: N/A
+        * Created By: Scott Smoke
+        * Date: 3/25/2015
+        * Modified By: Scott Smoke
+        * When this button is clicked an open file dialog will open and allow
+        * the user to enter a file name or select a file.
+        * Sources: msdn.Microsoft.com
+        */
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
