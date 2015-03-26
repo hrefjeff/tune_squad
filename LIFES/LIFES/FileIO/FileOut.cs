@@ -50,14 +50,17 @@ namespace LIFES.FileIO
          */
         public void WriteToPDF()
         {
+            Console.WriteLine(filename);
             //to do use pdfsharp
-            //PdfDocument pdf = new PdfDocument();
-            //PdfPage pdfPage = pdf.AddPage();
-            //XGraphics graph = XGraphics.FromPdfPage(pdfPage);
-            //XFont font = new XFont("Times New Roman", 12);
-            //graph.DrawString("This is my first PDF document", font, XBrushes.Black,
-            //new XRect(0, 0, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
-            //pdf.Save("firstpage.pdf");
+            PdfDocument pdf = new PdfDocument();
+            PdfPage pdfPage = pdf.AddPage();
+            XGraphics graph = XGraphics.FromPdfPage(pdfPage);
+            //testing purposes
+            XFont font = new XFont("Times New Roman", 12);
+            graph.DrawString("This is my first PDF document", font, XBrushes.Black,
+            new XRect(0, 0, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
+            //end testing
+            pdf.Save(filename);
 
         }
         /*
