@@ -16,10 +16,11 @@ namespace LIFES
      */ 
     public static class  Globals
     {
-        public static string timeConstraintsFileName;
-        public static string totalEnrollemntsFileName;
-        public static TimeConstraints timeConstraints;
-        public static string semester;
+        public static string timeConstraintsFileName = "";
+        public static string totalEnrollemntsFileName = "";
+        public static TimeConstraints timeConstraints = new TimeConstraints(0,0,0,0,0);
+        public static string semester = "";
+        public static int year = 0;
         //Save file if applicable
         //final exam schedule
     }
