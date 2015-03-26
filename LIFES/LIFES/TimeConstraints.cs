@@ -14,7 +14,7 @@ namespace LIFES
      * This class holds the time constraints that are specified in the 
      * Specification document.
      */
-    class TimeConstraints
+    public class TimeConstraints
     {
         private int numberOfDaysToSchedule;
         private int beginingTimeForExams;
