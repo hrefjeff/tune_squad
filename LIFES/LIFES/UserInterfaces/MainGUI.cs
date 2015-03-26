@@ -56,7 +56,8 @@ namespace LIFES.UserInterfaces
             TimeConstraintsForm timeConstraintsGUI = new TimeConstraintsForm();
             timeConstraintsGUI.ShowDialog();
             TimeConstraints tc = timeConstraintsGUI.GetTimeConstraints();
-
+            Globals.timeConstraints = tc;
+            Globals.timeConstraintsFileName = timeConstraintsGUI.GetFileName();
             //Testing
             if (tc != null)
             {
