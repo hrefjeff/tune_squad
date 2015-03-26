@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using LIFES.FileIO;
 namespace LIFES.UserInterfaces
 {
     public partial class MainGUI : Form
@@ -119,14 +119,47 @@ namespace LIFES.UserInterfaces
 
         }
 
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void textTest_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        /*
+         * Method: SaveAsToolStripMenuItem_Click
+         * Parameters: object sender, EventArgs e
+         * Output: A filed saved in the requested format.
+         * Created By: Scott Smoke
+         * Date: 3/26/2015
+         * Modified By: Scott Smoke
+         * This will allow the user to enter a file name and a save file type.
+         * Source: msdn.microsoft.com
+         *         http://stackoverflow.com/questions/11964955/how-to-check-what-filter-is-applied
+         */
+        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = "txt files (*.txt)| *.txt|" +
+            "Comma Sperateve Values (*.csv) |*.csv| pdf (*.pdf) |*.pdf";
+            saveFile.ShowDialog();
+            FileOut outFile = new FileOut(saveFile.FileName);
+            switch(saveFile.FilterIndex)
+            {
+                case 1:
+                    //write to text file
+                    outFile.WriteToText();
+                    break;
+                case 2:
+                    outFile.WriteToCSV();
+                    break;
+                case 3:
+                    outFile.WriteToPDF();
+                    break;
+                default:
+                    //error
+                    break;
+
+
+            }
+            
         }
     }
 }
