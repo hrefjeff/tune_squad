@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using LIFES;
+using System.Collections;
 namespace LIFES.Schedule
 {
-    class Scedule
+    class Scheduler
     {
+        private TimeConstraints tc;
+        //compressed data
         /*
          * This will construct a schedule object that will schedule the final 
          * exams
@@ -17,10 +20,14 @@ namespace LIFES.Schedule
          * Modified by: Scott Smoke
          * 
          */
-        public void Schedule()
+        public Scheduler(TimeConstraints t)
         {
+            tc = t;
+
             //to do 
         }
+
+     
         /*
          * This will reschedule the final exams once a user has pressed 
          * the reschedule button.
@@ -33,6 +40,8 @@ namespace LIFES.Schedule
         {
             //to do
         }
+
+        //GetSchedule()
         
     }
 }

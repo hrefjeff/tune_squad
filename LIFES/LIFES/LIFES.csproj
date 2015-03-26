@@ -92,9 +92,10 @@
     <Compile Include="FileIO\FileOut.cs" />
     <Compile Include="FileIO\FileIn.cs" />
     <Compile Include="Schedule\FinalExamTime.cs" />
-    <Compile Include="Schedule\Scedule.cs" />
+    <Compile Include="Schedule\Scheduler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeConstraints.cs" />
     <Compile Include="UserInterfaces\EnrollmentForm.cs">
       <SubType>Form</SubType>
     </Compile>

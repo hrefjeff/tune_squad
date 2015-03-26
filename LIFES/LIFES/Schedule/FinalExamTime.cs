@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace LIFES.Schedule
 {
     /*
-     * This class represents a final exam time. This item
-     * contains all information about the final exam.
-     * 
-     * 
+     * Class Name: FinalExamTime.cs
      * Author: Scott Smoke
-     * Modified By: Scott Smoke 
+     * Date: 3/25/2015
+     * Modified by: Scott Smoke
+     * This class is the final exam times that
+     * are constructed after the scheduler has ran.
      */ 
     class FinalExamTime
     {
