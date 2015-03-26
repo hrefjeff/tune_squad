@@ -15,19 +15,25 @@ namespace LIFES.UserInterfaces
         public MainGUI()
         {
             InitializeComponent();
-            Schedule.Click += Schedule_Click;
-            Reschedule.Click += Reschedule_Click;
-            timeConstraintsButton.Click += timeConstraintsButton_Click;
-            enrollmentButton.Click += enrollmentButton_Click;
+            scheduleButton.Click += Schedule_Click;
+            rescheduleButton.Click += Reschedule_Click;
+            timeConstraintsButton.Click += TimeConstraintsButton_Click;
+            enrollmentButton.Click += EnrollmentButton_Click;
         }
 
-        void enrollmentButton_Click(object sender, EventArgs e)
+        void EnrollmentButton_Click(object sender, EventArgs e)
         {
+            EnrollmentForm enrollmentGUI = new EnrollmentForm();
+            enrollmentGUI.ShowDialog();
+
             textTest.Text = "Clicked Total Enrollment Button";
         }
 
-        void timeConstraintsButton_Click(object sender, EventArgs e)
+        void TimeConstraintsButton_Click(object sender, EventArgs e)
         {
+            TimeConstraintsForm timeConstraintsGUI = new TimeConstraintsForm()
+            timeConstraintsGUI.ShowDialog();
+
             textTest.Text = "Clicked Time Constraints Button";
         }
 
