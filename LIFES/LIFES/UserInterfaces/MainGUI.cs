@@ -28,13 +28,31 @@ namespace LIFES.UserInterfaces
 
             textTest.Text = "Clicked Total Enrollment Button";
         }
-
+            /*
+         * Method: TimeConstraintsButton
+         * Parameters: object sender, EventArgs e
+         * Output: N/A
+         * Created By: Riley Smith
+         * Date: 3/24/2015
+         * Modified By: Riley Smith
+         */
         void TimeConstraintsButton_Click(object sender, EventArgs e)
         {
             TimeConstraintsForm timeConstraintsGUI = new TimeConstraintsForm();
             timeConstraintsGUI.ShowDialog();
-
-            textTest.Text = "Clicked Time Constraints Button";
+            TimeConstraintsForm timeConstraints = new TimeConstraintsForm();
+            timeConstraints.ShowDialog();
+            TimeConstraints tc = timeConstraints.GetTimeConstraints();
+            //Testing
+            if (tc != null)
+            {
+                textTest.Text = tc.GetNumberOfDays().ToString();
+            }
+            else
+            {
+                textTest.Text = "Error getting data";
+            }
+          
         }
 
         void Reschedule_Click(object sender, EventArgs e)
