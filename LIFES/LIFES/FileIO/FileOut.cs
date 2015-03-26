@@ -70,7 +70,7 @@ namespace LIFES.FileIO
          * This will write the data that is returned from the scheduler
          * to a file in the CSV format.
          */
-        public void writeToCSV()
+        public void WriteToCSV()
         {
             //to do
         }
@@ -84,7 +84,7 @@ namespace LIFES.FileIO
          * This will write the data that is returned from the scheduler
          * to a plain text file.
          */
-        public void writeToText() 
+        public void WriteToText() 
         {
             //to do
         }
