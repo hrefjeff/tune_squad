@@ -40,3 +40,10 @@ C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.exe.manifest
 C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.application
 C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.TimeConstraintsForm.resources
 C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.EnrollmentForm.resources
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\tune_squad\LIFES\LIFES\bin\Debug\LIFES.exe.config
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\tune_squad\LIFES\LIFES\obj\Debug\LIFES.csprojResolveAssemblyReference.cache
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\tune_squad\LIFES\LIFES\obj\Debug\LIFES.Properties.Resources.resources
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.EnrollmentForm.resources
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.MainGUI.resources
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.TimeConstraintsForm.resources
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\tune_squad\LIFES\LIFES\obj\Debug\LIFES.csproj.GenerateResource.Cache
