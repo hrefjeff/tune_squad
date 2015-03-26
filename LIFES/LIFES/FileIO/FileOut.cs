@@ -9,21 +9,37 @@ using PdfSharp.Drawing;
 namespace LIFES.FileIO
 {
     /*
-     * This class will output the final exam schedule to the requested 
-     * file type.
-     *  
+     * Class Name: FileOut.cs
      * Author: Scott Smoke
-     * Last Modified by: Scott Smoke
+     * Date: 3/24/2015
+     * Modified by: Scott Smoke
+     * This class will output the created final exam in the requested
+     * format.
      */
     class FileOut
     {
         private string filename;
+        /*
+         * Method: FileOut
+         * Parameters: String filename
+         * Output: N/A
+         * Author: Scott Smoke
+         * Date: 3/24/2015
+         * Modified By: Scott Smoke
+         * This constructs an object. 
+         */ 
         public FileOut(string file)
         {
             filename = file;
         }
 
         /*
+         * Method: WriteToPDF
+         * Parameters: String filename
+         * Output: Saved file of the pdf format
+         * Author: Scott Smoke
+         * Date: 3/24/2015
+         * Modified By: Scott Smoke
          * This method will output the final exam schedule to a pdf. 
          * This method uses the open source PDFSharp library by MigraDoc Foundation
          * nore information here: http://www.pdfsharp.net/.
@@ -31,11 +47,8 @@ namespace LIFES.FileIO
          * function and insert the data into a pdf.
          * 
          * Sources: http://csharp.net-informations.com/file/create-pdf.htm
-         * 
-         * Author: Scott Smoke
-         * Modified by: Scott Smoke
          */
-        public void writeToPDF()
+        public void WriteToPDF()
         {
             //to do use pdfsharp
             //PdfDocument pdf = new PdfDocument();
@@ -48,21 +61,29 @@ namespace LIFES.FileIO
 
         }
         /*
-        * This method will output the final exam schedule to a csv. 
-        * 
-        * Author: Scott Smoke
-        * Modified by: Scott Smoke
-        */
+         * Method: WriteToCSV
+         * Parameters: N/A
+         * Output: Saved file in the CSV format
+         * Author: Scott Smoke
+         * Date: 3/24/2015
+         * Modified By: Scott Smoke
+         * This will write the data that is returned from the scheduler
+         * to a file in the CSV format.
+         */
         public void writeToCSV()
         {
             //to do
         }
         /*
-        * This method will output the final exam schedule to a plain text file. 
-        * 
-        * Author: Scott Smoke
-        * Modified by: Scott Smoke
-        */
+         * Method: WriteToText
+         * Parameters: N/A
+         * Output: A saved file in plain text
+         * Author: Scott Smoke
+         * Date: 3/24/2015
+         * Modified By: Scott Smoke
+         * This will write the data that is returned from the scheduler
+         * to a plain text file.
+         */
         public void writeToText() 
         {
             //to do
