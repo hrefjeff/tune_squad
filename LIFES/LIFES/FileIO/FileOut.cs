@@ -50,7 +50,6 @@ namespace LIFES.FileIO
          */
         public void WriteToPDF()
         {
-            Console.WriteLine(filename);
             //to do use pdfsharp
             PdfDocument pdf = new PdfDocument();
             PdfPage pdfPage = pdf.AddPage();
@@ -75,7 +74,12 @@ namespace LIFES.FileIO
          */
         public void WriteToCSV()
         {
-            //to do
+            System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
+            //code to write goes here
+            file.Close();
+  
+
+       
         }
         /*
          * Method: WriteToText
@@ -89,7 +93,10 @@ namespace LIFES.FileIO
          */
         public void WriteToText() 
         {
-            //to do
+            System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
+            //code to write goes here
+            file.Close();
+          
         }
 
     }
