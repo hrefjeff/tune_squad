@@ -74,10 +74,13 @@ namespace LIFES.FileIO
          */
         public void WriteToCSV()
         {
-            System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
-            //code to write goes here
-            file.Close();
-  
+            if (filename !="")
+            {
+                System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
+                //code to write goes here
+                file.WriteLine(filename);
+                file.Close();
+            }
 
        
         }
@@ -93,9 +96,14 @@ namespace LIFES.FileIO
          */
         public void WriteToText() 
         {
-            System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
-            //code to write goes here
-            file.Close();
+            if (filename != "")
+            {
+                System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
+                //code to write goes here
+                file.WriteLine(filename);
+                file.Close();
+            }
+            
           
         }
 
