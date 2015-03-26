@@ -160,7 +160,70 @@ namespace LIFES.UserInterfaces
 
 
             }
-            
+
+        }
+        /*
+         * Method: PrintToolStripMenuItemClick 
+         * Parameters: object sender, EventArgs e
+         * Output: N/A
+         * Created By: Scott Smoke
+         * Date: 3/26/2015
+         * Modified By: Scott Smoke
+         * This will display a print dialog and allow the user to
+         * select a printer.
+         * Sources: msdn.miscrosoft.com
+         *          http://stackoverflow.com/questions/15985909/show-print-dialog-before-printing
+         */
+        private void PrintToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            System.Drawing.Printing.PrintDocument docToPrint =
+                new System.Drawing.Printing.PrintDocument();
+
+            //event handler for the object
+            docToPrint.PrintPage += 
+                new System.Drawing.Printing.
+                    PrintPageEventHandler(DocumentPrintPage);
+
+            PrintDialog print = new PrintDialog();
+            print.AllowSomePages = false;
+            print.ShowHelp = true;
+            print.Document = docToPrint;
+            DialogResult result = print.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                docToPrint.Print();
+            }
+           
+
+        }
+        /*
+         * Method:  DocumentPrintPage
+         * Parameters: object sender, 
+         *             System.Drawing.Printing.PrintPageEventArgs e
+         * Output: A printed document
+         * Created By: Scott Smoke
+         * Date: 3/26/2015
+         * Modified By: Scott Smoke
+         * This will print a document.
+         * Sources: msdn.microsoft.com
+         */
+        private void DocumentPrintPage(object sender, 
+            System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            //print schedule
+            // Insert code to render the page here. 
+            // This code will be called when the control is drawn. 
+
+            // The following code will render a simple 
+            // message on the printed document. 
+            //testing
+            string text = "In DocumentPrintPage method.";
+            System.Drawing.Font printFont = new System.Drawing.Font
+                ("Arial", 35, System.Drawing.FontStyle.Regular);
+
+            // Draw the content.
+            e.Graphics.DrawString(text, printFont,
+                System.Drawing.Brushes.Black, 10, 10);
         }
     }
 }
