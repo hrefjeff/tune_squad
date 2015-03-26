@@ -34,7 +34,7 @@ namespace LIFES.UserInterfaces
             return tc;
         }
         /*
-         * Method: button_2Click
+         * Method: button_2Click (update TimeConstraints)
          * Paramters: object Sender, EventArgs e
          * Output: N/A
          * Created By: Scott Smoke
