@@ -19,6 +19,7 @@ namespace LIFES
         public static string timeConstraintsFileName;
         public static string totalEnrollemntsFileName;
         public static TimeConstraints timeConstraints;
+        public static string semester;
         //Save file if applicable
         //final exam schedule
     }
