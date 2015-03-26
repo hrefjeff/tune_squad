@@ -17,11 +17,6 @@ namespace LIFES.UserInterfaces
             InitializeComponent();
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         /*
          * Method:Button1_click
          * Pasrameters: object sender, EventArgs e
@@ -39,6 +34,44 @@ namespace LIFES.UserInterfaces
             openFile.Title = "Open Total Enrollments File";
             openFile.ShowDialog();
             Globals.totalEnrollemntsFileName = openFile.FileName;
+        }
+        /* 
+         * Method: FallButtonCheckedChanged
+         * Parameters: object sender, EventArgs e
+         * Output: N/A
+         * Created By: Scott Smoke
+         * Date: 3/26/2015
+         * Modified By: Scott Smoke
+         * When this radio button is clicked it will set the global
+         * semester to fall.
+         * 
+         */
+        private void FallButtonCheckedChanged(object sender, EventArgs e)
+        {
+            if (fallButton.Checked)
+            {
+                Globals.semester = "fall";
+            }
+        }
+        /* 
+         * Method: SpringButtonCheckedChanged
+         * Parameters: object sender, EventArgs e
+         * Output: N/A
+         * Created By: Scott Smoke
+         * Date: 3/26/2015
+         * Modified By: Scott Smoke
+         * When this radio button is clicked it will set the global
+         * semester to spring.
+         * 
+         */
+        private void SpringButtonCheckedChanged(object sender, EventArgs e)
+        {
+            if(springButton.Checked)
+            {
+                Globals.semester = "spring";
+
+            }
+
         }
     }
 }
