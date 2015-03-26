@@ -43,7 +43,7 @@ namespace LIFES
             lunchPeriod = lunchLength; 
         }
         /*
-         * Method GetNumberOfDays
+         * Method: GetNumberOfDays
          * Parameters: N/A
          * Output: Integer
          * Created By: Scott Smoke
@@ -56,7 +56,7 @@ namespace LIFES
             return numberOfDaysToSchedule;
         }
         /*
-         * Method GetStartTime
+         * Method: GetStartTime
          * Parameters: N/A
          * Output: Integer
          * Created By: Scott Smoke
@@ -69,7 +69,7 @@ namespace LIFES
             return beginingTimeForExams;
         }
         /*
-         * Method GetLengthOfExams
+         * Method: GetLengthOfExams
          * Parameters: N/A
          * Output: Integer
          * Created By: Scott Smoke
@@ -82,7 +82,7 @@ namespace LIFES
             return lengthOfTimeOfExam;
         }
         /*
-         * Method GetTimeBetweenExams
+         * Method: GetTimeBetweenExams
          * Parameters: N/A
          * Output: Integer
          * Created By: Scott Smoke
@@ -95,7 +95,7 @@ namespace LIFES
             return timeBetweenExams;
         }
         /* 
-         * Method GetLunchPeriod
+         * Method: GetLunchPeriod
          * Parameters: N/A
          * Output: Integer
          * Created By: Scott Smoke
