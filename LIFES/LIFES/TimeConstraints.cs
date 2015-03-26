@@ -107,5 +107,23 @@ namespace LIFES
         {
             return lunchPeriod;
         }
+        /*
+         * Method: ToString
+         * Parameters: N/A
+         * Output: A string
+         * Created By: Scott Smoke
+         * Date: 3/26/2015
+         * Modified By: Scott Smoke
+         * Returns a string with all the fields concatenated together
+         */
+        public override string ToString()
+        {
+            return (
+                numberOfDaysToSchedule + "\r\n" +
+                beginingTimeForExams + "\r\n" +
+                lengthOfTimeOfExam + "\r\n" +
+                timeBetweenExams + "\r\n" +
+                lunchPeriod);
+        }
     }
 }
