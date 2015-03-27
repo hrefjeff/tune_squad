@@ -30,16 +30,15 @@
         {
             this.fallButton = new System.Windows.Forms.RadioButton();
             this.springButton = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
+            this.chooseFileButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // fallButton
             // 
             this.fallButton.AutoSize = true;
-            this.fallButton.Location = new System.Drawing.Point(40, 46);
-            this.fallButton.Margin = new System.Windows.Forms.Padding(4);
+            this.fallButton.Location = new System.Drawing.Point(30, 37);
             this.fallButton.Name = "fallButton";
-            this.fallButton.Size = new System.Drawing.Size(51, 21);
+            this.fallButton.Size = new System.Drawing.Size(41, 17);
             this.fallButton.TabIndex = 0;
             this.fallButton.TabStop = true;
             this.fallButton.Text = "Fall";
@@ -49,38 +48,35 @@
             // springButton
             // 
             this.springButton.AutoSize = true;
-            this.springButton.Location = new System.Drawing.Point(127, 46);
-            this.springButton.Margin = new System.Windows.Forms.Padding(4);
+            this.springButton.Location = new System.Drawing.Point(95, 37);
             this.springButton.Name = "springButton";
-            this.springButton.Size = new System.Drawing.Size(70, 21);
+            this.springButton.Size = new System.Drawing.Size(55, 17);
             this.springButton.TabIndex = 1;
             this.springButton.TabStop = true;
             this.springButton.Text = "Spring";
             this.springButton.UseVisualStyleBackColor = true;
             this.springButton.CheckedChanged += new System.EventHandler(this.SpringButtonCheckedChanged);
             // 
-            // button1
+            // chooseFileButton
             // 
-            this.button1.Location = new System.Drawing.Point(40, 124);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Choose File";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.chooseFileButton.Location = new System.Drawing.Point(30, 101);
+            this.chooseFileButton.Name = "chooseFileButton";
+            this.chooseFileButton.Size = new System.Drawing.Size(75, 23);
+            this.chooseFileButton.TabIndex = 2;
+            this.chooseFileButton.Text = "Choose File";
+            this.chooseFileButton.UseVisualStyleBackColor = true;
+            this.chooseFileButton.Click += new System.EventHandler(this.chooseFileButton_Click);
             // 
             // EnrollmentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 204);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(284, 166);
+            this.Controls.Add(this.chooseFileButton);
             this.Controls.Add(this.springButton);
             this.Controls.Add(this.fallButton);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EnrollmentForm";
-            this.Text = "EnrollmentForm";
+            this.Text = "Total Enrollment";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,6 +86,6 @@
 
         private System.Windows.Forms.RadioButton fallButton;
         private System.Windows.Forms.RadioButton springButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button chooseFileButton;
     }
 }

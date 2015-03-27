@@ -28,7 +28,7 @@ namespace LIFES.UserInterfaces
         }
 
         /*
-         * Method:Button1_click
+         * Method:chooseFileButton_Click
          * Pasrameters: object sender, EventArgs e
          * Ouytput: N/A
          * Created By: Scott Smoke
@@ -38,7 +38,7 @@ namespace LIFES.UserInterfaces
          * Description: This will pop up an open file dialog when clicked.
          *  This will allow the user to select a total enrollments file.
          */
-        private void Button1_Click(object sender, EventArgs e)
+        private void chooseFileButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Filter = "Comma Seperated Values |*.csv";
@@ -88,5 +88,6 @@ namespace LIFES.UserInterfaces
             }
 
         }
+
     }
 }
