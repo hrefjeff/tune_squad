@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using LIFES.FileIO;
 namespace LIFES.UserInterfaces
 {
-    /*
+   /*
     * Class Name: MainGUI.cs
     * 
     * Author: Riley Smith
@@ -31,6 +31,23 @@ namespace LIFES.UserInterfaces
             rescheduleButton.Click += Reschedule_Click;
             timeConstraintsButton.Click += TimeConstraintsButton_Click;
             enrollmentButton.Click += EnrollmentButton_Click;
+            loginToolStripMenuItem.Click += LoginToolStripMenuItem_Click;
+        }
+
+        /*
+         * Method: LoginToolStripMenuItem_Click
+         * Parameters: object sender, EventArgs e
+         * Output: N/A
+         * Created By: Riley Smith
+         * Date: 3/26/2015
+         * Modified By: Riley Smith
+         * 
+         * Description: Event handler for the menu button Login. 
+         */
+        void LoginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoginForm loginGUI = new LoginForm();
+            loginGUI.ShowDialog();
         }
 
         /*
@@ -235,6 +252,11 @@ namespace LIFES.UserInterfaces
             // Draw the content.
             e.Graphics.DrawString(text, printFont,
                 System.Drawing.Brushes.Black, 10, 10);
+        }
+
+        private void MainGUI_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

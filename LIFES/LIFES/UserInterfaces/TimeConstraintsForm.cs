@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace LIFES.UserInterfaces
 {
-    /*
+   /*
     * Class Name: TimeConstraintsForm.cs
     * Author: Riley Smith
     * Date: 3/24/2015

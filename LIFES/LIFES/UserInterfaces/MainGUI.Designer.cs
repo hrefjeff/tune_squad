@@ -49,6 +49,7 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textTest = new System.Windows.Forms.TextBox();
+            this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.examTable)).BeginInit();
             this.SuspendLayout();
@@ -60,11 +61,12 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.viewToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.loginToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(839, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(839, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -77,38 +79,38 @@
             this.saveAsToolStripMenuItem,
             this.printToolStripMenuItem,
             this.closeToolStripMenuItem});
-            this.fileToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fileToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(49, 25);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(41, 21);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.newToolStripMenuItem.Text = "New";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.saveAsToolStripMenuItem.Text = "Save As";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveAsToolStripMenuItem_Click);
             // 
@@ -116,7 +118,7 @@
             // 
             this.printToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.PrintToolStripMenuItemClick);
             // 
@@ -124,7 +126,7 @@
             // 
             this.closeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.closeToolStripMenuItem.Text = "Close";
             // 
             // viewToolStripMenuItem
@@ -133,10 +135,10 @@
             this.singleExamDayToolStripMenuItem,
             this.fullExamWeekToolStripMenuItem,
             this.viewTotalEnrollmentsToolStripMenuItem});
-            this.viewToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(59, 25);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(51, 21);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // singleExamDayToolStripMenuItem
@@ -144,7 +146,7 @@
             this.singleExamDayToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.singleExamDayToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
             this.singleExamDayToolStripMenuItem.Name = "singleExamDayToolStripMenuItem";
-            this.singleExamDayToolStripMenuItem.Size = new System.Drawing.Size(253, 26);
+            this.singleExamDayToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.singleExamDayToolStripMenuItem.Text = "Single Exam Day";
             // 
             // fullExamWeekToolStripMenuItem
@@ -152,7 +154,7 @@
             this.fullExamWeekToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fullExamWeekToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
             this.fullExamWeekToolStripMenuItem.Name = "fullExamWeekToolStripMenuItem";
-            this.fullExamWeekToolStripMenuItem.Size = new System.Drawing.Size(253, 26);
+            this.fullExamWeekToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.fullExamWeekToolStripMenuItem.Text = "Full Exam Week";
             // 
             // viewTotalEnrollmentsToolStripMenuItem
@@ -160,19 +162,20 @@
             this.viewTotalEnrollmentsToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewTotalEnrollmentsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
             this.viewTotalEnrollmentsToolStripMenuItem.Name = "viewTotalEnrollmentsToolStripMenuItem";
-            this.viewTotalEnrollmentsToolStripMenuItem.Size = new System.Drawing.Size(253, 26);
+            this.viewTotalEnrollmentsToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.viewTotalEnrollmentsToolStripMenuItem.Text = "View Total Enrollments";
             // 
             // helpToolStripMenuItem
             // 
-            this.helpToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(57, 25);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(48, 21);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // scheduleButton
             // 
+            this.scheduleButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scheduleButton.Location = new System.Drawing.Point(668, 446);
             this.scheduleButton.Margin = new System.Windows.Forms.Padding(4);
             this.scheduleButton.Name = "scheduleButton";
@@ -183,6 +186,7 @@
             // 
             // rescheduleButton
             // 
+            this.rescheduleButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rescheduleButton.Location = new System.Drawing.Point(536, 446);
             this.rescheduleButton.Margin = new System.Windows.Forms.Padding(4);
             this.rescheduleButton.Name = "rescheduleButton";
@@ -193,7 +197,7 @@
             // 
             // timeConstraintsButton
             // 
-            this.timeConstraintsButton.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeConstraintsButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timeConstraintsButton.Location = new System.Drawing.Point(88, 84);
             this.timeConstraintsButton.Margin = new System.Windows.Forms.Padding(4);
             this.timeConstraintsButton.Name = "timeConstraintsButton";
@@ -204,11 +208,11 @@
             // 
             // enrollmentButton
             // 
-            this.enrollmentButton.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enrollmentButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enrollmentButton.Location = new System.Drawing.Point(242, 84);
             this.enrollmentButton.Margin = new System.Windows.Forms.Padding(4);
             this.enrollmentButton.Name = "enrollmentButton";
-            this.enrollmentButton.Size = new System.Drawing.Size(108, 26);
+            this.enrollmentButton.Size = new System.Drawing.Size(126, 26);
             this.enrollmentButton.TabIndex = 5;
             this.enrollmentButton.Text = "Total Enrollment";
             this.enrollmentButton.UseVisualStyleBackColor = true;
@@ -240,17 +244,26 @@
             // 
             // textTest
             // 
+            this.textTest.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textTest.Location = new System.Drawing.Point(104, 449);
             this.textTest.Margin = new System.Windows.Forms.Padding(4);
             this.textTest.Name = "textTest";
-            this.textTest.Size = new System.Drawing.Size(231, 22);
+            this.textTest.Size = new System.Drawing.Size(231, 25);
             this.textTest.TabIndex = 7;
             this.textTest.Text = "Text Area for Testing ";
             this.textTest.TextChanged += new System.EventHandler(this.textTest_TextChanged);
             // 
+            // loginToolStripMenuItem
+            // 
+            this.loginToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
+            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(53, 21);
+            this.loginToolStripMenuItem.Text = "Login";
+            // 
             // MainGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(96)))), ((int)(((byte)(98)))));
             this.ClientSize = new System.Drawing.Size(839, 544);
@@ -266,6 +279,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainGUI";
             this.Text = "LIons Final Exam Scheduler";
+            this.Load += new System.EventHandler(this.MainGUI_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.examTable)).EndInit();
@@ -297,5 +311,6 @@
         private System.Windows.Forms.ToolStripMenuItem singleExamDayToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fullExamWeekToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewTotalEnrollmentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
     }
 }

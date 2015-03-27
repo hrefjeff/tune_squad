@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace LIFES.UserInterfaces
 {
-    /*
+   /*
     * Class Name: EnrollmentForm.cs
     * Author: Riley Smith
     * Date: 3/24/2015
