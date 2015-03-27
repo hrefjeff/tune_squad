@@ -55,7 +55,7 @@
             this.chooseFileButton.Name = "chooseFileButton";
             this.chooseFileButton.Size = new System.Drawing.Size(75, 23);
             this.chooseFileButton.TabIndex = 0;
-            this.chooseFileButton.Text = "Chose File";
+            this.chooseFileButton.Text = "Choose File";
             this.chooseFileButton.UseVisualStyleBackColor = true;
             this.chooseFileButton.Click += new System.EventHandler(this.ChooseFileButton_Click);
             // 
