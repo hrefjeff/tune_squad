@@ -110,6 +110,9 @@ namespace LIFES.UserInterfaces
          */
         void Reschedule_Click(object sender, EventArgs e)
         {
+            examTable.Rows[0].Cells[0].Value = "Rescheduled First Class Time";
+            examTable.Rows[0].Cells[1].Value = "Rescheduled First Exam Time";
+
             textTest.Text = "Clicked Reschedule Button";
         }
 
@@ -150,9 +153,20 @@ namespace LIFES.UserInterfaces
 
         private void textTest_TextChanged(object sender, EventArgs e)
         {
-        // End of generated methods
 
         }
+        private void MainGUI_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+        // End of generated methods
+
+        
         /*
          * Method: SaveAsToolStripMenuItem_Click
          * Parameters: object sender, EventArgs e
@@ -254,15 +268,6 @@ namespace LIFES.UserInterfaces
                 System.Drawing.Brushes.Black, 10, 10);
         }
 
-        private void MainGUI_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 
