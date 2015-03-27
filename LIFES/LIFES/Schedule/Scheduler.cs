@@ -41,7 +41,6 @@ namespace LIFES.Schedule
             //to do
         }
 
-        //GetSchedule()
         
     }
 }
