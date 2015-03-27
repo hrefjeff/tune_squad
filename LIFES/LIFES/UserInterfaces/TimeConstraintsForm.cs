@@ -78,7 +78,7 @@ namespace LIFES.UserInterfaces
         }
 
         /*
-         * Method: updateConstraintsButton_Click (update TimeConstraints)
+         * Method: UpdateConstraintsButton_Click (update TimeConstraints)
          * Paramters: object Sender, EventArgs e
          * Output: N/A
          * Created By: Scott Smoke
@@ -91,7 +91,7 @@ namespace LIFES.UserInterfaces
          *  data is all set to zero.
          * 
          */
-        private void updateConstraintsButton_Click(object sender, EventArgs e)
+        private void UpdateConstraintsButton_Click(object sender, EventArgs e)
         {
             if ((textBox1.Text != "") && (textBox2.Text != "") &&
                 (textBox3.Text != "") && (textBox4.Text != "") &&
@@ -110,7 +110,7 @@ namespace LIFES.UserInterfaces
         }
 
         /*
-        * Method: chooseFileButton_Click (Open file)
+        * Method: ChooseFileButton_Click (Open file)
         * Paramters: object Sender, EventArgs e
         * Output: N/A
         * Created By: Scott Smoke
@@ -121,7 +121,7 @@ namespace LIFES.UserInterfaces
         *   the user to enter a file name or select a file.
         * Sources: msdn.Microsoft.com
         */
-        private void chooseFileButton_Click(object sender, EventArgs e)
+        private void ChooseFileButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Filter = "Text Files |*.txt";

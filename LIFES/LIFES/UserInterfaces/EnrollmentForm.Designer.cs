@@ -65,7 +65,7 @@
             this.chooseFileButton.TabIndex = 2;
             this.chooseFileButton.Text = "Choose File";
             this.chooseFileButton.UseVisualStyleBackColor = true;
-            this.chooseFileButton.Click += new System.EventHandler(this.chooseFileButton_Click);
+            this.chooseFileButton.Click += new System.EventHandler(this.ChooseFileButton_Click);
             // 
             // EnrollmentForm
             // 

@@ -57,7 +57,7 @@
             this.chooseFileButton.TabIndex = 0;
             this.chooseFileButton.Text = "Chose File";
             this.chooseFileButton.UseVisualStyleBackColor = true;
-            this.chooseFileButton.Click += new System.EventHandler(this.chooseFileButton_Click);
+            this.chooseFileButton.Click += new System.EventHandler(this.ChooseFileButton_Click);
             // 
             // textBox1
             // 
@@ -147,7 +147,7 @@
             this.updateConstraintsButton.TabIndex = 11;
             this.updateConstraintsButton.Text = "Update Constraints";
             this.updateConstraintsButton.UseVisualStyleBackColor = true;
-            this.updateConstraintsButton.Click += new System.EventHandler(this.updateConstraintsButton_Click);
+            this.updateConstraintsButton.Click += new System.EventHandler(this.UpdateConstraintsButton_Click);
             // 
             // label6
             // 
