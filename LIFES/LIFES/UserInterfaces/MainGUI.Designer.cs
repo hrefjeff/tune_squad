@@ -41,6 +41,7 @@
             this.fullExamWeekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewTotalEnrollmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scheduleButton = new System.Windows.Forms.Button();
             this.rescheduleButton = new System.Windows.Forms.Button();
             this.timeConstraintsButton = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textTest = new System.Windows.Forms.TextBox();
-            this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.examTable)).BeginInit();
             this.SuspendLayout();
@@ -173,6 +173,14 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(48, 21);
             this.helpToolStripMenuItem.Text = "Help";
             // 
+            // loginToolStripMenuItem
+            // 
+            this.loginToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
+            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(53, 21);
+            this.loginToolStripMenuItem.Text = "Login";
+            // 
             // scheduleButton
             // 
             this.scheduleButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -252,14 +260,6 @@
             this.textTest.TabIndex = 7;
             this.textTest.Text = "Text Area for Testing ";
             this.textTest.TextChanged += new System.EventHandler(this.textTest_TextChanged);
-            // 
-            // loginToolStripMenuItem
-            // 
-            this.loginToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
-            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(53, 21);
-            this.loginToolStripMenuItem.Text = "Login";
             // 
             // MainGUI
             // 

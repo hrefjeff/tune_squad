@@ -91,6 +91,7 @@
     <Compile Include="Authentication\Authentication.cs" />
     <Compile Include="FileIO\FileOut.cs" />
     <Compile Include="FileIO\FileIn.cs" />
+    <Compile Include="Globals.cs" />
     <Compile Include="Schedule\FinalExamTime.cs" />
     <Compile Include="Schedule\Scheduler.cs" />
     <Compile Include="Program.cs" />
@@ -101,6 +102,12 @@
     </Compile>
     <Compile Include="UserInterfaces\EnrollmentForm.Designer.cs">
       <DependentUpon>EnrollmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterfaces\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterfaces\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserInterfaces\MainGUI.cs">
       <SubType>Form</SubType>
@@ -125,6 +132,9 @@
     </Compile>
     <EmbeddedResource Include="UserInterfaces\EnrollmentForm.resx">
       <DependentUpon>EnrollmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterfaces\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterfaces\MainGUI.resx">
       <DependentUpon>MainGUI.cs</DependentUpon>
