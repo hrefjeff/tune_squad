@@ -2,7 +2,6 @@ C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\LIFES.exe.co
 C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\LIFES.exe
 C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\LIFES.pdb
 C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.Properties.Resources.resources
-C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.Form1.resources
 C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.csproj.GenerateResource.Cache
 C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.exe
 C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.pdb
@@ -67,3 +66,17 @@ C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\PdfSharp.xml
 C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\de\PdfSharp.resources.dll
 C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.LoginForm.resources
 C:\Users\Scott\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.LoginForm.resources
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.csprojResolveAssemblyReference.cache
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.EnrollmentForm.resources
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.LoginForm.resources
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.MainGUI.resources
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.TimeConstraintsForm.resources
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\LIFES.exe.manifest
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\LIFES.application
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\PdfSharp.dll
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\PdfSharp.pdb
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\PdfSharp.xml
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\de\PdfSharp.resources.dll
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.TrustInfo.xml
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.exe.manifest
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.application
