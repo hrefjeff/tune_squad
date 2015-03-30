@@ -66,3 +66,4 @@ C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\PdfSharp.pdb
 C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\PdfSharp.xml
 C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\de\PdfSharp.resources.dll
 C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.LoginForm.resources
+C:\Users\Scott\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.LoginForm.resources
