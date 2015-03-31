@@ -79,7 +79,9 @@ namespace LIFES.UserInterfaces
         {
             AdminForm adminGUI = new AdminForm();
             adminGUI.Owner = this;
+            this.Hide();
             adminGUI.ShowDialog();
+            this.Show();
         }
 
         /*
@@ -96,7 +98,9 @@ namespace LIFES.UserInterfaces
         {
             LoginForm loginGUI = new LoginForm();
             loginGUI.Owner = this;
+            this.Hide();
             loginGUI.ShowDialog();
+            this.Show();
         }
 
         /*
@@ -114,7 +118,9 @@ namespace LIFES.UserInterfaces
             EnrollmentForm enrollmentGUI = new EnrollmentForm();
             enrollmentGUI.Owner = this;
 
+            this.Hide();
             enrollmentGUI.ShowDialog();
+            this.Show();
 
             textTest.Text = "Clicked Total Enrollment Button";
         }
@@ -134,7 +140,9 @@ namespace LIFES.UserInterfaces
 
             TimeConstraintsForm timeConstraintsGUI = new TimeConstraintsForm();
             timeConstraintsGUI.Owner = this;
+            this.Hide();
             timeConstraintsGUI.ShowDialog();
+            this.Show();
 
             TimeConstraints tc = timeConstraintsGUI.GetTimeConstraints();
             Globals.timeConstraints = tc;
