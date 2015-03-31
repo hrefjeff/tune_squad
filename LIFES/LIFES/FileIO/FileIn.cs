@@ -7,6 +7,30 @@ using System.IO;
 
 namespace LIFES.FileIO
 {
+
+    //class FileInput 
+    //{ 
+
+    //    private string fileName;
+
+    //    protected virtual void read();
+
+    //}
+
+    //class FileInputTimeConstraint :  FileInput
+    //{
+
+    //    protected void read();
+
+    //}
+
+    //class FileInputEnrollmentsFile : FileInput
+    //{ 
+
+    //    protected void read();
+
+    //}
+
     /* 
      * Name:        FileIn
      * Author:      Joshua Ford
@@ -30,7 +54,9 @@ namespace LIFES.FileIO
         {
             if (File.Exists(fileName))
             {
+
                 setLines(System.IO.File.ReadAllLines(fileName));
+                isValidConstraintsFile();
             }
             else
             {
@@ -43,35 +69,44 @@ namespace LIFES.FileIO
          * Author(s):   Joshua Ford
          * Created:     3/31/15
          * Modified by: [NOT YET MODIFIED]
+         * Parameters:  NONE
          * purpose:     This method runs a check on the constraints file ensuring that the file data is in proper format and that the data itself is valid.
-         */ 
-        private void validateConstraintsFile()
+         */
+        private bool isValidConstraintsFile()
         {
-            if (Length(myFile.getLines()) == 5)
+            bool good = true;
+            int numVal = -1;
+            for (int i = 0; i < lines.Length; i++)
             {
-                foreach (string val in myFile.getLines())
+                try
                 {
-                    Console.WriteLine(val);
+                    numVal = Convert.ToInt16(lines[i]);
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine("Line " + (i + 1) + " " + e.Message);
+                    good = false;
                 }
             }
+            return good;
         }
 
         /*
          * Name:        setLines
          * Author:      Joshua Ford
          * Created:     3/25/15
-         * Modified by: 
+         * Modified by: [NOT YET MODIFIED]
          * Purpose: Acts as the setter for this class (Purpose should be pretty transparant).
          */
         void setLines(string[] lines)
         {
-            if (lines.Length > 0)
+            if (lines.Length == 5)
             {
                 this.lines = lines;
             }
             else
             {
-                Console.WriteLine("Error, the file is empty.");
+                Console.WriteLine("Error, the file contains an incorrect number of lines.");
             }
         }
 
@@ -96,8 +131,9 @@ namespace LIFES.FileIO
             string filename;
             Console.WriteLine("Enter the file name: ");
             filename = Console.ReadLine();
+            filename = "C:\\Users\\Josh Ford\\Documents\\GitHub\\tune_squad\\tune_squad\\Test\\CsharpSandbox\\JoshSandbox\\testConstraints.txt";
             FileIn myFile = new FileIn(filename);
-            foreach(string val in myFile.getLines())
+            foreach (string val in myFile.getLines())
             {
                 Console.WriteLine(val);
             }
