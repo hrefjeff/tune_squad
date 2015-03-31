@@ -14,7 +14,6 @@ namespace LIFES.FileIO
      * Modified by: 
      * Purpose: Reads in data from a file.
      */
-
     class FileIn
     {
         // Class variable.
@@ -36,6 +35,24 @@ namespace LIFES.FileIO
             else
             {
                 Console.WriteLine("Error, the file specified could not be found.");
+            }
+        }
+
+        /*
+         * Name:        validateConstraintsFile
+         * Author(s):   Joshua Ford
+         * Created:     3/31/15
+         * Modified by: [NOT YET MODIFIED]
+         * purpose:     This method runs a check on the constraints file ensuring that the file data is in proper format and that the data itself is valid.
+         */ 
+        private void validateConstraintsFile()
+        {
+            if (Length(myFile.getLines()) == 5)
+            {
+                foreach (string val in myFile.getLines())
+                {
+                    Console.WriteLine(val);
+                }
             }
         }
 
@@ -72,7 +89,6 @@ namespace LIFES.FileIO
     }
 
     // This was stubbed in for the purpose of testing. :)
-    /*
     class Program
     {
         static void Main(string[] args)
@@ -88,5 +104,4 @@ namespace LIFES.FileIO
             Console.ReadLine();
         }
     }
-     */
 }
