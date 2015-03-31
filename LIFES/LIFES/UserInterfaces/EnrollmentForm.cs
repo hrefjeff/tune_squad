@@ -115,8 +115,6 @@ namespace LIFES.UserInterfaces
          */
         protected override void OnLoad(EventArgs e)
         {
-
-
             this.Size = this.Owner.Size;
             this.Location = this.Owner.Location;
 

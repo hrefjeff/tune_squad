@@ -46,6 +46,40 @@ namespace LIFES.UserInterfaces
             timeConstraintsButton.Click += TimeConstraintsButton_Click;
             enrollmentButton.Click += EnrollmentButton_Click;
             loginToolStripMenuItem.Click += LoginToolStripMenuItem_Click;
+            adminToolStripMenuItem.Click += adminToolStripMenuItem_Click;
+            closeToolStripMenuItem.Click += closeToolStripMenuItem_Click;
+        }
+
+        /*
+         * Method: closeToolStripMenuItem_Click
+         * Parameters: object sender, EventArgs e
+         * Output: N/A
+         * Created By: Riley Smith
+         * Date: 3/26/2015
+         * Modified By: Riley Smith
+         * 
+         * Description: Event handler for the menu button Close. 
+         */
+        void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        /*
+         * Method: adminToolStripMenuItem_Click
+         * Parameters: object sender, EventArgs e
+         * Output: N/A
+         * Created By: Riley Smith
+         * Date: 3/26/2015
+         * Modified By: Riley Smith
+         * 
+         * Description: Event handler for the menu button Admin. 
+         */
+        void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdminForm adminGUI = new AdminForm();
+            adminGUI.Owner = this;
+            adminGUI.ShowDialog();
         }
 
         /*
