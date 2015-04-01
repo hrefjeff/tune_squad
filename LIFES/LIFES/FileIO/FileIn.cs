@@ -7,37 +7,13 @@ using System.IO;
 
 namespace LIFES.FileIO
 {
-
-    //class FileInput 
-    //{ 
-
-    //    private string fileName;
-
-    //    protected virtual void read();
-
-    //}
-
-    //class FileInputTimeConstraint :  FileInput
-    //{
-
-    //    protected void read();
-
-    //}
-
-    //class FileInputEnrollmentsFile : FileInput
-    //{ 
-
-    //    protected void read();
-
-    //}
-
-    /* 
+    /*
      * Name:        FileIn
      * Author:      Joshua Ford
      * Created:     3/24/15
-     * Modified by: 
-     * Purpose: Reads in data from a file.
-     */
+     * Modified by: [NOT YET MODIFIED]
+     * Purpose:     Handles file input and validation of the first file.
+     * */
     class FileIn
     {
         // Class variable.
@@ -47,8 +23,9 @@ namespace LIFES.FileIO
          * Name:        FileIn
          * Author:      Joshua Ford
          * Created:     3/24/15
-         * Modified by: 
-         * Purpose: Takes a filename as input and reads that file, then returns an array of the lines in that file.
+         * Modified by: [NOT YET MODIFIED]
+         * Parameters:  fileName - The name of the file to be opened.
+         * Purpose:     Takes a filename as input and reads that file, then returns an array of the lines in that file.
          */
         public FileIn(string fileName)
         {
@@ -70,25 +47,81 @@ namespace LIFES.FileIO
          * Created:     3/31/15
          * Modified by: [NOT YET MODIFIED]
          * Parameters:  NONE
-         * purpose:     This method runs a check on the constraints file ensuring that the file data is in proper format and that the data itself is valid.
+         * Purpose:     This method runs a check on the constraints file ensuring that the file data is in proper format and that the data itself is valid.
          */
         private bool isValidConstraintsFile()
         {
             bool good = true;
-            int numVal = -1;
+
             for (int i = 0; i < lines.Length; i++)
             {
-                try
+                if (!isFileAllDigit(i))
                 {
-                    numVal = Convert.ToInt16(lines[i]);
-                }
-                catch (FormatException e)
-                {
-                    Console.WriteLine("Line " + (i + 1) + " " + e.Message);
                     good = false;
+                }
+                else if (i == 0)
+                {
+                    if (lines[i] != "3" && lines[i] != "4" && lines[i] != "5")
+                    {
+                        Console.WriteLine("Error on line 1: Incorrect number of day choice.");
+                        good = false;
+                        //throw new Exception("Error on line 1: Incorrect day choice.");
+                    }
+                }
+                else if (i == 1)
+                {
+                    if (lines[i] != "0700")
+                    {
+                        Console.WriteLine("Error on line 2: Incorrect start time for final exams.");
+                        good = false;
+                        //throw new Exception("Error line 2: Incorrect final exam start time.");
+                    }
+                }
+                else if (i == 2)
+                {
+                    if (Convert.ToInt16(lines[i]) < 75 || Convert.ToInt16(lines[i]) > 300)
+                    {
+                        Console.WriteLine("Error on line 3: Incorrect exam time.");
+                        good = false;
+                        //throw new Exception("Error line 3: Incorrect final exam length.");
+                    }
+                }
+                else if (i == 3)
+                {
+                    if (Convert.ToInt16(lines[i]) < 10 || Convert.ToInt16(lines[i]) > 30)
+                    {
+                        Console.WriteLine("Error on line 4: Incorrect time between final exams.");
+                        good = false;
+                        //throw new Exception("Error line 4: Incorrect length of time between exams.");
+                    }
                 }
             }
             return good;
+        }
+
+        /*
+         * Name:        isFileAllDigit
+         * Author(s):   Joshua Ford
+         * Created:     4/1/15
+         * Modified by: [NOT YET MODIFIED]
+         * Parameters:  lineNum - The line number being checked.
+         * Purpose:     Check a single line to make sure the string is in digit form.
+         */
+        private bool isFileAllDigit(int lineNum)
+        {
+            int numVal = -1;
+            bool digit = true;
+
+            try
+            {
+                numVal = Convert.ToInt16(lines[lineNum]);
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Line " + (lineNum + 1) + " " + e.Message);
+                digit = false;
+            }
+            return digit;
         }
 
         /*
@@ -96,6 +129,7 @@ namespace LIFES.FileIO
          * Author:      Joshua Ford
          * Created:     3/25/15
          * Modified by: [NOT YET MODIFIED]
+         * Parameters:  lines - An array of all lines in the file which was opened.
          * Purpose: Acts as the setter for this class (Purpose should be pretty transparant).
          */
         void setLines(string[] lines)
@@ -114,7 +148,8 @@ namespace LIFES.FileIO
          * Name:        getLines
          * Author:      Joshua Ford
          * Created:     3/25/15
-         * Modified by: 
+         * Modified by: [NOT YET MODIFIED]
+         * Parameters:  NONE
          * Purpose: Acts as the getter for this class (This should also be pretty obvious)
          */
         public string[] getLines()
