@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PdfSharp.Pdf;
 using PdfSharp.Drawing;
+using PdfSharp.Drawing.Layout;
 
 namespace LIFES.FileIO
 {
@@ -47,6 +48,7 @@ namespace LIFES.FileIO
          * function and insert the data into a pdf.
          * 
          * Sources: http://csharp.net-informations.com/file/create-pdf.htm
+         *          http://www.pdfsharp.net/wiki/TextLayout-sample.ashx?AspxAutoDetectCookieSupport=1
          */
         public void WriteToPDF()
         {
@@ -54,11 +56,23 @@ namespace LIFES.FileIO
             PdfDocument pdf = new PdfDocument();
             PdfPage pdfPage = pdf.AddPage();
             XGraphics graph = XGraphics.FromPdfPage(pdfPage);
-            //testing purposes
             XFont font = new XFont("Times New Roman", 12);
-            graph.DrawString("This is my first PDF document", font, XBrushes.Black,
-            new XRect(0, 0, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
-            //end testing
+            XTextFormatter tf = new XTextFormatter(graph);
+            //adding data to pdf
+            tf.DrawString(Globals.semester, font,
+                XBrushes.Black, new XRect(40, 0, pdfPage.Width.Point,
+                    pdfPage.Height.Point), XStringFormats.TopLeft);
+
+            tf.DrawString(Globals.totalEnrollemntsFileName, font,
+                XBrushes.Black, new XRect(40, 12, pdfPage.Width.Point,
+                    pdfPage.Height.Point), XStringFormats.TopLeft);
+
+            tf.DrawString(Globals.timeConstraints.ToString(), font,
+                XBrushes.Black, new XRect(40, 24, pdfPage.Width.Point,
+                    pdfPage.Height.Point), XStringFormats.TopLeft);
+            //add schedule
+     
+ 
             pdf.Save(filename);
 
         }
@@ -76,7 +90,8 @@ namespace LIFES.FileIO
         {
             if (filename !="")
             {
-                System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
+                System.IO.StreamWriter file = 
+                    new System.IO.StreamWriter(filename);
                 //code to write goes here
                 file.WriteLine(Globals.semester);
                 file.WriteLine(Globals.totalEnrollemntsFileName);
@@ -101,7 +116,8 @@ namespace LIFES.FileIO
         {
             if (filename != "")
             {
-                System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
+                System.IO.StreamWriter file = 
+                    new System.IO.StreamWriter(filename);
                 //code to write goes here
                 file.WriteLine(Globals.semester);
                 file.WriteLine(Globals.totalEnrollemntsFileName);
