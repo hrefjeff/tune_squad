@@ -14,6 +14,7 @@ namespace LIFES.FileIO
      * Modified by: [NOT YET MODIFIED]
      * Purpose:     Handles file input and validation of the first file.
      * */
+
     class FileIn
     {
         // Class variable.
@@ -27,14 +28,15 @@ namespace LIFES.FileIO
          * Parameters:  fileName - The name of the file to be opened.
          * Purpose:     Takes a filename as input and reads that file, then returns an array of the lines in that file.
          */
+
         public FileIn(string fileName)
         {
             if (File.Exists(fileName))
             {
-
                 setLines(System.IO.File.ReadAllLines(fileName));
-                isValidConstraintsFile();
+                IsValidConstraintsFile();
             }
+
             else
             {
                 Console.WriteLine("Error, the file specified could not be found.");
@@ -49,7 +51,8 @@ namespace LIFES.FileIO
          * Parameters:  NONE
          * Purpose:     This method runs a check on the constraints file ensuring that the file data is in proper format and that the data itself is valid.
          */
-        private bool isValidConstraintsFile()
+
+        private bool IsValidConstraintsFile()
         {
             bool good = true;
 
@@ -59,40 +62,44 @@ namespace LIFES.FileIO
                 {
                     good = false;
                 }
+
                 else if (i == 0)
                 {
                     if (lines[i] != "3" && lines[i] != "4" && lines[i] != "5")
                     {
                         Console.WriteLine("Error on line 1: Incorrect number of day choice.");
                         good = false;
-                        //throw new Exception("Error on line 1: Incorrect day choice.");
+                        //throw new Exception ("Error on line 1: Incorrect day choice.");
                     }
                 }
+
                 else if (i == 1)
                 {
                     if (lines[i] != "0700")
                     {
                         Console.WriteLine("Error on line 2: Incorrect start time for final exams.");
                         good = false;
-                        //throw new Exception("Error line 2: Incorrect final exam start time.");
+                        //throw new Exception ("Error line 2: Incorrect final exam start time.");
                     }
                 }
+
                 else if (i == 2)
                 {
                     if (Convert.ToInt16(lines[i]) < 75 || Convert.ToInt16(lines[i]) > 300)
                     {
                         Console.WriteLine("Error on line 3: Incorrect exam time.");
                         good = false;
-                        //throw new Exception("Error line 3: Incorrect final exam length.");
+                        //throw new Exception ("Error line 3: Incorrect final exam length.");
                     }
                 }
+
                 else if (i == 3)
                 {
                     if (Convert.ToInt16(lines[i]) < 10 || Convert.ToInt16(lines[i]) > 30)
                     {
                         Console.WriteLine("Error on line 4: Incorrect time between final exams.");
                         good = false;
-                        //throw new Exception("Error line 4: Incorrect length of time between exams.");
+                        //throw new Exception ("Error line 4: Incorrect length of time between exams.");
                     }
                 }
             }
@@ -107,6 +114,7 @@ namespace LIFES.FileIO
          * Parameters:  lineNum - The line number being checked.
          * Purpose:     Check a single line to make sure the string is in digit form.
          */
+
         private bool isFileAllDigit(int lineNum)
         {
             int numVal = -1;
@@ -132,7 +140,8 @@ namespace LIFES.FileIO
          * Parameters:  lines - An array of all lines in the file which was opened.
          * Purpose: Acts as the setter for this class (Purpose should be pretty transparant).
          */
-        void setLines(string[] lines)
+
+        public void setLines(string[] lines)
         {
             if (lines.Length == 5)
             {
@@ -152,6 +161,7 @@ namespace LIFES.FileIO
          * Parameters:  NONE
          * Purpose: Acts as the getter for this class (This should also be pretty obvious)
          */
+
         public string[] getLines()
         {
             return lines;
