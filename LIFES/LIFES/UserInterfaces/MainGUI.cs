@@ -55,7 +55,7 @@ namespace LIFES.UserInterfaces
         * 
         * Description: Event handler for the menu button Close. 
         */
-        void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -70,7 +70,7 @@ namespace LIFES.UserInterfaces
          * 
          * Description: Event handler for the Admin menu button Create User. 
          */
-        void createUserToolStripMenuItem_Click(object sender, EventArgs e)
+        private void createUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateUserForm createUser = new CreateUserForm();
             createUser.Owner = this;
@@ -370,6 +370,11 @@ namespace LIFES.UserInterfaces
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loginToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
 
         }
