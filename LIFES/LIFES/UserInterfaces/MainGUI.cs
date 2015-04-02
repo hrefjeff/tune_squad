@@ -26,17 +26,6 @@ namespace LIFES.UserInterfaces
      */
     public partial class MainGUI : Form
     {
-
-        //Constants
-        const int AW_SLIDE = 0X40000;
-        const int AW_CENTER = 0x00000010;
-        const int AW_HOR_POSITIVE = 0X1;
-        const int AW_HOR_NEGATIVE = 0X2;
-        const int AW_BLEND = 0X80000;
-
-        [DllImport("user32")]
-        static extern bool AnimateWindow(IntPtr hwnd, int time, int flags);
-
         public MainGUI()
         {
             InitializeComponent();
@@ -47,7 +36,7 @@ namespace LIFES.UserInterfaces
             timeConstraintsButton.Click += TimeConstraintsButton_Click;
             enrollmentButton.Click += EnrollmentButton_Click;
 
-            // Menu Buttons.
+            // Event handlers for Menu Buttons.
             loginToolStripMenuItem.Click += LoginToolStripMenuItem_Click;
             closeToolStripMenuItem.Click += closeToolStripMenuItem_Click;
             createUserToolStripMenuItem.Click += createUserToolStripMenuItem_Click;
@@ -56,11 +45,31 @@ namespace LIFES.UserInterfaces
             finalizeScheduleToolStripMenuItem.Click += finalizeScheduleToolStripMenuItem_Click;
         }
 
+        /*
+         * Method: finalizeScheduleToolStripMenuItem_Click
+         * Parameters: object sender, EventArgs e
+         * Output: N/A
+         * Created By: Riley Smith
+         * Date: 4/1/2015
+         * Modified By: Riley Smith
+         * 
+         * Description: Event handler for the Admin menu button Finalize. 
+         */
         void finalizeScheduleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            // Needs to be added
         }
 
+        /*
+         * Method: resetPasswordToolStripMenuItem_Click
+         * Parameters: object sender, EventArgs e
+         * Output: N/A
+         * Created By: Riley Smith
+         * Date: 4/1/2015
+         * Modified By: Riley Smith
+         * 
+         * Description: Event handler for the Admin menu button Reset Password. 
+         */
         void resetPasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ResetPasswordForm resetForm = new ResetPasswordForm();
@@ -68,6 +77,16 @@ namespace LIFES.UserInterfaces
             resetForm.ShowDialog();
         }
 
+        /*
+         * Method: deleteUserToolStripMenuItem_Click
+         * Parameters: object sender, EventArgs e
+         * Output: N/A
+         * Created By: Riley Smith
+         * Date: 4/1/2015
+         * Modified By: Riley Smith
+         * 
+         * Description: Event handler for the Admin menu button Delete User. 
+         */
         void deleteUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DeleteUserForm deleteUserForm = new DeleteUserForm();
@@ -75,6 +94,16 @@ namespace LIFES.UserInterfaces
             deleteUserForm.ShowDialog();
         }
 
+        /*
+         * Method: createUserToolStripMenuItem_Click
+         * Parameters: object sender, EventArgs e
+         * Output: N/A
+         * Created By: Riley Smith
+         * Date: 4/1/2015
+         * Modified By: Riley Smith
+         * 
+         * Description: Event handler for the Admin menu button Create User. 
+         */
         void createUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateUserForm createUser = new CreateUserForm();
@@ -276,8 +305,8 @@ namespace LIFES.UserInterfaces
                     //error
                     break;
             }
-
         }
+
         /*
          * Method: PrintToolStripMenuItemClick 
          * Parameters: object sender, EventArgs e
@@ -311,6 +340,7 @@ namespace LIFES.UserInterfaces
                 docToPrint.Print();
             }
         }
+
         /*
          * Method:  DocumentPrintPage
          * Parameters: object sender, 
