@@ -74,13 +74,14 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(96)))), ((int)(((byte)(98)))));
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.chooseFileButton);
             this.panel1.Controls.Add(this.springButton);
             this.panel1.Controls.Add(this.fallButton);
-            this.panel1.Location = new System.Drawing.Point(215, 143);
+            this.panel1.Location = new System.Drawing.Point(70, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(180, 141);
+            this.panel1.Size = new System.Drawing.Size(212, 141);
             this.panel1.TabIndex = 3;
             // 
             // EnrollmentForm
@@ -88,9 +89,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
-            this.ClientSize = new System.Drawing.Size(624, 462);
+            this.ClientSize = new System.Drawing.Size(356, 200);
             this.Controls.Add(this.panel1);
-            this.MinimumSize = new System.Drawing.Size(600, 500);
             this.Name = "EnrollmentForm";
             this.Text = "Total Enrollment";
             this.panel1.ResumeLayout(false);

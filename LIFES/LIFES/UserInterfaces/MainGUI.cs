@@ -41,13 +41,45 @@ namespace LIFES.UserInterfaces
         {
             InitializeComponent();
 
+            // Add Event Handlers.
             scheduleButton.Click += Schedule_Click;
             rescheduleButton.Click += Reschedule_Click;
             timeConstraintsButton.Click += TimeConstraintsButton_Click;
             enrollmentButton.Click += EnrollmentButton_Click;
+
+            // Menu Buttons.
             loginToolStripMenuItem.Click += LoginToolStripMenuItem_Click;
-            adminToolStripMenuItem.Click += adminToolStripMenuItem_Click;
             closeToolStripMenuItem.Click += closeToolStripMenuItem_Click;
+            createUserToolStripMenuItem.Click += createUserToolStripMenuItem_Click;
+            deleteUserToolStripMenuItem.Click += deleteUserToolStripMenuItem_Click;
+            resetPasswordToolStripMenuItem.Click += resetPasswordToolStripMenuItem_Click;
+            finalizeScheduleToolStripMenuItem.Click += finalizeScheduleToolStripMenuItem_Click;
+        }
+
+        void finalizeScheduleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        void resetPasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ResetPasswordForm resetForm = new ResetPasswordForm();
+            resetForm.Owner = this;
+            resetForm.ShowDialog();
+        }
+
+        void deleteUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteUserForm deleteUserForm = new DeleteUserForm();
+            deleteUserForm.Owner = this;
+            deleteUserForm.ShowDialog();
+        }
+
+        void createUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateUserForm createUser = new CreateUserForm();
+            createUser.Owner = this;
+            createUser.ShowDialog();
         }
 
         /*
@@ -63,25 +95,6 @@ namespace LIFES.UserInterfaces
         void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        /*
-         * Method: adminToolStripMenuItem_Click
-         * Parameters: object sender, EventArgs e
-         * Output: N/A
-         * Created By: Riley Smith
-         * Date: 3/26/2015
-         * Modified By: Riley Smith
-         * 
-         * Description: Event handler for the menu button Admin. 
-         */
-        void adminToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AdminForm adminGUI = new AdminForm();
-            adminGUI.Owner = this;
-            this.Hide();
-            adminGUI.ShowDialog();
-            this.Show();
         }
 
         /*
@@ -118,9 +131,9 @@ namespace LIFES.UserInterfaces
             EnrollmentForm enrollmentGUI = new EnrollmentForm();
             enrollmentGUI.Owner = this;
 
-            this.Hide();
+            //this.Hide();
             enrollmentGUI.ShowDialog();
-            this.Show();
+            //this.Show();
 
             textTest.Text = "Clicked Total Enrollment Button";
         }
@@ -140,9 +153,10 @@ namespace LIFES.UserInterfaces
 
             TimeConstraintsForm timeConstraintsGUI = new TimeConstraintsForm();
             timeConstraintsGUI.Owner = this;
-            this.Hide();
+            
+            //this.Hide();
             timeConstraintsGUI.ShowDialog();
-            this.Show();
+            //this.Show();
 
             TimeConstraints tc = timeConstraintsGUI.GetTimeConstraints();
             Globals.timeConstraints = tc;

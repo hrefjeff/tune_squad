@@ -33,7 +33,6 @@ namespace LIFES.UserInterfaces
         [DllImport("user32")]
         static extern bool AnimateWindow(IntPtr hwnd, int time, int flags);
 
-
         public EnrollmentForm()
         {
             InitializeComponent();
@@ -99,7 +98,6 @@ namespace LIFES.UserInterfaces
                 Globals.semester = "spring";
 
             }
-
         }
 
         /*
@@ -115,10 +113,11 @@ namespace LIFES.UserInterfaces
          */
         protected override void OnLoad(EventArgs e)
         {
-            this.Size = this.Owner.Size;
+            //this.Size = this.Owner.Size;
+
             this.Location = this.Owner.Location;
 
-            AnimateWindow(this.Handle, 200, AW_CENTER | AW_HOR_POSITIVE);
+            AnimateWindow(this.Handle, 200, AW_SLIDE | AW_HOR_POSITIVE);
         }
 
     }

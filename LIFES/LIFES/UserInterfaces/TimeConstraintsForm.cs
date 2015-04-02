@@ -39,22 +39,6 @@ namespace LIFES.UserInterfaces
         {
             InitializeComponent();
 
-            getData.Click += GetData_Click;
-        }
-
-        // Method used in testing TimeConstraints data.
-        // REMEMBER TO REMOVE!!!!!!!!!!!!!!!!!!!!!!!!!!
-        public void GetData_Click(object sender, EventArgs e)
-        {
-
-            if (tc != null)
-            {
-                textBox6.Text = tc.GetNumberOfDays().ToString();
-                textBox7.Text = tc.GetStartTime().ToString();
-                textBox8.Text = tc.GetLengthOfExams().ToString();
-                textBox9.Text = tc.GetTimeBetweenExams().ToString();
-                textBox10.Text = tc.GetLunchPeriod().ToString();
-            }
         }
 
         /*
@@ -154,7 +138,7 @@ namespace LIFES.UserInterfaces
          */
         protected override void OnLoad(EventArgs e)
         {
-            this.Size = this.Owner.Size;
+            //this.Size = this.Owner.Size;
             this.Location = this.Owner.Location;
 
             AnimateWindow(this.Handle, 200, AW_CENTER | AW_HOR_POSITIVE);
