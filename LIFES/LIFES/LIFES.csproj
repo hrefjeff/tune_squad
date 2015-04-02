@@ -169,6 +169,9 @@
     <EmbeddedResource Include="UserInterfaces\TimeConstraintsForm.resx">
       <DependentUpon>TimeConstraintsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
     <None Include="LIFES_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">

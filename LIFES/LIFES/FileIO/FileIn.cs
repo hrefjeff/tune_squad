@@ -163,9 +163,14 @@ namespace LIFES.FileIO
          */
         public TimeConstraints GetTimeConstraints()
         {
-            TimeConstraints tc =  new TimeConstraints(Convert.ToInt32(lines[0]), 
-                Convert.ToInt32(lines[1]), Convert.ToInt32(lines[2]), 
+            TimeConstraints tc= null;
+            if (lines != null)
+            {
+                tc = new TimeConstraints(Convert.ToInt32(lines[0]),
+                Convert.ToInt32(lines[1]), Convert.ToInt32(lines[2]),
                 Convert.ToInt32(lines[3]), Convert.ToInt32(lines[4]));
+            }
+          
             return tc;
         }
     }

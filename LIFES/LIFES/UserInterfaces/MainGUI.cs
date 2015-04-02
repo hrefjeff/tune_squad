@@ -331,12 +331,13 @@ namespace LIFES.UserInterfaces
             //this.Show();
 
             TimeConstraints tc = timeConstraintsGUI.GetTimeConstraints();
-            Globals.timeConstraints = tc;
-            Globals.timeConstraintsFileName = timeConstraintsGUI.GetFileName();
+            //Globals.timeConstraints = tc;
+            //Globals.timeConstraintsFileName = timeConstraintsGUI.GetFileName();
             //Testing
             if (tc != null)
             {
-                textTest.Text = tc.GetNumberOfDays().ToString();
+                Globals.timeConstraints = tc;
+                Globals.timeConstraintsFileName = timeConstraintsGUI.GetFileName();
             }
             else
             {
