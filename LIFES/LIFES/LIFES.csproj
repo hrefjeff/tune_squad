@@ -97,6 +97,18 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TimeConstraints.cs" />
+    <Compile Include="UserInterfaces\CreateUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterfaces\CreateUserForm.Designer.cs">
+      <DependentUpon>CreateUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterfaces\DeleteUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterfaces\DeleteUserForm.Designer.cs">
+      <DependentUpon>DeleteUserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterfaces\EnrollmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +127,12 @@
     <Compile Include="UserInterfaces\MainGUI.Designer.cs">
       <DependentUpon>MainGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInterfaces\ResetPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterfaces\ResetPasswordForm.Designer.cs">
+      <DependentUpon>ResetPasswordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterfaces\TimeConstraintsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +148,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserInterfaces\CreateUserForm.resx">
+      <DependentUpon>CreateUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterfaces\DeleteUserForm.resx">
+      <DependentUpon>DeleteUserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInterfaces\EnrollmentForm.resx">
       <DependentUpon>EnrollmentForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterfaces\MainGUI.resx">
       <DependentUpon>MainGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterfaces\ResetPasswordForm.resx">
+      <DependentUpon>ResetPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterfaces\TimeConstraintsForm.resx">
       <DependentUpon>TimeConstraintsForm.cs</DependentUpon>
