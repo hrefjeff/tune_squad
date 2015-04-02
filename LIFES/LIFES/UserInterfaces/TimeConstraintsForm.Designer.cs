@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.chooseFileButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -41,7 +42,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.updateConstraintsButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // chooseFileButton
@@ -160,10 +163,15 @@
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Location = new System.Drawing.Point(58, 31);
+            this.panel1.Location = new System.Drawing.Point(43, 31);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(307, 265);
+            this.panel1.Size = new System.Drawing.Size(345, 265);
             this.panel1.TabIndex = 12;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
             // 
             // TimeConstraintsForm
             // 
@@ -176,6 +184,7 @@
             this.Text = "Time Constraints";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -195,5 +204,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button updateConstraintsButton;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
