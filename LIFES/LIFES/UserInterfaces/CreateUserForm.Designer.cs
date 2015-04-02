@@ -48,7 +48,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 64);
+            this.label2.Location = new System.Drawing.Point(18, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 1;
@@ -76,7 +76,7 @@
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Location = new System.Drawing.Point(48, 29);
+            this.panel1.Location = new System.Drawing.Point(39, 31);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 100);
             this.panel1.TabIndex = 4;
@@ -86,8 +86,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
-            this.ClientSize = new System.Drawing.Size(339, 161);
+            this.ClientSize = new System.Drawing.Size(334, 161);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(350, 200);
+            this.MinimumSize = new System.Drawing.Size(350, 200);
             this.Name = "CreateUserForm";
             this.Text = "Create New User";
             this.panel1.ResumeLayout(false);

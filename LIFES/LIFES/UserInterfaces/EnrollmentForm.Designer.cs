@@ -79,9 +79,9 @@
             this.panel1.Controls.Add(this.chooseFileButton);
             this.panel1.Controls.Add(this.springButton);
             this.panel1.Controls.Add(this.fallButton);
-            this.panel1.Location = new System.Drawing.Point(70, 27);
+            this.panel1.Location = new System.Drawing.Point(52, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(212, 141);
+            this.panel1.Size = new System.Drawing.Size(250, 150);
             this.panel1.TabIndex = 3;
             // 
             // EnrollmentForm
@@ -89,8 +89,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
-            this.ClientSize = new System.Drawing.Size(356, 200);
+            this.ClientSize = new System.Drawing.Size(359, 211);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(375, 250);
+            this.MinimumSize = new System.Drawing.Size(375, 250);
             this.Name = "EnrollmentForm";
             this.Text = "Total Enrollment";
             this.panel1.ResumeLayout(false);

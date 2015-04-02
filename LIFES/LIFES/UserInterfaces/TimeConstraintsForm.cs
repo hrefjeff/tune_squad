@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using LIFES.FileIO;
 
 namespace LIFES.UserInterfaces
 {
@@ -26,17 +27,26 @@ namespace LIFES.UserInterfaces
         //Constants Used for transition animations
         const int AW_SLIDE = 0X40000;
         const int AW_CENTER = 0x00000010;
+        const int AW_BLEND = 0x00080000;
         const int AW_HOR_POSITIVE = 0X1;
         const int AW_HOR_NEGATIVE = 0X2;
-        const int AW_BLEND = 0X80000;
+        //const int AW_BLEND = 0X80000;
 
         [DllImport("user32")]
         static extern bool AnimateWindow(IntPtr hwnd, int time, int flags);
 
         private TimeConstraints tc;
         private string filename;
+        /*
+         * 
+         * 
+         * 
+         * 
+         * 
+         */ 
         public TimeConstraintsForm()
         {
+            tc = new TimeConstraints(0, 0, 0, 0, 0);
             InitializeComponent();
 
         }
@@ -178,6 +188,9 @@ namespace LIFES.UserInterfaces
             openFile.Title = "Open Time Constraints Text File";
             openFile.ShowDialog();
             filename = openFile.FileName;
+            FileIn fi = new FileIn(filename);
+            tc = fi.GetTimeConstraints();
+
         }
 
         /*
@@ -194,7 +207,8 @@ namespace LIFES.UserInterfaces
         protected override void OnLoad(EventArgs e)
         {
             //this.Size = this.Owner.Size;
-            this.Location = this.Owner.Location;
+            //this.Location = this.Owner.Location;
+
 
             AnimateWindow(this.Handle, 200, AW_CENTER | AW_HOR_POSITIVE);
         }
