@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-
+using System.Diagnostics;
 namespace LIFES.FileIO
 {
     /*
@@ -157,32 +157,34 @@ namespace LIFES.FileIO
          * Name:        getLines
          * Author:      Joshua Ford
          * Created:     3/25/15
-         * Modified by: [NOT YET MODIFIED]
+         * Modified by: Scott Smoke
          * Parameters:  NONE
          * Purpose: Acts as the getter for this class (This should also be pretty obvious)
          */
-
-        public string[] getLines()
+        public TimeConstraints GetTimeConstraints()
         {
-            return lines;
+            TimeConstraints tc =  new TimeConstraints(Convert.ToInt32(lines[0]), 
+                Convert.ToInt32(lines[1]), Convert.ToInt32(lines[2]), 
+                Convert.ToInt32(lines[3]), Convert.ToInt32(lines[4]));
+            return tc;
         }
     }
 
     // This was stubbed in for the purpose of testing. :)
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            string filename;
-            Console.WriteLine("Enter the file name: ");
-            filename = Console.ReadLine();
-            filename = "C:\\Users\\Josh Ford\\Documents\\GitHub\\tune_squad\\tune_squad\\Test\\CsharpSandbox\\JoshSandbox\\testConstraints.txt";
-            FileIn myFile = new FileIn(filename);
-            foreach (string val in myFile.getLines())
-            {
-                Console.WriteLine(val);
-            }
-            Console.ReadLine();
-        }
-    }
+    //class Program
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        string filename;
+    //        Console.WriteLine("Enter the file name: ");
+    //        filename = Console.ReadLine();
+    //        filename = "C:\\Users\\Josh Ford\\Documents\\GitHub\\tune_squad\\tune_squad\\Test\\CsharpSandbox\\JoshSandbox\\testConstraints.txt";
+    //        FileIn myFile = new FileIn(filename);
+    //        foreach (string val in myFile.getLines())
+    //        {
+    //            Console.WriteLine(val);
+    //        }
+    //        Console.ReadLine();
+    //    }
+    //}
 }
