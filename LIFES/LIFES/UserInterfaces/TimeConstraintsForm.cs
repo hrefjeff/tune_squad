@@ -188,7 +188,7 @@ namespace LIFES.UserInterfaces
             openFile.ShowDialog();
             filename = openFile.FileName;
             FileIn fi = new FileIn(filename);
-            tc = fi.getTimeConstraints();
+            tc = fi.GetTimeConstraints();
 
         }
 
