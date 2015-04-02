@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainGUI));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +46,10 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.finalizeScheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scheduleButton = new System.Windows.Forms.Button();
             this.rescheduleButton = new System.Windows.Forms.Button();
             this.timeConstraintsButton = new System.Windows.Forms.Button();
@@ -56,10 +60,6 @@
             this.textTest = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.createUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.finalizeScheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.examTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -216,6 +216,38 @@
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(59, 21);
             this.adminToolStripMenuItem.Text = "Admin";
             // 
+            // createUserToolStripMenuItem
+            // 
+            this.createUserToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
+            this.createUserToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
+            this.createUserToolStripMenuItem.Name = "createUserToolStripMenuItem";
+            this.createUserToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.createUserToolStripMenuItem.Text = "Create User";
+            // 
+            // deleteUserToolStripMenuItem
+            // 
+            this.deleteUserToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
+            this.deleteUserToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
+            this.deleteUserToolStripMenuItem.Name = "deleteUserToolStripMenuItem";
+            this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.deleteUserToolStripMenuItem.Text = "Delete User";
+            // 
+            // resetPasswordToolStripMenuItem
+            // 
+            this.resetPasswordToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
+            this.resetPasswordToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
+            this.resetPasswordToolStripMenuItem.Name = "resetPasswordToolStripMenuItem";
+            this.resetPasswordToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.resetPasswordToolStripMenuItem.Text = "Reset Password";
+            // 
+            // finalizeScheduleToolStripMenuItem
+            // 
+            this.finalizeScheduleToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
+            this.finalizeScheduleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
+            this.finalizeScheduleToolStripMenuItem.Name = "finalizeScheduleToolStripMenuItem";
+            this.finalizeScheduleToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.finalizeScheduleToolStripMenuItem.Text = "Finalize Schedule";
+            // 
             // scheduleButton
             // 
             this.scheduleButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -281,16 +313,16 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column1.HeaderText = "Class Time";
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column2.HeaderText = "Exam Time";
             this.Column2.Name = "Column2";
             // 
@@ -329,38 +361,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
-            // 
-            // createUserToolStripMenuItem
-            // 
-            this.createUserToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
-            this.createUserToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
-            this.createUserToolStripMenuItem.Name = "createUserToolStripMenuItem";
-            this.createUserToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.createUserToolStripMenuItem.Text = "Create User";
-            // 
-            // deleteUserToolStripMenuItem
-            // 
-            this.deleteUserToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
-            this.deleteUserToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
-            this.deleteUserToolStripMenuItem.Name = "deleteUserToolStripMenuItem";
-            this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.deleteUserToolStripMenuItem.Text = "Delete User";
-            // 
-            // resetPasswordToolStripMenuItem
-            // 
-            this.resetPasswordToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
-            this.resetPasswordToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
-            this.resetPasswordToolStripMenuItem.Name = "resetPasswordToolStripMenuItem";
-            this.resetPasswordToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.resetPasswordToolStripMenuItem.Text = "Reset Password";
-            // 
-            // finalizeScheduleToolStripMenuItem
-            // 
-            this.finalizeScheduleToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
-            this.finalizeScheduleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
-            this.finalizeScheduleToolStripMenuItem.Name = "finalizeScheduleToolStripMenuItem";
-            this.finalizeScheduleToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.finalizeScheduleToolStripMenuItem.Text = "Finalize Schedule";
             // 
             // MainGUI
             // 

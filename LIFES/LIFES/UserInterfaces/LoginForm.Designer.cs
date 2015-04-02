@@ -99,8 +99,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
-            this.ClientSize = new System.Drawing.Size(375, 244);
+            this.ClientSize = new System.Drawing.Size(384, 236);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(400, 275);
+            this.MinimumSize = new System.Drawing.Size(400, 275);
             this.Name = "LoginForm";
             this.Text = "User Login";
             this.Load += new System.EventHandler(this.LoginForm_Load);

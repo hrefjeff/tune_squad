@@ -46,52 +46,18 @@ namespace LIFES.UserInterfaces
         }
 
         /*
-         * Method: finalizeScheduleToolStripMenuItem_Click
-         * Parameters: object sender, EventArgs e
-         * Output: N/A
-         * Created By: Riley Smith
-         * Date: 4/1/2015
-         * Modified By: Riley Smith
-         * 
-         * Description: Event handler for the Admin menu button Finalize. 
-         */
-        void finalizeScheduleToolStripMenuItem_Click(object sender, EventArgs e)
+        * Method: closeToolStripMenuItem_Click
+        * Parameters: object sender, EventArgs e
+        * Output: N/A
+        * Created By: Riley Smith
+        * Date: 3/26/2015
+        * Modified By: Riley Smith
+        * 
+        * Description: Event handler for the menu button Close. 
+        */
+        void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Needs to be added
-        }
-
-        /*
-         * Method: resetPasswordToolStripMenuItem_Click
-         * Parameters: object sender, EventArgs e
-         * Output: N/A
-         * Created By: Riley Smith
-         * Date: 4/1/2015
-         * Modified By: Riley Smith
-         * 
-         * Description: Event handler for the Admin menu button Reset Password. 
-         */
-        void resetPasswordToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ResetPasswordForm resetForm = new ResetPasswordForm();
-            resetForm.Owner = this;
-            resetForm.ShowDialog();
-        }
-
-        /*
-         * Method: deleteUserToolStripMenuItem_Click
-         * Parameters: object sender, EventArgs e
-         * Output: N/A
-         * Created By: Riley Smith
-         * Date: 4/1/2015
-         * Modified By: Riley Smith
-         * 
-         * Description: Event handler for the Admin menu button Delete User. 
-         */
-        void deleteUserToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DeleteUserForm deleteUserForm = new DeleteUserForm();
-            deleteUserForm.Owner = this;
-            deleteUserForm.ShowDialog();
+            this.Close();
         }
 
         /*
@@ -108,41 +74,57 @@ namespace LIFES.UserInterfaces
         {
             CreateUserForm createUser = new CreateUserForm();
             createUser.Owner = this;
+            createUser.StartPosition = FormStartPosition.CenterScreen;
             createUser.ShowDialog();
         }
 
         /*
-         * Method: closeToolStripMenuItem_Click
-         * Parameters: object sender, EventArgs e
-         * Output: N/A
-         * Created By: Riley Smith
-         * Date: 3/26/2015
-         * Modified By: Riley Smith
-         * 
-         * Description: Event handler for the menu button Close. 
-         */
-        void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        * Method: deleteUserToolStripMenuItem_Click
+        * Parameters: object sender, EventArgs e
+        * Output: N/A
+        * Created By: Riley Smith
+        * Date: 4/1/2015
+        * Modified By: Riley Smith
+        * 
+        * Description: Event handler for the Admin menu button Delete User. 
+        */
+        void deleteUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DeleteUserForm deleteUserForm = new DeleteUserForm();
+            deleteUserForm.Owner = this;
+            deleteUserForm.StartPosition = FormStartPosition.CenterScreen;
+            deleteUserForm.ShowDialog();
         }
 
         /*
-         * Method: LoginToolStripMenuItem_Click
-         * Parameters: object sender, EventArgs e
-         * Output: N/A
-         * Created By: Riley Smith
+         * Method:  DocumentPrintPage
+         * Parameters: object sender, 
+         *             System.Drawing.Printing.PrintPageEventArgs e
+         * Output: A printed document
+         * Created By: Scott Smoke
          * Date: 3/26/2015
-         * Modified By: Riley Smith
+         * Modified By: Scott Smoke
          * 
-         * Description: Event handler for the menu button Login. 
+         * Description: This will print a document.
+         * Sources: msdn.microsoft.com
          */
-        void LoginToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DocumentPrintPage(object sender,
+            System.Drawing.Printing.PrintPageEventArgs e)
         {
-            LoginForm loginGUI = new LoginForm();
-            loginGUI.Owner = this;
-            this.Hide();
-            loginGUI.ShowDialog();
-            this.Show();
+            //print schedule
+            // Insert code to render the page here. 
+            // This code will be called when the control is drawn. 
+
+            // The following code will render a simple 
+            // message on the printed document. 
+            //testing
+            string text = "In DocumentPrintPage method.";
+            System.Drawing.Font printFont = new System.Drawing.Font
+                ("Arial", 35, System.Drawing.FontStyle.Regular);
+
+            // Draw the content.
+            e.Graphics.DrawString(text, printFont,
+                System.Drawing.Brushes.Black, 10, 10);
         }
 
         /*
@@ -161,6 +143,7 @@ namespace LIFES.UserInterfaces
             enrollmentGUI.Owner = this;
 
             //this.Hide();
+            enrollmentGUI.StartPosition = FormStartPosition.CenterScreen;
             enrollmentGUI.ShowDialog();
             //this.Show();
 
@@ -168,36 +151,71 @@ namespace LIFES.UserInterfaces
         }
 
         /*
-         * Method: TimeConstraintsButton_Click
+         * Method: finalizeScheduleToolStripMenuItem_Click
          * Parameters: object sender, EventArgs e
          * Output: N/A
          * Created By: Riley Smith
-         * Date: 3/24/2015
+         * Date: 4/1/2015
          * Modified By: Riley Smith
          * 
-         * Description: Event handler for the button Time Contraints.
+         * Description: Event handler for the Admin menu button Finalize. 
          */
-        void TimeConstraintsButton_Click(object sender, EventArgs e)
+        void finalizeScheduleToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Needs to be added
+        }
 
-            TimeConstraintsForm timeConstraintsGUI = new TimeConstraintsForm();
-            timeConstraintsGUI.Owner = this;
-            
-            //this.Hide();
-            timeConstraintsGUI.ShowDialog();
-            //this.Show();
+        /*
+         * Method: LoginToolStripMenuItem_Click
+         * Parameters: object sender, EventArgs e
+         * Output: N/A
+         * Created By: Riley Smith
+         * Date: 3/26/2015
+         * Modified By: Riley Smith
+         * 
+         * Description: Event handler for the menu button Login. 
+         */
+        void LoginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoginForm loginGUI = new LoginForm();
+            loginGUI.Owner = this;
+            this.Hide();
+            loginGUI.StartPosition = FormStartPosition.CenterScreen;
+            loginGUI.ShowDialog();
+            this.Show();
+        }
 
-            TimeConstraints tc = timeConstraintsGUI.GetTimeConstraints();
-            Globals.timeConstraints = tc;
-            Globals.timeConstraintsFileName = timeConstraintsGUI.GetFileName();
-            //Testing
-            if (tc != null)
+        /*
+        * Method: PrintToolStripMenuItemClick 
+        * Parameters: object sender, EventArgs e
+        * Output: N/A
+        * Created By: Scott Smoke
+        * Date: 3/26/2015
+        * Modified By: Scott Smoke
+        * 
+        * Description: This will display a print dialog and allow the user to
+        *  select a printer.
+        * Sources: msdn.miscrosoft.com
+        *          http://stackoverflow.com/questions/15985909/show-print-dialog-before-printing
+        */
+        private void PrintToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            System.Drawing.Printing.PrintDocument docToPrint =
+                new System.Drawing.Printing.PrintDocument();
+
+            //event handler for the object
+            docToPrint.PrintPage +=
+                new System.Drawing.Printing.
+                    PrintPageEventHandler(DocumentPrintPage);
+
+            PrintDialog print = new PrintDialog();
+            print.AllowSomePages = false;
+            print.ShowHelp = true;
+            print.Document = docToPrint;
+            DialogResult result = print.ShowDialog();
+            if (result == DialogResult.OK)
             {
-                textTest.Text = tc.GetNumberOfDays().ToString();
-            }
-            else
-            {
-                textTest.Text = "Error getting data";
+                docToPrint.Print();
             }
         }
 
@@ -220,55 +238,22 @@ namespace LIFES.UserInterfaces
         }
 
         /*
-         * Method: Schedule_Click
+         * Method: resetPasswordToolStripMenuItem_Click
          * Parameters: object sender, EventArgs e
          * Output: N/A
          * Created By: Riley Smith
-         * Date: 3/24/2015
+         * Date: 4/1/2015
          * Modified By: Riley Smith
          * 
-         * Description: Event handler for the button Schedule.
+         * Description: Event handler for the Admin menu button Reset Password. 
          */
-        void Schedule_Click(object sender, EventArgs e)
+        void resetPasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            examTable.Rows[0].Cells[0].Value = "First Class Time";
-            examTable.Rows[0].Cells[1].Value = "First Exam Time";
-
-            textTest.Text = "Clicked Schedule Button";
+            ResetPasswordForm resetForm = new ResetPasswordForm();
+            resetForm.Owner = this;
+            resetForm.StartPosition = FormStartPosition.CenterScreen;
+            resetForm.ShowDialog();
         }
-
-
-        // All this was generated by visual
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void textTest_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void MainGUI_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-        // End of generated methods
-
 
         /*
          * Method: SaveAsToolStripMenuItem_Click
@@ -308,69 +293,87 @@ namespace LIFES.UserInterfaces
         }
 
         /*
-         * Method: PrintToolStripMenuItemClick 
+         * Method: Schedule_Click
          * Parameters: object sender, EventArgs e
          * Output: N/A
-         * Created By: Scott Smoke
-         * Date: 3/26/2015
-         * Modified By: Scott Smoke
+         * Created By: Riley Smith
+         * Date: 3/24/2015
+         * Modified By: Riley Smith
          * 
-         * Description: This will display a print dialog and allow the user to
-         *  select a printer.
-         * Sources: msdn.miscrosoft.com
-         *          http://stackoverflow.com/questions/15985909/show-print-dialog-before-printing
+         * Description: Event handler for the button Schedule.
          */
-        private void PrintToolStripMenuItemClick(object sender, EventArgs e)
+        void Schedule_Click(object sender, EventArgs e)
         {
-            System.Drawing.Printing.PrintDocument docToPrint =
-                new System.Drawing.Printing.PrintDocument();
+            examTable.Rows[0].Cells[0].Value = "First Class Time";
+            examTable.Rows[0].Cells[1].Value = "First Exam Time";
 
-            //event handler for the object
-            docToPrint.PrintPage +=
-                new System.Drawing.Printing.
-                    PrintPageEventHandler(DocumentPrintPage);
+            textTest.Text = "Clicked Schedule Button";
+        }
+        
+        /*
+         * Method: TimeConstraintsButton_Click
+         * Parameters: object sender, EventArgs e
+         * Output: N/A
+         * Created By: Riley Smith
+         * Date: 3/24/2015
+         * Modified By: Riley Smith
+         * 
+         * Description: Event handler for the button Time Contraints.
+         */
+        void TimeConstraintsButton_Click(object sender, EventArgs e)
+        {
+            TimeConstraintsForm timeConstraintsGUI = new TimeConstraintsForm();
+            timeConstraintsGUI.Owner = this;
+            
+            //this.Hide();
+            timeConstraintsGUI.StartPosition = FormStartPosition.CenterScreen;
+            timeConstraintsGUI.ShowDialog();
+            //this.Show();
 
-            PrintDialog print = new PrintDialog();
-            print.AllowSomePages = false;
-            print.ShowHelp = true;
-            print.Document = docToPrint;
-            DialogResult result = print.ShowDialog();
-            if (result == DialogResult.OK)
+            TimeConstraints tc = timeConstraintsGUI.GetTimeConstraints();
+            Globals.timeConstraints = tc;
+            Globals.timeConstraintsFileName = timeConstraintsGUI.GetFileName();
+            //Testing
+            if (tc != null)
             {
-                docToPrint.Print();
+                textTest.Text = tc.GetNumberOfDays().ToString();
+            }
+            else
+            {
+                textTest.Text = "Error getting data";
             }
         }
 
-        /*
-         * Method:  DocumentPrintPage
-         * Parameters: object sender, 
-         *             System.Drawing.Printing.PrintPageEventArgs e
-         * Output: A printed document
-         * Created By: Scott Smoke
-         * Date: 3/26/2015
-         * Modified By: Scott Smoke
-         * 
-         * Description: This will print a document.
-         * Sources: msdn.microsoft.com
-         */
-        private void DocumentPrintPage(object sender,
-            System.Drawing.Printing.PrintPageEventArgs e)
+        // All this was generated by visual
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            //print schedule
-            // Insert code to render the page here. 
-            // This code will be called when the control is drawn. 
 
-            // The following code will render a simple 
-            // message on the printed document. 
-            //testing
-            string text = "In DocumentPrintPage method.";
-            System.Drawing.Font printFont = new System.Drawing.Font
-                ("Arial", 35, System.Drawing.FontStyle.Regular);
-
-            // Draw the content.
-            e.Graphics.DrawString(text, printFont,
-                System.Drawing.Brushes.Black, 10, 10);
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textTest_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void MainGUI_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+        // End of generated methods
 
     }
 }

@@ -27,9 +27,10 @@ namespace LIFES.UserInterfaces
         //Constants Used for transition animations
         const int AW_SLIDE = 0X40000;
         const int AW_CENTER = 0x00000010;
+        const int AW_BLEND = 0x00080000;
         const int AW_HOR_POSITIVE = 0X1;
         const int AW_HOR_NEGATIVE = 0X2;
-        const int AW_BLEND = 0X80000;
+        //const int AW_BLEND = 0X80000;
 
         [DllImport("user32")]
         static extern bool AnimateWindow(IntPtr hwnd, int time, int flags);
@@ -206,7 +207,8 @@ namespace LIFES.UserInterfaces
         protected override void OnLoad(EventArgs e)
         {
             //this.Size = this.Owner.Size;
-            this.Location = this.Owner.Location;
+            //this.Location = this.Owner.Location;
+
 
             AnimateWindow(this.Handle, 200, AW_CENTER | AW_HOR_POSITIVE);
         }

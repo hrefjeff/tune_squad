@@ -38,6 +38,9 @@
             // 
             // usersGridView
             // 
+            this.usersGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.usersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.usersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Username});
@@ -54,6 +57,7 @@
             // 
             // deleteButton
             // 
+            this.deleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.deleteButton.Location = new System.Drawing.Point(268, 219);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
@@ -63,13 +67,16 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.usersGridView);
             this.panel1.Controls.Add(this.deleteButton);
-            this.panel1.Location = new System.Drawing.Point(67, 52);
+            this.panel1.Location = new System.Drawing.Point(62, 45);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(401, 269);
+            this.panel1.Size = new System.Drawing.Size(400, 270);
             this.panel1.TabIndex = 2;
             // 
             // DeleteUserForm
@@ -77,8 +84,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
-            this.ClientSize = new System.Drawing.Size(542, 370);
+            this.ClientSize = new System.Drawing.Size(534, 361);
             this.Controls.Add(this.panel1);
+            this.MinimumSize = new System.Drawing.Size(550, 400);
             this.Name = "DeleteUserForm";
             this.Text = "Delete User";
             ((System.ComponentModel.ISupportInitialize)(this.usersGridView)).EndInit();

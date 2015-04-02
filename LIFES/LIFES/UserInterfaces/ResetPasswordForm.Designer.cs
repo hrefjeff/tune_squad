@@ -38,10 +38,13 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.userNames});
-            this.dataGridView1.Location = new System.Drawing.Point(69, 28);
+            this.dataGridView1.Location = new System.Drawing.Point(60, 29);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(282, 150);
             this.dataGridView1.TabIndex = 0;
@@ -54,7 +57,8 @@
             // 
             // resetPassButton
             // 
-            this.resetPassButton.Location = new System.Drawing.Point(250, 203);
+            this.resetPassButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.resetPassButton.Location = new System.Drawing.Point(241, 204);
             this.resetPassButton.Name = "resetPassButton";
             this.resetPassButton.Size = new System.Drawing.Size(101, 23);
             this.resetPassButton.TabIndex = 1;
@@ -63,12 +67,16 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.resetPassButton);
             this.panel1.Location = new System.Drawing.Point(63, 47);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(420, 243);
+            this.panel1.Size = new System.Drawing.Size(400, 270);
             this.panel1.TabIndex = 2;
             // 
             // ResetPasswordForm
@@ -76,8 +84,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
-            this.ClientSize = new System.Drawing.Size(548, 338);
+            this.ClientSize = new System.Drawing.Size(534, 361);
             this.Controls.Add(this.panel1);
+            this.MinimumSize = new System.Drawing.Size(550, 400);
             this.Name = "ResetPasswordForm";
             this.Text = "Reset Password";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
