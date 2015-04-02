@@ -96,9 +96,64 @@ namespace LIFES.UserInterfaces
                 Convert.ToInt32(textBox2.Text), Convert.ToInt32(textBox3.Text),
                 Convert.ToInt32(textBox4.Text), Convert.ToInt32(textBox5.Text));
                 tc = t;
+
+                errorProvider1.Clear();
             }
+
             else
             {
+                // If a text box is empty, show a errorProvider.
+                if (textBox1.Text == string.Empty)
+                {
+                    errorProvider1.SetError(textBox1, "Cannot Be Empty");
+                }
+
+                else
+                {
+                    errorProvider1.SetError(textBox1, "");
+                }
+
+                if (textBox2.Text == string.Empty)
+                {
+                    errorProvider1.SetError(textBox2, "Cannot Be Empty");
+                }
+
+                else
+                {
+                    errorProvider1.SetError(textBox2, "");
+                }
+
+                if (textBox3.Text == string.Empty)
+                {
+                    errorProvider1.SetError(textBox3, "Cannot Be Empty");
+                }
+
+                else
+                {
+                    errorProvider1.SetError(textBox3, "");
+                }
+
+                if (textBox4.Text == string.Empty)
+                {
+                    errorProvider1.SetError(textBox4, "Cannot Be Empty");
+                }
+
+                else
+                {
+                    errorProvider1.SetError(textBox4, "");
+                }
+
+                if (textBox5.Text == string.Empty)
+                {
+                    errorProvider1.SetError(textBox5, "Cannot Be Empty");
+                }
+
+                else
+                {
+                    errorProvider1.SetError(textBox5, "");
+                }
+                // End of errorProviders.
+
                 TimeConstraints t = new TimeConstraints(0, 0, 0, 0, 0);
                 tc = t;
             }
