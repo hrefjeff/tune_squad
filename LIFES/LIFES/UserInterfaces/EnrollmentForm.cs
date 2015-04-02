@@ -117,7 +117,7 @@ namespace LIFES.UserInterfaces
 
             //this.Location = this.Owner.Location;
 
-            AnimateWindow(this.Handle, 200, AW_SLIDE | AW_HOR_POSITIVE);
+            AnimateWindow(this.Handle, 200, AW_CENTER | AW_HOR_POSITIVE);
         }
 
     }

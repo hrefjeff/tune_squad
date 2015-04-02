@@ -124,7 +124,7 @@ namespace LIFES
         public override string ToString()
         {
             return (
-                numberOfDaysToSchedule + "\r\n" +
+                numberOfDaysToSchedule + "\r\n" + "0"+
                 beginingTimeForExams + "\r\n" +
                 lengthOfTimeOfExam + "\r\n" +
                 timeBetweenExams + "\r\n" +
