@@ -192,7 +192,6 @@ namespace FileIO
             {
                 Console.WriteLine("Error, the file specified could not be found.");
                 throw new Exception("File Not Found Error");
-
             }
         }
 
