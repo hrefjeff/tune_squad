@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using LIFES.FileIO;
 
 namespace LIFES.UserInterfaces
 {
@@ -35,8 +36,16 @@ namespace LIFES.UserInterfaces
 
         private TimeConstraints tc;
         private string filename;
+        /*
+         * 
+         * 
+         * 
+         * 
+         * 
+         */ 
         public TimeConstraintsForm()
         {
+            tc = new TimeConstraints(0, 0, 0, 0, 0);
             InitializeComponent();
 
         }
@@ -123,6 +132,9 @@ namespace LIFES.UserInterfaces
             openFile.Title = "Open Time Constraints Text File";
             openFile.ShowDialog();
             filename = openFile.FileName;
+            FileIn fi = new FileIn(filename);
+            tc = fi.getTimeConstraints();
+
         }
 
         /*
