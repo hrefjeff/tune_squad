@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainGUI));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -145,8 +145,9 @@
             this.closeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
             this.closeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -202,7 +203,7 @@
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
             this.loginToolStripMenuItem.Size = new System.Drawing.Size(61, 21);
             this.loginToolStripMenuItem.Text = "Logout";
-            this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click_1);
+            this.loginToolStripMenuItem.Click += new System.EventHandler(this.LoginToolStripMenuItem_Click);
             // 
             // adminToolStripMenuItem
             // 
@@ -224,6 +225,7 @@
             this.createUserToolStripMenuItem.Name = "createUserToolStripMenuItem";
             this.createUserToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.createUserToolStripMenuItem.Text = "Create User";
+            this.createUserToolStripMenuItem.Click += new System.EventHandler(this.CreateUserToolStripMenuItem_Click);
             // 
             // deleteUserToolStripMenuItem
             // 
@@ -232,6 +234,7 @@
             this.deleteUserToolStripMenuItem.Name = "deleteUserToolStripMenuItem";
             this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.deleteUserToolStripMenuItem.Text = "Delete User";
+            this.deleteUserToolStripMenuItem.Click += new System.EventHandler(this.DeleteUserToolStripMenuItem_Click);
             // 
             // resetPasswordToolStripMenuItem
             // 
@@ -240,6 +243,7 @@
             this.resetPasswordToolStripMenuItem.Name = "resetPasswordToolStripMenuItem";
             this.resetPasswordToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.resetPasswordToolStripMenuItem.Text = "Reset Password";
+            this.resetPasswordToolStripMenuItem.Click += new System.EventHandler(this.ResetPasswordToolStripMenuItem_Click);
             // 
             // finalizeScheduleToolStripMenuItem
             // 
@@ -248,6 +252,7 @@
             this.finalizeScheduleToolStripMenuItem.Name = "finalizeScheduleToolStripMenuItem";
             this.finalizeScheduleToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.finalizeScheduleToolStripMenuItem.Text = "Finalize Schedule";
+            this.finalizeScheduleToolStripMenuItem.Click += new System.EventHandler(this.FinalizeScheduleToolStripMenuItem_Click);
             // 
             // scheduleButton
             // 
@@ -260,6 +265,7 @@
             this.scheduleButton.TabIndex = 2;
             this.scheduleButton.Text = "Schedule";
             this.scheduleButton.UseVisualStyleBackColor = true;
+            this.scheduleButton.Click += new System.EventHandler(this.Schedule_Click);
             // 
             // rescheduleButton
             // 
@@ -272,6 +278,7 @@
             this.rescheduleButton.TabIndex = 3;
             this.rescheduleButton.Text = "Reschedule";
             this.rescheduleButton.UseVisualStyleBackColor = true;
+            this.rescheduleButton.Click += new System.EventHandler(this.Reschedule_Click);
             // 
             // timeConstraintsButton
             // 
@@ -283,6 +290,7 @@
             this.timeConstraintsButton.TabIndex = 4;
             this.timeConstraintsButton.Text = "Time Constraints";
             this.timeConstraintsButton.UseVisualStyleBackColor = true;
+            this.timeConstraintsButton.Click += new System.EventHandler(this.TimeConstraintsButton_Click);
             // 
             // enrollmentButton
             // 
@@ -294,6 +302,7 @@
             this.enrollmentButton.TabIndex = 5;
             this.enrollmentButton.Text = "Total Enrollment";
             this.enrollmentButton.UseVisualStyleBackColor = true;
+            this.enrollmentButton.Click += new System.EventHandler(this.EnrollmentButton_Click);
             // 
             // examTable
             // 
@@ -314,16 +323,16 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle19;
             this.Column1.HeaderText = "Class Time";
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle20;
             this.Column2.HeaderText = "Exam Time";
             this.Column2.Name = "Column2";
             // 

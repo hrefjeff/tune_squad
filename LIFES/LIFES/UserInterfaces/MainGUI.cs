@@ -29,24 +29,10 @@ namespace LIFES.UserInterfaces
         public MainGUI()
         {
             InitializeComponent();
-
-            // Add Event Handlers.
-            scheduleButton.Click += Schedule_Click;
-            rescheduleButton.Click += Reschedule_Click;
-            timeConstraintsButton.Click += TimeConstraintsButton_Click;
-            enrollmentButton.Click += EnrollmentButton_Click;
-
-            // Event handlers for Menu Buttons.
-            loginToolStripMenuItem.Click += LoginToolStripMenuItem_Click;
-            closeToolStripMenuItem.Click += closeToolStripMenuItem_Click;
-            createUserToolStripMenuItem.Click += createUserToolStripMenuItem_Click;
-            deleteUserToolStripMenuItem.Click += deleteUserToolStripMenuItem_Click;
-            resetPasswordToolStripMenuItem.Click += resetPasswordToolStripMenuItem_Click;
-            finalizeScheduleToolStripMenuItem.Click += finalizeScheduleToolStripMenuItem_Click;
         }
 
         /*
-        * Method: closeToolStripMenuItem_Click
+        * Method: CloseToolStripMenuItem_Click
         * Parameters: object sender, EventArgs e
         * Output: N/A
         * Created By: Riley Smith
@@ -55,13 +41,13 @@ namespace LIFES.UserInterfaces
         * 
         * Description: Event handler for the menu button Close. 
         */
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CloseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         /*
-         * Method: createUserToolStripMenuItem_Click
+         * Method: CreateUserToolStripMenuItem_Click
          * Parameters: object sender, EventArgs e
          * Output: N/A
          * Created By: Riley Smith
@@ -70,7 +56,7 @@ namespace LIFES.UserInterfaces
          * 
          * Description: Event handler for the Admin menu button Create User. 
          */
-        private void createUserToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CreateUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateUserForm createUser = new CreateUserForm();
             createUser.Owner = this;
@@ -79,7 +65,7 @@ namespace LIFES.UserInterfaces
         }
 
         /*
-        * Method: deleteUserToolStripMenuItem_Click
+        * Method: DeleteUserToolStripMenuItem_Click
         * Parameters: object sender, EventArgs e
         * Output: N/A
         * Created By: Riley Smith
@@ -88,7 +74,7 @@ namespace LIFES.UserInterfaces
         * 
         * Description: Event handler for the Admin menu button Delete User. 
         */
-        void deleteUserToolStripMenuItem_Click(object sender, EventArgs e)
+        void DeleteUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DeleteUserForm deleteUserForm = new DeleteUserForm();
             deleteUserForm.Owner = this;
@@ -151,7 +137,7 @@ namespace LIFES.UserInterfaces
         }
 
         /*
-         * Method: finalizeScheduleToolStripMenuItem_Click
+         * Method: FinalizeScheduleToolStripMenuItem_Click
          * Parameters: object sender, EventArgs e
          * Output: N/A
          * Created By: Riley Smith
@@ -160,7 +146,7 @@ namespace LIFES.UserInterfaces
          * 
          * Description: Event handler for the Admin menu button Finalize. 
          */
-        void finalizeScheduleToolStripMenuItem_Click(object sender, EventArgs e)
+        void FinalizeScheduleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Needs to be added
         }
@@ -238,7 +224,7 @@ namespace LIFES.UserInterfaces
         }
 
         /*
-         * Method: resetPasswordToolStripMenuItem_Click
+         * Method: ResetPasswordToolStripMenuItem_Click
          * Parameters: object sender, EventArgs e
          * Output: N/A
          * Created By: Riley Smith
@@ -247,7 +233,7 @@ namespace LIFES.UserInterfaces
          * 
          * Description: Event handler for the Admin menu button Reset Password. 
          */
-        void resetPasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        void ResetPasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ResetPasswordForm resetForm = new ResetPasswordForm();
             resetForm.Owner = this;
@@ -365,11 +351,6 @@ namespace LIFES.UserInterfaces
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void loginToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
 
         }

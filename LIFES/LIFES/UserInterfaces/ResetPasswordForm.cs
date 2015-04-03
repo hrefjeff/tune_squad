@@ -29,6 +29,7 @@ namespace LIFES.UserInterfaces
         const int AW_CENTER = 0x00000010;
         const int AW_HOR_POSITIVE = 0X1;
         const int AW_HOR_NEGATIVE = 0X2;
+        const int AW_VER_POSITIVE = 0x00000004;
         const int AW_BLEND = 0X80000;
 
         [DllImport("user32")]
@@ -56,7 +57,7 @@ namespace LIFES.UserInterfaces
 
             //this.Location = this.Owner.Location;
 
-            AnimateWindow(this.Handle, 200, AW_SLIDE | AW_HOR_POSITIVE);
+            AnimateWindow(this.Handle, 200, AW_SLIDE | AW_VER_POSITIVE);
         }
     }
 }

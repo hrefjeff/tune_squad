@@ -30,6 +30,7 @@ namespace LIFES.UserInterfaces
         const int AW_BLEND = 0x00080000;
         const int AW_HOR_POSITIVE = 0X1;
         const int AW_HOR_NEGATIVE = 0X2;
+        const int AW_HIDE = 0x00010000;
         //const int AW_BLEND = 0X80000;
 
         [DllImport("user32")]
@@ -48,7 +49,6 @@ namespace LIFES.UserInterfaces
         {
             tc = new TimeConstraints(0, 0, 0, 0, 0);
             InitializeComponent();
-
         }
 
         /*
@@ -88,7 +88,8 @@ namespace LIFES.UserInterfaces
          * Output: N/A
          * Created By: Scott Smoke
          * Date: 3/25/2015
-         * Modified By: Scott Smoke
+         * Modified By: Riley Smith
+         * Last Modified: 4/2/2015
          * 
          * Description: When this button is clicked the data that is in the form
          *  get saved into the TimeConstraints variable.
@@ -166,6 +167,19 @@ namespace LIFES.UserInterfaces
 
                 TimeConstraints t = new TimeConstraints(0, 0, 0, 0, 0);
                 tc = t;
+
+                // Testing Error Dialog
+                string[] errors = { "Please Enter All Data Fields", 
+                                      "Can Show Array of Strings Here", 
+                                      "This is an Example", 
+                                      "Remember to Remove" };
+                string errorMsg = "";
+
+                foreach (string ele in errors)
+                    errorMsg += ele + "\n";
+
+                MessageBox.Show(errorMsg, "ERROR");
+                // End of Error Dialog
             }
         }
 
