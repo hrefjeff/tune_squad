@@ -1,0 +1,8 @@
+TF 1405 - 1595,130
+TR 976 - 1206,137
+Error Placement
+MF 809 - 924,.
+MT 1094 - 1194,117
+Error Placement
+MRF 1657 - 1707,empty
+F 1402 - 1632,183

@@ -1,0 +1,5 @@
+3-5    Days
+0700   Start Time
+75-?  Length of Exam
+10-30  Length of Break
+0-?    Length of Lunch
