@@ -19,50 +19,50 @@ namespace LIFES.Schedule
     }
 
     /*
-     * Class Name: MaxBinaryHeapOfClasses
+     * Class Name: MaxBinaryHeapOfCourses
      * Author: Jeffrey Allen
      * Date: 4/8/2015
      * Modified by: Jeffrey Allen
      * This class is the final exam times that
      * are constructed after the scheduler has ran.
      */
-    class MaxBinaryHeapOfClasses
+    class MaxBinaryHeapOfCourses
     {
-        public List<CompressedClasses> listOfCompressedClasses;
+        public List<CompressedCourses> listOfCompressedCourses;
 
-        public void insert(Class someClass)
+        public void insert(Cource someCourse)
         {
         }
     }
 
     /*
-     * Class Name: CompressedClasses
+     * Class Name: CompressedCourses
      * Author: Jeffrey Allen
      * Date: 4/8/2015
      * Modified by: Jeffrey Allen
      * This class is the final exam times that
      * are constructed after the scheduler has ran.
      */ 
-    class CompressedClasses
+    class CompressedCourses
     {
-        private List<Class> listOfClasses;
+        private List<Course> listOfCourses;
         private int _totalEnrollments;
-        private int _totalNumberOfClasses;
+        private int _totalNumberOfCourses;
 
-        public void insertClass() { }
-        public void removeClass() { }
+        public void insertCourse() { }
+        public void removeCourse() { }
         public void summary() { }
     }
 
     /*
-    * Class Name: Class
+    * Class Name: Course
     * Author: Jeffrey Allen
     * Date: 4/8/2015
     * Modified by: Jeffrey Allen
     * This class is the final exam times that
     * are constructed after the scheduler has ran.
     */ 
-    class Class
+    class Course
     {
         private string _meetingDay;
         private string _startTime;
