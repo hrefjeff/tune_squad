@@ -83,3 +83,6 @@ C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.applic
 C:\Users\Scott\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.CreateUserForm.resources
 C:\Users\Scott\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.DeleteUserForm.resources
 C:\Users\Scott\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.ResetPasswordForm.resources
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.CreateUserForm.resources
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.DeleteUserForm.resources
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.ResetPasswordForm.resources
