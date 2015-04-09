@@ -11,7 +11,7 @@ namespace LIFES.Authentication
      * Class Name:UserList
      * Author: Jordan Beck
      * Date: 4/2/2015
-     * Modified by: Jordan Beck
+     * Modified by: Scott Smoke
      * This class creates, stores, and maintains usernames, passwords, admin status, and attempts 
      * of invalid log on attempts.
      * ------------------------------------------
