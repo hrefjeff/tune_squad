@@ -30,9 +30,11 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.userNameTextBox = new System.Windows.Forms.TextBox();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.confirmTextBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,42 +56,61 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
-            // textBox1
+            // userNameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.userNameTextBox.Location = new System.Drawing.Point(130, 18);
+            this.userNameTextBox.Name = "userNameTextBox";
+            this.userNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.userNameTextBox.TabIndex = 2;
             // 
-            // textBox2
+            // passwordTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(115, 57);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.passwordTextBox.Location = new System.Drawing.Point(130, 57);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
+            this.passwordTextBox.TabIndex = 3;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.confirmTextBox);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.passwordTextBox);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Location = new System.Drawing.Point(39, 31);
+            this.panel1.Controls.Add(this.userNameTextBox);
+            this.panel1.Location = new System.Drawing.Point(39, 36);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 100);
+            this.panel1.Size = new System.Drawing.Size(257, 138);
             this.panel1.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 94);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Confirm Password";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // confirmTextBox
+            // 
+            this.confirmTextBox.Location = new System.Drawing.Point(130, 94);
+            this.confirmTextBox.Name = "confirmTextBox";
+            this.confirmTextBox.Size = new System.Drawing.Size(100, 20);
+            this.confirmTextBox.TabIndex = 5;
             // 
             // CreateUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
-            this.ClientSize = new System.Drawing.Size(334, 161);
+            this.ClientSize = new System.Drawing.Size(334, 211);
             this.Controls.Add(this.panel1);
-            this.MaximumSize = new System.Drawing.Size(350, 200);
-            this.MinimumSize = new System.Drawing.Size(350, 200);
+            this.MaximumSize = new System.Drawing.Size(350, 250);
+            this.MinimumSize = new System.Drawing.Size(350, 250);
             this.Name = "CreateUserForm";
             this.Text = "Create New User";
             this.panel1.ResumeLayout(false);
@@ -102,8 +123,10 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox userNameTextBox;
+        private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox confirmTextBox;
+        private System.Windows.Forms.Label label3;
     }
 }
