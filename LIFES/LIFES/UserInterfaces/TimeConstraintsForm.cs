@@ -92,9 +92,9 @@ namespace LIFES.UserInterfaces
          * Last Modified: 4/2/2015
          * 
          * Description: When this button is clicked the data that is in the form
-         *  get saved into the TimeConstraints variable.
-         *  If no data is entered then the TimeConstraints variable
-         *  data is all set to zero.
+         * get saved into the TimeConstraints variable.
+         * If no data is entered then the TimeConstraints variable
+         * data is all set to zero.
          * 
          */
         private void UpdateConstraintsButton_Click(object sender, EventArgs e)
