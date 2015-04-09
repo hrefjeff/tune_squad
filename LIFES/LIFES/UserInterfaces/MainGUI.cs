@@ -131,6 +131,7 @@ namespace LIFES.UserInterfaces
             //this.Hide();
             enrollmentGUI.StartPosition = FormStartPosition.CenterScreen;
             enrollmentGUI.ShowDialog();
+            Globals.year = enrollmentGUI.GetYear();
             //this.Show();
 
             textTest.Text = "Clicked Total Enrollment Button";
