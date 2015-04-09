@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using LIFES.Authentication;
 
 namespace LIFES.UserInterfaces
 {
@@ -36,9 +37,12 @@ namespace LIFES.UserInterfaces
         [DllImport("user32")]
         static extern bool AnimateWindow(IntPtr hwnd, int time, int flags);
 
+        private UserList users;
+
         public CreateUserForm()
         {
             InitializeComponent();
+            users = new UserList();
         }
 
         /*
@@ -63,6 +67,17 @@ namespace LIFES.UserInterfaces
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CreateUserBttn_Click(object sender, EventArgs e)
+        {
+            if(userNameTextBox.Text != "" && passwordTextBox.Text != "" && confirmTextBox.Text != "")
+            {
+                if (passwordTextBox.Text == confirmTextBox.Text)
+                {
+                    users.AddUser(userNameTextBox.Text, passwordTextBox.Text, true);
+                }
+            }
         }
     }
 }

@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dayCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enrollmentCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -40,24 +41,13 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dayCol,
             this.classCol,
             this.enrollmentCol});
             this.dataGridView1.Location = new System.Drawing.Point(36, 46);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(364, 155);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // classCol
-            // 
-            this.classCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.classCol.HeaderText = "Class Time";
-            this.classCol.Name = "classCol";
-            // 
-            // enrollmentCol
-            // 
-            this.enrollmentCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.enrollmentCol.HeaderText = "Enrollment";
-            this.enrollmentCol.Name = "enrollmentCol";
             // 
             // panel1
             // 
@@ -70,7 +60,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(431, 263);
             this.panel1.TabIndex = 1;
-            
+            // 
+            // dayCol
+            // 
+            this.dayCol.HeaderText = "Day";
+            this.dayCol.Name = "dayCol";
+            // 
+            // classCol
+            // 
+            this.classCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.classCol.HeaderText = "Class Time";
+            this.classCol.Name = "classCol";
+            // 
+            // enrollmentCol
+            // 
+            this.enrollmentCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.enrollmentCol.HeaderText = "Enrollment";
+            this.enrollmentCol.Name = "enrollmentCol";
             // 
             // ViewTotalEnrollmentsForm
             // 
@@ -90,8 +96,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dayCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn classCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentCol;
-        private System.Windows.Forms.Panel panel1;
     }
 }
