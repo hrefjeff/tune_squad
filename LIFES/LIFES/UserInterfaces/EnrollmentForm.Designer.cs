@@ -101,13 +101,14 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.Text = "Select Year";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1SelectedIndexChanged);
             // 
             // EnrollmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
-            this.ClientSize = new System.Drawing.Size(359, 212);
+            this.ClientSize = new System.Drawing.Size(359, 211);
             this.Controls.Add(this.panel1);
             this.MaximumSize = new System.Drawing.Size(375, 250);
             this.MinimumSize = new System.Drawing.Size(375, 250);

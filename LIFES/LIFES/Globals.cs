@@ -20,7 +20,7 @@ namespace LIFES
         public static string totalEnrollemntsFileName = "";
         public static TimeConstraints timeConstraints = new TimeConstraints(0,0,0,0,0);
         public static string semester = "";
-        public static int year = 0;
+        public static string year = "0";
         //Save file if applicable
         //final exam schedule
     }

@@ -33,9 +33,24 @@ namespace LIFES.UserInterfaces
         [DllImport("user32")]
         static extern bool AnimateWindow(IntPtr hwnd, int time, int flags);
 
+        private string year;
         public EnrollmentForm()
         {
             InitializeComponent();
+        }
+        /*
+         * Method: GetYear
+         * Parameters: object sender, EventArgs e
+         * Output: year
+         * Created By: Scott Smoke
+         * Date: 4/9/2015
+         * Modified By: Scott Smoke
+         * 
+         * Description: This returns the selected year.
+         */ 
+        public string GetYear()
+        {
+            return year;
         }
 
         /*
@@ -118,6 +133,12 @@ namespace LIFES.UserInterfaces
             //this.Location = this.Owner.Location;
 
             AnimateWindow(this.Handle, 200, AW_CENTER | AW_HOR_POSITIVE);
+        }
+
+        private void ComboBox1SelectedIndexChanged(object sender, EventArgs e)
+        {
+            year = comboBox1.SelectedItem.ToString();
+            
         }
 
     }

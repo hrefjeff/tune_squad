@@ -59,7 +59,7 @@ namespace LIFES.FileIO
             XFont font = new XFont("Times New Roman", 12);
             XTextFormatter tf = new XTextFormatter(graph);
             //adding data to pdf
-            tf.DrawString(Globals.semester, font,
+            tf.DrawString(Globals.semester + " " + Globals.year, font,
                 XBrushes.Black, new XRect(40, 0, pdfPage.Width.Point,
                     pdfPage.Height.Point), XStringFormats.TopLeft);
 
@@ -93,7 +93,7 @@ namespace LIFES.FileIO
                 System.IO.StreamWriter file = 
                     new System.IO.StreamWriter(filename);
                 //code to write goes here
-                file.WriteLine(Globals.semester);
+                file.WriteLine(Globals.semester + " " + Globals.year);
                 file.WriteLine(Globals.totalEnrollemntsFileName);
                 file.WriteLine(Globals.timeConstraints.ToString());
                 //place exam schedule
@@ -119,7 +119,7 @@ namespace LIFES.FileIO
                 System.IO.StreamWriter file = 
                     new System.IO.StreamWriter(filename);
                 //code to write goes here
-                file.WriteLine(Globals.semester);
+                file.WriteLine(Globals.semester + " " +Globals.year);
                 file.WriteLine(Globals.totalEnrollemntsFileName);
                 file.WriteLine(Globals.timeConstraints.ToString());
                 //place exam schedule
