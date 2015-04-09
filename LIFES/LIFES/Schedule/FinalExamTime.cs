@@ -30,7 +30,7 @@ namespace LIFES.Schedule
     {
         public List<CompressedCourses> listOfCompressedCourses;
 
-        public void insert(Cource someCourse)
+        public void insert(Course someCourse)
         {
         }
     }
