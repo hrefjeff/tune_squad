@@ -44,7 +44,7 @@ namespace LIFES.Authentication
      */
     public class UserList
     {
-        string ioFile = "C:/Users/Public/TestFolder/Username2.txt";
+        string ioFile = "Username2.txt";
 
         public UserList()
         {
