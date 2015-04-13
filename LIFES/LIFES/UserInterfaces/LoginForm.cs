@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using LIFES.Authentication;
 
 namespace LIFES.UserInterfaces
 {
@@ -60,6 +61,28 @@ namespace LIFES.UserInterfaces
             //this.Location = this.Owner.Location;
 
             AnimateWindow(this.Handle, 200, AW_CENTER | AW_HOR_POSITIVE);
+        }
+        /*
+         * Method: Login
+         * Parameters: object sender, EventArgs s
+         * Output: N/A
+         * Created By: Scott Smoke
+         * Date: 4/12/2015
+         * Modified By: Scott Smoke
+         * 
+         * Description: This will grab the username and password
+         * from their respective text boxes and see if they are valid. 
+         */ 
+        private void Login(object sender, EventArgs e)
+        {
+            string userName = userNameTextBox.Text;
+            string pwd = passwordTextBox.Text;
+            UserList users = new UserList();
+            //if userName is in the file
+            //then if pwd is equal to password stored in the file
+            //then log on
+            //else throw error(s)
+
         }
     }
 }
