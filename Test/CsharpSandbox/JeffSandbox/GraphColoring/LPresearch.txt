@@ -1,0 +1,17 @@
+Resources:
+	http://www.cas.mcmaster.ca/~liangh9/MIT15_053S13_lec11.pdf
+	https://www.uleth.ca/dspace/bitstream/handle/10133/633/zibran,%20minhaz.pdf?sequence=1
+	http://ccis2k.org/iajit/PDF/vol.5,no.1/11-68.pdf
+	http://www.academia.edu/1325212/Timetable_Scheduling_using_Graph_Coloring
+
+
+The University of North Alabama has to schedule 227 exams in x exam periods
+so that there are no exam conflicts.
+
+G = (N, A)
+
+N = {1, 2, 3, … n} set of exams. 28 periods.
+
+A = set of arcs.
+
+(i, j) ∈ A if a person needs to take exam i and exam j.
