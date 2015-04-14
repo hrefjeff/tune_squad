@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using LIFES.Authentication;
+using System.Text.RegularExpressions;
 
 namespace LIFES.UserInterfaces
 {
@@ -71,6 +72,8 @@ namespace LIFES.UserInterfaces
 
         private void CreateUserBttn_Click(object sender, EventArgs e)
         {
+            //regular expression for username 
+            Regex emailEx = new Regex("^[a-zA-Z0-9]{1,32}@una.edu$");
             if(userNameTextBox.Text != "" && passwordTextBox.Text != "" && confirmTextBox.Text != "")
             {
                 if (passwordTextBox.Text == confirmTextBox.Text)
