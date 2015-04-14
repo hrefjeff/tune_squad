@@ -44,9 +44,48 @@ using System.Collections;
  */
 public class UserList
 {
+<<<<<<< Updated upstream
     string ioFile = "Username2.txt";
 
     public UserList()
+=======
+    /*
+     * Class Name:UserList
+     * Author: Jordan Beck
+     * Date: 4/2/2015
+     * Modified by: Scott Smoke
+     * This class creates, stores, and maintains usernames, passwords, admin status, and attempts 
+     * of invalid log on attempts.
+     * ------------------------------------------
+     * List of public functions and their jobs
+     * UserList()
+     * Creates the text file that will store the usernames, and etc.
+     * 
+     * AddUser(string username, string password, bool admin) 
+     * Creates a new user in the following format: 
+     * John Password 0 0
+     * The first 0  represents admin status, the second represents the login attempts.
+     * 
+     * IsUser(string username)
+     * Returns a boolean value if the user is entered into the text file already.
+     * 
+     * ChangePassword(string username, string password)
+     * Edits the text file to change the users password.
+     * 
+     * TestPassword(string username, string tryPassword)
+     * Searches the text file for the user, and attempts to validate the password.
+     * If the password is wrong it increments the log on attempts
+     * If it is correct it resets the attempts to zero.
+     * returns a bool for if the password was correct or not.
+     * 
+     * DelUser(string username)
+     * Searches the text file for the user and removes them.
+     * 
+     * IsAdmin(string username)
+     * Returns a bool if the user provided is an admin or not.
+     */
+    public class UserList
+>>>>>>> Stashed changes
     {
         //Opens or creates file
         FileStream file = new FileStream(@ioFile, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
