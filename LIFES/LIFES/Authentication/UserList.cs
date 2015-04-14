@@ -44,11 +44,8 @@ using System.Collections;
  */
 public class UserList
 {
-<<<<<<< Updated upstream
-    string ioFile = "Username2.txt";
 
-    public UserList()
-=======
+    string ioFile = "Username2.txt";
     /*
      * Class Name:UserList
      * Author: Jordan Beck
@@ -84,8 +81,7 @@ public class UserList
      * IsAdmin(string username)
      * Returns a bool if the user provided is an admin or not.
      */
-    public class UserList
->>>>>>> Stashed changes
+    public class UserList ()
     {
         //Opens or creates file
         FileStream file = new FileStream(@ioFile, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
