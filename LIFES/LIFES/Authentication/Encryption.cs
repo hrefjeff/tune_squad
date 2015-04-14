@@ -89,5 +89,4 @@ namespace LIFES.Authentication
         }
         
     }
-    }
 }
