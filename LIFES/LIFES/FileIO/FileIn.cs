@@ -11,10 +11,9 @@ namespace LIFES.FileIO
      * Name:        FileIn
      * Author:      Joshua Ford
      * Created:     3/24/15
-     * Modified by: [NOT YET MODIFIED]
-     * Purpose:     Handles file input and validation of the first file.
-     * */
-
+     * Modified by: Joshua Ford
+     * Purpose:     Handles file input and validation of the constraints file.
+     */
     class FileIn
     {
         // Class variable.
@@ -24,11 +23,12 @@ namespace LIFES.FileIO
          * Name:        FileIn
          * Author:      Joshua Ford
          * Created:     3/24/15
-         * Modified by: [NOT YET MODIFIED]
+         * Modified by: Joshua Ford
          * Parameters:  fileName - The name of the file to be opened.
-         * Purpose:     Takes a filename as input and reads that file, then returns an array of the lines in that file.
+         * Output - No explicit retun.
+         * Purpose:     Takes a filename as input and reads that file, then 
+         *              returns an array of the lines in that file.
          */
-
         public FileIn(string fileName)
         {
             if (File.Exists(fileName))
@@ -39,7 +39,8 @@ namespace LIFES.FileIO
 
             else
             {
-                Console.WriteLine("Error, the file specified could not be found.");
+                Console.WriteLine("Error, the file specified could not be" 
+                    + " found.");
             }
         }
 
@@ -47,9 +48,13 @@ namespace LIFES.FileIO
          * Name:        validateConstraintsFile
          * Author(s):   Joshua Ford
          * Created:     3/31/15
-         * Modified by: [NOT YET MODIFIED]
+         * Modified by: Joshua Ford
          * Parameters:  NONE
-         * Purpose:     This method runs a check on the constraints file ensuring that the file data is in proper format and that the data itself is valid.
+         * Output: good - A boolean value which is true if the constraints are
+         *                valid and false otherwise.
+         * Purpose:     This method runs a check on the constraints file 
+         *              ensuring that the file data is in proper format and
+         *              that the data itself is valid.
          */
 
         private bool IsValidConstraintsFile()
@@ -67,9 +72,9 @@ namespace LIFES.FileIO
                 {
                     if (lines[i] != "3" && lines[i] != "4" && lines[i] != "5")
                     {
-                        Console.WriteLine("Error on line 1: Incorrect number of day choice.");
+                        Console.WriteLine("Error on line 1: Incorrect number"
+                        + " of day choice.");
                         good = false;
-                        //throw new Exception ("Error on line 1: Incorrect day choice.");
                     }
                 }
 
@@ -77,29 +82,31 @@ namespace LIFES.FileIO
                 {
                     if (lines[i] != "0700")
                     {
-                        Console.WriteLine("Error on line 2: Incorrect start time for final exams.");
+                        Console.WriteLine("Error on line 2: Incorrect start"
+                        + " time for final exams.");
                         good = false;
-                        //throw new Exception ("Error line 2: Incorrect final exam start time.");
                     }
                 }
 
                 else if (i == 2)
                 {
-                    if (Convert.ToInt16(lines[i]) < 75 || Convert.ToInt16(lines[i]) > 300)
+                    if (Convert.ToInt16(lines[i]) < 75 || 
+                        Convert.ToInt16(lines[i]) > 300)
                     {
-                        Console.WriteLine("Error on line 3: Incorrect exam time.");
+                        Console.WriteLine("Error on line 3: Incorrect exam"
+                        + " time.");
                         good = false;
-                        //throw new Exception ("Error line 3: Incorrect final exam length.");
                     }
                 }
 
                 else if (i == 3)
                 {
-                    if (Convert.ToInt16(lines[i]) < 10 || Convert.ToInt16(lines[i]) > 30)
+                    if (Convert.ToInt16(lines[i]) < 10 || 
+                        Convert.ToInt16(lines[i]) > 30)
                     {
-                        Console.WriteLine("Error on line 4: Incorrect time between final exams.");
+                        Console.WriteLine("Error on line 4: Incorrect time"
+                        + " between final exams.");
                         good = false;
-                        //throw new Exception ("Error line 4: Incorrect length of time between exams.");
                     }
                 }
             }
@@ -110,9 +117,12 @@ namespace LIFES.FileIO
          * Name:        isFileAllDigit
          * Author(s):   Joshua Ford
          * Created:     4/1/15
-         * Modified by: [NOT YET MODIFIED]
+         * Modified by: Joshua Ford
          * Parameters:  lineNum - The line number being checked.
-         * Purpose:     Check a single line to make sure the string is in digit form.
+         * Output: digit - Returns true if the passed parameter is a digit and
+         *                 returns false otherwise.
+         * Purpose:     Check a single line to make sure the string is in 
+         *              digit form.
          */
 
         private bool isFileAllDigit(int lineNum)
@@ -136,11 +146,12 @@ namespace LIFES.FileIO
          * Name:        setLines
          * Author:      Joshua Ford
          * Created:     3/25/15
-         * Modified by: [NOT YET MODIFIED]
-         * Parameters:  lines - An array of all lines in the file which was opened.
+         * Modified by: Joshua Ford
+         * Parameters:  lines - An array of all lines in the file which was
+         *                      opened.
+         * Output: No explicit output.
          * Purpose: Acts as the setter for this class (Purpose should be pretty transparant).
          */
-
         public void setLines(string[] lines)
         {
             if (lines.Length == 5)
@@ -157,9 +168,11 @@ namespace LIFES.FileIO
          * Name:        getLines
          * Author:      Joshua Ford
          * Created:     3/25/15
-         * Modified by: Scott Smoke
+         * Modified by: Joshua Ford
          * Parameters:  NONE
-         * Purpose: Acts as the getter for this class (This should also be pretty obvious)
+         * Output: tc - Returns time constraints.
+         * Purpose: Acts as the getter for this class 
+         *          (This should also be pretty obvious)
          */
         public TimeConstraints GetTimeConstraints()
         {
