@@ -87,3 +87,4 @@ C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserIn
 C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.DeleteUserForm.resources
 C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.ResetPasswordForm.resources
 C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.ViewTotalEnrollmentsForm.resources
+C:\Users\elJeffeh\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\DocumentFormat.OpenXml.dll
