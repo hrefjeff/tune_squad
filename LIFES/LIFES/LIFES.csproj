@@ -96,7 +96,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Authentication\Authentication.cs" />
     <Compile Include="Authentication\Encryption.cs" />
     <Compile Include="Authentication\UserList.cs" />
     <Compile Include="FileIO\FileOut.cs" />

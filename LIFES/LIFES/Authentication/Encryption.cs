@@ -15,7 +15,7 @@ namespace LIFES.Authentication
      * 
      * Description: This handles the encryption and decryption for the userlist class.
      * 
-     */ 
+     */
     static class Encryption
     {
         private static string key = "abdelc;seopedladjcledoskedcoedmo";

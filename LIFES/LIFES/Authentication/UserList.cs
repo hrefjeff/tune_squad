@@ -7,6 +7,8 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Security.AccessControl;
 using System.Collections;
+namespace LIFES.Authentication
+{ 
 /*
  * Class Name:UserList
  * Author: Jordan Beck
@@ -42,8 +44,6 @@ using System.Collections;
  * IsAdmin(string username)
  * Returns a bool if the user provided is an admin or not.
  */
-namespace LIFES.Authentication
-{
     public class UserList
     {
 
@@ -638,7 +638,6 @@ namespace LIFES.Authentication
         }
 
         */
-
 
     }
 }
