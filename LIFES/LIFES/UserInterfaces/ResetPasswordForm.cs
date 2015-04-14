@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LIFES.Authentication;
 using System.Runtime.InteropServices;
+using System.Collections;
 
 namespace LIFES.UserInterfaces
 {
@@ -58,31 +59,17 @@ namespace LIFES.UserInterfaces
         private void FillTable()
         {
 
-            /* Need Jordan to create UserList.GetUsers()
-            string[] users = userList.GetUsers();
+            userList = new UserList();
+
+            ArrayList users = userList.GetUserNames();
 
             int line = 0;
-            for (string ele in users)
+            foreach (string ele in users)
             {
                 usersGridView.Rows.Add();
                 usersGridView.Rows[line].Cells[0].Value = ele;
                 line++;
             }
-            */
-
-            // Hard Coded Test Data. REMOVE !!!!!!!!!!!!!!!!!
-            usersGridView.Rows.Add();
-            usersGridView.Rows.Add();
-            usersGridView.Rows.Add();
-            usersGridView.Rows.Add();
-            usersGridView.Rows.Add();
-
-            usersGridView.Rows[0].Cells[0].Value = "Riley";
-            usersGridView.Rows[1].Cells[0].Value = "Scott";
-            usersGridView.Rows[2].Cells[0].Value = "Jeff";
-            usersGridView.Rows[3].Cells[0].Value = "Jordan";
-            usersGridView.Rows[4].Cells[0].Value = "Josh";
-            // End Test Data
         }
 
         /*
