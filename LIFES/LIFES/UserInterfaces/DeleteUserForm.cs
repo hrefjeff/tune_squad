@@ -38,15 +38,15 @@ namespace LIFES.UserInterfaces
         static extern bool AnimateWindow(IntPtr hwnd, int time, int flags);
 
         private UserList userList;
-
+       
         public DeleteUserForm()
         {
             InitializeComponent();
-            
-            
+
+            userList = new UserList();
+         
             FillTable();
-            
-            
+                
         }
 
         /*
@@ -61,7 +61,19 @@ namespace LIFES.UserInterfaces
          */
         private void DeleteButton_Click(object sender, EventArgs e)
         {
+            if (usersGridView.CurrentCell != null)
+            {
+                string userToDelete = usersGridView.CurrentCell.Value.ToString();
+                // MessageBox.Show(userToDelete);
+                userList.DelUser(userToDelete);
 
+                int selectedIndex = usersGridView.CurrentCell.RowIndex;
+                if (selectedIndex > -1)
+                {
+                    usersGridView.Rows.RemoveAt(selectedIndex);
+                    usersGridView.Refresh();
+                }
+            }
         }
 
         /*
@@ -76,8 +88,6 @@ namespace LIFES.UserInterfaces
          */
         private void FillTable()
         {
-            userList = new UserList();
-            
             ArrayList users = userList.GetUserNames();
 
             int line = 0;
