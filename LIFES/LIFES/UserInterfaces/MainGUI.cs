@@ -364,6 +364,7 @@ namespace LIFES.UserInterfaces
          */
         private void OpenUserGuide_Click(object sender, EventArgs e)
         {
+           // new branch
             Microsoft.Office.Interop.Word.Application word = new Microsoft.Office.Interop.Word.Application();
             Microsoft.Office.Interop.Word.Document document;
             document = word.Documents.Open("C:\\UserManualLIFESV2.docx");
