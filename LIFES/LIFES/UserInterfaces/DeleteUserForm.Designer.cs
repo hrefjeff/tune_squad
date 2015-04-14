@@ -38,15 +38,18 @@
             // 
             // usersGridView
             // 
+            this.usersGridView.AllowUserToAddRows = false;
             this.usersGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.usersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.usersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Username});
-            this.usersGridView.Location = new System.Drawing.Point(55, 24);
+            this.usersGridView.Location = new System.Drawing.Point(55, 25);
             this.usersGridView.Name = "usersGridView";
-            this.usersGridView.Size = new System.Drawing.Size(288, 163);
+            this.usersGridView.ReadOnly = true;
+            this.usersGridView.RowHeadersWidth = 40;
+            this.usersGridView.Size = new System.Drawing.Size(290, 170);
             this.usersGridView.TabIndex = 0;
             // 
             // Username
@@ -54,16 +57,18 @@
             this.Username.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Username.HeaderText = "User Name";
             this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
             // 
             // deleteButton
             // 
             this.deleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteButton.Location = new System.Drawing.Point(268, 219);
+            this.deleteButton.Location = new System.Drawing.Point(270, 220);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
             this.deleteButton.TabIndex = 1;
             this.deleteButton.Text = "Delete User";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // panel1
             // 
@@ -74,7 +79,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.usersGridView);
             this.panel1.Controls.Add(this.deleteButton);
-            this.panel1.Location = new System.Drawing.Point(62, 45);
+            this.panel1.Location = new System.Drawing.Point(60, 45);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 270);
             this.panel1.TabIndex = 2;

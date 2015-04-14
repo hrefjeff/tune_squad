@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LIFES.Authentication;
 using System.Runtime.InteropServices;
 
 namespace LIFES.UserInterfaces
@@ -35,9 +36,69 @@ namespace LIFES.UserInterfaces
         [DllImport("user32")]
         static extern bool AnimateWindow(IntPtr hwnd, int time, int flags);
 
+        private UserList userList;
+
         public DeleteUserForm()
         {
             InitializeComponent();
+
+            FillTable();
+            
+        }
+
+        /*
+         * Method: DeleteButton_Click
+         * Parameters: N/A
+         * Output: N/A
+         * Created By: Riley Smith
+         * Date: 4/13/2015
+         * Modified By: Riley Smith
+         * 
+         * Description: Event handler for the Delete User Button. 
+         */
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /*
+         * Method: FillTable
+         * Parameters: N/A
+         * Output: N/A
+         * Created By: Riley Smith
+         * Date: 4/13/2015
+         * Modified By: Riley Smith
+         * 
+         * Description: Fills the Users Table with a list of users.
+         */
+        private void FillTable()
+        {
+
+            /* Need Jordan to create UserList.GetUsers()
+            string[] users = userList.GetUsers();
+
+            int line = 0;
+            for (string ele in users)
+            {
+                usersGridView.Rows.Add();
+                usersGridView.Rows[line].Cells[0].Value = ele;
+                line++;
+            }
+            */
+
+            // Hard Coded Test Data. REMOVE !!!!!!!!!!!!!!!!!
+            usersGridView.Rows.Add();
+            usersGridView.Rows.Add();
+            usersGridView.Rows.Add();
+            usersGridView.Rows.Add();
+            usersGridView.Rows.Add();
+
+            usersGridView.Rows[0].Cells[0].Value = "Riley";
+            usersGridView.Rows[1].Cells[0].Value = "Scott";
+            usersGridView.Rows[2].Cells[0].Value = "Jeff";
+            usersGridView.Rows[3].Cells[0].Value = "Jordan";
+            usersGridView.Rows[4].Cells[0].Value = "Josh";
+            // End Test Data
         }
 
         /*
@@ -48,8 +109,8 @@ namespace LIFES.UserInterfaces
          * Date: 3/30/2015
          * Modified By: Riley Smith
          * 
-         * Override the function that loads the Form.
-         * Animates the window as it opens.
+         * Description: Override the function that loads the Form.
+         *              Animates the window as it opens.
          */
         protected override void OnLoad(EventArgs e)
         {
@@ -59,5 +120,7 @@ namespace LIFES.UserInterfaces
 
             AnimateWindow(this.Handle, 200, AW_SLIDE | AW_VER_POSITIVE);
         }
+
+       
     }
 }

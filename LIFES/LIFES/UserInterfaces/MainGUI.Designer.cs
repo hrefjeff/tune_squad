@@ -80,7 +80,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(839, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(834, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -261,7 +261,7 @@
             // 
             this.scheduleButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.scheduleButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scheduleButton.Location = new System.Drawing.Point(668, 464);
+            this.scheduleButton.Location = new System.Drawing.Point(663, 463);
             this.scheduleButton.Margin = new System.Windows.Forms.Padding(4);
             this.scheduleButton.Name = "scheduleButton";
             this.scheduleButton.Size = new System.Drawing.Size(88, 26);
@@ -274,7 +274,7 @@
             // 
             this.rescheduleButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.rescheduleButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rescheduleButton.Location = new System.Drawing.Point(536, 464);
+            this.rescheduleButton.Location = new System.Drawing.Point(531, 463);
             this.rescheduleButton.Margin = new System.Windows.Forms.Padding(4);
             this.rescheduleButton.Name = "rescheduleButton";
             this.rescheduleButton.Size = new System.Drawing.Size(88, 26);
@@ -317,10 +317,11 @@
             this.dayCol,
             this.Column1,
             this.Column2});
-            this.examTable.Location = new System.Drawing.Point(88, 161);
+            this.examTable.Location = new System.Drawing.Point(90, 160);
             this.examTable.Margin = new System.Windows.Forms.Padding(4);
             this.examTable.Name = "examTable";
-            this.examTable.Size = new System.Drawing.Size(668, 252);
+            this.examTable.RowHeadersWidth = 40;
+            this.examTable.Size = new System.Drawing.Size(650, 250);
             this.examTable.TabIndex = 6;
             this.examTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -350,10 +351,10 @@
             this.textTest.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textTest.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textTest.Location = new System.Drawing.Point(242, 464);
+            this.textTest.Location = new System.Drawing.Point(242, 463);
             this.textTest.Margin = new System.Windows.Forms.Padding(4);
             this.textTest.Name = "textTest";
-            this.textTest.Size = new System.Drawing.Size(231, 25);
+            this.textTest.Size = new System.Drawing.Size(226, 25);
             this.textTest.TabIndex = 7;
             this.textTest.Text = "Text Area for Testing ";
             this.textTest.TextChanged += new System.EventHandler(this.textTest_TextChanged);
@@ -362,7 +363,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(11, 420);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 419);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(164, 130);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -374,7 +375,7 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(793, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(788, 0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(46, 25);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -386,7 +387,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(96)))), ((int)(((byte)(98)))));
-            this.ClientSize = new System.Drawing.Size(839, 562);
+            this.ClientSize = new System.Drawing.Size(834, 561);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textTest);

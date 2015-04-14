@@ -28,37 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.usersGridView = new System.Windows.Forms.DataGridView();
             this.userNames = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.resetPassButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // usersGridView
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.usersGridView.AllowUserToAddRows = false;
+            this.usersGridView.AllowUserToDeleteRows = false;
+            this.usersGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.usersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.userNames});
-            this.dataGridView1.Location = new System.Drawing.Point(60, 29);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(282, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.usersGridView.Location = new System.Drawing.Point(55, 25);
+            this.usersGridView.Name = "usersGridView";
+            this.usersGridView.ReadOnly = true;
+            this.usersGridView.Size = new System.Drawing.Size(290, 170);
+            this.usersGridView.TabIndex = 0;
             // 
             // userNames
             // 
             this.userNames.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.userNames.HeaderText = "User Name";
             this.userNames.Name = "userNames";
+            this.userNames.ReadOnly = true;
             // 
             // resetPassButton
             // 
             this.resetPassButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.resetPassButton.Location = new System.Drawing.Point(241, 204);
+            this.resetPassButton.Location = new System.Drawing.Point(244, 220);
             this.resetPassButton.Name = "resetPassButton";
             this.resetPassButton.Size = new System.Drawing.Size(101, 23);
             this.resetPassButton.TabIndex = 1;
@@ -72,9 +76,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.usersGridView);
             this.panel1.Controls.Add(this.resetPassButton);
-            this.panel1.Location = new System.Drawing.Point(63, 47);
+            this.panel1.Location = new System.Drawing.Point(60, 45);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 270);
             this.panel1.TabIndex = 2;
@@ -89,7 +93,7 @@
             this.MinimumSize = new System.Drawing.Size(550, 400);
             this.Name = "ResetPasswordForm";
             this.Text = "Reset Password";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -97,7 +101,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView usersGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn userNames;
         private System.Windows.Forms.Button resetPassButton;
         private System.Windows.Forms.Panel panel1;

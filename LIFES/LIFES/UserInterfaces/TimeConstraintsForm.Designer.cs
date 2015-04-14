@@ -52,7 +52,7 @@
             this.chooseFileButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.chooseFileButton.Location = new System.Drawing.Point(27, 17);
             this.chooseFileButton.Name = "chooseFileButton";
-            this.chooseFileButton.Size = new System.Drawing.Size(102, 25);
+            this.chooseFileButton.Size = new System.Drawing.Size(102, 28);
             this.chooseFileButton.TabIndex = 0;
             this.chooseFileButton.Text = "Choose File";
             this.chooseFileButton.UseVisualStyleBackColor = true;
@@ -65,7 +65,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(179, 65);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(110, 20);
+            this.textBox1.Size = new System.Drawing.Size(114, 20);
             this.textBox1.TabIndex = 1;
             // 
             // textBox2
@@ -75,7 +75,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Location = new System.Drawing.Point(179, 104);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(110, 20);
+            this.textBox2.Size = new System.Drawing.Size(114, 20);
             this.textBox2.TabIndex = 2;
             // 
             // textBox3
@@ -85,7 +85,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox3.Location = new System.Drawing.Point(179, 145);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(110, 20);
+            this.textBox3.Size = new System.Drawing.Size(114, 20);
             this.textBox3.TabIndex = 3;
             // 
             // textBox4
@@ -95,7 +95,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox4.Location = new System.Drawing.Point(179, 178);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(110, 20);
+            this.textBox4.Size = new System.Drawing.Size(114, 20);
             this.textBox4.TabIndex = 4;
             // 
             // textBox5
@@ -105,7 +105,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox5.Location = new System.Drawing.Point(179, 218);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(110, 20);
+            this.textBox5.Size = new System.Drawing.Size(114, 20);
             this.textBox5.TabIndex = 5;
             // 
             // label1
@@ -173,7 +173,7 @@
             this.updateConstraintsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.updateConstraintsButton.Location = new System.Drawing.Point(179, 17);
             this.updateConstraintsButton.Name = "updateConstraintsButton";
-            this.updateConstraintsButton.Size = new System.Drawing.Size(110, 25);
+            this.updateConstraintsButton.Size = new System.Drawing.Size(110, 28);
             this.updateConstraintsButton.TabIndex = 11;
             this.updateConstraintsButton.Text = "Update Constraints";
             this.updateConstraintsButton.UseVisualStyleBackColor = true;
@@ -198,9 +198,9 @@
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Location = new System.Drawing.Point(43, 31);
+            this.panel1.Location = new System.Drawing.Point(40, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(351, 267);
+            this.panel1.Size = new System.Drawing.Size(355, 270);
             this.panel1.TabIndex = 12;
             // 
             // errorProvider1
