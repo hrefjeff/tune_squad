@@ -56,7 +56,7 @@ namespace FinalExamScheduler
             }
             else if (_classStartTime >= 1800)
             {
-                throw new Exception("Error - Class Start Time After 1800");
+                throw new Exception("Error - Class End Time After 1800");
             }
             else if (_classEndTime < _classStartTime)
             {
