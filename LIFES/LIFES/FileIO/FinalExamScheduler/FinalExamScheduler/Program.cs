@@ -14,7 +14,7 @@ namespace FinalExamScheduler
                 fileName = Console.ReadLine();
             }
 
-            fileName = "C:\\Users\\Josh Ford\\Desktop\\fall_2014.csv";
+            fileName = "C:\\Users\\Josh Ford\\Documents\\GitHub\\tune_squad\\tune_squad\\Test\\Fall 2014 Total Enrollments by Meeting times.csv";
 
             var compressedClassTimes = new CompressedClassTimes(fileName);
 
