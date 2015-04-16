@@ -79,6 +79,7 @@ namespace LIFES.UserInterfaces
                 if (passwordTextBox.Text == confirmTextBox.Text)
                 {
                     users.AddUser(userNameTextBox.Text, passwordTextBox.Text, true);
+                    MessageBox.Show(userNameTextBox.Text + " added", "User Added");
                 }
             }
         }

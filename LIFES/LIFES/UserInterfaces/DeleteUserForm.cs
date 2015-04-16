@@ -64,14 +64,21 @@ namespace LIFES.UserInterfaces
             if (usersGridView.CurrentCell != null)
             {
                 string userToDelete = usersGridView.CurrentCell.Value.ToString();
-                // MessageBox.Show(userToDelete);
-                userList.DelUser(userToDelete);
+                
+                // Confirmation Dialog.
+                DialogResult result = MessageBox.Show("Delete " + userToDelete 
+                    + "?", "Are You Sure", MessageBoxButtons.YesNo);
 
-                int selectedIndex = usersGridView.CurrentCell.RowIndex;
-                if (selectedIndex > -1)
+                if (result == DialogResult.Yes)
                 {
-                    usersGridView.Rows.RemoveAt(selectedIndex);
-                    usersGridView.Refresh();
+                    userList.DelUser(userToDelete);
+                    
+                    int selectedIndex = usersGridView.CurrentCell.RowIndex;
+                    if (selectedIndex > -1)
+                    {
+                        usersGridView.Rows.RemoveAt(selectedIndex);
+                        usersGridView.Refresh();
+                    }
                 }
             }
         }

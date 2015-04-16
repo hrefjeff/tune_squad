@@ -68,6 +68,7 @@
             this.resetPassButton.TabIndex = 1;
             this.resetPassButton.Text = "Reset Password";
             this.resetPassButton.UseVisualStyleBackColor = true;
+            this.resetPassButton.Click += new System.EventHandler(this.ResetPasswordButton_Click);
             // 
             // panel1
             // 
