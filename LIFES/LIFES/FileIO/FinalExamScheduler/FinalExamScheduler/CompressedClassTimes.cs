@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Collections;
 
 
 namespace FinalExamScheduler
 {
     /*
      * Class Name: CompressedClassTimes.cs
-     * Author: Joshua Ford, Shawn Weeks
+     * Author: Joshua Ford.
      * Date: 3/28/15
-     * Modified by: Joshua Ford, Shawn Weeks.
+     * Modified by: Joshua Ford.
      * Description: Takes as a parameter a fileName. The data is read in,
      *              checked for proper formatting, and checked for data
      *              accuracy. The class times are then compressed in
@@ -20,6 +21,7 @@ namespace FinalExamScheduler
      */
     public class CompressedClassTimes
     {
+        private ArrayList errorList = new ArrayList();
         private readonly List<CompressedClassTime> compressedClassTimes;
 
         /*
@@ -28,9 +30,9 @@ namespace FinalExamScheduler
          *                        be processed.
          * Output: No explicit output.
          * 
-         * Author: Joshua Ford, Shawn Weeks.
+         * Author: Joshua Ford.
          * Date: 3/28/15
-         * Modified by: Joshua Ford, Shawn Weeks
+         * Modified by: Joshua Ford.
          * Description: Reads in line by line from the file and then validates 
          *              that the line is in proper format, checks for valid 
          *              data, and compresses data.
@@ -40,6 +42,8 @@ namespace FinalExamScheduler
             // Creates a temparary Dict to hold the compressed day and time.
             var tmpCompressedClassTimes = new Dictionary<String, 
                 CompressedClassTime>();
+
+
 
             // Read in the file line by line.
             using (var sr = new StreamReader(filename))
@@ -51,7 +55,13 @@ namespace FinalExamScheduler
                 while (!sr.EndOfStream)
                 {
                     lineCounter++;
-                    
+
+                    // Ignore the first line of class times file.
+                    if(lineCounter == 1)
+                    {
+                        sr.ReadLine();
+                    }
+
                     // Read one line.
                     String line = sr.ReadLine();
 
@@ -105,8 +115,11 @@ namespace FinalExamScheduler
                         // were not correct.
                         catch (Exception e)
                         {
-                            Console.WriteLine(e.Message 
-                                + " on line " + lineCounter);
+                            if (e.Message != "")
+                            {
+                                errorList.Add(e.Message
+                                    + " on line " + lineCounter);
+                            }
                         }
                     }
                     // If row is invalid, raise error.
@@ -143,6 +156,11 @@ namespace FinalExamScheduler
             return compressedClassTimes;
         }
 
+        // Getter for errorsList.
+        public ArrayList getErrorList(ArrayList errorList)
+        {
+            return errorList;
+        }
     }
 }
 

@@ -51,7 +51,7 @@ namespace LIFES.UserInterfaces
 
         /*
          * Method: DeleteButton_Click
-         * Parameters: N/A
+         * Parameters: object Sender, EventArgs e
          * Output: N/A
          * Created By: Riley Smith
          * Date: 4/13/2015
@@ -64,14 +64,21 @@ namespace LIFES.UserInterfaces
             if (usersGridView.CurrentCell != null)
             {
                 string userToDelete = usersGridView.CurrentCell.Value.ToString();
-                // MessageBox.Show(userToDelete);
-                userList.DelUser(userToDelete);
+                
+                // Confirmation Dialog.
+                DialogResult result = MessageBox.Show("Delete " + userToDelete 
+                    + "?", "Are You Sure", MessageBoxButtons.YesNo);
 
-                int selectedIndex = usersGridView.CurrentCell.RowIndex;
-                if (selectedIndex > -1)
+                if (result == DialogResult.Yes)
                 {
-                    usersGridView.Rows.RemoveAt(selectedIndex);
-                    usersGridView.Refresh();
+                    userList.DelUser(userToDelete);
+                    
+                    int selectedIndex = usersGridView.CurrentCell.RowIndex;
+                    if (selectedIndex > -1)
+                    {
+                        usersGridView.Rows.RemoveAt(selectedIndex);
+                        usersGridView.Refresh();
+                    }
                 }
             }
         }
@@ -112,13 +119,7 @@ namespace LIFES.UserInterfaces
          */
         protected override void OnLoad(EventArgs e)
         {
-            //this.Size = this.Owner.Size;
-
-            //this.Location = this.Owner.Location;
-
             AnimateWindow(this.Handle, 200, AW_SLIDE | AW_VER_POSITIVE);
         }
-
-       
     }
 }

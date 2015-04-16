@@ -86,16 +86,12 @@ namespace LIFES.UserInterfaces
          */
         protected override void OnLoad(EventArgs e)
         {
-            //this.Size = this.Owner.Size;
-
-            //this.Location = this.Owner.Location;
-
             AnimateWindow(this.Handle, 200, AW_SLIDE | AW_VER_POSITIVE);
         }
 
         /*
          * Method: ResetPasswordButton_Click
-         * Parameters: N/A
+         * Parameters: object Sender, EventArgs e
          * Output: N/A
          * Created By: Riley Smith
          * Date: 4/13/2015
@@ -103,5 +99,17 @@ namespace LIFES.UserInterfaces
          * 
          * Description: Event handler for the Reset Password Button. 
          */
+        private void ResetPasswordButton_Click(object sender, EventArgs e)
+        {
+            if (usersGridView.CurrentCell != null)
+            {
+                string userName = usersGridView.CurrentCell.Value.ToString();
+
+                GetNewPasswordForm setPassword = new GetNewPasswordForm(userName);
+                setPassword.StartPosition = FormStartPosition.CenterParent;
+                setPassword.ShowDialog();
+            }
+        }
+ 
     }
 }

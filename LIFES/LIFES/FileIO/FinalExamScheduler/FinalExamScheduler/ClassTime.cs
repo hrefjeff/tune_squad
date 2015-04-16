@@ -5,9 +5,9 @@ namespace FinalExamScheduler
 {
     /*
      * Class Name: ClassTime.cs
-     * Author: Joshua Ford, Shawn Weeks.
+     * Author: Joshua Ford.
      * Date: 3/28/15
-     * Modified by: Joshua Ford, Shawn Weeks.
+     * Modified by: Joshua Ford.
      * Description: Validate the data from the class times file is correct.
      *              Raise errors on any that does not conform to day order,
      *              minimum class start time, reasonable class end times, and
@@ -23,54 +23,54 @@ namespace FinalExamScheduler
 
         /*
          * Method Name: ClassTime
-         * Parameters: _dayOfTheWeek    - The number of days that the given 
-         *                                class takes place.
+         * Parameters: dayOfTheWeek    - The number of days that the given 
+         *                               class takes place.
          *             
-         *             _classStartTime  - The time in which the class starts.
+         *             classStartTime  - The time in which the class starts.
          *            
-         *             _classEndTime    - The time in which the class ends.
+         *             classEndTime    - The time in which the class ends.
          *             
-         *             _studentsEnrolled- The number of students enrolled in 
-         *                                this class.
+         *             studentsEnrolled- The number of students enrolled in 
+         *                               this class.
          *             
          * Output: No explicit output.
-         * Author: Joshua Ford, Shawn Weeks.
+         * Author: Joshua Ford.
          * Date: 3/28/15
-         * Modified By: Joshua Ford, Shawn Weeks.
+         * Modified By: Joshua Ford.
          * Description: This is the constructor: Checks line for correct 
          *              class data.
          */ 
-        public ClassTime(String _dayOfTheWeek, int _classStartTime, 
-            int _classEndTime, int _studentsEnrolled)
+        public ClassTime(String dayOfTheWeek, int classStartTime, 
+            int classEndTime, int studentsEnrolled)
         {
             Regex r = new Regex("^M?T?W?R?F?$");
-            Match m = r.Match(_dayOfTheWeek);
+            Match m = r.Match(dayOfTheWeek);
 
             if (!m.Success)
             {
                 throw new Exception("Error - Days of the Week Invalid");
             }
-            else if (_classStartTime < 700)
+            else if (classStartTime < 700)
             {
                 throw new Exception("Error - Class Start Time Before 0700");
             }
-            else if (_classStartTime >= 1800)
+            else if (classStartTime >= 1800)
             {
-                throw new Exception("Error - Class Start Time After 1800");
+               throw new Exception("");
             }
-            else if (_classEndTime < _classStartTime)
+            else if (classEndTime < classStartTime)
             {
                 throw new Exception("Error - Class Ends Before It Starts");
             }
-            else if (_studentsEnrolled < 1)
+            else if (studentsEnrolled < 1)
             {
                 throw new Exception("Error - Students Enrolled Less Than 1");
             }
 
-            this.dayOfTheWeek = _dayOfTheWeek;
-            this.classStartTime = _classStartTime;
-            this.classEndTime = _classEndTime;
-            this.studentsEnrolled = _studentsEnrolled;
+            this.dayOfTheWeek = dayOfTheWeek;
+            this.classStartTime = classStartTime;
+            this.classEndTime = classEndTime;
+            this.studentsEnrolled = studentsEnrolled;
             this.ownedBy = "NA";
         }
 
