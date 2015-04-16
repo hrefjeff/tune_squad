@@ -86,10 +86,6 @@ namespace LIFES.UserInterfaces
          */
         protected override void OnLoad(EventArgs e)
         {
-            //this.Size = this.Owner.Size;
-
-            //this.Location = this.Owner.Location;
-
             AnimateWindow(this.Handle, 200, AW_SLIDE | AW_VER_POSITIVE);
         }
 
@@ -114,7 +110,6 @@ namespace LIFES.UserInterfaces
                 setPassword.ShowDialog();
             }
         }
-
-        
+ 
     }
 }

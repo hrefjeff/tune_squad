@@ -59,15 +59,7 @@ namespace LIFES.UserInterfaces
          */
         protected override void OnLoad(EventArgs e)
         {
-            //this.Size = this.Owner.Size;
-            //this.Location = this.Owner.Location;
-
             AnimateWindow(this.Handle, 200, AW_SLIDE | AW_VER_POSITIVE);
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void CreateUserBttn_Click(object sender, EventArgs e)
