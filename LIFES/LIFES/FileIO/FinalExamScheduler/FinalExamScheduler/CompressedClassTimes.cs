@@ -8,9 +8,9 @@ namespace FinalExamScheduler
 {
     /*
      * Class Name: CompressedClassTimes.cs
-     * Author: Joshua Ford, Shawn Weeks
+     * Author: Joshua Ford.
      * Date: 3/28/15
-     * Modified by: Joshua Ford, Shawn Weeks.
+     * Modified by: Joshua Ford.
      * Description: Takes as a parameter a fileName. The data is read in,
      *              checked for proper formatting, and checked for data
      *              accuracy. The class times are then compressed in
@@ -28,9 +28,9 @@ namespace FinalExamScheduler
          *                        be processed.
          * Output: No explicit output.
          * 
-         * Author: Joshua Ford, Shawn Weeks.
+         * Author: Joshua Ford.
          * Date: 3/28/15
-         * Modified by: Joshua Ford, Shawn Weeks
+         * Modified by: Joshua Ford.
          * Description: Reads in line by line from the file and then validates 
          *              that the line is in proper format, checks for valid 
          *              data, and compresses data.

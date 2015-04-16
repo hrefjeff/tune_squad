@@ -5,9 +5,9 @@ namespace FinalExamScheduler
 {
     /*
      * Class Name: CompressedClassTime.cs
-     * Author: Joshua Ford, Shawn Weeks.
+     * Author: Joshua Ford.
      * Date: 3/28/15
-     * Modified by: Joshua Ford, Shawn Weeks.
+     * Modified by: Joshua Ford.
      * Description: Associates the class times with one another and checks for
      *              conflicts.
      */
@@ -49,9 +49,9 @@ namespace FinalExamScheduler
         /*
          * Method Name: CompareTo
          * Parameters: c - The compressed class time to be evaluated.
-         * Author: Joshua Ford, Shawn Weeks.
+         * Author: Joshua Ford.
          * Date: 4/12/15
-         * Modified by: Joshua Ford, Shawn Weeks.
+         * Modified by: Joshua Ford.
          * Description: Checks to see if the given class time equal to the next
          *              has been proccessed while the next one hasn't been. If 
          *              so, the resort is held off until the next class has 
