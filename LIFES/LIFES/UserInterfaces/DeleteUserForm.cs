@@ -51,7 +51,7 @@ namespace LIFES.UserInterfaces
 
         /*
          * Method: DeleteButton_Click
-         * Parameters: N/A
+         * Parameters: object Sender, EventArgs e
          * Output: N/A
          * Created By: Riley Smith
          * Date: 4/13/2015
