@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.chooseFileButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.numDaysTextBox = new System.Windows.Forms.TextBox();
+            this.firstExamTimeTextBox = new System.Windows.Forms.TextBox();
+            this.lengthOfExamsTextBox = new System.Windows.Forms.TextBox();
+            this.lengthBetweenExamsTextBox = new System.Windows.Forms.TextBox();
+            this.lunchPeriodTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,55 +58,55 @@
             this.chooseFileButton.UseVisualStyleBackColor = true;
             this.chooseFileButton.Click += new System.EventHandler(this.ChooseFileButton_Click);
             // 
-            // textBox1
+            // numDaysTextBox
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.numDaysTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(179, 65);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(114, 20);
-            this.textBox1.TabIndex = 1;
+            this.numDaysTextBox.Location = new System.Drawing.Point(179, 65);
+            this.numDaysTextBox.Name = "numDaysTextBox";
+            this.numDaysTextBox.Size = new System.Drawing.Size(114, 20);
+            this.numDaysTextBox.TabIndex = 1;
             // 
-            // textBox2
+            // firstExamTimeTextBox
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.firstExamTimeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(179, 104);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(114, 20);
-            this.textBox2.TabIndex = 2;
+            this.firstExamTimeTextBox.Location = new System.Drawing.Point(179, 104);
+            this.firstExamTimeTextBox.Name = "firstExamTimeTextBox";
+            this.firstExamTimeTextBox.Size = new System.Drawing.Size(114, 20);
+            this.firstExamTimeTextBox.TabIndex = 2;
             // 
-            // textBox3
+            // lengthOfExamsTextBox
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lengthOfExamsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(179, 145);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(114, 20);
-            this.textBox3.TabIndex = 3;
+            this.lengthOfExamsTextBox.Location = new System.Drawing.Point(179, 145);
+            this.lengthOfExamsTextBox.Name = "lengthOfExamsTextBox";
+            this.lengthOfExamsTextBox.Size = new System.Drawing.Size(114, 20);
+            this.lengthOfExamsTextBox.TabIndex = 3;
             // 
-            // textBox4
+            // lengthBetweenExamsTextBox
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lengthBetweenExamsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(179, 178);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(114, 20);
-            this.textBox4.TabIndex = 4;
+            this.lengthBetweenExamsTextBox.Location = new System.Drawing.Point(179, 178);
+            this.lengthBetweenExamsTextBox.Name = "lengthBetweenExamsTextBox";
+            this.lengthBetweenExamsTextBox.Size = new System.Drawing.Size(114, 20);
+            this.lengthBetweenExamsTextBox.TabIndex = 4;
             // 
-            // textBox5
+            // lunchPeriodTextBox
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lunchPeriodTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(179, 218);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(114, 20);
-            this.textBox5.TabIndex = 5;
+            this.lunchPeriodTextBox.Location = new System.Drawing.Point(179, 218);
+            this.lunchPeriodTextBox.Name = "lunchPeriodTextBox";
+            this.lunchPeriodTextBox.Size = new System.Drawing.Size(114, 20);
+            this.lunchPeriodTextBox.TabIndex = 5;
             // 
             // label1
             // 
@@ -187,17 +187,17 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.updateConstraintsButton);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.lunchPeriodTextBox);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.lengthBetweenExamsTextBox);
             this.panel1.Controls.Add(this.chooseFileButton);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.lengthOfExamsTextBox);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.numDaysTextBox);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.firstExamTimeTextBox);
             this.panel1.Location = new System.Drawing.Point(40, 30);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(355, 270);
@@ -229,11 +229,11 @@
         #endregion
 
         private System.Windows.Forms.Button chooseFileButton;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox numDaysTextBox;
+        private System.Windows.Forms.TextBox firstExamTimeTextBox;
+        private System.Windows.Forms.TextBox lengthOfExamsTextBox;
+        private System.Windows.Forms.TextBox lengthBetweenExamsTextBox;
+        private System.Windows.Forms.TextBox lunchPeriodTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

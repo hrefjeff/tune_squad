@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Diagnostics;
+using System.Collections;
 namespace LIFES.FileIO
 {
     /*
@@ -18,6 +19,7 @@ namespace LIFES.FileIO
     {
         // Class variable.
         private string[] lines;
+        private ArrayList errors = new ArrayList();
 
         /*
          * Name:        FileIn
@@ -72,7 +74,8 @@ namespace LIFES.FileIO
                 {
                     if (lines[i] != "3" && lines[i] != "4" && lines[i] != "5")
                     {
-                        Console.WriteLine("Error on line 1: Incorrect number"
+                        
+                        errors.Add("Error on line 1: Incorrect number"
                         + " of day choice.");
                         good = false;
                     }
@@ -82,7 +85,8 @@ namespace LIFES.FileIO
                 {
                     if (lines[i] != "0700")
                     {
-                        Console.WriteLine("Error on line 2: Incorrect start"
+                       
+                        errors.Add("Error on line 2: Incorrect start"
                         + " time for final exams.");
                         good = false;
                     }
@@ -93,7 +97,8 @@ namespace LIFES.FileIO
                     if (Convert.ToInt16(lines[i]) < 75 || 
                         Convert.ToInt16(lines[i]) > 300)
                     {
-                        Console.WriteLine("Error on line 3: Incorrect exam"
+                        
+                        errors.Add("Error on line 3: Incorrect exam"
                         + " time.");
                         good = false;
                     }
@@ -104,7 +109,8 @@ namespace LIFES.FileIO
                     if (Convert.ToInt16(lines[i]) < 10 || 
                         Convert.ToInt16(lines[i]) > 30)
                     {
-                        Console.WriteLine("Error on line 4: Incorrect time"
+                       
+                        errors.Add("Error on line 4: Incorrect time"
                         + " between final exams.");
                         good = false;
                     }
@@ -117,7 +123,7 @@ namespace LIFES.FileIO
          * Name:        isFileAllDigit
          * Author(s):   Joshua Ford
          * Created:     4/1/15
-         * Modified by: Joshua Ford
+         * Modified by: Scott Smoke
          * Parameters:  lineNum - The line number being checked.
          * Output: digit - Returns true if the passed parameter is a digit and
          *                 returns false otherwise.
@@ -136,7 +142,7 @@ namespace LIFES.FileIO
             }
             catch (FormatException e)
             {
-                Console.WriteLine("Line " + (lineNum + 1) + " " + e.Message);
+                errors.Add("Line " + (lineNum + 1) + " " + e.Message);
                 digit = false;
             }
             return digit;
@@ -181,10 +187,23 @@ namespace LIFES.FileIO
             {
                 tc = new TimeConstraints(Convert.ToInt32(lines[0]),
                 Convert.ToInt32(lines[1]), Convert.ToInt32(lines[2]),
-                Convert.ToInt32(lines[3]), Convert.ToInt32(lines[4]));
+                Convert.ToInt32(lines[3]), Convert.ToInt32(lines[4]));        
             }
           
             return tc;
+        }
+        /*
+         * Method: GetErors
+         * Created By: Scott Smoke
+         * Date: 4/16/2015
+         * Modified By: Scott Smoke
+         * Parameters: N/A
+         * Output: ArrayList containing the errors.
+         * Description: This returns an ArrayList containg the found errors.
+         */
+        public ArrayList GetErrors()
+        {
+            return errors;
         }
     }
 
