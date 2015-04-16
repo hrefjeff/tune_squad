@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Collections;
 
 
 namespace FinalExamScheduler
@@ -20,6 +21,7 @@ namespace FinalExamScheduler
      */
     public class CompressedClassTimes
     {
+        private ArrayList errorList = new ArrayList();
         private readonly List<CompressedClassTime> compressedClassTimes;
 
         /*
@@ -41,6 +43,8 @@ namespace FinalExamScheduler
             var tmpCompressedClassTimes = new Dictionary<String, 
                 CompressedClassTime>();
 
+
+
             // Read in the file line by line.
             using (var sr = new StreamReader(filename))
             {
@@ -51,7 +55,13 @@ namespace FinalExamScheduler
                 while (!sr.EndOfStream)
                 {
                     lineCounter++;
-                    
+
+                    // Ignore the first line of class times file.
+                    if(lineCounter == 1)
+                    {
+                        sr.ReadLine();
+                    }
+
                     // Read one line.
                     String line = sr.ReadLine();
 
@@ -105,8 +115,11 @@ namespace FinalExamScheduler
                         // were not correct.
                         catch (Exception e)
                         {
-                            Console.WriteLine(e.Message 
-                                + " on line " + lineCounter);
+                            if (e.Message != "")
+                            {
+                                errorList.Add(e.Message
+                                    + " on line " + lineCounter);
+                            }
                         }
                     }
                     // If row is invalid, raise error.
@@ -143,6 +156,11 @@ namespace FinalExamScheduler
             return compressedClassTimes;
         }
 
+        // Getter for errorsList.
+        public ArrayList getErrorList(ArrayList errorList)
+        {
+            return errorList;
+        }
     }
 }
 
