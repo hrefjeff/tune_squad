@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using LIFES.FileIO;
+using System.Collections;
 
 namespace LIFES.UserInterfaces
 {
@@ -99,13 +100,13 @@ namespace LIFES.UserInterfaces
          */
         private void UpdateConstraintsButton_Click(object sender, EventArgs e)
         {
-            if ((textBox1.Text != "") && (textBox2.Text != "") &&
-                (textBox3.Text != "") && (textBox4.Text != "") &&
-                (textBox5.Text != ""))
+            if ((numDaysTextBox.Text != "") && (firstExamTimeTextBox.Text != "") &&
+                (lengthOfExamsTextBox.Text != "") && (lengthBetweenExamsTextBox.Text != "") &&
+                (lunchPeriodTextBox.Text != ""))
             {
-                TimeConstraints t = new TimeConstraints(Convert.ToInt32(textBox1.Text),
-                Convert.ToInt32(textBox2.Text), Convert.ToInt32(textBox3.Text),
-                Convert.ToInt32(textBox4.Text), Convert.ToInt32(textBox5.Text));
+                TimeConstraints t = new TimeConstraints(Convert.ToInt32(numDaysTextBox.Text),
+                Convert.ToInt32(firstExamTimeTextBox.Text), Convert.ToInt32(lengthOfExamsTextBox.Text),
+                Convert.ToInt32(lengthBetweenExamsTextBox.Text), Convert.ToInt32(lunchPeriodTextBox.Text));
                 tc = t;
 
                 errorProvider1.Clear();
@@ -114,54 +115,54 @@ namespace LIFES.UserInterfaces
             else
             {
                 // If a text box is empty, show a errorProvider.
-                if (textBox1.Text == string.Empty)
+                if (numDaysTextBox.Text == string.Empty)
                 {
-                    errorProvider1.SetError(textBox1, "Cannot Be Empty");
+                    errorProvider1.SetError(numDaysTextBox, "Cannot Be Empty");
                 }
 
                 else
                 {
-                    errorProvider1.SetError(textBox1, "");
+                    errorProvider1.SetError(numDaysTextBox, "");
                 }
 
-                if (textBox2.Text == string.Empty)
+                if (firstExamTimeTextBox.Text == string.Empty)
                 {
-                    errorProvider1.SetError(textBox2, "Cannot Be Empty");
-                }
-
-                else
-                {
-                    errorProvider1.SetError(textBox2, "");
-                }
-
-                if (textBox3.Text == string.Empty)
-                {
-                    errorProvider1.SetError(textBox3, "Cannot Be Empty");
+                    errorProvider1.SetError(firstExamTimeTextBox, "Cannot Be Empty");
                 }
 
                 else
                 {
-                    errorProvider1.SetError(textBox3, "");
+                    errorProvider1.SetError(firstExamTimeTextBox, "");
                 }
 
-                if (textBox4.Text == string.Empty)
+                if (lengthOfExamsTextBox.Text == string.Empty)
                 {
-                    errorProvider1.SetError(textBox4, "Cannot Be Empty");
-                }
-
-                else
-                {
-                    errorProvider1.SetError(textBox4, "");
-                }
-
-                if (textBox5.Text == string.Empty)
-                {
-                    errorProvider1.SetError(textBox5, "Cannot Be Empty");
+                    errorProvider1.SetError(lengthOfExamsTextBox, "Cannot Be Empty");
                 }
 
                 else
                 {
-                    errorProvider1.SetError(textBox5, "");
+                    errorProvider1.SetError(lengthOfExamsTextBox, "");
+                }
+
+                if (lengthBetweenExamsTextBox.Text == string.Empty)
+                {
+                    errorProvider1.SetError(lengthBetweenExamsTextBox, "Cannot Be Empty");
+                }
+
+                else
+                {
+                    errorProvider1.SetError(lengthBetweenExamsTextBox, "");
+                }
+
+                if (lunchPeriodTextBox.Text == string.Empty)
+                {
+                    errorProvider1.SetError(lunchPeriodTextBox, "Cannot Be Empty");
+                }
+
+                else
+                {
+                    errorProvider1.SetError(lunchPeriodTextBox, "");
                 }
                 // End of errorProviders.
 
@@ -203,7 +204,23 @@ namespace LIFES.UserInterfaces
             openFile.ShowDialog();
             filename = openFile.FileName;
             FileIn fi = new FileIn(filename);
-            tc = fi.GetTimeConstraints();
+            if (fi.GetErrors().Count == 0)
+            {
+                tc = fi.GetTimeConstraints();
+                //putting constraints on the display
+                numDaysTextBox.Text = tc.GetNumberOfDays().ToString();
+                firstExamTimeTextBox.Text = tc.GetStartTime().ToString();
+                lengthOfExamsTextBox.Text = tc.GetLengthOfExams().ToString();
+                lengthBetweenExamsTextBox.Text = tc.GetTimeBetweenExams().ToString();
+                lunchPeriodTextBox.Text = tc.GetLunchPeriod().ToString();
+            }
+            else
+            {
+                string errors = Errors(fi.GetErrors());
+                MessageBox.Show(errors);
+            }
+            
+
 
         }
 
@@ -222,6 +239,30 @@ namespace LIFES.UserInterfaces
         {
             AnimateWindow(this.Handle, 200, AW_CENTER | AW_HOR_POSITIVE);
         }
+        /*
+         * Method:  Errors
+         * Parameters: ArrayList
+         * Output: string
+         * Created By: Scott Smoke
+         * Date: 4/16/2015
+         * Modified By: Scott Smoke
+         * 
+         * Description: This will return a string that will be created useing
+         * the incomming list.
+         * 
+         * 
+         * 
+         */
+        private string Errors(ArrayList list)
+        {
+            string errors = "";
+            foreach (string str in list)
+            {
+                errors = errors + str + "\r\n";
+            }
+            return errors;
+        }
+         
 
     }
 }
