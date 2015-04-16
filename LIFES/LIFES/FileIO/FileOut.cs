@@ -71,6 +71,7 @@ namespace LIFES.FileIO
                 XBrushes.Black, new XRect(40, 24, pdfPage.Width.Point,
                     pdfPage.Height.Point), XStringFormats.TopLeft);
             //add schedule
+            
      
  
             pdf.Save(filename);
