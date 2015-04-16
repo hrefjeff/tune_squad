@@ -8,95 +8,65 @@ using System.Security.Cryptography;
 using System.Security.AccessControl;
 using System.Collections;
 namespace LIFES.Authentication
-{ 
-/*
- * Class Name:UserList
- * Author: Jordan Beck
- * Date: 4/2/2015
- * Modified by: Jordan Beck
- * This class creates, stores, and maintains usernames, passwords, admin status, and attempts 
- * of invalid log on attempts.
- * ------------------------------------------
- * List of public functions and their jobs
- * UserList()
- * Creates the text file that will store the usernames, and etc.
- * 
- * AddUser(string username, string password, bool admin)
- * Creates a new user in the following format: 
- * John Password 0 0
- * The first 0  represents admin status, the second represents the login attempts.
- * 
- * IsUser(string username)
- * Returns a boolean value if the user is entered into the text file already.
- * 
- * ChangePassword(string username, string password)
- * Edits the text file to change the users password.
- * 
- * TestPassword(string username, string tryPassword)
- * Searches the text file for the user, and attempts to validate the password.
- * If the password is wrong it increments the log on attempts
- * If it is correct it resets the attempts to zero.
- * returns a bool for if the password was correct or not.
- * 
- * DelUser(string username)
- * Searches the text file for the user and removes them.
- * 
- * IsAdmin(string username)
- * Returns a bool if the user provided is an admin or not.
- */
+{
+    /*
+     * Class Name:UserList
+     * Author: Jordan Beck
+     * Date: 4/2/2015
+     * Modified by: Jordan Beck
+     * This class creates, stores, and maintains usernames, passwords,
+     *  admin status, and attempts of invalid log on attempts.
+     * 
+     * Format:
+     * John Password 1 2
+     * 
+     * User is John.
+     * Password is Password.
+     * Is an Admin.
+     * Has attempted his password wrong twice.
+     */
     public class UserList
     {
-
+        //string path = Application.StartupPath + "/Username";
+        //string ioFile = path;
         string ioFile = "Username2.txt";
+
         /*
-         * Class Name:UserList
-         * Author: Jordan Beck
+         * Method: UserList
+         * Parameters: None
+         * Created By: Jordan Beck
          * Date: 4/2/2015
-         * Modified by: Scott Smoke
-         * This class creates, stores, and maintains usernames, passwords, admin status, and attempts 
-         * of invalid log on attempts.
-         * ------------------------------------------
-         * List of public functions and their jobs
-         * UserList()
-         * Creates the text file that will store the usernames, and etc.
+         * Modified By: Jordan Beck
          * 
-         * AddUser(string username, string password, bool admin) 
-         * Creates a new user in the following format: 
-         * John Password 0 0
-         * The first 0  represents admin status, the second represents the login attempts.
-         * 
-         * IsUser(string username)
-         * Returns a boolean value if the user is entered into the text file already.
-         * 
-         * ChangePassword(string username, string password)
-         * Edits the text file to change the users password.
-         * 
-         * TestPassword(string username, string tryPassword)
-         * Searches the text file for the user, and attempts to validate the password.
-         * If the password is wrong it increments the log on attempts
-         * If it is correct it resets the attempts to zero.
-         * returns a bool for if the password was correct or not.
-         * 
-         * DelUser(string username)
-         * Searches the text file for the user and removes them.
-         * 
-         * IsAdmin(string username)
-         * Returns a bool if the user provided is an admin or not.
+         * Description: Creates the text file that will store the usernames, and etc.
          */
         public UserList()
         {
             //Opens or creates file
             FileStream file = new FileStream(@ioFile, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
             file.Close();
+            //Default Admin used for adding the first admin.
+            AddUser("AlanTuring", "06231912", true);
         }
 
-
-        public void AddUser(string userName, string password, bool admin)
+        /*
+         * Method: AddUser
+         * Parameters: string userName, string password, bool admin
+         * Created By: Jordan Beck
+         * Date: 4/2/2015
+         * Modified By: Jordan Beck
+         * 
+         * Description: Creates a new user in the following format: 
+         * John Password 0 0
+         * The first 0  represents admin status,
+         *  the second represents the login attempts.
+         */
+        public bool AddUser(string userName, string password, bool admin)
         {
             //Test to see if username is taken.
             if (IsUser(userName))
             {
-                return;
+                return false;
             }
 
             //This block creates the line to input into the file.
@@ -116,140 +86,208 @@ namespace LIFES.Authentication
 
             //Adds the field for number of attempts.
             line = line + " 0";
+            int j = 0;
 
             //Inputs the User to Document.
+            RemoveEncryption(@ioFile);
             using (StreamWriter writeFile = File.AppendText(@ioFile))
             {
+                line = line + '\n';
                 writeFile.WriteLine(line);
                 writeFile.Close();
-                AddEncryption(@ioFile);
             }
+            AddEncryption(@ioFile);
+            return true;
         }
+
+        /*
+         * Method: IsUser
+         * Parameters: string userName
+         * Created By: Jordan Beck
+         * Date: 4/2/2015
+         * Modified By: Jordan Beck
+         * 
+         * Description: Returns a boolean value if the user 
+         *  is entered into the text file already.
+         */
         public bool IsUser(string userName)
         {
             string testName = "";
+            RemoveEncryption(@ioFile);
             using (StreamReader reader = new StreamReader(@ioFile))
             {
-                RemoveEncryption(@ioFile);
                 string line;
                 // Block compares username
+                
                 while ((line = reader.ReadLine()) != null)
                 {
                     int i = 0;
                     testName = "";
-                    if (!String.IsNullOrEmpty(line))
+                    if (!(line == ""))
                     {
-                        //Gets Name
-                        while (!((line[i] == ' ') || (line[i] == '\n')))
+                        if (!String.IsNullOrEmpty(line))
                         {
-                            testName = testName + line[i];
-                            i++;
-                        }
+                            //Gets Name
+                            while (!((line[i] == ' ') || (line[i] == '\n')))
+                            {
+                                testName = testName + line[i];
+                                i++;
+                            }
 
-                        if (testName == userName)
-                        {
-                            reader.Close();
-                            return true;
+                            if (testName == userName)
+                            {
+                                reader.Close();
+                                AddEncryption(@ioFile);
+                                return true;
+                            }
                         }
                     }
                 }
                 reader.Close();
             }
+            AddEncryption(@ioFile);
             return false;
         }
-        public void ChangePassword(string inputName, string inputPassword)
+        /*
+         * Method: ChangePassword
+         * Parameters: string userName, string password
+         * Created By: Jordan Beck
+         * Date: 4/2/2015
+         * Modified By: Jordan Beck
+         * 
+         * Description: Edits the text file to change the users password.
+         */
+        public bool ChangePassword(string inputName, string inputPassword)
         {
             string actualName = inputName;
             inputName = inputName + " ";
+            RemoveEncryption(@ioFile);
             using (StreamReader reader = new StreamReader(@ioFile))
             {
-                RemoveEncryption(@ioFile);
                 string line = "";
                 int i = 0;
                 int row = 0;
                 while ((line = reader.ReadLine()) != null)
                 {
                     row++;
-                    while (line[i] == inputName[i])
+                    if (line != "")
                     {
-                        if (line[i] == ' ')
+                        while (line[i] == inputName[i])
                         {
-                            reader.Close();
-                            ChangeFilePassword(actualName, inputPassword);
-                            return;
+                            if (line[i] == ' ')
+                            {
+                                reader.Close();
+                                AddEncryption(@ioFile);
+                                ChangeFilePassword(actualName, inputPassword);
+                                return true;
+                            }
+                            i++;
                         }
-                        i++;
                     }
                 }
+                reader.Close();
             }
+            AddEncryption(@ioFile);
+            return false;
         }
+        /*
+         * Method: TestPassword
+         * Parameters: string userName, string tryPassword
+         * Created By: Jordan Beck
+         * Date: 4/2/2015
+         * Modified By: Jordan Beck
+         * 
+         * Description: Searches the text file for the user, and attempts 
+         *  to validate the password.
+         * If the password is wrong it increments the log on attempts.
+         * If it is correct it resets the attempts to zero.
+         * Returns a bool for if the password was correct or not.
+         */
         public bool TestPassword(string inputName, string inputPassword)
         {
             char attemptsAllowed = '4';
             bool isCorrect = false;
             string input = inputName + " " + inputPassword + " ";
             int row = 0;
+
+            RemoveEncryption(@ioFile);
             using (StreamReader reader = new StreamReader(@ioFile))
             {
-                RemoveEncryption(@ioFile);
                 string line = "";
                 while ((line = reader.ReadLine()) != null)
                 {
                     int i = 0;
                     row++;
-                    if (line[i] == input[i])
+                    if (line != "")
                     {
-                        do
+                        if (line[i] == input[i])
                         {
-                            i++;
-                            if ((line[i] == input[i]) && (line[i] == ' '))
+                            do
                             {
-                                do
+                                i++;
+                                if ((line[i] == input[i]) && (line[i] == ' '))
                                 {
-                                    i++;
-                                    if ((line[i] == input[i]) && (line[i] == ' '))
+                                    do
                                     {
-                                        //Doesn't Allow for over 4 attempts
-                                        //i+3 is displacement for the the Attempts
-                                        if (line[i + 3] == attemptsAllowed)
+                                        i++;
+                                        if ((line[i] == input[i]) && (line[i] == ' '))
                                         {
-                                            return false;
+                                            //Doesn't Allow for over 4 attempts
+                                            //i+3 is displacement for the the Attempts
+                                            if (line[i + 3] == attemptsAllowed)
+                                            {
+                                                reader.Close();
+                                                AddEncryption(@ioFile);
+                                                return false;
+                                            }
+                                            else
+                                            {
+                                                reader.Close();
+                                                AddEncryption(@ioFile);
+                                                ResetAttemptTry(row, i + 3);
+                                            }
+
+                                            isCorrect = true;
+                                            return isCorrect;
                                         }
-                                        else
+                                        if (line[i] != input[i])
                                         {
+                                            while (line[i] != ' ')
+                                            {
+                                                i++;
+                                            }
                                             reader.Close();
-                                            ResetAttemptTry(row, i + 3);
+                                            AddEncryption(@ioFile);
+                                            IncreaseAttemptTry(row, i + 3);
+                                            return isCorrect;
                                         }
+                                    } while (line[i] == input[i]);
 
-                                        isCorrect = true;
-                                        return isCorrect;
-                                    }
-                                    if (line[i] != input[i])
-                                    {
-                                        while (line[i] != ' ')
-                                        {
-                                            i++;
-                                        }
-                                        reader.Close();
-                                        IncreaseAttemptTry(row, i + 3);
-                                        return isCorrect;
-                                    }
-                                } while (line[i] == input[i]);
-
-                            }
-                        } while (line[i] == input[i]);
+                                }
+                            } while (line[i] == input[i]);
+                        }
                     }
                 }
                 reader.Close();
             }
+            AddEncryption(@ioFile);
             return isCorrect;
         }
+        /*
+         * Method: DelUser
+         * Parameters: string inputName
+         * Created By: Jordan Beck
+         * Date: 4/2/2015
+         * Modified By: Jordan Beck
+         * 
+         * Description: Searches the text file for the user and removes them.
+         */
         public void DelUser(string inputName)
         {
             inputName = inputName + " ";
+            RemoveEncryption(@ioFile);
             using (StreamReader reader = new StreamReader(@ioFile))
             {
-                RemoveEncryption(@ioFile);
                 string line = "";
                 int row = 0;
                 while ((line = reader.ReadLine()) != null)
@@ -268,6 +306,7 @@ namespace LIFES.Authentication
                                 {
                                     //removes line by rewriting the Username file
                                     reader.Close();
+                                    AddEncryption(@ioFile);
                                     ReWriteFile(row);
                                     return;
                                 }
@@ -276,24 +315,41 @@ namespace LIFES.Authentication
                     }
                 }
                 reader.Close();
+                AddEncryption(@ioFile);
+                return;
             }
         }
 
+        /*
+         * Method: GetUserNames
+         * Parameters: None
+         * Created By: Jordan Beck
+         * Date: 4/13/2015
+         * Modified By: Jordan Beck
+         * 
+         * Description: Returns an array of the usernames.
+         */
         public ArrayList GetUserNames()
         {
             ArrayList usernameList = new ArrayList();
+            RemoveEncryption(@ioFile);
             using (StreamReader reader = new StreamReader(@ioFile))
             {
-
-                RemoveEncryption(@ioFile);
                 string line;
                 // Block compares username
                 while ((line = reader.ReadLine()) != null)
                 {
                     int i = 0;
                     string testName = "";
-                    if (!String.IsNullOrEmpty(line))
+
+                    //Skips default Admin
+                    if (line == "AlanTuring 06231912 1 0")
                     {
+                        //Skips
+                    }
+                    else if (!String.IsNullOrEmpty(line))
+                    {
+
                         //Gets Name
                         while (!((line[i] == ' ') || (line[i] == '\n')))
                         {
@@ -301,18 +357,30 @@ namespace LIFES.Authentication
                             i++;
                         }
                         usernameList.Add(testName);
+
                     }
+
                 }
+                reader.Close();
             }
-
-
+            AddEncryption(@ioFile);
             return usernameList;
         }
+
+        /*
+         * Method: IsAdmin
+         * Parameters: string inputName
+         * Created By: Jordan Beck
+         * Date: 4/2/2015
+         * Modified By: Jordan Beck
+         * 
+         * Description: Returns a bool if the user provided is an admin or not.
+         */
         public bool IsAdmin(string inputName)
         {
+            RemoveEncryption(@ioFile);
             using (StreamReader reader = new StreamReader(@ioFile))
             {
-                RemoveEncryption(@ioFile);
                 string line = "";
                 while ((line = reader.ReadLine()) != null)
                 {
@@ -334,10 +402,14 @@ namespace LIFES.Authentication
                                 //i+1 is displacement for the admin
                                 if (line[i + 1] == '0')
                                 {
+                                    reader.Close();
+                                    AddEncryption(@ioFile);
                                     return false;
                                 }
                                 else
                                 {
+                                    reader.Close();
+                                    AddEncryption(@ioFile);
                                     return true;
                                 }
                             }
@@ -346,26 +418,38 @@ namespace LIFES.Authentication
                 }
                 reader.Close();
             }
+            AddEncryption(@ioFile);
             return false;
         }
 
-
+        /*
+         * Method: ReWriteFile
+         * Parameters: int rowRemove
+         * Created By: Jordan Beck
+         * Date: 4/2/2015
+         * Modified By: Jordan Beck
+         * 
+         * Description: Rewrites the UserName file
+         */
         private void ReWriteFile(int rowRemove)
         {
             string fileToWrite = "";
             //Reads through the file and creates a new file
+            RemoveEncryption(@ioFile);
             using (StreamReader reader = new StreamReader(@ioFile))
             {
-                RemoveEncryption(@ioFile);
                 string line = "";
                 int row = 0;
                 while ((line = reader.ReadLine()) != null)
                 {
                     row++;
-                    if (row != rowRemove)
+                    if (line != "")
                     {
-                        fileToWrite = fileToWrite + line;
-                        fileToWrite = fileToWrite + '\n';
+                        if (row != rowRemove)
+                        {
+                            fileToWrite = fileToWrite + line;
+                            fileToWrite = fileToWrite + '\n';
+                        }
                     }
                 }
                 reader.Close();
@@ -380,17 +464,27 @@ namespace LIFES.Authentication
             {
                 writeFile.Write(fileToWrite);
                 writeFile.Close();
-                AddEncryption(@ioFile);
             }
+            AddEncryption(@ioFile);
         }
+
+        /*
+         * Method: IncreaseAttemptTry
+         * Parameters: int rowRemove, int colRemove
+         * Created By: Jordan Beck
+         * Date: 4/4/2015
+         * Modified By: Jordan Beck
+         * 
+         * Description: Increases the attempts allowed for the password attempts.
+         */
         private void IncreaseAttemptTry(int rowRemove, int colRemove)
         {
             int attemptsAllowed = 4;
             string fileToWrite = "";
             //Reads through the file and creates a new file
+            RemoveEncryption(@ioFile);
             using (StreamReader reader = new StreamReader(@ioFile))
             {
-                RemoveEncryption(@ioFile);
                 string line = "";
                 int row = 0;
                 int i = 0;
@@ -433,16 +527,26 @@ namespace LIFES.Authentication
             {
                 writeFile.Write(fileToWrite);
                 writeFile.Close();
-                AddEncryption(@ioFile);
             }
+            AddEncryption(@ioFile);
         }
+
+        /*
+         * Method: ReserAttemptTry
+         * Parameters: int rowRemove, int colRemove
+         * Created By: Jordan Beck
+         * Date: 4/4/2015
+         * Modified By: Jordan Beck
+         * 
+         * Description: Reset the password attempts to 0
+         */
         private void ResetAttemptTry(int rowRemove, int colRemove)
         {
             string fileToWrite = "";
             //Reads through the file and creates a new file
+            RemoveEncryption(@ioFile);
             using (StreamReader reader = new StreamReader(@ioFile))
             {
-                RemoveEncryption(@ioFile);
                 string line = "";
                 int row = 0;
                 int i = 0;
@@ -480,9 +584,19 @@ namespace LIFES.Authentication
             {
                 writeFile.Write(fileToWrite);
                 writeFile.Close();
-                AddEncryption(@ioFile);
             }
+            AddEncryption(@ioFile);
         }
+
+        /*
+         * Method: ChangeFilePassword
+         * Parameters: string username, string newPassword
+         * Created By: Jordan Beck
+         * Date: 4/2/2015
+         * Modified By: Jordan Beck
+         * 
+         * Description: Changes the password for the user in the file.
+         */
         private void ChangeFilePassword(string username, string newPassword)
         {
             bool admin = IsAdmin(username);
@@ -490,154 +604,87 @@ namespace LIFES.Authentication
             AddUser(username, newPassword, admin);
         }
 
-        public static void AddEncryption(string FileName)
+        /*
+         * Method: AddEncryption
+         * Parameters: string fileName
+         * Created By: Jordan Beck
+         * Date: 4/14/2015
+         * Modified By: Jordan Beck
+         * 
+         * Description: Encrypts the entire file
+         */
+        public void AddEncryption(string fileName)
         {
-            //encrypt here
+            string fileToWrite = "";
+            //Reads through the file and creates a new file
+            using (StreamReader reader = new StreamReader(@ioFile))
+            {
+                string line = "";
+                while ((line = reader.ReadLine()) != null)
+                {
+                    if (line != "")
+                    {
+                        fileToWrite = fileToWrite + line;
+                        fileToWrite = fileToWrite + '\n';
+                    }
+                }
+                reader.Close();
+            }
+            //Del file
+            File.Delete(@ioFile);
+            //recreate file
+            FileStream file = new FileStream(@ioFile, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
+            file.Close();
+            //writes fileToWrite to file
+            using (StreamWriter writeFile = File.AppendText(@ioFile))
+            {
+                fileToWrite = Encryption.Encrypt(fileToWrite);
+                writeFile.Write(fileToWrite);
+                writeFile.Close();
+            }
         }
-        // Decrypt a file. 
-        public static void RemoveEncryption(string FileName)
+
+        /*
+         * Method: RemoveEncryption
+         * Parameters: string fileName
+         * Created By: Jordan Beck
+         * Date: 4/14/2015
+         * Modified By: Jordan Beck
+         * 
+         * Description: Decrypts the entire file.
+         */
+        public void RemoveEncryption(string fileName)
         {
             //File.Decrypt(FileName);
-        }
-
-        //NOT MY CODE
-        //
-        /////////////////////////////////////////////////////////////////////////////////////////////
-        /*
-        static readonly string PasswordHash = "P@@Sw0rd";
-        static readonly string SaltKey = "S@LT&KEY";
-        static readonly string VIKey = "@1B2c3D4e5F6g7H8";
-
-        public static string Encrypt(string plainText)
+            string fileToWrite = "";
+            //Reads through the file and creates a new file
+            using (StreamReader reader = new StreamReader(@ioFile))
             {
-                byte[] plainTextBytes = Encoding.UTF8.GetBytes(plainText);
-
-                byte[] keyBytes = new Rfc2898DeriveBytes(PasswordHash, Encoding.ASCII.GetBytes(SaltKey)).GetBytes(256 / 8);
-                var symmetricKey = new RijndaelManaged() { Mode = CipherMode.CBC, Padding = PaddingMode.Zeros };
-                var encryptor = symmetricKey.CreateEncryptor(keyBytes, Encoding.ASCII.GetBytes(VIKey));
-			
-                byte[] cipherTextBytes;
-
-                using (var memoryStream = new MemoryStream())
+                string line = "";
+                while ((line = reader.ReadLine()) != null)
                 {
-                    using (var cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write))
+                    line = Encryption.Decrypt(line);
+                    if (line != "")
                     {
-                        cryptoStream.Write(plainTextBytes, 0, plainTextBytes.Length);
-                        cryptoStream.FlushFinalBlock();
-                        cipherTextBytes = memoryStream.ToArray();
-                        cryptoStream.Close();
-                    }
-                    memoryStream.Close();
-                }
-                return Convert.ToBase64String(cipherTextBytes);
-            }
-        public static string Decrypt(string encryptedText)
-            {
-                byte[] cipherTextBytes = Convert.FromBase64String(encryptedText);
-                byte[] keyBytes = new Rfc2898DeriveBytes(PasswordHash, Encoding.ASCII.GetBytes(SaltKey)).GetBytes(256 / 8);
-                var symmetricKey = new RijndaelManaged() { Mode = CipherMode.CBC, Padding = PaddingMode.None };
-
-                var decryptor = symmetricKey.CreateDecryptor(keyBytes, Encoding.ASCII.GetBytes(VIKey));
-                var memoryStream = new MemoryStream(cipherTextBytes);
-                var cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read);
-                byte[] plainTextBytes = new byte[cipherTextBytes.Length];
-
-                int decryptedByteCount = cryptoStream.Read(plainTextBytes, 0, plainTextBytes.Length);
-                memoryStream.Close();
-                cryptoStream.Close();
-                return Encoding.UTF8.GetString(plainTextBytes, 0, decryptedByteCount).TrimEnd("\0".ToCharArray());
-            }
-    
-        static byte[] EncryptStringToBytes_Aes(string plainText, byte[] Key,
-                                                                    byte[] IV)
-        {
-            // Check arguments. 
-            if (plainText == null || plainText.Length <= 0)
-                throw new ArgumentNullException("plainText");
-            if (Key == null || Key.Length <= 0)
-                throw new ArgumentNullException("Key");
-            if (IV == null || IV.Length <= 0)
-                throw new ArgumentNullException("Key");
-            byte[] encrypted;
-            // Create an Aes object 
-            // with the specified key and IV. 
-            using (Aes aesAlg = Aes.Create())
-            {
-                aesAlg.Key = Key;
-                aesAlg.IV = IV;
-
-                // Create a decrytor to perform the stream transform.
-                ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key
-                                                                    , aesAlg.IV);
-
-                // Create the streams used for encryption. 
-                using (MemoryStream msEncrypt = new MemoryStream())
-                {
-                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt
-                                            , encryptor, CryptoStreamMode.Write))
-                    {
-                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
-                        {
-
-                            //Write all data to the stream.
-                            swEncrypt.Write(plainText);
-                        }
-                        encrypted = msEncrypt.ToArray();
+                        fileToWrite = fileToWrite + line;
+                        fileToWrite = fileToWrite + '\n';
                     }
                 }
+                reader.Close();
             }
-            // Return the encrypted bytes from the memory stream. 
-            return encrypted;
-        }
-
-        static string DecryptStringFromBytes_Aes(byte[] cipherText, byte[] Key
-    , byte[] IV)
-        {
-            // Check arguments. 
-            if (cipherText == null || cipherText.Length <= 0)
-                throw new ArgumentNullException("cipherText");
-            if (Key == null || Key.Length <= 0)
-                throw new ArgumentNullException("Key");
-            if (IV == null || IV.Length <= 0)
-                throw new ArgumentNullException("Key");
-
-            // Declare the string used to hold 
-            // the decrypted text. 
-            string plaintext = null;
-
-            // Create an Aes object 
-            // with the specified key and IV. 
-            using (Aes aesAlg = Aes.Create())
+            //Del file
+            File.Delete(@ioFile);
+            //recreate file
+            FileStream file = new FileStream(@ioFile, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
+            file.Close();
+            //writes fileToWrite to file
+            using (StreamWriter writeFile = File.AppendText(@ioFile))
             {
-                aesAlg.Key = Key;
-                aesAlg.IV = IV;
-
-                // Create a decrytor to perform the stream transform.
-                ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key
-    , aesAlg.IV);
-
-                // Create the streams used for decryption. 
-                using (MemoryStream msDecrypt = new MemoryStream(cipherText))
-                {
-                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt
-    , decryptor, CryptoStreamMode.Read))
-                    {
-                        using (StreamReader srDecrypt = new StreamReader(
-    csDecrypt))
-                        {
-
-                            // Read the decrypted bytes from the decrypting stream
-                            // and place them in a string.
-                            plaintext = srDecrypt.ReadToEnd();
-                        }
-                    }
-                }
-                return plaintext;
-
+                //fileToWrite = Encryption.Encrypt(fileToWrite);
+                writeFile.Write(fileToWrite);
+                writeFile.Close();
             }
+
         }
-
-        */
-
     }
 }

@@ -16,7 +16,7 @@ namespace LIFES.Authentication
      * Description: This handles the encryption and decryption for the userlist class.
      * 
      */
-    static class Encryption
+    public static class Encryption
     {
         private static string key = "abdelc;seopedladjcledoskedcoedmo";
         private static string iv = "aweopdklawmfovno";
@@ -34,7 +34,7 @@ namespace LIFES.Authentication
          *       https://msdn.microsoft.com/en-us/library/system.security.cryptography.aescryptoserviceprovider(v=vs.110).aspx
          * 
          */
-        private static string Encrypt(string str)
+        public static string Encrypt(string str)
         {
             
             byte[] plaintextbytes = System.Text.ASCIIEncoding.ASCII.GetBytes(str);
@@ -69,7 +69,7 @@ namespace LIFES.Authentication
          *       https://msdn.microsoft.com/en-us/library/system.security.cryptography.aescryptoserviceprovider(v=vs.110).aspx
          * 
          */
-        private static string Decrypt(string str)
+        public static string Decrypt(string str)
         {
             byte[] encryptedBytes = Convert.FromBase64String(str);
             AesCryptoServiceProvider aes = new AesCryptoServiceProvider();
