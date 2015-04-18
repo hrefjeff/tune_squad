@@ -104,7 +104,7 @@ namespace Compression
             Console.WriteLine();
 
             for (int j = 0; j < degreeOfVertice.Length; j++)
-                Console.Write(degreeOfVertice[j] + " ");
+                Console.WriteLine(degreeOfVertice[j] + " ");
 
             ////////////////NNCount = 0;
             ////////////////unprocessed = numOfVertices;
@@ -140,7 +140,7 @@ namespace Compression
                         {
                             if (conflictMatrix[row,col] > 0)
                             {
-                                available[result[i]] = true;
+                                available[classArray[col]] = true;
                             }
                         }
  
