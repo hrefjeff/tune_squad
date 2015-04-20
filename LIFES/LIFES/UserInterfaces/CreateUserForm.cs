@@ -61,19 +61,58 @@ namespace LIFES.UserInterfaces
         {
             AnimateWindow(this.Handle, 200, AW_SLIDE | AW_VER_POSITIVE);
         }
-
+        /*
+         * Method: CreateUserBttn_Click
+         * Paraneters: object sender, EventArgs e
+         * Output: The username and password to the file
+         * Created By: Riley Smith
+         * Date: 3/30/2015
+         * Modified By: Scott Smoke
+         * 
+         * Description: This will create a user account if the username is
+         * a UNA email account and the password matches the requirements in the Spec doc
+         * else it displays a message denoting what needs to be corrected.
+         * 
+         */ 
         private void CreateUserBttn_Click(object sender, EventArgs e)
         {
-            //regular expression for username 
             Regex emailEx = new Regex("^[a-zA-Z0-9]{1,32}@una.edu$");
-            if(userNameTextBox.Text != "" && passwordTextBox.Text != "" && confirmTextBox.Text != "")
+            Regex pwdEx = new Regex("^[a-z]{1}([a-z0-9\\*#\\$]){7,8}$");
+            if (emailEx.IsMatch(userNameTextBox.Text))
             {
-                if (passwordTextBox.Text == confirmTextBox.Text)
+                if (userNameTextBox.Text != "" && passwordTextBox.Text != "" &&
+                    confirmTextBox.Text != "")
                 {
-                    users.AddUser(userNameTextBox.Text, passwordTextBox.Text, true);
-                    MessageBox.Show(userNameTextBox.Text + " added", "User Added");
+                    if (pwdEx.IsMatch(passwordTextBox.Text.ToLower()))
+                    {
+                        if (passwordTextBox.Text.Equals(confirmTextBox.Text))
+                        {
+                            users.AddUser(userNameTextBox.Text, 
+                                passwordTextBox.Text, true);
+
+                            MessageBox.Show(userNameTextBox.Text + " added", 
+                                "User Added");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please ensure the passwords match");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Passwords must be between 7-9\n" +
+                            "characters, start with a letter, all be in the\n" +
+                            "same case and must contain any of the following\n"+
+                            "numbers/leters/#*$");
+                    }
+                    
                 }
             }
+            else
+            {
+                MessageBox.Show("Must use a UNA email");
+            }
+            
         }
     }
 }

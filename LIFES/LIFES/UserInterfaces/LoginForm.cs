@@ -81,6 +81,16 @@ namespace LIFES.UserInterfaces
             //then log on
             //else throw error(s)
 
+            if (users.TestPassword(userName, pwd))
+            {
+                MessageBox.Show("Login Success");
+            }
+
+            else 
+            {
+                MessageBox.Show("Login Failed");
+            }
+
         }
     }
 }

@@ -18,7 +18,9 @@ namespace FinalExamScheduler
         private List<ClassTime> classTimes;
         private Boolean isProccessed;
 
-        // Constructor.
+        /* CompressedClassTime.
+         * 
+         */ 
         public CompressedClassTime(String dayOfTheWeek, int classTimeStartHour)
         {
             this.dayOfTheWeek = dayOfTheWeek;
@@ -49,6 +51,12 @@ namespace FinalExamScheduler
         /*
          * Method Name: CompareTo
          * Parameters: c - The compressed class time to be evaluated.
+         * Output: returnValue - Returns 1 if one totalStudentsEnrolled is less
+         *                       than the next totalStudentsEnrolled. Returns 
+         *                       -1 if one totalStudentsEnrolled is greater 
+         *                       than the next totalStudentsEnrolled or if one
+         *                       of the totalStudentsEnrolled has been 
+         *                       processed and the next one has not.
          * Author: Joshua Ford.
          * Date: 4/12/15
          * Modified by: Joshua Ford.

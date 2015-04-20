@@ -45,6 +45,8 @@ namespace FinalExamScheduler
         {
             Regex r = new Regex("^M?T?W?R?F?$");
             Match m = r.Match(dayOfTheWeek);
+            Regex singleDay = new Regex("M[^x]|T[^x]|W[^x]|R[^x]");
+            Match sd = singleDay.Match(dayOfTheWeek);
 
             if (!m.Success)
             {
@@ -58,6 +60,10 @@ namespace FinalExamScheduler
             {
                throw new Exception("");
             }
+            else if (classEndTime > 1815)
+            {
+                throw new Exception("");
+            }
             else if (classEndTime < classStartTime)
             {
                 throw new Exception("Error - Class Ends Before It Starts");
@@ -65,6 +71,11 @@ namespace FinalExamScheduler
             else if (studentsEnrolled < 1)
             {
                 throw new Exception("Error - Students Enrolled Less Than 1");
+            }
+            else if (!sd.Success)
+            {
+                throw new Exception("Warning - One day class will not be"
+                    + " included in the compression");
             }
 
             this.dayOfTheWeek = dayOfTheWeek;

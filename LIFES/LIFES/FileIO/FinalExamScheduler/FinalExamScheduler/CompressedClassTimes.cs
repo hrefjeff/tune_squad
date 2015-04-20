@@ -22,6 +22,7 @@ namespace FinalExamScheduler
     public class CompressedClassTimes
     {
         private ArrayList errorList = new ArrayList();
+        private ArrayList warningList = new ArrayList();
         private readonly List<CompressedClassTime> compressedClassTimes;
 
         /*
@@ -117,8 +118,18 @@ namespace FinalExamScheduler
                         {
                             if (e.Message != "")
                             {
-                                errorList.Add(e.Message
-                                    + " on line " + lineCounter);
+                                if (e.Message.StartsWith("Error"))
+                                {
+                                    errorList.Add(e.Message
+                                        + " on line " + lineCounter);
+                                }
+                                else
+                                {
+                                    warningList.Add(e.Message
+                                        + " on line " + lineCounter);
+
+                                    Console.WriteLine(e.Message + " on line " + lineCounter);
+                                }
                             }
                         }
                     }
@@ -160,6 +171,12 @@ namespace FinalExamScheduler
         public ArrayList getErrorList(ArrayList errorList)
         {
             return errorList;
+        }
+
+        // Getter for errorsList.
+        public ArrayList getWarningList(ArrayList warningList)
+        {
+            return warningList;
         }
     }
 }
