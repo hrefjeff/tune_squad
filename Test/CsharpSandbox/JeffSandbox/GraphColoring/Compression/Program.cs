@@ -33,8 +33,8 @@ namespace Compression
         {
 
             string filename;
-            //filename = "C:\\Users\\elJeffeh\\spring_sched.csv";
-            filename = "C:\\Users\\elJeffeh\\SmallTestDoc-Good.csv";
+            filename = "C:\\Users\\elJeffeh\\spring_sched.csv";
+            //filename = "C:\\Users\\elJeffeh\\SmallTestDoc-Good.csv";
 
             ClassScheduleFileLoader classScheduleFile = new ClassScheduleFileLoader(filename);
 
@@ -88,7 +88,10 @@ namespace Compression
 
             // initialize schedule colors
             for (int i = 0; i < numOfRows; i++)
+            {
                 classSchedules[i].color = -1;
+                classSchedules[i].classNum = i;
+            }
 
             greedy();
 
@@ -131,7 +134,7 @@ namespace Compression
             {
                 Console.WriteLine("List " + i + " contains:");
                 for (int j = 0; j < listOfCompressedClasses[i].listOfClasses.Count; j++)
-                    Console.WriteLine("\t" + listOfCompressedClasses[i].listOfClasses[j].meetingDay);
+                    Console.WriteLine("\t" + listOfCompressedClasses[i].listOfClasses[j].classNum + "---" + listOfCompressedClasses[i].listOfClasses[j].meetingDay + "---" + listOfCompressedClasses[i].listOfClasses[j].startTime + "---" + listOfCompressedClasses[i].listOfClasses[j].endTime);
 
             }
 
@@ -161,9 +164,12 @@ namespace Compression
                         //load adjacent colors using the input matrix
                         //and thereby the colors of connected nodes
                         for (j = 0; j < numOfRows; j++)
-                            if (conflictMatrix[i,j] > 0)
+                        {
+                            if (conflictMatrix[i, j] > 0)
                                 if (classSchedules[j].color > 0)
                                     classSchedules[i].adj_colors[counter++] = classSchedules[j].color;
+                        }
+
                         //fill color if it is not in adj_colors
                         if (!find(color_list[numOfColors], classSchedules[i].adj_colors))
                             classSchedules[i].color = color_list[numOfColors];
@@ -481,6 +487,7 @@ namespace Compression
             public int enrollment;
             public int color;
             public int[] adj_colors = new int[1000];
+            public int classNum = 0;
 
             // Constructor.
             public ClassSchedule(string daysOfWeek, int startTime, int classEndTime, int studentsEnrolled)
