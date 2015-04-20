@@ -36,6 +36,8 @@
             this.createUserButton = new System.Windows.Forms.Button();
             this.confirmTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.adminRadioButton = new System.Windows.Forms.RadioButton();
+            this.generalRadioButton = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +80,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.generalRadioButton);
+            this.panel1.Controls.Add(this.adminRadioButton);
             this.panel1.Controls.Add(this.createUserButton);
             this.panel1.Controls.Add(this.confirmTextBox);
             this.panel1.Controls.Add(this.label3);
@@ -116,12 +120,35 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Confirm Password";
             // 
+            // adminRadioButton
+            // 
+            this.adminRadioButton.AutoSize = true;
+            this.adminRadioButton.Location = new System.Drawing.Point(21, 130);
+            this.adminRadioButton.Name = "adminRadioButton";
+            this.adminRadioButton.Size = new System.Drawing.Size(54, 17);
+            this.adminRadioButton.TabIndex = 7;
+            this.adminRadioButton.TabStop = true;
+            this.adminRadioButton.Text = "Admin";
+            this.adminRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // generalRadioButton
+            // 
+            this.generalRadioButton.AutoSize = true;
+            this.generalRadioButton.Checked = true;
+            this.generalRadioButton.Location = new System.Drawing.Point(21, 154);
+            this.generalRadioButton.Name = "generalRadioButton";
+            this.generalRadioButton.Size = new System.Drawing.Size(62, 17);
+            this.generalRadioButton.TabIndex = 8;
+            this.generalRadioButton.TabStop = true;
+            this.generalRadioButton.Text = "General";
+            this.generalRadioButton.UseVisualStyleBackColor = true;
+            // 
             // CreateUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
-            this.ClientSize = new System.Drawing.Size(334, 261);
+            this.ClientSize = new System.Drawing.Size(334, 262);
             this.Controls.Add(this.panel1);
             this.MaximumSize = new System.Drawing.Size(350, 300);
             this.MinimumSize = new System.Drawing.Size(350, 300);
@@ -143,5 +170,7 @@
         private System.Windows.Forms.TextBox confirmTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button createUserButton;
+        private System.Windows.Forms.RadioButton generalRadioButton;
+        private System.Windows.Forms.RadioButton adminRadioButton;
     }
 }

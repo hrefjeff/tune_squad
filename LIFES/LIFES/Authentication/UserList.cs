@@ -47,6 +47,8 @@ namespace LIFES.Authentication
             file.Close();
             //Default Admin used for adding the first admin.
             AddUser("AlanTuring", "06231912", true);
+            //We dont want the default to fit the standard
+            //Makes it more complicated to in a brute force attempt.
         }
 
         /*
@@ -86,7 +88,6 @@ namespace LIFES.Authentication
 
             //Adds the field for number of attempts.
             line = line + " 0";
-            int j = 0;
 
             //Inputs the User to Document.
             RemoveEncryption(@ioFile);

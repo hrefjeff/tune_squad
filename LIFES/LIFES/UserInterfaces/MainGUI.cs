@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LIFES.FileIO;
+using LIFES.Authentication;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 
@@ -34,6 +35,8 @@ namespace LIFES.UserInterfaces
      */
     public partial class MainGUI : Form
     {
+        bool isAdmin = false;
+        string currentUser = "";
         public MainGUI()
         {
             InitializeComponent();
@@ -42,7 +45,24 @@ namespace LIFES.UserInterfaces
             this.Hide();
             loginGUI.StartPosition = FormStartPosition.CenterScreen;
             loginGUI.ShowDialog();
-            this.Show();
+            //this.Show();
+        }
+        /*
+        * Method: Constructer
+        * Parameters: string null
+        * Output: N/A
+        * Created By:Jordan Beck
+        * Date: 4/20/2015
+        * Modified By: Jordan Beck
+        * 
+        * Description: Opens the Gui Core without the login 
+        */
+        public MainGUI(string userName)
+        {
+            // Creates the Current User
+            UserList list = new UserList();
+            currentUser = userName;
+            isAdmin = list.IsAdmin(userName);
         }
 
         /*
@@ -72,10 +92,18 @@ namespace LIFES.UserInterfaces
          */
         private void CreateUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateUserForm createUser = new CreateUserForm();
-            createUser.Owner = this;
-            createUser.StartPosition = FormStartPosition.CenterScreen;
-            createUser.ShowDialog();
+            if (isAdmin)
+            {
+                //DO stuff
+                CreateUserForm createUser = new CreateUserForm();
+                createUser.Owner = this;
+                createUser.StartPosition = FormStartPosition.CenterScreen;
+                createUser.ShowDialog();
+            }
+            else
+            {
+                //adminToolStripMenuItem.BackColor = Color.Gray;
+            }
         }
 
         /*
@@ -90,10 +118,17 @@ namespace LIFES.UserInterfaces
         */
         void DeleteUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DeleteUserForm deleteUserForm = new DeleteUserForm();
-            deleteUserForm.Owner = this;
-            deleteUserForm.StartPosition = FormStartPosition.CenterScreen;
-            deleteUserForm.ShowDialog();
+            if (isAdmin)
+            {
+                DeleteUserForm deleteUserForm = new DeleteUserForm();
+                deleteUserForm.Owner = this;
+                deleteUserForm.StartPosition = FormStartPosition.CenterScreen;
+                deleteUserForm.ShowDialog();
+            }
+            else
+            {
+                //adminToolStripMenuItem.BackColor = Color.Gray;
+            }
         }
 
         /*
@@ -163,6 +198,14 @@ namespace LIFES.UserInterfaces
          */
         void FinalizeScheduleToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (isAdmin)
+            {
+
+            }
+            else
+            {
+                //adminToolStripMenuItem.BackColor = Color.Gray;
+            }
             // Needs to be added
         }
 
@@ -250,10 +293,17 @@ namespace LIFES.UserInterfaces
          */
         void ResetPasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ResetPasswordForm resetForm = new ResetPasswordForm();
-            resetForm.Owner = this;
-            resetForm.StartPosition = FormStartPosition.CenterScreen;
-            resetForm.ShowDialog();
+            if (isAdmin)
+            {
+                ResetPasswordForm resetForm = new ResetPasswordForm();
+                resetForm.Owner = this;
+                resetForm.StartPosition = FormStartPosition.CenterScreen;
+                resetForm.ShowDialog();
+            }
+            else
+            {
+                Visible = false;
+            }
         }
 
         /*
