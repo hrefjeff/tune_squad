@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LIFES.FileIO;
+using LIFES.Authentication;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 
@@ -34,6 +35,8 @@ namespace LIFES.UserInterfaces
      */
     public partial class MainGUI : Form
     {
+        bool isAdmin = false;
+        string currentUser = "";
         public MainGUI()
         {
             InitializeComponent();
@@ -54,9 +57,12 @@ namespace LIFES.UserInterfaces
         * 
         * Description: Opens the Gui Core without the login 
         */
-        public MainGUI(string a)
+        public MainGUI(string userName)
         {
-            //Empty
+            // Creates the Current User
+            UserList list = new UserList();
+            currentUser = userName;
+            isAdmin = list.IsAdmin(userName);
         }
 
         /*
@@ -86,10 +92,18 @@ namespace LIFES.UserInterfaces
          */
         private void CreateUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateUserForm createUser = new CreateUserForm();
-            createUser.Owner = this;
-            createUser.StartPosition = FormStartPosition.CenterScreen;
-            createUser.ShowDialog();
+            if (isAdmin)
+            {
+                //DO stuff
+                CreateUserForm createUser = new CreateUserForm();
+                createUser.Owner = this;
+                createUser.StartPosition = FormStartPosition.CenterScreen;
+                createUser.ShowDialog();
+            }
+            else
+            {
+                //adminToolStripMenuItem.BackColor = Color.Gray;
+            }
         }
 
         /*
@@ -104,10 +118,17 @@ namespace LIFES.UserInterfaces
         */
         void DeleteUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DeleteUserForm deleteUserForm = new DeleteUserForm();
-            deleteUserForm.Owner = this;
-            deleteUserForm.StartPosition = FormStartPosition.CenterScreen;
-            deleteUserForm.ShowDialog();
+            if (isAdmin)
+            {
+                DeleteUserForm deleteUserForm = new DeleteUserForm();
+                deleteUserForm.Owner = this;
+                deleteUserForm.StartPosition = FormStartPosition.CenterScreen;
+                deleteUserForm.ShowDialog();
+            }
+            else
+            {
+                //adminToolStripMenuItem.BackColor = Color.Gray;
+            }
         }
 
         /*

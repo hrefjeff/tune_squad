@@ -85,9 +85,7 @@ namespace LIFES.UserInterfaces
             {
                 MessageBox.Show("Login Success");
                 this.Hide();
-                MainGUI resetForm = new MainGUI("null");
-                //resetForm.Owner = this;
-               // resetForm.StartPosition = FormStartPosition.CenterScreen;
+                MainGUI resetForm = new MainGUI("userName");
             }
 
             else 
