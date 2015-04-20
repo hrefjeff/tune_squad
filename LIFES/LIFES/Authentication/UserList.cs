@@ -88,7 +88,6 @@ namespace LIFES.Authentication
 
             //Adds the field for number of attempts.
             line = line + " 0";
-            int j = 0;
 
             //Inputs the User to Document.
             RemoveEncryption(@ioFile);

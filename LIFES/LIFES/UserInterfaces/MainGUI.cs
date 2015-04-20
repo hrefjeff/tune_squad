@@ -42,7 +42,21 @@ namespace LIFES.UserInterfaces
             this.Hide();
             loginGUI.StartPosition = FormStartPosition.CenterScreen;
             loginGUI.ShowDialog();
-            this.Show();
+            //this.Show();
+        }
+        /*
+        * Method: Constructer
+        * Parameters: string null
+        * Output: N/A
+        * Created By:Jordan Beck
+        * Date: 4/20/2015
+        * Modified By: Jordan Beck
+        * 
+        * Description: Opens the Gui Core without the login 
+        */
+        public MainGUI(string a)
+        {
+            //Empty
         }
 
         /*
