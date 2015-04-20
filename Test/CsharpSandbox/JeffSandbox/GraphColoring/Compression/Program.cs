@@ -33,7 +33,8 @@ namespace Compression
         {
 
             string filename;
-            filename = "C:\\Users\\elJeffeh\\fall_sched.csv";
+            //filename = "C:\\Users\\elJeffeh\\spring_sched.csv";
+            filename = "C:\\Users\\elJeffeh\\SmallTestDoc-Good.csv";
 
             ClassScheduleFileLoader classScheduleFile = new ClassScheduleFileLoader(filename);
 
@@ -95,6 +96,7 @@ namespace Compression
             for (int i = 0; i < numOfRows; i++)
                 Console.WriteLine("Class " + i + ": " + classSchedules[i].color);
 
+            // initilize list by adding first class to it
             List<CompressedClasses> listOfCompressedClasses = new List<CompressedClasses>();
             CompressedClasses initClassList = new CompressedClasses();
             initClassList.classColor = classSchedules[0].color;
@@ -102,8 +104,9 @@ namespace Compression
             listOfCompressedClasses.Add(initClassList);
 
             bool addedToList = false;
-            // compress
-            for (int j = 0; j < numOfRows; j++)
+
+            // compress, starting from 2nd class
+            for (int j = 1; j < numOfRows; j++)
             {
                 for (int k = 0; k < listOfCompressedClasses.Count; k++)
                 {
@@ -120,18 +123,19 @@ namespace Compression
                     newClassList.classColor = classSchedules[j].color;
                     newClassList.insertClass(classSchedules[j]);
                     listOfCompressedClasses.Add(newClassList);
-                    addedToList = false;
                 }
+                addedToList = false;
             }
 
             for (int i = 0; i < listOfCompressedClasses.Count; i++)
             {
                 Console.WriteLine("List " + i + " contains:");
                 for (int j = 0; j < listOfCompressedClasses[i].listOfClasses.Count; j++)
-                    Console.WriteLine("\t" + listOfCompressedClasses[i].listOfClasses[j]);
+                    Console.WriteLine("\t" + listOfCompressedClasses[i].listOfClasses[j].meetingDay);
 
             }
 
+            Console.WriteLine(filename);
             for (int i = 0; i < listOfCompressedClasses.Count; i++)
                 listOfCompressedClasses[i].summary(i);
 
