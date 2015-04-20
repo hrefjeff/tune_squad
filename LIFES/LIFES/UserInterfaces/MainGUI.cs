@@ -37,6 +37,12 @@ namespace LIFES.UserInterfaces
         public MainGUI()
         {
             InitializeComponent();
+
+            LoginForm loginGUI = new LoginForm();
+            this.Hide();
+            loginGUI.StartPosition = FormStartPosition.CenterScreen;
+            loginGUI.ShowDialog();
+            this.Show();
         }
 
         /*
