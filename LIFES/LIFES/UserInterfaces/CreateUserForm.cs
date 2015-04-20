@@ -87,11 +87,25 @@ namespace LIFES.UserInterfaces
                     {
                         if (passwordTextBox.Text.Equals(confirmTextBox.Text))
                         {
-                            users.AddUser(userNameTextBox.Text, 
-                                passwordTextBox.Text, true);
+                            if (adminRadioButton.Checked)
+                            {
 
-                            MessageBox.Show(userNameTextBox.Text + " added", 
-                                "User Added");
+                                users.AddUser(userNameTextBox.Text,
+                                    passwordTextBox.Text, true);
+
+                                MessageBox.Show(userNameTextBox.Text + " added",
+                                    "User Added");
+                            }
+
+                            else if (generalRadioButton.Checked)
+                            {
+                                users.AddUser(userNameTextBox.Text,
+                                    passwordTextBox.Text, false);
+
+                                MessageBox.Show(userNameTextBox.Text + " added",
+                                    "User Added");
+                            }
+
                         }
                         else
                         {
@@ -112,7 +126,7 @@ namespace LIFES.UserInterfaces
             {
                 MessageBox.Show("Must use a UNA email");
             }
-            
+
         }
     }
 }
