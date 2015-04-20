@@ -46,7 +46,9 @@ namespace LIFES.Authentication
             FileStream file = new FileStream(@ioFile, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
             file.Close();
             //Default Admin used for adding the first admin.
-            AddUser("AlanTuring@una.edu", "a06231912", true);
+            AddUser("AlanTuring", "06231912", true);
+            //We dont want the default to fit the standard
+            //Makes it more complicated to in a brute force attempt.
         }
 
         /*
