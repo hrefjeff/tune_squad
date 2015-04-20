@@ -85,7 +85,7 @@ namespace LIFES.UserInterfaces
             {
                 MessageBox.Show("Login Success");
                 this.Hide();
-                MainGUI resetForm = new MainGUI("userName");
+                MainGUI resetForm = new MainGUI(userName);
             }
 
             else 

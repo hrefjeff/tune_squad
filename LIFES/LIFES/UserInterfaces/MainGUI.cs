@@ -27,7 +27,7 @@ namespace LIFES.UserInterfaces
      * 
      * Author: Riley Smith
      * Date: 3/24/2015
-     * Modified by: Riley Smith
+     * Modified by: Jordan Beck
      * 
      * Description: This is the driver class for the MainGUI Window.
      * 
@@ -37,6 +37,7 @@ namespace LIFES.UserInterfaces
     {
         bool isAdmin = false;
         string currentUser = "";
+
         public MainGUI()
         {
             InitializeComponent();
@@ -102,7 +103,7 @@ namespace LIFES.UserInterfaces
             }
             else
             {
-                //adminToolStripMenuItem.BackColor = Color.Gray;
+                MessageBox.Show("User is not an Admin");
             }
         }
 
@@ -127,7 +128,7 @@ namespace LIFES.UserInterfaces
             }
             else
             {
-                //adminToolStripMenuItem.BackColor = Color.Gray;
+                MessageBox.Show("User is not an Admin");
             }
         }
 
@@ -204,7 +205,7 @@ namespace LIFES.UserInterfaces
             }
             else
             {
-                //adminToolStripMenuItem.BackColor = Color.Gray;
+                MessageBox.Show("User is not an Admin");
             }
             // Needs to be added
         }
@@ -302,7 +303,7 @@ namespace LIFES.UserInterfaces
             }
             else
             {
-                Visible = false;
+                MessageBox.Show("User is not an Admin");
             }
         }
 
