@@ -198,6 +198,14 @@ namespace LIFES.UserInterfaces
          */
         void FinalizeScheduleToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (isAdmin)
+            {
+
+            }
+            else
+            {
+                //adminToolStripMenuItem.BackColor = Color.Gray;
+            }
             // Needs to be added
         }
 
@@ -285,10 +293,17 @@ namespace LIFES.UserInterfaces
          */
         void ResetPasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ResetPasswordForm resetForm = new ResetPasswordForm();
-            resetForm.Owner = this;
-            resetForm.StartPosition = FormStartPosition.CenterScreen;
-            resetForm.ShowDialog();
+            if (isAdmin)
+            {
+                ResetPasswordForm resetForm = new ResetPasswordForm();
+                resetForm.Owner = this;
+                resetForm.StartPosition = FormStartPosition.CenterScreen;
+                resetForm.ShowDialog();
+            }
+            else
+            {
+                Visible = false;
+            }
         }
 
         /*
