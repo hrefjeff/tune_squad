@@ -19,21 +19,25 @@ namespace Compression
         //====================BEGIN GRAPH COLORING==============
         public static int MAX = 100;
         static int[] degreeOfVertice = new int[MAX];
-        static int[] color = new int[MAX];
-        static int[] NN = new int[MAX];
-        static int NNCount = 0;
-        static int unprocessed = 0;
         static Matrix conflictMatrix = new Matrix(0,0);
+        static List<ClassSchedule> classSchedules;
+        static int numOfRows;
+        static int numOfCols;
+        static int numOfColors;
+
+        static int[] color_list = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,
+                                  31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,
+                                  61,62,63,64,65,66,67,68,69,70};
 
         static void Main(string[] args)
         {
 
             string filename;
-            filename = "C:\\Users\\elJeffeh\\SmallTestDoc-Good.csv";
+            filename = "C:\\Users\\elJeffeh\\fall_sched.csv";
 
             ClassScheduleFileLoader classScheduleFile = new ClassScheduleFileLoader(filename);
 
-            List<ClassSchedule> classSchedules = classScheduleFile.getClassSchedules();
+            classSchedules = classScheduleFile.getClassSchedules();
 
             // test
             //Course fCourse = new Course("MWF","0800","0850",30);
@@ -44,8 +48,6 @@ namespace Compression
             // Read in classes
             //listOfCourses.Add(fCourse);
             //listOfCourses.Add(sCourse);
-
-            int numOfRows, numOfCols;
 
             numOfRows = classSchedules.Count;
             numOfCols = classSchedules.Count;
@@ -81,96 +83,107 @@ namespace Compression
 
             conflictMatrix.printMatrix();
 
-            
-
             // Begin graph coloring 
 
-            int V = classSchedules.Count;
+            // initialize schedule colors
+            for (int i = 0; i < numOfRows; i++)
+                classSchedules[i].color = -1;
 
-            for (int i = 0; i < V; i++)
+            greedy();
+
+            // display sched colors
+            for (int i = 0; i < numOfRows; i++)
+                Console.WriteLine("Class " + i + ": " + classSchedules[i].color);
+
+            List<CompressedClasses> listOfCompressedClasses = new List<CompressedClasses>();
+            CompressedClasses initClassList = new CompressedClasses();
+            initClassList.classColor = classSchedules[0].color;
+            initClassList.insertClass(classSchedules[0]);
+            listOfCompressedClasses.Add(initClassList);
+
+            bool addedToList = false;
+            // compress
+            for (int j = 0; j < numOfRows; j++)
             {
-                color[i] = 0;
-                degreeOfVertice[i] = 0;
-
-                for (int j = 0; j < V; j++)
+                for (int k = 0; k < listOfCompressedClasses.Count; k++)
                 {
-                    if (conflictMatrix[i, j] > 1)
+                    if (classSchedules[j].color == listOfCompressedClasses[k].classColor)
                     {
-                        degreeOfVertice[i] = degreeOfVertice[i] + 1;
+                        listOfCompressedClasses[k].insertClass(classSchedules[j]);
+                        addedToList = true;
                     }
+                }
+
+                if (!addedToList)
+                {
+                    CompressedClasses newClassList = new CompressedClasses();
+                    newClassList.classColor = classSchedules[j].color;
+                    newClassList.insertClass(classSchedules[j]);
+                    listOfCompressedClasses.Add(newClassList);
+                    addedToList = false;
                 }
             }
 
-            Console.WriteLine();
+            for (int i = 0; i < listOfCompressedClasses.Count; i++)
+            {
+                Console.WriteLine("List " + i + " contains:");
+                for (int j = 0; j < listOfCompressedClasses[i].listOfClasses.Count; j++)
+                    Console.WriteLine("\t" + listOfCompressedClasses[i].listOfClasses[j]);
 
-            for (int j = 0; j < degreeOfVertice.Length; j++)
-                Console.WriteLine(degreeOfVertice[j] + " ");
+            }
 
-            ////////////////NNCount = 0;
-            ////////////////unprocessed = numOfVertices;
+            for (int i = 0; i < listOfCompressedClasses.Count; i++)
+                listOfCompressedClasses[i].summary(i);
 
-            ////////////////Coloring();
-
-            int numOfClasses = numOfRows;
-            int numOfColors = 25;
-            
-                    int[] classArray =  new int[numOfClasses];
- 
-                    // Assign the first color to first vertex
-                    classArray[0]  = 0;
- 
-                    // Initialize remaining V-1 vertices as unassigned
-                    for (int u = 1; u < numOfClasses; u++)
-                        classArray[u] = -1;  // no color is assigned to u
- 
-                    // A temporary array to store the available colors. True
-                    // value of available[cr] would mean that the color cr is
-                    // assigned to one of its adjacent vertices
-                    bool[] available = new bool[numOfColors];
-
-                    for (int cr = 0; cr < numOfColors; cr++)
-                        available[cr] = false;
- 
-                    // Assign colors to remaining V-1 vertices
-                    for (int row = 1; row < numOfClasses; row++)
-                    {
-                        // Process all adjacent vertices and flag their colors
-                        // as unavailable
-                        for (int col = 0; col < numOfClasses; ++col)
-                        {
-                            if (conflictMatrix[row,col] > 0)
-                            {
-                                available[classArray[col]] = true;
-                            }
-                        }
- 
-                        // Find the first available color
-                        int cr;
-
-                        for (cr = 0; cr < numOfVertices; cr++)
-                        {
-                            if (available[cr] == false)
-                                break;
-                        }
- 
-                        result[u] = cr; // Assign the found color
- 
-                        // Reset the values back to false for the next iteration
-                        for (int i = 0; i < numOfVertices; ++i)
-                            if (result[i] != -1)
-                                available[result[i]] = false;
-                    }
- 
-                    // print the result
-                    for (int u = 0; u < numOfCols; u++)
-                        Console.WriteLine("Class " + u + " --->  Color " + result[u]);
-
- 
-            
-
-            Console.WriteLine("here");
             Console.ReadLine();
 
+        }
+
+        //greedy graph coloring algorithm: filling in one color in as many nodes
+        //as possible
+        static void greedy()
+        {
+            short i, j, counter;
+            while (!done()) //while any node remains uncolored
+            {
+                for (i = 0; i < numOfRows; i++)
+                {
+                    if (classSchedules[i].color < 0)	//not colored yet
+                    {
+                        //subscript for colors in adj_colors
+                        counter = 0;
+                        for (j = 0; j < numOfRows; j++)
+                            classSchedules[i].adj_colors[j] = 0;
+                        //load adjacent colors using the input matrix
+                        //and thereby the colors of connected nodes
+                        for (j = 0; j < numOfRows; j++)
+                            if (conflictMatrix[i,j] > 0)
+                                if (classSchedules[j].color > 0)
+                                    classSchedules[i].adj_colors[counter++] = classSchedules[j].color;
+                        //fill color if it is not in adj_colors
+                        if (!find(color_list[numOfColors], classSchedules[i].adj_colors))
+                            classSchedules[i].color = color_list[numOfColors];
+                    }
+                }
+                numOfColors++;	//to next color
+            }
+        }
+
+        static bool done()	//returns true if all nodes have been colored
+        {
+            for(short i = 0; i < numOfRows; i++)
+                if(classSchedules[i].color < 0)
+                    return false;
+            return true;
+        }
+
+        //returns true if color ch is found in the array of adjacent colors
+        static bool find(int color, int[] array)
+        {
+            for (short i = 0; i < numOfRows; i++)
+                if (array[i] == color)
+                    return true;
+            return false;
         }
 
         //////////////===============================FAILED COLORING FUNCTIONS=====================
@@ -462,6 +475,8 @@ namespace Compression
             public int startTime;
             public int endTime;
             public int enrollment;
+            public int color;
+            public int[] adj_colors = new int[1000];
 
             // Constructor.
             public ClassSchedule(string daysOfWeek, int startTime, int classEndTime, int studentsEnrolled)
@@ -470,6 +485,7 @@ namespace Compression
                 setstartTime(startTime);
                 setClassEndTime(classEndTime);
                 setStudentsEnrolled(studentsEnrolled);
+                this.color = -1;
             }
 
             // Day of the week setter.
@@ -620,5 +636,29 @@ namespace Compression
 
                 return lines;
             }
-        }            
+        }
+
+        class CompressedClasses
+        {
+            public int classColor = 0;
+            public List<ClassSchedule> listOfClasses;
+            private int _totalEnrollments;
+            private int _totalNumberOfCourses;
+
+            public CompressedClasses() 
+            {
+                   listOfClasses = new List<ClassSchedule>();
+            }
+
+            public void insertClass(ClassSchedule someCourse)
+            {
+                listOfClasses.Add(someCourse);
+            }
+            
+            public void removeClass() { }
+            public void summary(int index)
+            {
+                Console.WriteLine("List -" + index + "- contains this many classes: " + listOfClasses.Count);
+            }
+        }
 }

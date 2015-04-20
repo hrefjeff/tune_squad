@@ -56,6 +56,7 @@ namespace Compression.Scheduler
         private int _startTime;
         private int _endTime;
         private int _enrollment;
+        private int _color;
 
         public Course(string someDay, string someStartTime, string someEndTime, int enrollment)
         {
@@ -63,6 +64,7 @@ namespace Compression.Scheduler
             _startTime = Convert.ToInt32(someStartTime);
             _endTime = Convert.ToInt32(someEndTime);
             _enrollment = enrollment;
+            _color = -1;
         }
 
         public string meetingDay
@@ -87,6 +89,12 @@ namespace Compression.Scheduler
         {
             get { return _enrollment; }
             set { _enrollment = value; }
+        }
+
+        public int color
+        {
+            get { return _color; }
+            set { _color = value; }
         }
 
     }
