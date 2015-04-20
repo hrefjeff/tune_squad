@@ -66,7 +66,7 @@ namespace LIFES.UserInterfaces
          * Output: N/A
          * Created By: Scott Smoke
          * Date: 4/12/2015
-         * Modified By: Scott Smoke
+         * Modified By: JordanB Beck
          * 
          * Description: This will grab the username and password
          * from their respective text boxes and see if they are valid. 
@@ -84,6 +84,10 @@ namespace LIFES.UserInterfaces
             if (users.TestPassword(userName, pwd))
             {
                 MessageBox.Show("Login Success");
+                this.Hide();
+                MainGUI resetForm = new MainGUI("null");
+                //resetForm.Owner = this;
+               // resetForm.StartPosition = FormStartPosition.CenterScreen;
             }
 
             else 
