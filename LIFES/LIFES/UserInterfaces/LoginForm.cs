@@ -34,6 +34,8 @@ namespace LIFES.UserInterfaces
         [DllImport("user32")]
         static extern bool AnimateWindow(IntPtr hwnd, int time, int flags);
 
+        private bool isAdmin;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -84,8 +86,9 @@ namespace LIFES.UserInterfaces
             if (users.TestPassword(userName, pwd))
             {
                 MessageBox.Show("Login Success");
-                this.Hide();
-                MainGUI resetForm = new MainGUI(userName);
+                isAdmin = users.IsAdmin(userName);
+
+                this.Close();
             }
 
             else 
@@ -93,6 +96,11 @@ namespace LIFES.UserInterfaces
                 MessageBox.Show("Login Failed");
             }
 
+        }
+
+        public bool GetAdmin()
+        {
+            return isAdmin;
         }
     }
 }

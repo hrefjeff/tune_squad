@@ -35,18 +35,26 @@ namespace LIFES.UserInterfaces
      */
     public partial class MainGUI : Form
     {
-        bool isAdmin = false;
-        string currentUser = "";
+        private string currentUser = "";
 
         public MainGUI()
         {
             InitializeComponent();
 
             LoginForm loginGUI = new LoginForm();
+      
             this.Hide();
+
             loginGUI.StartPosition = FormStartPosition.CenterScreen;
             loginGUI.ShowDialog();
-            //this.Show();
+            this.Show();
+
+            if (!loginGUI.GetAdmin())
+            {
+                adminToolStripMenuItem.Visible = false;
+            }
+
+            
         }
         /*
         * Method: Constructer
@@ -58,6 +66,8 @@ namespace LIFES.UserInterfaces
         * 
         * Description: Opens the Gui Core without the login 
         */
+
+        /*
         public MainGUI(string userName)
         {
             // Creates the Current User
@@ -65,6 +75,7 @@ namespace LIFES.UserInterfaces
             currentUser = userName;
             isAdmin = list.IsAdmin(userName);
         }
+         */ 
 
         /*
         * Method: CloseToolStripMenuItem_Click
@@ -93,18 +104,13 @@ namespace LIFES.UserInterfaces
          */
         private void CreateUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (isAdmin)
-            {
+         
                 //DO stuff
                 CreateUserForm createUser = new CreateUserForm();
                 createUser.Owner = this;
                 createUser.StartPosition = FormStartPosition.CenterScreen;
                 createUser.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("User is not an Admin");
-            }
+       
         }
 
         /*
@@ -119,17 +125,12 @@ namespace LIFES.UserInterfaces
         */
         void DeleteUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (isAdmin)
-            {
+          
                 DeleteUserForm deleteUserForm = new DeleteUserForm();
                 deleteUserForm.Owner = this;
                 deleteUserForm.StartPosition = FormStartPosition.CenterScreen;
                 deleteUserForm.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("User is not an Admin");
-            }
+          
         }
 
         /*
@@ -199,16 +200,14 @@ namespace LIFES.UserInterfaces
          */
         void FinalizeScheduleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (isAdmin)
-            {
-
-            }
-            else
-            {
+       
+           
                 MessageBox.Show("User is not an Admin");
-            }
+            
             // Needs to be added
         }
+
+       
 
         /*
          * Method: LoginToolStripMenuItem_Click
@@ -228,6 +227,16 @@ namespace LIFES.UserInterfaces
             loginGUI.StartPosition = FormStartPosition.CenterScreen;
             loginGUI.ShowDialog();
             this.Show();
+
+            if (!loginGUI.GetAdmin())
+            {
+                adminToolStripMenuItem.Visible = false;
+            }
+
+            else
+            {
+                adminToolStripMenuItem.Visible = true;
+            }
         }
 
         /*
@@ -294,17 +303,12 @@ namespace LIFES.UserInterfaces
          */
         void ResetPasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (isAdmin)
-            {
+           
                 ResetPasswordForm resetForm = new ResetPasswordForm();
                 resetForm.Owner = this;
                 resetForm.StartPosition = FormStartPosition.CenterScreen;
                 resetForm.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("User is not an Admin");
-            }
+           
         }
 
         /*
