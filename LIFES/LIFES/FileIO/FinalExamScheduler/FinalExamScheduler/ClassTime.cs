@@ -23,19 +23,15 @@ namespace FinalExamScheduler
 
         /*
          * Method Name: ClassTime
-         * Parameters: dayOfTheWeek    - The number of days that the given 
-         *                               class takes place.
-         *             
-         *             classStartTime  - The time in which the class starts.
-         *            
-         *             classEndTime    - The time in which the class ends.
-         *             
-         *             studentsEnrolled- The number of students enrolled in 
-         *                               this class.
-         *             
-         * Output: No explicit output.
-         * Author: Joshua Ford.
-         * Date: 3/28/15
+         * Parameters:  dayOfTheWeek    - The number of days that the given 
+         *                                class takes place.            
+         *              classStartTime  - The time in which the class starts.          
+         *              classEndTime    - The time in which the class ends.          
+         *              studentsEnrolled- The number of students enrolled in 
+         *                                this class.            
+         * Return:      No explicit output.
+         * Author:      Joshua Ford.
+         * Date:        3/28/15
          * Modified By: Joshua Ford.
          * Description: This is the constructor: Checks line for correct 
          *              class data.
@@ -85,37 +81,85 @@ namespace FinalExamScheduler
             this.ownedBy = "NA";
         }
 
-        // Setter for OwnedBy.
-        public void setOwnedBy(String _ownedBy)
+        /*
+         * Method Name: setOwnedBy
+		 * Parameters:  ownedBy	- Class variable, ownedBy.
+		 * Return:      None
+		 * Author:      Joshua Ford
+		 * Date:        3/28/15
+		 * Modified by: Joshua Ford
+		 * Description: Mutator for the class variable, ownedBy.
+		 */
+        public void setOwnedBy(String ownedBy)
         {
-            this.ownedBy = _ownedBy;
+            this.ownedBy = ownedBy;
         }
 
-        // Getter for DayOfTheWeek.
+		/*
+		 * Method Name: getDayOfTheWeek
+		 * Parameters:  None
+		 * Return:      dayOfTheWeek	- Gets class variable, dayOfTheWeek. 
+		 * Author:      Joshua Ford
+		 * Date:        3/28/15
+		 * Modified by: Joshua Ford
+		 * Description: Accessor for class variable, dayOfTheWeek.
+		 */
         public String getDayOfTheWeek()
         {
             return dayOfTheWeek;
         }
 
-        // Getter for ClassStartTime.
+		/*
+		 * Method Name: getClassStartTime
+		 * Parameters:  None
+		 * Return:      classStartTime	- Gets class variable, classStartTime. 
+		 * Author:      Joshua Ford
+		 * Date:        3/28/15
+		 * Modified by: Joshua Ford
+		 * Description: Accessor for class variable, classStartTime.
+		 */
         public int getClassStartTime()
         {
             return classStartTime;
         }
 
-        // Getter for ClassEndTime.
+		/*
+		 * Method Name: getClassEndTime
+		 * Parameters:  None
+		 * Return:      classEndTime	- Gets class variable, classEndTime. 
+		 * Author:      Joshua Ford
+		 * Date:        3/28/15
+		 * Modified by: Joshua Ford
+		 * Description: Accessor for class variable, classEndTime.
+		 */
         public int getClassEndTime()
         {
             return classEndTime;
         }
 
-        // Getter for StudentsEnrolled.
+		/*
+		 * Method Name: getStudentsEnrolled
+		 * Parameters:  None
+		 * Return:      studentsEnrolled	- Gets class variable, studentsEnrolled. 
+		 * Author:      Joshua Ford
+		 * Date:        3/28/15
+		 * Modified by: Joshua Ford
+		 * Description: Accessor for class variable, studentsEnrolled.
+		 */
         public int getStudentsEnrolled()
         {
             return studentsEnrolled;
         }
 
-        // Getter for OwnedBy.
+		/*
+		 * Method Name: getOwnedby
+		 * Parameters:  None
+		 * Return:      ownedBy	- Gets class variable, ownedBy. 
+		 * Author:      Joshua Ford
+		 * Date:        3/28/15
+		 * Modified by: Joshua Ford
+		 * Description: Accessor for class variable, ownedBy.
+		 */
         public String getOwnedBy()
         {
             return ownedBy;
