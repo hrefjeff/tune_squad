@@ -74,7 +74,7 @@ namespace FinalExamScheduler
             }
             else if (classEndTime - classStartTime >= 150)
             {
-                throw new Exception("Warning - This lab class time will not be"
+                throw new Exception("Warning - This lab time will not be"
                     + " included in the compression");
             }
 

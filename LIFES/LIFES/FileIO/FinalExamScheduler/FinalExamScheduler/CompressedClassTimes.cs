@@ -4,7 +4,6 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Collections;
 
-
 namespace FinalExamScheduler
 {
     /*
@@ -43,6 +42,7 @@ namespace FinalExamScheduler
             // Creates a temparary Dict to hold the compressed day and time.
             var tmpCompressedClassTimes = new Dictionary<String, 
                 CompressedClassTime>();
+            int warning = 0;
 
 
 
@@ -125,6 +125,8 @@ namespace FinalExamScheduler
                                 }
                                 else
                                 {
+                                    warning++;
+                                    
                                     warningList.Add(e.Message
                                         + " on line " + lineCounter);
 
@@ -140,6 +142,7 @@ namespace FinalExamScheduler
                             + lineCounter + "\"" + line + "\"");
                     }
                 }
+                Console.WriteLine("\nThere were " + warning + " warnings caught in this file.\n"  );
             }
 
             // Create and populate compressedClassTimes with values from 
@@ -161,20 +164,45 @@ namespace FinalExamScheduler
                 c.getTotalStudentsEnrolled() == 0);
 
         }
-        // Getter for compressedClassTimes.
+        
+        /*
+         * Method Name: getCompressedClassTimes
+         * Parameters:  None
+         * Return:      compressedClassTimes - Gets class variable. 
+         * Author:      Joshua Ford
+         * Date:        3/28/15
+         * Modified by: Joshua Ford
+         * Description: Accessor for compressedClassTimes variable.
+         */
         public List<CompressedClassTime> getCompressedClassTimes()
         {
             return compressedClassTimes;
         }
 
-        // Getter for errorsList.
-        public ArrayList getErrorList(ArrayList errorList)
+        /*
+         * Method Name: getErrorList
+         * Parameters:  None.
+         * Return:      errorList   - Gets class variable, errorList.
+         * Author:      Joshua Ford
+         * Date:        4/19/15
+         * Modified by: Joshua Ford
+         * Description: Accessor for errorList variable.
+         */
+        public ArrayList getErrorList()
         {
             return errorList;
         }
 
-        // Getter for errorsList.
-        public ArrayList getWarningList(ArrayList warningList)
+        /*
+         * Method Name: getWarningList
+         * Parameters:  None
+         * Return:      warningList - Gets class variable, warningList. 
+         * Author:      Joshua Ford
+         * Date:        4/19/15
+         * Modified by: Joshua Ford
+         * Description: Accessor for warningList variable.
+         */
+        public ArrayList getWarningList()
         {
             return warningList;
         }
