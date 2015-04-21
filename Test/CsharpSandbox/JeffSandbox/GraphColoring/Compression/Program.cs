@@ -150,7 +150,7 @@ namespace Compression
         //as possible
         static void greedy()
         {
-            short i, j, counter;
+            int i, j, k, counter;
             while (!done()) //while any node remains uncolored
             {
                 for (i = 0; i < numOfRows; i++)
@@ -161,13 +161,20 @@ namespace Compression
                         counter = 0;
                         for (j = 0; j < numOfRows; j++)
                             classSchedules[i].adj_colors[j] = 0;
+
                         //load adjacent colors using the input matrix
                         //and thereby the colors of connected nodes
-                        for (j = 0; j < numOfRows; j++)
+                        for (k = 0; k < numOfRows; k++)
                         {
-                            if (conflictMatrix[i, j] > 0)
-                                if (classSchedules[j].color > 0)
-                                    classSchedules[i].adj_colors[counter++] = classSchedules[j].color;
+                            // if class sched conflicts with other
+                            if (conflictMatrix[i, k] > 0)
+                            {
+                                // if other class sched is colored
+                                if (classSchedules[k].color >= 0)
+                                {
+                                    classSchedules[i].adj_colors[counter++] = classSchedules[k].color;
+                                }
+                            }
                         }
 
                         //fill color if it is not in adj_colors
@@ -187,10 +194,10 @@ namespace Compression
             return true;
         }
 
-        //returns true if color ch is found in the array of adjacent colors
+        //returns true if color is found in the array of adjacent colors
         static bool find(int color, int[] array)
         {
-            for (short i = 0; i < numOfRows; i++)
+            for (int i = 0; i < numOfRows; i++)
                 if (array[i] == color)
                     return true;
             return false;
