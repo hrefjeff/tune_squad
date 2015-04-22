@@ -39,44 +39,8 @@ namespace LIFES.UserInterfaces
 
         public MainGUI()
         {
-            InitializeComponent();
-
-            LoginForm loginGUI = new LoginForm();
-      
-            this.Hide();
-
-            loginGUI.StartPosition = FormStartPosition.CenterScreen;
-            loginGUI.ShowDialog();
-            this.Show();
-
-            if (!loginGUI.GetAdmin())
-            {
-                adminToolStripMenuItem.Visible = false;
-            }
-
-            
+            InitializeComponent();        
         }
-        /*
-        * Method: Constructer
-        * Parameters: string null
-        * Output: N/A
-        * Created By:Jordan Beck
-        * Date: 4/20/2015
-        * Modified By: Jordan Beck
-        * 
-        * Description: Opens the Gui Core without the login 
-        */
-
-        /*
-        public MainGUI(string userName)
-        {
-            // Creates the Current User
-            UserList list = new UserList();
-            currentUser = userName;
-            isAdmin = list.IsAdmin(userName);
-        }
-         */ 
-
         /*
         * Method: CloseToolStripMenuItem_Click
         * Parameters: object sender, EventArgs e
@@ -215,28 +179,17 @@ namespace LIFES.UserInterfaces
          * Output: N/A
          * Created By: Riley Smith
          * Date: 3/26/2015
-         * Modified By: Riley Smith
+         * Modified By: Scott Smoke
          * 
          * Description: Event handler for the menu button Login. 
          */
         void LoginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LoginForm loginGUI = new LoginForm();
-            loginGUI.Owner = this;
+            LoginForm loginGUI = new LoginForm(this, adminToolStripMenuItem);
             this.Hide();
             loginGUI.StartPosition = FormStartPosition.CenterScreen;
             loginGUI.ShowDialog();
-            this.Show();
-
-            if (!loginGUI.GetAdmin())
-            {
-                adminToolStripMenuItem.Visible = false;
-            }
-
-            else
-            {
-                adminToolStripMenuItem.Visible = true;
-            }
+            
         }
 
         /*
@@ -434,10 +387,25 @@ namespace LIFES.UserInterfaces
             //word.Visible = true;
             Process.Start(@"C:\\Users\\eljeffeh\\UserManualLIFESV2test.pdf");
         }
-     
+       /*
+        * Method: MainGUI_Load
+        * Parameters: object sender, EventArgs e
+        * Output: N/A
+        * Created By: Scott Smoke
+        * Date: 4/21/2015
+        * Modified By: Scott Smoke
+        * 
+        * Description: This will launch the log in form when the application launches.
+        */ 
         private void MainGUI_Load(object sender, EventArgs e)
         {
+            LoginForm loginGUI = new LoginForm(this,adminToolStripMenuItem);
+            //hides the main interface
+            this.Hide();
+            loginGUI.StartPosition = FormStartPosition.CenterScreen;
+            loginGUI.ShowDialog();
 
+           
         }
 
     }
