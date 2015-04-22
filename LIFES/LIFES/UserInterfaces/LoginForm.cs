@@ -34,11 +34,17 @@ namespace LIFES.UserInterfaces
         [DllImport("user32")]
         static extern bool AnimateWindow(IntPtr hwnd, int time, int flags);
 
-        private bool isAdmin;
+        Form callingForm;
 
-        public LoginForm()
+        private bool isAdmin;
+        ToolStripMenuItem adminMenu;
+        private bool logedIn = false;
+
+        public LoginForm(Form owner, ToolStripMenuItem admin )
         {
             InitializeComponent();
+            callingForm = owner;
+            adminMenu = admin;
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -87,8 +93,21 @@ namespace LIFES.UserInterfaces
             {
                 MessageBox.Show("Login Success");
                 isAdmin = users.IsAdmin(userName);
-
+                if (isAdmin)
+                {
+                    adminMenu.Visible = true;
+                    callingForm.Show();
+                    logedIn = true;
+                }
+                else
+                {
+                    callingForm.Show();
+                    adminMenu.Visible = false;
+                    logedIn = true;
+                    
+                }
                 this.Close();
+                
             }
 
             else 
@@ -101,6 +120,26 @@ namespace LIFES.UserInterfaces
         public bool GetAdmin()
         {
             return isAdmin;
+        }
+        /*
+         * Method: LoginForm_FormClosing
+         * Parameters: object sender, FormClosingEventArgs e
+         * Output : N/A
+         * Created By: Scott Smoke
+         * Date: 4/21/2015
+         * Modified By: Scott Smoke
+         * 
+         * Description: This methode will close the main interface if the user has clicked
+         * on the red x.
+         */ 
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!logedIn)
+            {
+                callingForm.Close();
+            }
+            
+            //this.Close();
         }
     }
 }
