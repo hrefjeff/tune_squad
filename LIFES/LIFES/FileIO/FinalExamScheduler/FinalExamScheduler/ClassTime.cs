@@ -68,9 +68,9 @@ namespace FinalExamScheduler
             {
                 throw new Exception("Error - Students Enrolled Less Than 1");
             }
-            else if (classEndTime - classStartTime >= 150)
+            else if (!sd.Success)
             {
-                throw new Exception("Warning - This lab time will not be"
+                throw new Exception("Warning - This class time will not be"
                     + " included in the compression");
             }
 
