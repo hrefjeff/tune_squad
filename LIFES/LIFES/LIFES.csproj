@@ -99,6 +99,9 @@
   <ItemGroup>
     <Compile Include="Authentication\Encryption.cs" />
     <Compile Include="Authentication\UserList.cs" />
+    <Compile Include="FileIO\ClassTime.cs" />
+    <Compile Include="FileIO\CompressedClassTime.cs" />
+    <Compile Include="FileIO\CompressedClassTimes.cs" />
     <Compile Include="FileIO\FileOut.cs" />
     <Compile Include="FileIO\FileIn.cs" />
     <Compile Include="Globals.cs" />
