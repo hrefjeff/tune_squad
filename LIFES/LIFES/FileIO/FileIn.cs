@@ -18,7 +18,7 @@ namespace LIFES.FileIO
     class FileIn
     {
         // Class variable.
-        private string[] lines;
+        private string[] lines = null;
         private ArrayList errors = new ArrayList();
 
         /*
@@ -62,59 +62,66 @@ namespace LIFES.FileIO
         private bool IsValidConstraintsFile()
         {
             bool good = true;
-
-            for (int i = 0; i < lines.Length; i++)
+            if (lines != null)
             {
-                if (!isFileAllDigit(i))
-                {
-                    good = false;
-                }
 
-                else if (i == 0)
+                for (int i = 0; i < lines.Length; i++)
                 {
-                    if (lines[i] != "3" && lines[i] != "4" && lines[i] != "5")
+                    if (!isFileAllDigit(i))
                     {
-                        
-                        errors.Add("Error on line 1: Incorrect number"
-                        + " of day choice.");
                         good = false;
                     }
-                }
 
-                else if (i == 1)
-                {
-                    if (lines[i] != "0700")
+                    else if (i == 0)
                     {
-                       
-                        errors.Add("Error on line 2: Incorrect start"
-                        + " time for final exams.");
-                        good = false;
+                        if (lines[i] != "3" && lines[i] != "4" && lines[i] != "5")
+                        {
+
+                            errors.Add("Error on line 1: Incorrect number"
+                            + " of day choice.");
+                            good = false;
+                        }
+                    }
+
+                    else if (i == 1)
+                    {
+                        if (lines[i] != "0700")
+                        {
+
+                            errors.Add("Error on line 2: Incorrect start"
+                            + " time for final exams.");
+                            good = false;
+                        }
+                    }
+
+                    else if (i == 2)
+                    {
+                        if (Convert.ToInt16(lines[i]) < 75 ||
+                            Convert.ToInt16(lines[i]) > 300)
+                        {
+
+                            errors.Add("Error on line 3: Incorrect exam"
+                            + " time.");
+                            good = false;
+                        }
+                    }
+
+                    else if (i == 3)
+                    {
+                        if (Convert.ToInt16(lines[i]) < 10 ||
+                            Convert.ToInt16(lines[i]) > 30)
+                        {
+
+                            errors.Add("Error on line 4: Incorrect time"
+                            + " between final exams.");
+                            good = false;
+                        }
                     }
                 }
-
-                else if (i == 2)
-                {
-                    if (Convert.ToInt16(lines[i]) < 75 || 
-                        Convert.ToInt16(lines[i]) > 300)
-                    {
-                        
-                        errors.Add("Error on line 3: Incorrect exam"
-                        + " time.");
-                        good = false;
-                    }
-                }
-
-                else if (i == 3)
-                {
-                    if (Convert.ToInt16(lines[i]) < 10 || 
-                        Convert.ToInt16(lines[i]) > 30)
-                    {
-                       
-                        errors.Add("Error on line 4: Incorrect time"
-                        + " between final exams.");
-                        good = false;
-                    }
-                }
+            }
+            else
+            {
+                good = false;
             }
             return good;
         }
@@ -166,7 +173,7 @@ namespace LIFES.FileIO
             }
             else
             {
-                Console.WriteLine("Error, the file contains an incorrect number of lines.");
+                errors.Add("Incorrect File length");
             }
         }
 
