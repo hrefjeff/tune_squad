@@ -205,22 +205,26 @@ namespace LIFES.UserInterfaces
             openFile.Title = "Open Time Constraints Text File";
             openFile.ShowDialog();
             filename = openFile.FileName;
-            FileIn fi = new FileIn(filename);
-            if (fi.GetErrors().Count == 0)
+            if (filename != "")
             {
-                tc = fi.GetTimeConstraints();
-                //putting constraints on the display
-                numDaysTextBox.Text = tc.GetNumberOfDays().ToString();
-                firstExamTimeTextBox.Text = tc.GetStartTime().ToString();
-                lengthOfExamsTextBox.Text = tc.GetLengthOfExams().ToString();
-                lengthBetweenExamsTextBox.Text = tc.GetTimeBetweenExams().ToString();
-                lunchPeriodTextBox.Text = tc.GetLunchPeriod().ToString();
+                FileIn fi = new FileIn(filename);
+                if (fi.GetErrors().Count == 0)
+                {
+                    tc = fi.GetTimeConstraints();
+                    //putting constraints on the display
+                    numDaysTextBox.Text = tc.GetNumberOfDays().ToString();
+                    firstExamTimeTextBox.Text = tc.GetStartTime().ToString();
+                    lengthOfExamsTextBox.Text = tc.GetLengthOfExams().ToString();
+                    lengthBetweenExamsTextBox.Text = tc.GetTimeBetweenExams().ToString();
+                    lunchPeriodTextBox.Text = tc.GetLunchPeriod().ToString();
+                }
+                else
+                {
+                    string errors = Errors(fi.GetErrors());
+                    MessageBox.Show(errors);
+                }
             }
-            else
-            {
-                string errors = Errors(fi.GetErrors());
-                MessageBox.Show(errors);
-            }
+           
             
         }
 
