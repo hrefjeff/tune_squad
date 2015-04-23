@@ -61,6 +61,7 @@ namespace LIFES.UserInterfaces
         {
             AnimateWindow(this.Handle, 200, AW_SLIDE | AW_VER_POSITIVE);
         }
+
         /*
          * Method: CreateUserBttn_Click
          * Paraneters: object sender, EventArgs e
@@ -95,6 +96,11 @@ namespace LIFES.UserInterfaces
 
                                 MessageBox.Show(userNameTextBox.Text + " added",
                                     "User Added");
+
+                                // Reset text boxes.
+                                userNameTextBox.Clear();
+                                passwordTextBox.Clear();
+                                confirmTextBox.Clear();
                             }
 
                             else if (generalRadioButton.Checked)
@@ -104,12 +110,17 @@ namespace LIFES.UserInterfaces
 
                                 MessageBox.Show(userNameTextBox.Text + " added",
                                     "User Added");
+
+                                // Reset text boxes.
+                                userNameTextBox.Clear();
+                                passwordTextBox.Clear();
+                                confirmTextBox.Clear();
                             }
 
                         }
                         else
                         {
-                            MessageBox.Show("Please ensure the passwords match");
+                            MessageBox.Show("Please ensure the passwords match.");
                         }
                     }
                     else
@@ -127,6 +138,26 @@ namespace LIFES.UserInterfaces
                 MessageBox.Show("Must use a UNA email");
             }
 
+        }
+
+        /*
+        * Method: ConfirmTextBox_KeyDown
+        * Paraneters: object sender, EventArgs e
+        * Output: N/A
+        * Created By: Riley Smith
+        * Date: 4/22/2015
+        * Modified By: Riley Smith
+        * 
+        * Description: If the user pressed the enter key while in the 
+        *   confirm password textbox, call the CreateUserBttn_Click function.
+        * 
+        */
+        private void ConfirmTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                CreateUserBttn_Click(sender, e);
+            }
         }
     }
 }

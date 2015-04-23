@@ -110,6 +110,8 @@ namespace LIFES.UserInterfaces
                 tc = t;
 
                 errorProvider1.Clear();
+                MessageBox.Show("Time Constraints Updated");
+                this.Close();
             }
 
             else
@@ -220,8 +222,6 @@ namespace LIFES.UserInterfaces
                 MessageBox.Show(errors);
             }
             
-
-
         }
 
         /*

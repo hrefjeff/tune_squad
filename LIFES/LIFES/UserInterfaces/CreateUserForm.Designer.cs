@@ -33,11 +33,11 @@
             this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.generalRadioButton = new System.Windows.Forms.RadioButton();
+            this.adminRadioButton = new System.Windows.Forms.RadioButton();
             this.createUserButton = new System.Windows.Forms.Button();
             this.confirmTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.adminRadioButton = new System.Windows.Forms.RadioButton();
-            this.generalRadioButton = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,6 +94,29 @@
             this.panel1.Size = new System.Drawing.Size(250, 190);
             this.panel1.TabIndex = 4;
             // 
+            // generalRadioButton
+            // 
+            this.generalRadioButton.AutoSize = true;
+            this.generalRadioButton.Checked = true;
+            this.generalRadioButton.Location = new System.Drawing.Point(21, 154);
+            this.generalRadioButton.Name = "generalRadioButton";
+            this.generalRadioButton.Size = new System.Drawing.Size(62, 17);
+            this.generalRadioButton.TabIndex = 8;
+            this.generalRadioButton.TabStop = true;
+            this.generalRadioButton.Text = "General";
+            this.generalRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // adminRadioButton
+            // 
+            this.adminRadioButton.AutoSize = true;
+            this.adminRadioButton.Location = new System.Drawing.Point(21, 130);
+            this.adminRadioButton.Name = "adminRadioButton";
+            this.adminRadioButton.Size = new System.Drawing.Size(54, 17);
+            this.adminRadioButton.TabIndex = 7;
+            this.adminRadioButton.TabStop = true;
+            this.adminRadioButton.Text = "Admin";
+            this.adminRadioButton.UseVisualStyleBackColor = true;
+            // 
             // createUserButton
             // 
             this.createUserButton.Location = new System.Drawing.Point(130, 142);
@@ -110,6 +133,7 @@
             this.confirmTextBox.Name = "confirmTextBox";
             this.confirmTextBox.Size = new System.Drawing.Size(100, 20);
             this.confirmTextBox.TabIndex = 5;
+            this.confirmTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ConfirmTextBox_KeyDown);
             // 
             // label3
             // 
@@ -120,35 +144,12 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Confirm Password";
             // 
-            // adminRadioButton
-            // 
-            this.adminRadioButton.AutoSize = true;
-            this.adminRadioButton.Location = new System.Drawing.Point(21, 130);
-            this.adminRadioButton.Name = "adminRadioButton";
-            this.adminRadioButton.Size = new System.Drawing.Size(54, 17);
-            this.adminRadioButton.TabIndex = 7;
-            this.adminRadioButton.TabStop = true;
-            this.adminRadioButton.Text = "Admin";
-            this.adminRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // generalRadioButton
-            // 
-            this.generalRadioButton.AutoSize = true;
-            this.generalRadioButton.Checked = true;
-            this.generalRadioButton.Location = new System.Drawing.Point(21, 154);
-            this.generalRadioButton.Name = "generalRadioButton";
-            this.generalRadioButton.Size = new System.Drawing.Size(62, 17);
-            this.generalRadioButton.TabIndex = 8;
-            this.generalRadioButton.TabStop = true;
-            this.generalRadioButton.Text = "General";
-            this.generalRadioButton.UseVisualStyleBackColor = true;
-            // 
             // CreateUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
-            this.ClientSize = new System.Drawing.Size(334, 262);
+            this.ClientSize = new System.Drawing.Size(334, 261);
             this.Controls.Add(this.panel1);
             this.MaximumSize = new System.Drawing.Size(350, 300);
             this.MinimumSize = new System.Drawing.Size(350, 300);

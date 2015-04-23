@@ -148,8 +148,6 @@ namespace LIFES.UserInterfaces
             enrollmentGUI.ShowDialog();
             Globals.year = enrollmentGUI.GetYear();
             //this.Show();
-
-            textTest.Text = "Clicked Total Enrollment Button";
         }
 
         /*
@@ -241,7 +239,6 @@ namespace LIFES.UserInterfaces
             examTable.Rows[0].Cells[0].Value = "Rescheduled First Class Time";
             examTable.Rows[0].Cells[1].Value = "Rescheduled First Exam Time";
 
-            textTest.Text = "Clicked Reschedule Button";
         }
 
         /*
@@ -316,7 +313,6 @@ namespace LIFES.UserInterfaces
             examTable.Rows[0].Cells[0].Value = "First Class Time";
             examTable.Rows[0].Cells[1].Value = "First Exam Time";
 
-            textTest.Text = "Clicked Schedule Button";
         }
         
         /*
@@ -404,8 +400,6 @@ namespace LIFES.UserInterfaces
             this.Hide();
             loginGUI.StartPosition = FormStartPosition.CenterScreen;
             loginGUI.ShowDialog();
-
-           
         }
 
     }

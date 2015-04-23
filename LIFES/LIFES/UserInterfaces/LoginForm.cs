@@ -121,6 +121,7 @@ namespace LIFES.UserInterfaces
         {
             return isAdmin;
         }
+
         /*
          * Method: LoginForm_FormClosing
          * Parameters: object sender, FormClosingEventArgs e
@@ -140,6 +141,26 @@ namespace LIFES.UserInterfaces
             }
             
             //this.Close();
+        }
+
+        /*
+         * Method: PasswordTextBox_KeyDown
+         * Paraneters: object sender, EventArgs e
+         * Output: N/A
+         * Created By: Riley Smith
+         * Date: 4/22/2015
+         * Modified By: Riley Smith
+         * 
+         * Description: If the user pressed the enter key while in the 
+         *   password textbox, call the Login function. 
+         * 
+         */
+        private void PasswordTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Login(sender, e);
+            }
         }
     }
 }

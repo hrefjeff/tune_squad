@@ -48,6 +48,7 @@
             this.usersGridView.Location = new System.Drawing.Point(55, 25);
             this.usersGridView.Name = "usersGridView";
             this.usersGridView.ReadOnly = true;
+            this.usersGridView.RowHeadersVisible = false;
             this.usersGridView.RowHeadersWidth = 40;
             this.usersGridView.Size = new System.Drawing.Size(290, 170);
             this.usersGridView.TabIndex = 0;

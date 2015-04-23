@@ -58,7 +58,6 @@
             this.dayCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textTest = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
@@ -261,7 +260,7 @@
             // 
             this.scheduleButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.scheduleButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scheduleButton.Location = new System.Drawing.Point(663, 463);
+            this.scheduleButton.Location = new System.Drawing.Point(652, 463);
             this.scheduleButton.Margin = new System.Windows.Forms.Padding(4);
             this.scheduleButton.Name = "scheduleButton";
             this.scheduleButton.Size = new System.Drawing.Size(88, 26);
@@ -345,18 +344,6 @@
             this.Column2.HeaderText = "Exam Time";
             this.Column2.Name = "Column2";
             // 
-            // textTest
-            // 
-            this.textTest.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textTest.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textTest.Location = new System.Drawing.Point(242, 463);
-            this.textTest.Margin = new System.Windows.Forms.Padding(4);
-            this.textTest.Name = "textTest";
-            this.textTest.Size = new System.Drawing.Size(226, 25);
-            this.textTest.TabIndex = 7;
-            this.textTest.Text = "Text Area for Testing ";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -387,7 +374,6 @@
             this.ClientSize = new System.Drawing.Size(834, 561);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textTest);
             this.Controls.Add(this.examTable);
             this.Controls.Add(this.enrollmentButton);
             this.Controls.Add(this.timeConstraintsButton);
@@ -422,7 +408,6 @@
         private System.Windows.Forms.Button timeConstraintsButton;
         private System.Windows.Forms.Button enrollmentButton;
         private System.Windows.Forms.DataGridView examTable;
-        private System.Windows.Forms.TextBox textTest;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
