@@ -57,12 +57,6 @@ namespace FinalExamScheduler
                 {
                     lineCounter++;
 
-                    // Ignore the first line of class times file.
-                    if(lineCounter == 1)
-                    {
-                        sr.ReadLine();
-                    }
-
                     // Read one line.
                     String line = sr.ReadLine();
 
