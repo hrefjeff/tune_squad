@@ -91,7 +91,6 @@ namespace LIFES.UserInterfaces
 
             if (users.TestPassword(userName, pwd))
             {
-                MessageBox.Show("Login Success");
                 isAdmin = users.IsAdmin(userName);
                 if (isAdmin)
                 {

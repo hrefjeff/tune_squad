@@ -175,13 +175,14 @@ namespace LIFES.UserInterfaces
                 string[] errors = { "Please Enter All Data Fields", 
                                       "Can Show Array of Strings Here", 
                                       "This is an Example", 
-                                      "Remember to Remove" };
+                                      "Remember to Remove"};
                 string errorMsg = "";
 
                 foreach (string ele in errors)
                     errorMsg += ele + "\n";
 
                 MessageBox.Show(errorMsg, "ERROR");
+                
                 // End of Error Dialog
             }
         }

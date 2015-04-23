@@ -78,7 +78,7 @@ namespace LIFES.UserInterfaces
         private void CreateUserBttn_Click(object sender, EventArgs e)
         {
             Regex emailEx = new Regex("^[a-zA-Z0-9]{1,32}@una.edu$");
-            Regex pwdEx = new Regex("^[a-z]{1}([a-z0-9\\*#\\$]){7,8}$");
+            Regex pwdEx = new Regex("^[a-z]{1}([a-z0-9\\*#\\$]){6,8}$");
             if (emailEx.IsMatch(userNameTextBox.Text))
             {
                 if (userNameTextBox.Text != "" && passwordTextBox.Text != "" &&
