@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace FinalExamScheduler
+namespace LIFES.FileIO
 {
     /*
      * Class Name: ClassTime.cs

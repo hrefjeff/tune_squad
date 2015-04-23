@@ -4,7 +4,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Collections;
 
-namespace FinalExamScheduler
+namespace LIFES.FileIO
 {
     /*
      * Class Name: CompressedClassTimes.cs

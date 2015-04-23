@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using LIFES.FileIO;
 
 namespace LIFES.UserInterfaces
 {
@@ -72,6 +73,8 @@ namespace LIFES.UserInterfaces
             openFile.Title = "Open Total Enrollments File";
             openFile.ShowDialog();
             Globals.totalEnrollemntsFileName = openFile.FileName;
+
+            RunCompression();
         }
 
         /* 
@@ -135,6 +138,17 @@ namespace LIFES.UserInterfaces
         {
             year = comboBox1.SelectedItem.ToString();
             
+        }
+
+        public void RunCompression()
+        {
+            if (Globals.totalEnrollemntsFileName != "")
+            {
+                CompressedClassTimes compressedClassTimes = 
+                    new CompressedClassTimes(Globals.totalEnrollemntsFileName);
+
+                compressedClassTimes.getCompressedClassTimes();
+            }
         }
 
     }

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Collections.Generic;
+using LIFES.FileIO;
 
 namespace LIFES.UserInterfaces
 {
@@ -36,6 +38,8 @@ namespace LIFES.UserInterfaces
         public ViewTotalEnrollmentsForm()
         {
             InitializeComponent();
+
+            FillTable();
         }
 
         /*
@@ -52,6 +56,38 @@ namespace LIFES.UserInterfaces
         protected override void OnLoad(EventArgs e)
         {
             AnimateWindow(this.Handle, 200, AW_CENTER | AW_HOR_POSITIVE);
+        }
+
+        /*
+         * Method: FillTable
+         * Parameters: N/A
+         * Output: N/A
+         * Created By: Riley Smith
+         * Date: 4/13/2015
+         * Modified By: Riley Smith
+         * 
+         * Description: Fills the Users Table with a list of users.
+         */
+        private void FillTable()
+        {
+            if (Globals.totalEnrollemntsFileName != "")
+            {
+                CompressedClassTimes compressedClassTimes =
+                    new CompressedClassTimes(Globals.totalEnrollemntsFileName);
+
+                List<CompressedClassTime> list = compressedClassTimes.getCompressedClassTimes();
+
+                int linenumber = 0;
+                foreach (CompressedClassTime ele in list)
+                {
+                    TimesGridView.Rows.Add();
+                    TimesGridView.Rows[linenumber].Cells[0].Value = ele.getDayOfTheWeek();
+                    TimesGridView.Rows[linenumber].Cells[1].Value = ele.getClassTimeStartHour();
+                    TimesGridView.Rows[linenumber].Cells[2].Value = ele.getTotalStudentsEnrolled();
+
+                    linenumber++;
+                }
+            }
         }
    
     }

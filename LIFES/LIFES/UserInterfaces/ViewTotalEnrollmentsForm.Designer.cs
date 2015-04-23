@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TimesGridView = new System.Windows.Forms.DataGridView();
             this.dayCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enrollmentCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TimesGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // TimesGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TimesGridView.AllowUserToAddRows = false;
+            this.TimesGridView.AllowUserToDeleteRows = false;
+            this.TimesGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TimesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TimesGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dayCol,
             this.classCol,
             this.enrollmentCol});
-            this.dataGridView1.Location = new System.Drawing.Point(35, 40);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(360, 175);
-            this.dataGridView1.TabIndex = 0;
+            this.TimesGridView.Location = new System.Drawing.Point(35, 40);
+            this.TimesGridView.Name = "TimesGridView";
+            this.TimesGridView.ReadOnly = true;
+            this.TimesGridView.Size = new System.Drawing.Size(360, 175);
+            this.TimesGridView.TabIndex = 0;
             // 
             // dayCol
             // 
@@ -81,7 +81,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.TimesGridView);
             this.panel1.Location = new System.Drawing.Point(75, 55);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(430, 250);
@@ -96,7 +96,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ViewTotalEnrollmentsForm";
             this.Text = "Total Enrollments";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TimesGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -104,7 +104,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView TimesGridView;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dayCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn classCol;
