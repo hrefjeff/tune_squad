@@ -223,8 +223,7 @@ namespace LIFES.UserInterfaces
                     string errors = Errors(fi.GetErrors());
                     MessageBox.Show(errors);
                 }
-            }
-           
+            } 
             
         }
 
