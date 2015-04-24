@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.TimesGridView = new System.Windows.Forms.DataGridView();
-            this.dayCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.classCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dayCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classCol = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.enrollmentCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TimesGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +55,18 @@
             this.TimesGridView.Size = new System.Drawing.Size(360, 175);
             this.TimesGridView.TabIndex = 0;
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.TimesGridView);
+            this.panel1.Location = new System.Drawing.Point(75, 55);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(430, 250);
+            this.panel1.TabIndex = 1;
+            // 
             // dayCol
             // 
             this.dayCol.HeaderText = "Day";
@@ -67,6 +79,8 @@
             this.classCol.HeaderText = "Class Time";
             this.classCol.Name = "classCol";
             this.classCol.ReadOnly = true;
+            this.classCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.classCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // enrollmentCol
             // 
@@ -74,18 +88,6 @@
             this.enrollmentCol.HeaderText = "Enrollment";
             this.enrollmentCol.Name = "enrollmentCol";
             this.enrollmentCol.ReadOnly = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.TimesGridView);
-            this.panel1.Location = new System.Drawing.Point(75, 55);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(430, 250);
-            this.panel1.TabIndex = 1;
             // 
             // ViewTotalEnrollmentsForm
             // 
@@ -107,7 +109,7 @@
         private System.Windows.Forms.DataGridView TimesGridView;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dayCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn classCol;
+        private System.Windows.Forms.DataGridViewComboBoxColumn classCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentCol;
     }
 }

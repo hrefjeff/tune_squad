@@ -85,6 +85,8 @@ namespace LIFES.UserInterfaces
                     TimesGridView.Rows[linenumber].Cells[1].Value = ele.getClassTimeStartHour();
                     TimesGridView.Rows[linenumber].Cells[2].Value = ele.getTotalStudentsEnrolled();
 
+                    
+
                     linenumber++;
                 }
             }
