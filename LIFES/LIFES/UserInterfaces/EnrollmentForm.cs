@@ -177,7 +177,7 @@ namespace LIFES.UserInterfaces
                     string errorMsg = "";
                     foreach (string ele in compressedClassTimes.getErrorList())
                     {
-                        errorMsg += ele + "\n";
+                        errorMsg = errorMsg + ele + "\n";
                     }
 
                     MessageBox.Show(errorMsg, "ERROR");
