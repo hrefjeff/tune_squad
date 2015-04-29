@@ -69,10 +69,23 @@ namespace LIFES.FileIO
                         // line into a respective variable.
                         try
                         {
-                            String dayOfTheWeek = 
-                                new Regex("^[A-Z]+").Match(line).Value;
+							String dayOfTheWeek = new Regex
+								("^[A-Z]+").Match(line).Value;
+							
+							if(dayOfWeek)
+							{
+								throw new Exception("Error - Invalid day " + 
+									"of week");
+							}
+
                             int classStartTime = int.Parse
-                                (new Regex("^[0-9]{4}$").Match(line).Value);
+                                (new Regex("[0-9]+").Match(line).Value);
+
+							if(classStartTime)
+							{
+								throw new Exception("Error - Invalid class " +
+									"start time");
+							}
                             int classEndTime = int.Parse(new 
                                 Regex("[0-9]+").Match(line).NextMatch().Value);
                             int studentsEnrolled = 
