@@ -289,18 +289,31 @@ namespace LIFES.UserInterfaces
                 flag = false;
             }
 
-                    
-            if (Convert.ToInt32(lengthOfExamsTextBox.Text) < 75 ||
-                Convert.ToInt32(lengthOfExamsTextBox.Text) > 300)
+            int number;  
+            if (Int32.TryParse(lengthOfExamsTextBox.Text, out number))
             {
-                flag = false;
+                if (number < 75 || number > 300)
+                {
+                    flag = false;
+                }
             }
 
-
-            if (Convert.ToInt32(lengthBetweenExamsTextBox.Text) < 10 ||
-                Convert.ToInt32(lengthBetweenExamsTextBox.Text) > 30)
+            else
             {
-                flag = false;
+                return false;
+            }
+
+            if (Int32.TryParse(lengthBetweenExamsTextBox.Text, out number))
+            {
+                if (number < 10 || number > 30)
+                {
+                    flag = false;
+                }
+            }
+
+            else
+            {
+                return false;
             }
 
             if (Convert.ToInt32(lunchPeriodTextBox.Text) < 0)
