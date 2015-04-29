@@ -150,7 +150,16 @@ namespace LIFES.UserInterfaces
             year = comboBox1.SelectedItem.ToString();
             
         }
-
+        /*
+        * Method: RunCompression()
+        * Parameters: N/A
+        * Output: N/A
+        * Created By: Riley Smith
+        * Date: 3/30/2015
+        * Modified By: Riley Smith
+        * 
+        *Description: This will run the compression.
+        */
         public void RunCompression()
         {
             if (Globals.totalEnrollemntsFileName != "")
@@ -166,7 +175,6 @@ namespace LIFES.UserInterfaces
                 else
                 {
                     string errorMsg = "";
-
                     foreach (string ele in compressedClassTimes.getErrorList())
                     {
                         errorMsg += ele + "\n";
@@ -182,22 +190,7 @@ namespace LIFES.UserInterfaces
                 Globals.compressedTimes = null;
             }
         }
-        /*
-         * Method:  EnrollmentForm_FormClosing
-         * Parameters: object sender, FormClosingEventArgs e
-         * Output: N/A
-         * Created By: Scott Smoke
-         * Date:4/29/2015
-         * Modified By: Scott Smoke
-         * 
-         * Description: Closing event for the form. If the year is
-         * not selected then it will not close.
-         */
-        //private void EnrollmentForm_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-
-        //}
-
+        
         private void Button1_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem == null)
