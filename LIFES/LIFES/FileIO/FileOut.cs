@@ -14,7 +14,8 @@ namespace LIFES.FileIO
      * Created By: Scott Smoke
      * Date: 3/24/2015
      * Modified by: Scott Smoke
-     * This class will output the created final exam in the requested
+     * 
+     * Description: This class will output the created final exam in the requested
      * format.
      */
     class FileOut
@@ -27,7 +28,8 @@ namespace LIFES.FileIO
          * Created By: Scott Smoke
          * Date: 3/24/2015
          * Modified By: Scott Smoke
-         * This constructs an object. 
+         * 
+         * Description: This constructs an object. 
          */
         public FileOut(string file)
         {
@@ -41,7 +43,8 @@ namespace LIFES.FileIO
          * Created By: Scott Smoke
          * Date: 3/24/2015
          * Modified By: Scott Smoke
-         * This method will output the final exam schedule to a pdf. 
+         * 
+         * Description: This method will output the final exam schedule to a pdf. 
          * This method uses the open source PDFSharp library by MigraDoc Foundation
          * nore information here: http://www.pdfsharp.net/.
          * This will read the data structure returned from the schedule
@@ -84,7 +87,8 @@ namespace LIFES.FileIO
          * Created By: Scott Smoke
          * Date: 3/24/2015
          * Modified By: Scott Smoke
-         * This will write the data that is returned from the scheduler
+         * 
+         * Description: This will write the data that is returned from the scheduler
          * to a file in the CSV format.
          */
         public void WriteToCSV()
@@ -110,7 +114,8 @@ namespace LIFES.FileIO
          * Created By: Scott Smoke
          * Date: 3/24/2015
          * Modified By: Scott Smoke
-         * This will write the data that is returned from the scheduler
+         * 
+         * Description: This will write the data that is returned from the scheduler
          * to a plain text file.
          */
         public void WriteToText() 
