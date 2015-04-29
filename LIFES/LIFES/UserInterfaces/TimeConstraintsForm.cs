@@ -264,6 +264,17 @@ namespace LIFES.UserInterfaces
             return errors;
         }
 
+        /*
+         * Method: ValidateBoxes
+         * Parameters: N/A
+         * Output: bool
+         * Created By: Riley Smith
+         * Date: 4/29/2015
+         * Modified By: Riley Smith
+         * 
+         * Checks to see if the data in the textBoxes are valid.
+         * Returns true or false.
+         */
         private bool ValidateBoxes()
         {
             bool flag = true;
