@@ -71,20 +71,19 @@ namespace LIFES.UserInterfaces
          */
         private void FillTable()
         {
-            if (Globals.totalEnrollemntsFileName != "" && Globals.compressedTimes != null)
+            if (Globals.totalEnrollemntsFileName != "" 
+                && Globals.compressedTimes != null)
             {
-                //CompressedClassTimes compressedClassTimes =
-                //    new CompressedClassTimes(Globals.totalEnrollemntsFileName);
-
-                //List<CompressedClassTime> list = compressedClassTimes.getCompressedClassTimes();
-
                 int linenumber = 0;
                 foreach (CompressedClassTime ele in Globals.compressedTimes)
                 {
                     TimesGridView.Rows.Add();
-                    TimesGridView.Rows[linenumber].Cells[0].Value = ele.getDayOfTheWeek();
-                    TimesGridView.Rows[linenumber].Cells[1].Value = ele.getClassTimeStartHour();
-                    TimesGridView.Rows[linenumber].Cells[2].Value = ele.getTotalStudentsEnrolled();
+                    TimesGridView.Rows[linenumber].Cells[0].Value = 
+                        ele.getDayOfTheWeek();
+                    TimesGridView.Rows[linenumber].Cells[1].Value = 
+                        ele.getClassTimeStartHour();
+                    TimesGridView.Rows[linenumber].Cells[2].Value =
+                        ele.getTotalStudentsEnrolled();
                     linenumber++;
                 }
             }
