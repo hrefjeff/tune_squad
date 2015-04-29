@@ -72,7 +72,7 @@ namespace LIFES.FileIO
                             String dayOfTheWeek = 
                                 new Regex("^[A-Z]+").Match(line).Value;
                             int classStartTime = int.Parse
-                                (new Regex("[0-9]+").Match(line).Value);
+                                (new Regex("^[0-9]{4}$").Match(line).Value);
                             int classEndTime = int.Parse(new 
                                 Regex("[0-9]+").Match(line).NextMatch().Value);
                             int studentsEnrolled = 
