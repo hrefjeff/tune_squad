@@ -107,7 +107,16 @@
             "2017",
             "2018",
             "2019",
-            "2020"});
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029"});
             this.comboBox1.Location = new System.Drawing.Point(112, 27);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
@@ -120,7 +129,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
-            this.ClientSize = new System.Drawing.Size(364, 211);
+            this.ClientSize = new System.Drawing.Size(364, 212);
             this.Controls.Add(this.panel1);
             this.MaximumSize = new System.Drawing.Size(380, 250);
             this.MinimumSize = new System.Drawing.Size(380, 250);
