@@ -193,13 +193,22 @@ namespace LIFES.UserInterfaces
          * Description: Closing event for the form. If the year is
          * not selected then it will not close.
          */
-        private void EnrollmentForm_FormClosing(object sender, FormClosingEventArgs e)
+        //private void EnrollmentForm_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+
+        //}
+
+        private void Button1_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem == null)
             {
                 MessageBox.Show("Please select a year");
-                e.Cancel = true;
             }
+            else
+            {
+                Close();
+            }
+          
         }
 
     }
