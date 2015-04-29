@@ -70,9 +70,9 @@ namespace LIFES.FileIO
                         try
                         {
 							String dayOfTheWeek = new Regex
-								("^[A-Z]+").Match(line).Value;
+								("[A-Z]+").Match(line).Value;
 							
-							if(dayOfWeek)
+							if(dayOfTheWeek.Equals(false))
 							{
 								throw new Exception("Error - Invalid day " + 
 									"of week");
@@ -81,7 +81,7 @@ namespace LIFES.FileIO
                             int classStartTime = int.Parse
                                 (new Regex("[0-9]+").Match(line).Value);
 
-							if(classStartTime)
+                            if (classStartTime.Equals(false))
 							{
 								throw new Exception("Error - Invalid class " +
 									"start time");
@@ -92,6 +92,10 @@ namespace LIFES.FileIO
                                 int.Parse(new Regex("[0-9]+").Match(line).
                                 NextMatch().NextMatch().Value);
 
+                            if (studentsEnrolled.Equals(false))
+                            {
+                                throw new Exception("Error - Student Enrolled");
+                            }
                             // Create new instance of ClassTime and pass line
                             // components.
                             var classTime = 
@@ -145,7 +149,7 @@ namespace LIFES.FileIO
                     // If row is invalid, raise error.
                     else
                     {
-                        Console.WriteLine("Error on Line" 
+                        errorList.Add("Error on Line" 
                             + lineCounter + "\"" + line + "\"");
                     }
                 }
