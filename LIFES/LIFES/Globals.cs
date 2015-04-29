@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using LIFES.FileIO;
 namespace LIFES
 {
     /*
@@ -21,6 +21,7 @@ namespace LIFES
         public static TimeConstraints timeConstraints = new TimeConstraints(0,0,0,0,0);
         public static string semester = "";
         public static string year = "0";
+        public static List<CompressedClassTime> compressedTimes;
         //Save file if applicable
         //final exam schedule
     }

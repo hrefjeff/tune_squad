@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using LIFES.FileIO;
+using LIFES;
 
 namespace LIFES.UserInterfaces
 {
@@ -72,21 +73,18 @@ namespace LIFES.UserInterfaces
         {
             if (Globals.totalEnrollemntsFileName != "")
             {
-                CompressedClassTimes compressedClassTimes =
-                    new CompressedClassTimes(Globals.totalEnrollemntsFileName);
+                //CompressedClassTimes compressedClassTimes =
+                //    new CompressedClassTimes(Globals.totalEnrollemntsFileName);
 
-                List<CompressedClassTime> list = compressedClassTimes.getCompressedClassTimes();
+                //List<CompressedClassTime> list = compressedClassTimes.getCompressedClassTimes();
 
                 int linenumber = 0;
-                foreach (CompressedClassTime ele in list)
+                foreach (CompressedClassTime ele in Globals.compressedTimes)
                 {
                     TimesGridView.Rows.Add();
                     TimesGridView.Rows[linenumber].Cells[0].Value = ele.getDayOfTheWeek();
                     TimesGridView.Rows[linenumber].Cells[1].Value = ele.getClassTimeStartHour();
                     TimesGridView.Rows[linenumber].Cells[2].Value = ele.getTotalStudentsEnrolled();
-
-                    
-
                     linenumber++;
                 }
             }
