@@ -146,7 +146,10 @@ namespace LIFES.UserInterfaces
             //this.Hide();
             enrollmentGUI.StartPosition = FormStartPosition.CenterScreen;
             enrollmentGUI.ShowDialog();
-            Globals.year = enrollmentGUI.GetYear();
+            if (enrollmentGUI.GetYear() != null)
+            {
+                Globals.year = enrollmentGUI.GetYear();
+            }
             //this.Show();
         }
 
