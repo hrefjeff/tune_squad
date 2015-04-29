@@ -4,11 +4,6 @@ using System.Reflection.Emit;
 using System.Reflection;
 using System.Threading;
 
-// Writing to text file
-using System.IO;
-using System.Text;
-using System.Collections.Generic;
-
 namespace MetaExpr
 {
 	/// <summary>
@@ -42,20 +37,15 @@ namespace MetaExpr
 
         public void printMatrix()
         {
-            using (StreamWriter writer = new StreamWriter("output.txt"))
-
             for (int i = 0; i < this.rows; i++)
             {
-                Console.Write("Row " + i + ": ");
-                writer.Write("Class " + i +",");
+                Console.WriteLine("Row " + i + ": ");
                 for (int j = 0; j < this.columns; j++)
                 {
                     //"Matrix(" + i + "," + j + ") = " + 
                     Console.Write(this[i, j] + " ");
-                    writer.Write(this[i,j] + ",");
                 }
                 Console.WriteLine("");
-                writer.WriteLine("");
             }
         }
 		

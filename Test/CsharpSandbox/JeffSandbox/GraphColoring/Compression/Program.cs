@@ -58,8 +58,10 @@ namespace Compression
             //Console.WriteLine(fCourse.meetingDay);
             //Console.WriteLine(fCourse.startTime);
             //Console.WriteLine(fCourse.endTime);
+            using (StreamWriter writer = new StreamWriter("conflict.txt"))
             for (int i = 0; i < numOfCols; i++)
             {
+                writer.Write("Row " + i + ": ");
                 for (int j = i; j < numOfCols; j++)
                 {
                     if (i == j)
@@ -73,16 +75,18 @@ namespace Compression
 
                         if (conflictNum > 0)
                         {
+                            writer.Write(j+",");
                             conflictMatrix[i, j] = conflictNum;
                             conflictMatrix[j, i] = conflictNum;
                         }
                     }
                 }
             }
+             
 
             Console.WriteLine();
 
-            conflictMatrix.printMatrix();
+            //conflictMatrix.printMatrix();
 
             // Begin graph coloring 
 
@@ -96,8 +100,8 @@ namespace Compression
             greedy();
 
             // display sched colors
-            for (int i = 0; i < numOfRows; i++)
-                Console.WriteLine("Class " + i + ": " + classSchedules[i].color);
+            //for (int i = 0; i < numOfRows; i++)
+            //    Console.WriteLine("Class " + i + ": " + classSchedules[i].color);
 
             // initilize list by adding first class to it
             List<CompressedClasses> listOfCompressedClasses = new List<CompressedClasses>();
@@ -134,15 +138,34 @@ namespace Compression
             {
                 Console.WriteLine("List " + i + " contains:");
                 for (int j = 0; j < listOfCompressedClasses[i].listOfClasses.Count; j++)
+                {
                     Console.WriteLine("\t" + listOfCompressedClasses[i].listOfClasses[j].classNum + "---" + listOfCompressedClasses[i].listOfClasses[j].meetingDay + "---" + listOfCompressedClasses[i].listOfClasses[j].startTime + "---" + listOfCompressedClasses[i].listOfClasses[j].endTime);
+                }
 
             }
 
-            Console.WriteLine(filename);
-            for (int i = 0; i < listOfCompressedClasses.Count; i++)
-                listOfCompressedClasses[i].summary(i);
+            //Console.WriteLine(filename);
+            //for (int i = 0; i < listOfCompressedClasses.Count; i++)
+            //    listOfCompressedClasses[i].summary(i);
 
-            Console.ReadLine();
+            //int conflictCount = 0;
+            //for (int i = 0; i < conflictMatrix.Rows; i++)
+            //{
+            //    Console.Write("Num conflicts for class " + i + ": ");
+            //    for (int j = 0; j < conflictMatrix.Columns; j++)
+            //    {
+            //        if (conflictMatrix[i, j] > 0)
+            //        {
+            //            Console.Write(j + ",");
+            //            conflictCount = conflictCount + 1;
+            //        }
+            //    }
+            //    Console.WriteLine("");
+            //    Console.WriteLine("Total for " + i + ":" + conflictCount);
+            //    conflictCount = 0;
+            //}
+
+                Console.ReadLine();
 
         }
 
