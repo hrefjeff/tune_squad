@@ -31,7 +31,7 @@
             this.TimesGridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dayCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.classCol = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.classCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enrollmentCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TimesGridView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -80,7 +80,6 @@
             this.classCol.Name = "classCol";
             this.classCol.ReadOnly = true;
             this.classCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.classCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // enrollmentCol
             // 
@@ -109,7 +108,7 @@
         private System.Windows.Forms.DataGridView TimesGridView;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dayCol;
-        private System.Windows.Forms.DataGridViewComboBoxColumn classCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentCol;
     }
 }
