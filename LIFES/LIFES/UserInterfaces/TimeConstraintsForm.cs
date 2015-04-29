@@ -104,14 +104,24 @@ namespace LIFES.UserInterfaces
                 (lengthOfExamsTextBox.Text != "") && (lengthBetweenExamsTextBox.Text != "") &&
                 (lunchPeriodTextBox.Text != ""))
             {
-                TimeConstraints t = new TimeConstraints(Convert.ToInt32(numDaysTextBox.Text),
-                Convert.ToInt32(firstExamTimeTextBox.Text), Convert.ToInt32(lengthOfExamsTextBox.Text),
-                Convert.ToInt32(lengthBetweenExamsTextBox.Text), Convert.ToInt32(lunchPeriodTextBox.Text));
-                tc = t;
 
-                errorProvider1.Clear();
-                MessageBox.Show("Time Constraints Updated");
-                this.Close();
+                if (ValidateBoxes())
+                {
+
+                    TimeConstraints t = new TimeConstraints(Convert.ToInt32(numDaysTextBox.Text),
+                    Convert.ToInt32(firstExamTimeTextBox.Text), Convert.ToInt32(lengthOfExamsTextBox.Text),
+                    Convert.ToInt32(lengthBetweenExamsTextBox.Text), Convert.ToInt32(lunchPeriodTextBox.Text));
+                    tc = t;
+
+                    errorProvider1.Clear();
+                    MessageBox.Show("Time Constraints Updated");
+                    this.Close();
+                }
+
+                else
+                {
+                    MessageBox.Show("Error with Time Constraints");
+                }
             }
 
             else
@@ -171,19 +181,6 @@ namespace LIFES.UserInterfaces
                 TimeConstraints t = new TimeConstraints(0, 0, 0, 0, 0);
                 tc = t;
 
-                // Testing Error Dialog
-                string[] errors = { "Please Enter All Data Fields", 
-                                      "Can Show Array of Strings Here", 
-                                      "This is an Example", 
-                                      "Remember to Remove"};
-                string errorMsg = "";
-
-                foreach (string ele in errors)
-                    errorMsg += ele + "\n";
-
-                MessageBox.Show(errorMsg, "ERROR");
-                
-                // End of Error Dialog
             }
         }
 
@@ -266,7 +263,43 @@ namespace LIFES.UserInterfaces
             }
             return errors;
         }
-         
+
+        private bool ValidateBoxes()
+        {
+            bool flag = true;
+
+            if (numDaysTextBox.Text != "3" && numDaysTextBox.Text != "4" && numDaysTextBox.Text != "5")
+            {
+                flag = false;
+            }
+    
+            if (firstExamTimeTextBox.Text != "0700" && firstExamTimeTextBox.Text != "700")
+            {
+                flag = false;
+            }
+
+                    
+            if (Convert.ToInt32(lengthOfExamsTextBox.Text) < 75 ||
+                Convert.ToInt32(lengthOfExamsTextBox.Text) > 300)
+            {
+                flag = false;
+            }
+
+
+            if (Convert.ToInt32(lengthBetweenExamsTextBox.Text) < 10 ||
+                Convert.ToInt32(lengthBetweenExamsTextBox.Text) > 30)
+            {
+                flag = false;
+            }
+
+            if (Convert.ToInt32(lunchPeriodTextBox.Text) < 0)
+            {
+                flag = false;
+            }
+
+            return flag;
+            
+        }
 
     }
 }
