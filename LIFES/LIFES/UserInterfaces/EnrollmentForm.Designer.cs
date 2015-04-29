@@ -114,6 +114,7 @@
             this.MinimumSize = new System.Drawing.Size(380, 250);
             this.Name = "EnrollmentForm";
             this.Text = "Total Enrollment";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EnrollmentForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -134,6 +134,17 @@ namespace LIFES.UserInterfaces
             AnimateWindow(this.Handle, 200, AW_CENTER | AW_HOR_POSITIVE);
         }
 
+        /*
+         * Method: ComboBox1SelectedIndexChanged
+         * Parameters: EventArgs e
+         * Output: N/A
+         * Created By: Scott Smoke
+         * Date: 3/30/2015
+         * Modified By: Scott Smoke
+         * 
+         *Description: This will get the selected year from
+         *the drop down menu.
+         */
         private void ComboBox1SelectedIndexChanged(object sender, EventArgs e)
         {
             year = comboBox1.SelectedItem.ToString();
@@ -169,6 +180,25 @@ namespace LIFES.UserInterfaces
             else
             {
                 Globals.compressedTimes = null;
+            }
+        }
+        /*
+         * Method:  EnrollmentForm_FormClosing
+         * Parameters: object sender, FormClosingEventArgs e
+         * Output: N/A
+         * Created By: Scott Smoke
+         * Date:4/29/2015
+         * Modified By: Scott Smoke
+         * 
+         * Description: Closing event for the form. If the year is
+         * not selected then it will not close.
+         */
+        private void EnrollmentForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (comboBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a year");
+                e.Cancel = true;
             }
         }
 
