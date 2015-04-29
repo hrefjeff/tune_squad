@@ -147,7 +147,22 @@ namespace LIFES.UserInterfaces
                 CompressedClassTimes compressedClassTimes = 
                     new CompressedClassTimes(Globals.totalEnrollemntsFileName);
 
-                compressedClassTimes.getCompressedClassTimes();
+                if (compressedClassTimes.getErrorList().Count == 0)
+                {
+                    compressedClassTimes.getCompressedClassTimes();
+                }
+
+                else
+                {
+                    string errorMsg = "";
+
+                    foreach (string ele in compressedClassTimes.getErrorList())
+                    {
+                        errorMsg += ele + "\n";
+
+                        MessageBox.Show(errorMsg, "ERROR");
+                    }
+                }
             }
         }
 
