@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LIFES.Authentication;
+using System.Text.RegularExpressions;
 
 namespace LIFES.UserInterfaces
 {
@@ -46,13 +47,30 @@ namespace LIFES.UserInterfaces
         private void SetPasswordButton_Click(object sender, EventArgs e)
         {
             UserList userList = new UserList();
+            Regex pwdEx = new Regex("^[a-z]{1}([a-z0-9\\*#\\$]){6,8}$");
 
             if (passwordTextBox.Text != "" && confirmTextBox.Text != "")
             {
                 if (passwordTextBox.Text == confirmTextBox.Text)
                 {
-                    userList.ChangePassword(username, passwordTextBox.Text);
-                    MessageBox.Show("Password for " + username + " changed to: " + passwordTextBox.Text);
+                    if (pwdEx.IsMatch(passwordTextBox.Text.ToLower()))
+                    {
+                        userList.ChangePassword(username, passwordTextBox.Text);
+                        MessageBox.Show("Password for " + username + " changed to: " + passwordTextBox.Text);
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Passwords must be between 7-9\n" +
+                            "characters, start with a letter, all be in the\n" +
+                            "same case and must contain any of the following\n"+
+                            "numbers/leters/#*$");
+                    }
+                }
+
+                else
+                {
+                    MessageBox.Show("Please ensure the passwords match.");
                 }
             }
         }
