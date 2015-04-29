@@ -1,3 +1,0 @@
-Reseting Password allows passwords such as "a" and "rea" and "nims!"
-Found at 7:58 on 4/20
-JSB
