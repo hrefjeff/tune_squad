@@ -149,7 +149,7 @@ namespace LIFES.UserInterfaces
 
                 if (compressedClassTimes.getErrorList().Count == 0)
                 {
-                    compressedClassTimes.getCompressedClassTimes();
+                    Globals.compressedTimes = compressedClassTimes.getCompressedClassTimes();
                 }
 
                 else
@@ -159,10 +159,16 @@ namespace LIFES.UserInterfaces
                     foreach (string ele in compressedClassTimes.getErrorList())
                     {
                         errorMsg += ele + "\n";
-
-                        MessageBox.Show(errorMsg, "ERROR");
                     }
+
+                    MessageBox.Show(errorMsg, "ERROR");
+                    Globals.compressedTimes = null;
                 }
+            }
+
+            else
+            {
+                Globals.compressedTimes = null;
             }
         }
 

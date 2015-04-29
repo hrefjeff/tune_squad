@@ -71,7 +71,7 @@ namespace LIFES.UserInterfaces
          */
         private void FillTable()
         {
-            if (Globals.totalEnrollemntsFileName != "")
+            if (Globals.totalEnrollemntsFileName != "" && Globals.compressedTimes != null)
             {
                 //CompressedClassTimes compressedClassTimes =
                 //    new CompressedClassTimes(Globals.totalEnrollemntsFileName);
