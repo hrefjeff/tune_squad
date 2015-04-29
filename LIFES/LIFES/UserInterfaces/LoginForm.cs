@@ -84,34 +84,36 @@ namespace LIFES.UserInterfaces
             string userName = userNameTextBox.Text;
             string pwd = passwordTextBox.Text;
             UserList users = new UserList();
-            //if userName is in the file
-            //then if pwd is equal to password stored in the file
-            //then log on
-            //else throw error(s)
-
-            if (users.TestPassword(userName, pwd))
+            if (users.IsUser(userName))
             {
-                isAdmin = users.IsAdmin(userName);
-                if (isAdmin)
+
+                if (users.TestPassword(userName, pwd))
                 {
-                    adminMenu.Visible = true;
-                    callingForm.Show();
-                    logedIn = true;
+                    isAdmin = users.IsAdmin(userName);
+                    if (isAdmin)
+                    {
+                        adminMenu.Visible = true;
+                        callingForm.Show();
+                        logedIn = true;
+                    }
+                    else
+                    {
+                        callingForm.Show();
+                        adminMenu.Visible = false;
+                        logedIn = true;
+
+                    }
+
                 }
+
                 else
                 {
-                    callingForm.Show();
-                    adminMenu.Visible = false;
-                    logedIn = true;
-                    
+                    MessageBox.Show("Incorrect Password");
                 }
-                this.Close();
-                
             }
-
-            else 
+            else
             {
-                MessageBox.Show("Login Failed");
+                MessageBox.Show("Incorrect Username");
             }
 
         }
