@@ -103,7 +103,7 @@ namespace LIFES.UserInterfaces
                         logedIn = true;
 
                     }
-
+                    Close();
                 }
 
                 else
