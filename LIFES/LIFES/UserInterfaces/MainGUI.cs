@@ -13,14 +13,6 @@ using LIFES.Schedule;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 
-// word document
-
-using System.IO;
-using Microsoft.Office.Interop.Word;
-using DocumentFormat.OpenXml.Packaging;
-using DocumentFormat.OpenXml.Wordprocessing;
-
-
 namespace LIFES.UserInterfaces
 {
     /*
@@ -164,9 +156,10 @@ namespace LIFES.UserInterfaces
          */
         void FinalizeScheduleToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //
        
            
-                MessageBox.Show("User is not an Admin");
+               
             
             // Needs to be added
         }
@@ -240,7 +233,6 @@ namespace LIFES.UserInterfaces
         {
             examTable.Rows[0].Cells[0].Value = "Rescheduled First Class Time";
             examTable.Rows[0].Cells[1].Value = "Rescheduled First Exam Time";
-
         }
 
         /*
@@ -381,12 +373,6 @@ namespace LIFES.UserInterfaces
          */
         private void OpenUserGuide_Click(object sender, EventArgs e)
         {
-           // new branch
-            //Microsoft.Office.Interop.Word.Application word = new Microsoft.Office.Interop.Word.Application();
-            //Microsoft.Office.Interop.Word.Document document;
-            //document = word.Documents.Open("C:\\UserManualLIFESV2.docx");
-            //document.Activate();
-            //word.Visible = true;
             Process.Start(@"C:\\Users\\eljeffeh\\UserManualLIFESV2test.pdf");
         }
        /*
