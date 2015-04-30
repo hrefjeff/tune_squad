@@ -158,9 +158,10 @@ namespace LIFES.UserInterfaces
          */
         void FinalizeScheduleToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //
        
            
-                MessageBox.Show("User is not an Admin");
+               
             
             // Needs to be added
         }
@@ -234,7 +235,6 @@ namespace LIFES.UserInterfaces
         {
             examTable.Rows[0].Cells[0].Value = "Rescheduled First Class Time";
             examTable.Rows[0].Cells[1].Value = "Rescheduled First Exam Time";
-
         }
 
         /*
