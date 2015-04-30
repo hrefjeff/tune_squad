@@ -661,7 +661,7 @@ namespace LIFES.Authentication
          * 
          * Description: Changes the password for the user in the file.
          */
-        private void ChangeFilePassword(string username, string newPassword)
+        public void ChangeFilePassword(string username, string newPassword)
         {
             bool admin = IsAdmin(username);
             DelUser(username);
