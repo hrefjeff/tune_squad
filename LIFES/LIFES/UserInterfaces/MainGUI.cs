@@ -36,8 +36,6 @@ namespace LIFES.UserInterfaces
      */
     public partial class MainGUI : Form
     {
-        private string currentUser = "";
-
         public MainGUI()
         {
             InitializeComponent();        
