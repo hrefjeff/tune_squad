@@ -66,7 +66,7 @@ namespace LIFES.FileIO
             }
             else if (studentsEnrolled < 1)
             {
-                throw new Exception("Error - Students Enrolled Less Than 1");
+                throw new Exception("Warning - Students Enrolled Less Than 1");
             }
             else if (!sd.Success)
             {

@@ -112,3 +112,26 @@ C:\Users\Riley\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.csproj.Ge
 C:\Users\Riley\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.TrustInfo.xml
 C:\Users\Riley\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.exe.manifest
 C:\Users\Riley\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.application
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\LIFES.exe.config
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.csprojResolveAssemblyReference.cache
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.Properties.Resources.resources
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.CreateUserForm.resources
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.DeleteUserForm.resources
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.EnrollmentForm.resources
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.LoginForm.resources
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.MainGUI.resources
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.ResetPasswordForm.resources
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.TimeConstraintsForm.resources
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.ViewTotalEnrollmentsForm.resources
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.csproj.GenerateResource.Cache
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\LIFES.exe.manifest
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\LIFES.application
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\LIFES.exe
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\LIFES.pdb
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\PdfSharp.dll
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.TrustInfo.xml
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.exe.manifest
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.application
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.exe
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.pdb
