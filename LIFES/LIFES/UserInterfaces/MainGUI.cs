@@ -16,7 +16,7 @@ using System.Diagnostics;
 // word document
 
 using System.IO;
-using Microsoft.Office.Interop.Word;
+//using Microsoft.Office.Interop.Word;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 
