@@ -68,6 +68,11 @@ namespace LIFES.UserInterfaces
             {
                 usersGridView.Rows.Add();
                 usersGridView.Rows[line].Cells[0].Value = ele;
+                DataGridViewRow row = usersGridView.Rows[line];
+                if (userList.IsLocked(ele))
+                {
+                    row.DefaultCellStyle.BackColor = Color.Red;
+                }
                 line++;
             }
         }
@@ -102,11 +107,20 @@ namespace LIFES.UserInterfaces
         {
             if (usersGridView.CurrentCell != null)
             {
+                userList = new UserList();
                 string userName = usersGridView.CurrentCell.Value.ToString();
 
                 GetNewPasswordForm setPassword = new GetNewPasswordForm(userName);
                 setPassword.StartPosition = FormStartPosition.CenterParent;
                 setPassword.ShowDialog();
+
+                int selectedIndex = usersGridView.CurrentCell.RowIndex;
+                DataGridViewRow row = usersGridView.Rows[selectedIndex];
+                if (!userList.IsLocked(userName))
+                {
+                    row.DefaultCellStyle.BackColor = Color.White;
+
+                }
             }
         }
  
