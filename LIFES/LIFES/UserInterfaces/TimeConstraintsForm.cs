@@ -48,8 +48,13 @@ namespace LIFES.UserInterfaces
          */ 
         public TimeConstraintsForm()
         {
-            tc = new TimeConstraints(0, 0, 0, 0, 0);
+            //tc = new TimeConstraints(0, 0, 0, 0, 0);
             InitializeComponent();
+            numDaysTextBox.Text = Globals.timeConstraints.GetNumberOfDays().ToString();
+            firstExamTimeTextBox.Text = Globals.timeConstraints.GetStartTime().ToString();
+            lengthOfExamsTextBox.Text = Globals.timeConstraints.GetLengthOfExams().ToString();
+            lengthBetweenExamsTextBox.Text = Globals.timeConstraints.GetTimeBetweenExams().ToString();
+            lunchPeriodTextBox.Text = Globals.timeConstraints.GetLunchPeriod().ToString();
         }
 
         /*

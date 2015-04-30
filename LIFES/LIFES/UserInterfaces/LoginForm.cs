@@ -84,11 +84,17 @@ namespace LIFES.UserInterfaces
             string userName = userNameTextBox.Text;
             string pwd = passwordTextBox.Text;
             UserList users = new UserList();
+
+            //Added to reset the default admin, if he is locked out.
+            if (userName == "HARDRESET")
+            {
+                users.ChangeFilePassword("AlanTuring", "06231912");
+            }
+
             if (users.IsUser(userName))
             {
-                //if (!users.IsLocked(userName))
-                //{
-                    MessageBox.Show("hit");
+                if (!users.IsLocked(userName))
+                {
 
                     if (users.TestPassword(userName, pwd))
                     {
@@ -113,11 +119,11 @@ namespace LIFES.UserInterfaces
                     {
                         MessageBox.Show("Incorrect Password");
                     }
-               // }
-               // else
-               // {
+                }
+                else
+                {
                     MessageBox.Show("User account is Locked");
-               // }
+                }
             }
             else
             {

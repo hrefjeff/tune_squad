@@ -410,6 +410,22 @@ namespace LIFES.UserInterfaces
             loginGUI.ShowDialog();
         }
 
+        /*
+        * Method: SwapButton_Click
+        * Parameters: object sender, EventArgs e
+        * Output: N/A
+        * Created By: Jeffrey Allen
+        * Date: 4/30/2015
+        * Modified By: 
+        * 
+        * Description: This button will swap two exam periods within
+        *              the main window
+        */ 
+        private void SwapButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
 

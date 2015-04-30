@@ -326,10 +326,9 @@ namespace LIFES.Authentication
                                                 return false;
                                             }
                                         }
-                                    } while (line[i] == input[i]);
-
+                                    } while (line[i]!='\n');
                                 }
-                            } while (line[i] == input[i]);
+                            }while (line[i] == input[i]);
                         }
                     }
                 }
@@ -662,7 +661,7 @@ namespace LIFES.Authentication
          * 
          * Description: Changes the password for the user in the file.
          */
-        private void ChangeFilePassword(string username, string newPassword)
+        public void ChangeFilePassword(string username, string newPassword)
         {
             bool admin = IsAdmin(username);
             DelUser(username);
