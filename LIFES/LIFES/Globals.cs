@@ -11,7 +11,7 @@ namespace LIFES
      * Created By: Scott Smoke
      * Date: 3/26/2015
      * Modified BY: Scott Smoke
-     * This class will contain all the global 
+     * Description: This class will contain all the global 
      * variables that are used throughout the project.
      */ 
     public static class  Globals
