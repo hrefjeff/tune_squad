@@ -42,7 +42,7 @@ namespace LIFES.UserInterfaces
         private UserList users;
         private ArrayList usersList;
         private int numAdmins;
-        private const int ADMINAMOUNT = 1;
+        private const int ADMINAMOUNT = 2;
 
         public CreateUserForm()
         {
