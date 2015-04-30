@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LIFES.FileIO;
 using LIFES.Authentication;
+using LIFES.Schedule;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 
@@ -315,6 +316,10 @@ namespace LIFES.UserInterfaces
         {
             examTable.Rows[0].Cells[0].Value = "First Class Time";
             examTable.Rows[0].Cells[1].Value = "First Exam Time";
+            Scheduler examSchedule = new Scheduler(Globals.compressedTimes, Globals.timeConstraints);
+            examSchedule.Schedule();
+            Debug.Write(examSchedule.GetExamSlots());
+
 
         }
         
