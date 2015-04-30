@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using LIFES.Authentication;
 using System.Text.RegularExpressions;
+using System.Collections;
 
 namespace LIFES.UserInterfaces
 {
@@ -39,11 +40,25 @@ namespace LIFES.UserInterfaces
         static extern bool AnimateWindow(IntPtr hwnd, int time, int flags);
 
         private UserList users;
+        private ArrayList usersList;
+        private int numAdmins;
+        private const int ADMINAMOUNT = 1;
 
         public CreateUserForm()
         {
             InitializeComponent();
             users = new UserList();
+            usersList = users.GetUserNames();
+            numAdmins = 0;
+
+            foreach (string ele in usersList)
+            {
+                string userName = ele;
+                if (users.IsAdmin(userName))
+                {
+                    numAdmins = numAdmins + 1;
+                }
+            }
         }
 
         /*
@@ -74,7 +89,7 @@ namespace LIFES.UserInterfaces
          * a UNA email account and the password matches the requirements in the Spec doc
          * else it displays a message denoting what needs to be corrected.
          * 
-         */ 
+         */
         private void CreateUserBttn_Click(object sender, EventArgs e)
         {
             Regex emailEx = new Regex("^[a-zA-Z0-9]{1,32}@una.edu$");
@@ -90,12 +105,19 @@ namespace LIFES.UserInterfaces
                         {
                             if (adminRadioButton.Checked)
                             {
-
-                                users.AddUser(userNameTextBox.Text,
-                                    passwordTextBox.Text, true);
-
-                                MessageBox.Show(userNameTextBox.Text + " added",
+                                if (numAdmins < ADMINAMOUNT)
+                                {
+                                    users.AddUser(userNameTextBox.Text,
+                                        passwordTextBox.Text, true);
+                                    MessageBox.Show(userNameTextBox.Text + " added",
                                     "User Added");
+                                    numAdmins = numAdmins + 1;
+                                }
+                                else
+                                {
+                                    MessageBox.Show(userNameTextBox.Text +
+                                        " unable to be added, only one admin is allowed.");
+                                }
 
                                 // Reset text boxes.
                                 userNameTextBox.Clear();
@@ -127,10 +149,10 @@ namespace LIFES.UserInterfaces
                     {
                         MessageBox.Show("Passwords must be between 7-9\n" +
                             "characters, start with a letter, all be in the\n" +
-                            "same case and must contain any of the following\n"+
+                            "same case and must contain any of the following\n" +
                             "numbers/leters/#*$");
                     }
-                    
+
                 }
             }
             else
