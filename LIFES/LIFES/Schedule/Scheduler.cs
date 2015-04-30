@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using LIFES;
 using System.Collections;
 using LIFES.FileIO;
+using System.Diagnostics;
 namespace LIFES.Schedule
 {
     class Scheduler
@@ -22,7 +23,8 @@ namespace LIFES.Schedule
         }
         private void AvailableExamSlots()
         {
-            examSlots = (int)(((1715-tc.GetLunchPeriod()) - tc.GetStartTime()) / (tc.GetLengthOfExams() + tc.GetTimeBetweenExams()));
+            Debug.WriteLine("Inside the slots");
+            examSlots = (int)(((1715-tc.GetLunchPeriod()) - tc.GetStartTime()) / (((tc.GetLengthOfExams()+tc.GetTimeBetweenExams())/60)*100));
              
         }
         /*
@@ -69,7 +71,7 @@ namespace LIFES.Schedule
          */ 
         public void Schedule()
         {
-
+            AvailableExamSlots();
             runScheduler();
         }
         public int GetExamSlots()
