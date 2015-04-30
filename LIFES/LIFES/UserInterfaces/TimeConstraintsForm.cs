@@ -106,13 +106,15 @@ namespace LIFES.UserInterfaces
         private void UpdateConstraintsButton_Click(object sender, EventArgs e)
         {
             if ((numDaysTextBox.Text != "") && (firstExamTimeTextBox.Text != "") &&
-                (lengthOfExamsTextBox.Text != "") && (lengthBetweenExamsTextBox.Text != "") &&
-                (lunchPeriodTextBox.Text != ""))
+                (lengthOfExamsTextBox.Text != "") && (lengthBetweenExamsTextBox.Text != ""))
             {
 
                 if (ValidateBoxes())
                 {
-
+                    if (lunchPeriodTextBox.Text == "")
+                    {
+                        lunchPeriodTextBox.Text = "0";
+                    }
                     TimeConstraints t = new TimeConstraints(Convert.ToInt32(numDaysTextBox.Text),
                     Convert.ToInt32(firstExamTimeTextBox.Text), Convert.ToInt32(lengthOfExamsTextBox.Text),
                     Convert.ToInt32(lengthBetweenExamsTextBox.Text), Convert.ToInt32(lunchPeriodTextBox.Text));
@@ -172,15 +174,6 @@ namespace LIFES.UserInterfaces
                     errorProvider1.SetError(lengthBetweenExamsTextBox, "");
                 }
 
-                if (lunchPeriodTextBox.Text == string.Empty)
-                {
-                    errorProvider1.SetError(lunchPeriodTextBox, "Cannot Be Empty");
-                }
-
-                else
-                {
-                    errorProvider1.SetError(lunchPeriodTextBox, "");
-                }
                 // End of errorProviders.
 
                 TimeConstraints t = new TimeConstraints(0, 0, 0, 0, 0);
@@ -321,9 +314,20 @@ namespace LIFES.UserInterfaces
                 return false;
             }
 
-            if (Convert.ToInt32(lunchPeriodTextBox.Text) < 0)
+            if (lunchPeriodTextBox.Text != "")
             {
-                flag = false;
+                if (Int32.TryParse(lunchPeriodTextBox.Text, out number))
+                {
+                    if (number < 0 || number > 1439)
+                    {
+                        flag = false;
+                    }
+                }
+
+                else
+                {
+                    return false;
+                }
             }
 
             return flag;
