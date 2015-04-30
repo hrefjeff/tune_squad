@@ -41,7 +41,7 @@ namespace LIFES.FileIO
 
             else
             {
-                Console.WriteLine("Error, the file specified could not be" 
+                errors.Add("Error, the file specified could not be" 
                     + " found.");
             }
         }
@@ -200,7 +200,7 @@ namespace LIFES.FileIO
             return tc;
         }
         /*
-         * Method: GetErors
+         * Method: GetErrors
          * Created By: Scott Smoke
          * Date: 4/16/2015
          * Modified By: Scott Smoke
