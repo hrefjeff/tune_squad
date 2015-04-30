@@ -85,6 +85,7 @@ namespace LIFES.UserInterfaces
             string pwd = passwordTextBox.Text;
             UserList users = new UserList();
 
+            //Added to reset the default admin, if he is locked out.
             if (userName == "HARDRESET")
             {
                 users.ChangeFilePassword("AlanTuring", "06231912");
