@@ -326,10 +326,9 @@ namespace LIFES.Authentication
                                                 return false;
                                             }
                                         }
-                                    } while (line[i] == input[i]);
-
+                                    } while (line[i]!='\n');
                                 }
-                            } while (line[i] == input[i]);
+                            }while (line[i] == input[i]);
                         }
                     }
                 }
