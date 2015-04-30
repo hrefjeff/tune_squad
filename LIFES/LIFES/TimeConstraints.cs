@@ -32,6 +32,8 @@ namespace LIFES
          * Created By: Scott Smoke
          * Date: 3/25/2015
          * Modified by: Scott Smoke
+         * 
+         * Description: Class constructor.
          */
         public TimeConstraints(int numberOfDays, int startTime,
             int lengthOfExam, int timeBetween, int lunchLength)
@@ -50,7 +52,7 @@ namespace LIFES
          * Created By: Scott Smoke
          * Date: 3/25/2015
          * Modified by: Scott Smoke
-         * Gettter for the property numberOfDaysToSchedule
+         * Description: Gettter for the property numberOfDaysToSchedule
          */
         public int GetNumberOfDays()
         {
@@ -64,7 +66,7 @@ namespace LIFES
          * Created By: Scott Smoke
          * Date: 3/25/2015
          * Modified by: Scott Smoke
-         * Gettter for the property beginingTimeForExams
+         * Description: Gettter for the property beginingTimeForExams
          */
         public int GetStartTime()
         {
@@ -78,7 +80,7 @@ namespace LIFES
          * Created By: Scott Smoke
          * Date: 3/25/2015
          * Modified by: Scott Smoke
-         * Gettter for the property lengthOfTimeOfExam
+         * Description: Gettter for the property lengthOfTimeOfExam
          */
         public int GetLengthOfExams()
         {
@@ -92,7 +94,7 @@ namespace LIFES
          * Created By: Scott Smoke
          * Date: 3/25/2015
          * Modified by: Scott Smoke
-         * Gettter for the property timeBetweenExams
+         * Description: Gettter for the property timeBetweenExams
          */
         public int GetTimeBetweenExams()
         {
@@ -106,7 +108,7 @@ namespace LIFES
          * Created By: Scott Smoke
          * Date: 3/25/2015
          * Modified by: Scott Smoke
-         * Gettter for the property lunchPeriod
+         * Description: Gettter for the property lunchPeriod
          */
         public int GetLunchPeriod()
         {
@@ -119,7 +121,7 @@ namespace LIFES
          * Created By: Scott Smoke
          * Date: 3/26/2015
          * Modified By: Scott Smoke
-         * Returns a string with all the fields concatenated together
+         * Description: Returns a string with all the fields concatenated together
          */
         public override string ToString()
         {
