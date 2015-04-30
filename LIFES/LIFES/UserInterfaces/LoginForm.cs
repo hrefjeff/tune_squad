@@ -86,30 +86,38 @@ namespace LIFES.UserInterfaces
             UserList users = new UserList();
             if (users.IsUser(userName))
             {
+                //if (!users.IsLocked(userName))
+                //{
+                    MessageBox.Show("hit");
 
-                if (users.TestPassword(userName, pwd))
-                {
-                    isAdmin = users.IsAdmin(userName);
-                    if (isAdmin)
+                    if (users.TestPassword(userName, pwd))
                     {
-                        adminMenu.Visible = true;
-                        callingForm.Show();
-                        logedIn = true;
+                        isAdmin = users.IsAdmin(userName);
+                        if (isAdmin)
+                        {
+                            adminMenu.Visible = true;
+                            callingForm.Show();
+                            logedIn = true;
+                        }
+                        else
+                        {
+                            callingForm.Show();
+                            adminMenu.Visible = false;
+                            logedIn = true;
+
+                        }
+                        Close();
                     }
+
                     else
                     {
-                        callingForm.Show();
-                        adminMenu.Visible = false;
-                        logedIn = true;
-
+                        MessageBox.Show("Incorrect Password");
                     }
-                    Close();
-                }
-
-                else
-                {
-                    MessageBox.Show("Incorrect Password");
-                }
+               // }
+               // else
+               // {
+                    MessageBox.Show("User account is Locked");
+               // }
             }
             else
             {
