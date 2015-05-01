@@ -1,0 +1,16 @@
+Day 1 			Exam Time
+mwf 7:00-7:15	7:00-8:45 a.m.
+mw  9:00-9:15	9:00-9:45 a.m.
+
+Day 2 			Exam Time
+th 7:00-8:15	7:00-8:15 a.m.
+th 10:00-11:15	10:00-11:45 a.m.
+
+Day 3 			Exam Time
+mwf 8:00-8:50	8:00-9:45 a.m.
+
+Day 4 			Exam Time
+mw 8:00-9:15	8:00-9:45 a.m.
+
+Day 5 			Exam Time
+mwf 9:00-9:50	9:00-10:45 a.m.
