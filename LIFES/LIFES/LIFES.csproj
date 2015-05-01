@@ -105,6 +105,8 @@
     <Compile Include="FileIO\FileOut.cs" />
     <Compile Include="FileIO\FileIn.cs" />
     <Compile Include="Globals.cs" />
+    <Compile Include="Schedule\FInalExam.cs" />
+    <Compile Include="Schedule\FinalExamDay.cs" />
     <Compile Include="Schedule\Scheduler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
