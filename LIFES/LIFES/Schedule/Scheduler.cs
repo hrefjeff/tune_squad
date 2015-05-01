@@ -24,11 +24,13 @@ namespace LIFES.Schedule
                 if(fed.HasAvailableTime(ct.getClassTimeStartHour()))
                 {
                     FinalExam fe = new FinalExam(ct);
-                    int endTime = ct.getClassTimeStartHour()+ tc.GetLengthOfExams();
+                    Debug.WriteLine("Class start hour " + ct.getClassTimeStartHour());
+                    int endTime = (ct.getClassTimeStartHour())+ tc.GetLengthOfExams();
                     fe.SetEndTime(endTime+tc.GetTimeBetweenExams());
                     fed.InsertExam(fe);
                     //debugging infor
                     Debug.WriteLine("Day: " + fed.GetDay().ToString() + " " + fed.GetNumberOfExams());
+                    return;
                 }
             }
         }
@@ -47,15 +49,14 @@ namespace LIFES.Schedule
         {
             for (int i = 0; i < tc.GetNumberOfDays(); i++ )
             {
-                if (examWeek[i].GetDay() == 0)
-                {
-                    examWeek[i].SetDay(i);
-                }
+                examWeek[i] = new FinalExamDay();
+                examWeek[i].SetDay(i);
+                examWeek[i].setNumberOfExams(examSlots);
             }
         }
         private void runScheduler()
         {
-            AvailableExamSlots();
+           
             if (compressedClassTime != null)
             {
                 //checking pigeon hole principle
@@ -63,7 +64,7 @@ namespace LIFES.Schedule
                 {
                     //debugging info
                     Debug.WriteLine("Yay we get to schedule");
-                    
+                    Debug.WriteLine("Size of compressedClassTimes " + compressedClassTime.Count);
                     foreach (CompressedClassTime ct in compressedClassTime)
                     {
                         Schedule(ct);
@@ -133,6 +134,7 @@ namespace LIFES.Schedule
             tc = t;
             compressedClassTime = ct;
             examWeek = new FinalExamDay[tc.GetNumberOfDays()];
+            AvailableExamSlots();
             Initialize();
             //to do 
         }
