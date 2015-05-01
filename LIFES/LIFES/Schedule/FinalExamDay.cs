@@ -64,7 +64,11 @@ namespace LIFES.Schedule
          */
         public void InsertExam(FinalExam exam)
         {
-            finals.Add(exam);
+            if (numberOfExams > finals.Count)
+            {
+                finals.Add(exam);
+            }
+            
         }
         /*
          * Method: SetDay
@@ -88,6 +92,10 @@ namespace LIFES.Schedule
             return day;
         }
 
+        public int GetNumberOfExams()
+        {
+            return finals.Count;
+        }
         public void setNumberOfExams(int num)
         {
             numberOfExams = num;
