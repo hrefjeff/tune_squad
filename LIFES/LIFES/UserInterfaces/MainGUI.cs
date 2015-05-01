@@ -12,6 +12,7 @@ using LIFES.Authentication;
 using LIFES.Schedule;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using System.IO;
 
 namespace LIFES.UserInterfaces
 {
@@ -304,11 +305,15 @@ namespace LIFES.UserInterfaces
          */
         void Schedule_Click(object sender, EventArgs e)
         {
-            examTable.Rows[0].Cells[0].Value = "First Class Time";
-            examTable.Rows[0].Cells[1].Value = "First Exam Time";
-            Scheduler examSchedule = new Scheduler(Globals.compressedTimes, Globals.timeConstraints);
-            examSchedule.Schedule();
-            Debug.Write(examSchedule.GetExamSlots());
+            examTable.Rows.Add();
+            examTable.Rows[0].Cells[0].Value = "MWF";
+            examTable.Rows[0].Cells[1].Value = "8:00";
+            examTable.Rows[1].Cells[0].Value = "TR";
+            examTable.Rows[1].Cells[1].Value = "9:00";
+
+            //Scheduler examSchedule = new Scheduler(Globals.compressedTimes, Globals.timeConstraints);
+            //examSchedule.Schedule();
+            //Debug.Write(examSchedule.GetExamSlots());
 
 
         }
@@ -431,7 +436,7 @@ namespace LIFES.UserInterfaces
             openFile.Title = "Open an Exam Schedule";
             openFile.ShowDialog();
             string filename = openFile.FileName;
-            
+
         }
 
     }
