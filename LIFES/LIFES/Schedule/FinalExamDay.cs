@@ -115,7 +115,7 @@ namespace LIFES.Schedule
          */
         public bool HasAvailableTime(int time)
         {
-            if (finals.Count < numberOfExams)
+            if (finals.Count <= numberOfExams)
             {
 
                 foreach (FinalExam fe in finals)
