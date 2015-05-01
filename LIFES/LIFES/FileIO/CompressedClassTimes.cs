@@ -140,8 +140,6 @@ namespace LIFES.FileIO
                                     
                                     warningList.Add(e.Message
                                         + " on line " + lineCounter);
-
-                                    Console.WriteLine(e.Message + " on line " + lineCounter);
                                 }
                             }
                         }
@@ -153,7 +151,6 @@ namespace LIFES.FileIO
                             + lineCounter + "\"" + line + "\"");
                     }
                 }
-                Console.WriteLine("\nThere were " + warning + " warnings caught in this file.\n"  );
             }
 
             // Create and populate compressedClassTimes with values from 
