@@ -37,7 +37,7 @@ namespace LIFES.Schedule
         public FinalExam(CompressedClassTime ct)
         {
             compressedClass = ct;
-            startTime = 0;
+            startTime = ct.getClassTimeStartHour();
             endTime = 0;
         }
         /*
