@@ -410,6 +410,30 @@ namespace LIFES.UserInterfaces
 
         }
 
+        /*
+        * Method: OpenButton_Click
+        * Paramters: object Sender, EventArgs e
+        * Output: N/A
+        * Created By: Riley Smith
+        * Date: 5/1/2015
+        * Modified By: Riley Smith
+        * 
+        * Description: When this button is clicked an open file dialog will open and allow
+        *   the user to enter a file name or select a file.
+        * Sources: msdn.Microsoft.com
+        */
+        private void OpenButton_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "txt files (*.txt)| *.txt|" +
+            "Comma Sperateve Values (*.csv) |*.csv| pdf (*.pdf) |*.pdf";
+            openFile.Title = "Open an Exam Schedule";
+            openFile.ShowDialog();
+            string filename = openFile.FileName;
+            
+        }
+
     }
 }
 
