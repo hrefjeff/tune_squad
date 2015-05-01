@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5EDA3548-A8FF-4356-AB50-6073FF35EA06}</ProjectGuid>
+    <ProjectGuid>{24188125-76C2-4641-940D-8A39DC9CE72D}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>helloworld</RootNamespace>
-    <AssemblyName>helloworld</AssemblyName>
+    <RootNamespace>ClasstimeMilToStd</RootNamespace>
+    <AssemblyName>ClasstimeMilToStd</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
