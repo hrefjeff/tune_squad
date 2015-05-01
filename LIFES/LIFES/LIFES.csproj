@@ -82,7 +82,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="PdfSharp">
-      <HintPath>..\PDFsharp\code\PdfSharp\bin\Debug\PdfSharp.dll</HintPath>
+      <HintPath>..\PDFsharp\code\PdfSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

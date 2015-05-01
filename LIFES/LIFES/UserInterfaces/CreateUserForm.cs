@@ -19,7 +19,7 @@ namespace LIFES.UserInterfaces
      * 
      * Author: Riley Smith
      * Date: 4/1/2015
-     * Modified by: Riley Smith
+     * Modified by: Jordan Beck
      * 
      * Description: This is the driver class for the Create User Window.
      * 
@@ -67,7 +67,7 @@ namespace LIFES.UserInterfaces
          * Output: N/A
          * Created By: Riley Smith
          * Date: 3/30/2015
-         * Modified By: Riley Smith
+         * Modified By: Jordan Beck
          * 
          * Override the function that loads the Form.
          * Animates the window as it opens.
