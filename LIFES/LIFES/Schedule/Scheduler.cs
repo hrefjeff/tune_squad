@@ -211,6 +211,11 @@ namespace LIFES.Schedule
             return examSlots;
         }
 
+        public FinalExamDay[] GetExams()
+        {
+            return examWeek;
+        } 
+
 
 
     }
