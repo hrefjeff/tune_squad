@@ -27,6 +27,8 @@ namespace LIFES.Schedule
                     int endTime = ct.getClassTimeStartHour()+ tc.GetLengthOfExams();
                     fe.SetEndTime(endTime+tc.GetTimeBetweenExams());
                     fed.InsertExam(fe);
+                    //debugging infor
+                    Debug.WriteLine("Day: " + fed.GetDay().ToString() + " " + fed.GetNumberOfExams());
                 }
             }
         }
@@ -59,7 +61,7 @@ namespace LIFES.Schedule
                 //checking pigeon hole principle
                 if ((examSlots * tc.GetNumberOfDays()) >= compressedClassTime.Count())
                 {
-                    //run schedule
+                    //debugging info
                     Debug.WriteLine("Yay we get to schedule");
                     
                     foreach (CompressedClassTime ct in compressedClassTime)
