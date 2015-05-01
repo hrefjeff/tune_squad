@@ -18,14 +18,24 @@ namespace LIFES.Schedule
 
         private void runScheduler()
         {
-
+            AvailableExamSlots();
+            if ((examSlots * tc.GetNumberOfDays()) <= compressedClassTime.Count())
+            {
+                //run schedule
+            }
+            else
+            {
+                //report error to user
+            }
 
         }
         private void AvailableExamSlots()
         {
-            Debug.WriteLine("Inside the slots");
-            examSlots = (int)(((1715-tc.GetLunchPeriod()) - tc.GetStartTime()) / (((tc.GetLengthOfExams()+tc.GetTimeBetweenExams())/60)*100));
-             
+            if((tc.GetLengthOfExams() !=0) && (tc.GetTimeBetweenExams() !=0 ))
+            {
+                examSlots = (int)(((1715-tc.GetLunchPeriod()) - tc.GetStartTime()) / (((tc.GetLengthOfExams()+tc.GetTimeBetweenExams())/60)*100));
+            }
+ 
         }
         /*
          * Method: Scheduler
@@ -71,7 +81,6 @@ namespace LIFES.Schedule
          */ 
         public void Schedule()
         {
-            AvailableExamSlots();
             runScheduler();
         }
         public int GetExamSlots()
