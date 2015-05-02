@@ -319,9 +319,10 @@ namespace LIFES.UserInterfaces
             examTable.Rows[2].Cells[1].Value = "11:00";
 
 
-            //Scheduler examSchedule = new Scheduler(Globals.compressedTimes, Globals.timeConstraints);
-            //examSchedule.Schedule();
-            //Debug.Write(examSchedule.GetExamSlots());
+            Scheduler examSchedule = new Scheduler(Globals.compressedTimes, Globals.timeConstraints);
+            examSchedule.Schedule();
+            Globals.examWeek = examSchedule.GetExams();
+            Debug.Write(examSchedule.GetExamSlots());
 
 
         }

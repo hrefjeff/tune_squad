@@ -37,7 +37,7 @@ namespace LIFES.Schedule
         public FinalExam(CompressedClassTime ct)
         {
             compressedClass = ct;
-            startTime = ct.getClassTimeStartHour();
+            
             endTime = 0;
         }
         /*
@@ -99,6 +99,11 @@ namespace LIFES.Schedule
         public int GetStartTime()
         {
             return startTime;
+        }
+
+        public CompressedClassTime GetCompressedClasses()
+        {
+            return compressedClass;
         }
         /*
          * Method: getEndTime
