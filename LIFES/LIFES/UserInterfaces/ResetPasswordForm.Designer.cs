@@ -47,6 +47,7 @@
             this.usersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.userNames});
             this.usersGridView.Location = new System.Drawing.Point(55, 25);
+            this.usersGridView.MultiSelect = false;
             this.usersGridView.Name = "usersGridView";
             this.usersGridView.ReadOnly = true;
             this.usersGridView.RowHeadersVisible = false;

@@ -57,6 +57,7 @@ namespace LIFES.UserInterfaces
                     {
                         userList.ChangePassword(username, passwordTextBox.Text);
                         MessageBox.Show("Password for " + username + " changed to: " + passwordTextBox.Text);
+                        this.Close();
                     }
 
                     else
@@ -74,5 +75,26 @@ namespace LIFES.UserInterfaces
                 }
             }
         }
+
+        /*
+         * Method: ConfirmTextBox_KeyDown
+         * Paraneters: object sender, EventArgs e
+         * Output: N/A
+         * Created By: Riley Smith
+         * Date: 4/22/2015
+         * Modified By: Riley Smith
+         * 
+         * Description: If the user pressed the enter key while in the 
+         *   confirm password textbox, call the SetPasswordButton_Click function.
+         * 
+         */
+        private void ConfirmTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SetPasswordButton_Click(sender, e);
+            }
+        }
+        
     }
 }

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.passwordLabel = new System.Windows.Forms.Label();
-            this.confirmLabel = new System.Windows.Forms.Label();
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.confirmTextBox = new System.Windows.Forms.TextBox();
             this.setPasswordButton = new System.Windows.Forms.Button();
+            this.confirmTextBox = new System.Windows.Forms.TextBox();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.confirmLabel = new System.Windows.Forms.Label();
+            this.passwordLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,14 +51,30 @@
             this.panel1.Size = new System.Drawing.Size(320, 160);
             this.panel1.TabIndex = 0;
             // 
-            // passwordLabel
+            // setPasswordButton
             // 
-            this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(22, 27);
-            this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(78, 13);
-            this.passwordLabel.TabIndex = 0;
-            this.passwordLabel.Text = "New Password";
+            this.setPasswordButton.Location = new System.Drawing.Point(178, 113);
+            this.setPasswordButton.Name = "setPasswordButton";
+            this.setPasswordButton.Size = new System.Drawing.Size(103, 23);
+            this.setPasswordButton.TabIndex = 4;
+            this.setPasswordButton.Text = "Set Password";
+            this.setPasswordButton.UseVisualStyleBackColor = true;
+            this.setPasswordButton.Click += new System.EventHandler(this.SetPasswordButton_Click);
+            // 
+            // confirmTextBox
+            // 
+            this.confirmTextBox.Location = new System.Drawing.Point(141, 71);
+            this.confirmTextBox.Name = "confirmTextBox";
+            this.confirmTextBox.Size = new System.Drawing.Size(140, 20);
+            this.confirmTextBox.TabIndex = 3;
+            this.confirmTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ConfirmTextBox_KeyDown);
+            // 
+            // passwordTextBox
+            // 
+            this.passwordTextBox.Location = new System.Drawing.Point(141, 20);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(140, 20);
+            this.passwordTextBox.TabIndex = 2;
             // 
             // confirmLabel
             // 
@@ -69,29 +85,14 @@
             this.confirmLabel.TabIndex = 1;
             this.confirmLabel.Text = "Confirm Password";
             // 
-            // passwordTextBox
+            // passwordLabel
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(141, 20);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(140, 20);
-            this.passwordTextBox.TabIndex = 2;
-            // 
-            // confirmTextBox
-            // 
-            this.confirmTextBox.Location = new System.Drawing.Point(141, 71);
-            this.confirmTextBox.Name = "confirmTextBox";
-            this.confirmTextBox.Size = new System.Drawing.Size(140, 20);
-            this.confirmTextBox.TabIndex = 3;
-            // 
-            // setPasswordButton
-            // 
-            this.setPasswordButton.Location = new System.Drawing.Point(178, 113);
-            this.setPasswordButton.Name = "setPasswordButton";
-            this.setPasswordButton.Size = new System.Drawing.Size(103, 23);
-            this.setPasswordButton.TabIndex = 4;
-            this.setPasswordButton.Text = "Set Password";
-            this.setPasswordButton.UseVisualStyleBackColor = true;
-            this.setPasswordButton.Click += new System.EventHandler(this.SetPasswordButton_Click);
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Location = new System.Drawing.Point(22, 27);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(78, 13);
+            this.passwordLabel.TabIndex = 0;
+            this.passwordLabel.Text = "New Password";
             // 
             // GetNewPasswordForm
             // 

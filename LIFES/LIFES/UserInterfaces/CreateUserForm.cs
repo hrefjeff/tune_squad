@@ -112,6 +112,11 @@ namespace LIFES.UserInterfaces
                                     MessageBox.Show(userNameTextBox.Text + " added",
                                     "User Added");
                                     numAdmins = numAdmins + 1;
+
+                                    // Reset text boxes.
+                                    userNameTextBox.Clear();
+                                    passwordTextBox.Clear();
+                                    confirmTextBox.Clear();
                                 }
                                 else
                                 {
@@ -119,10 +124,6 @@ namespace LIFES.UserInterfaces
                                         " unable to be added, only one admin is allowed.");
                                 }
 
-                                // Reset text boxes.
-                                userNameTextBox.Clear();
-                                passwordTextBox.Clear();
-                                confirmTextBox.Clear();
                             }
 
                             else if (generalRadioButton.Checked)
