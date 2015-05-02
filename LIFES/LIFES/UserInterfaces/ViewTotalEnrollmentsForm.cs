@@ -76,11 +76,21 @@ namespace LIFES.UserInterfaces
                 int linenumber = 0;
                 foreach (CompressedClassTime ele in Globals.compressedTimes)
                 {
+                    string classTimes = "";
+
+                    foreach (ClassTime time in ele.getClassTimes())
+                    {
+                        classTimes += time.getDayOfTheWeek() + " ";
+                        classTimes += time.getClassStartTime() + "-";
+                        classTimes += time.getClassEndTime() + "\n";
+                    }
+
                     TimesGridView.Rows.Add();
                     TimesGridView.Rows[linenumber].Cells[0].Value = 
                         ele.getDayOfTheWeek();
-                    TimesGridView.Rows[linenumber].Cells[1].Value = 
-                        ele.getClassTimeStartHour();
+                    TimesGridView.Rows[linenumber].Cells[1].Value =
+                        classTimes;
+                        //ele.getClassTimeStartHour();
                     TimesGridView.Rows[linenumber].Cells[2].Value =
                         ele.getTotalStudentsEnrolled();
                     linenumber++;

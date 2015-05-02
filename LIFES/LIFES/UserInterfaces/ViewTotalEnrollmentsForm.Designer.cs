@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TimesGridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dayCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,6 +77,8 @@
             // classCol
             // 
             this.classCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.classCol.DefaultCellStyle = dataGridViewCellStyle1;
             this.classCol.HeaderText = "Class Time";
             this.classCol.Name = "classCol";
             this.classCol.ReadOnly = true;
