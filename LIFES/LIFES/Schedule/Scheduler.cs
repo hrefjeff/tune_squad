@@ -9,7 +9,7 @@ using LIFES.FileIO;
 using System.Diagnostics;
 namespace LIFES.Schedule
 {
-    class Scheduler
+   public class Scheduler
     {
         private TimeConstraints tc;
         private List<CompressedClassTime> compressedClassTime;
