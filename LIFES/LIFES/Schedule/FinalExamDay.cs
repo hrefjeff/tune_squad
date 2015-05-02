@@ -15,7 +15,7 @@ namespace LIFES.Schedule
      * Description: This class represents a single exam day.
      * 
      */
-    class FinalExamDay
+    public class FinalExamDay
     {
         int day;
         private List<FinalExam> finals;
