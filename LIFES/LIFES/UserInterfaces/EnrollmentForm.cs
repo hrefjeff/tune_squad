@@ -170,6 +170,7 @@ namespace LIFES.UserInterfaces
                 if (compressedClassTimes.getErrorList().Count == 0)
                 {
                     Globals.compressedTimes = compressedClassTimes.getCompressedClassTimes();
+                    MessageBox.Show("Enrollment File Accepted");
                 }
 
                 else
