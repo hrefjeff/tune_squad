@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewTotalEnrollmentsForm));
             this.TimesGridView = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.dayCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enrollmentCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.TimesGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,18 +56,6 @@
             this.TimesGridView.ReadOnly = true;
             this.TimesGridView.Size = new System.Drawing.Size(360, 175);
             this.TimesGridView.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.TimesGridView);
-            this.panel1.Location = new System.Drawing.Point(75, 55);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(430, 250);
-            this.panel1.TabIndex = 1;
             // 
             // dayCol
             // 
@@ -91,6 +80,18 @@
             this.enrollmentCol.Name = "enrollmentCol";
             this.enrollmentCol.ReadOnly = true;
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.TimesGridView);
+            this.panel1.Location = new System.Drawing.Point(75, 55);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(430, 250);
+            this.panel1.TabIndex = 1;
+            // 
             // ViewTotalEnrollmentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -98,6 +99,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
             this.ClientSize = new System.Drawing.Size(584, 361);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewTotalEnrollmentsForm";
             this.Text = "Total Enrollments";
             ((System.ComponentModel.ISupportInitialize)(this.TimesGridView)).EndInit();

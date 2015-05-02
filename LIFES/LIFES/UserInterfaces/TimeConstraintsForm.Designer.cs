@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimeConstraintsForm));
             this.chooseFileButton = new System.Windows.Forms.Button();
             this.numDaysTextBox = new System.Windows.Forms.TextBox();
             this.firstExamTimeTextBox = new System.Windows.Forms.TextBox();
@@ -215,6 +216,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
             this.ClientSize = new System.Drawing.Size(434, 336);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(450, 375);
             this.MinimumSize = new System.Drawing.Size(450, 375);
             this.Name = "TimeConstraintsForm";

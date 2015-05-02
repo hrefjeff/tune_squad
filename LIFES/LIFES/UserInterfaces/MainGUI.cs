@@ -30,12 +30,9 @@ namespace LIFES.UserInterfaces
     public partial class MainGUI : Form
     {
 
-        private int firstSelected = -1;
-        private int secondSelected = -1;
-
         public MainGUI()
         {
-            InitializeComponent();        
+            InitializeComponent();
         }
         /*
         * Method: CloseToolStripMenuItem_Click

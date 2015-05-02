@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnrollmentForm));
             this.fallButton = new System.Windows.Forms.RadioButton();
             this.springButton = new System.Windows.Forms.RadioButton();
             this.chooseFileButton = new System.Windows.Forms.Button();
@@ -129,8 +130,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
-            this.ClientSize = new System.Drawing.Size(364, 212);
+            this.ClientSize = new System.Drawing.Size(364, 211);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(380, 250);
             this.MinimumSize = new System.Drawing.Size(380, 250);
             this.Name = "EnrollmentForm";
