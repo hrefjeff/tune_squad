@@ -18,7 +18,7 @@ namespace LIFES.Schedule
      * that allows this class to be sorted.
      * 
      */ 
-    class FinalExam : IComparable<FinalExam>
+    public class FinalExam : IComparable<FinalExam>
     {
         private CompressedClassTime compressedClass;
         private int startTime;

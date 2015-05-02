@@ -83,7 +83,7 @@ namespace LIFES.UserInterfaces
         * 
         * Description: Event handler for the Admin menu button Delete User. 
         */
-        void DeleteUserToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DeleteUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
           
                 DeleteUserForm deleteUserForm = new DeleteUserForm();
@@ -135,7 +135,7 @@ namespace LIFES.UserInterfaces
          * 
          * Description: Event handler for the button Total Enrollment. 
          */
-        void EnrollmentButton_Click(object sender, EventArgs e)
+        private void EnrollmentButton_Click(object sender, EventArgs e)
         {
             EnrollmentForm enrollmentGUI = new EnrollmentForm();
             enrollmentGUI.Owner = this;
@@ -160,7 +160,7 @@ namespace LIFES.UserInterfaces
          * 
          * Description: Event handler for the Admin menu button Finalize. 
          */
-        void FinalizeScheduleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void FinalizeScheduleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //
        
@@ -182,7 +182,7 @@ namespace LIFES.UserInterfaces
          * 
          * Description: Event handler for the menu button Login. 
          */
-        void LoginToolStripMenuItem_Click(object sender, EventArgs e)
+        private void LoginToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoginForm loginGUI = new LoginForm(this, adminToolStripMenuItem);
             this.Hide();
@@ -235,7 +235,7 @@ namespace LIFES.UserInterfaces
          * 
          * Description: Event handler for the button Reschedule.
          */
-        void Reschedule_Click(object sender, EventArgs e)
+        private void Reschedule_Click(object sender, EventArgs e)
         {
             examTable.Rows[0].Cells[0].Value = "Rescheduled First Class Time";
             examTable.Rows[0].Cells[1].Value = "Rescheduled First Exam Time";
@@ -251,7 +251,7 @@ namespace LIFES.UserInterfaces
          * 
          * Description: Event handler for the Admin menu button Reset Password. 
          */
-        void ResetPasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ResetPasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
            
                 ResetPasswordForm resetForm = new ResetPasswordForm();
@@ -308,21 +308,21 @@ namespace LIFES.UserInterfaces
          * 
          * Description: Event handler for the button Schedule.
          */
-        void Schedule_Click(object sender, EventArgs e)
+        private void Schedule_Click(object sender, EventArgs e)
         {
             examTable.Rows.Add();
             examTable.Rows.Add();
-            examTable.Rows[0].Cells[0].Value = "MWF";
-            examTable.Rows[0].Cells[1].Value = "8:00";
-            examTable.Rows[1].Cells[0].Value = "TR";
-            examTable.Rows[1].Cells[1].Value = "9:00";
-            examTable.Rows[2].Cells[0].Value = "MW";
-            examTable.Rows[2].Cells[1].Value = "11:00";
+            //examTable.Rows[0].Cells[0].Value = "MWF";
+            //examTable.Rows[0].Cells[1].Value = "8:00";
+            //examTable.Rows[1].Cells[0].Value = "TR";
+            //examTable.Rows[1].Cells[1].Value = "9:00";
+            //examTable.Rows[2].Cells[0].Value = "MW";
+            //examTable.Rows[2].Cells[1].Value = "11:00";
 
 
             Scheduler examSchedule = new Scheduler(Globals.compressedTimes, Globals.timeConstraints);
             examSchedule.Schedule();
-            Globals.examWeek = examSchedule.GetExams();
+           Globals.examWeek = examSchedule.GetExams();
             Debug.Write(examSchedule.GetExamSlots());
 
 
@@ -338,7 +338,7 @@ namespace LIFES.UserInterfaces
          * 
          * Description: Event handler for the button Time Contraints.
          */
-        void TimeConstraintsButton_Click(object sender, EventArgs e)
+        private void TimeConstraintsButton_Click(object sender, EventArgs e)
         {
             TimeConstraintsForm timeConstraintsGUI = new TimeConstraintsForm();
             timeConstraintsGUI.Owner = this;
