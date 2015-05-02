@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LIFES.FileIO;
+using LIFES.Schedule;
 namespace LIFES
 {
     /*
@@ -22,6 +23,7 @@ namespace LIFES
         public static string semester = "";
         public static string year = "0";
         public static List<CompressedClassTime> compressedTimes;
+        public static FinalExamDay[] examWeek;
         //Save file if applicable
         //final exam schedule
     }

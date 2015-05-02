@@ -29,6 +29,10 @@ namespace LIFES.UserInterfaces
      */
     public partial class MainGUI : Form
     {
+
+        private int firstSelected = -1;
+        private int secondSelected = -1;
+
         public MainGUI()
         {
             InitializeComponent();        
@@ -307,14 +311,19 @@ namespace LIFES.UserInterfaces
         void Schedule_Click(object sender, EventArgs e)
         {
             examTable.Rows.Add();
+            examTable.Rows.Add();
             examTable.Rows[0].Cells[0].Value = "MWF";
             examTable.Rows[0].Cells[1].Value = "8:00";
             examTable.Rows[1].Cells[0].Value = "TR";
             examTable.Rows[1].Cells[1].Value = "9:00";
+            examTable.Rows[2].Cells[0].Value = "MW";
+            examTable.Rows[2].Cells[1].Value = "11:00";
 
-            //Scheduler examSchedule = new Scheduler(Globals.compressedTimes, Globals.timeConstraints);
-            //examSchedule.Schedule();
-            //Debug.Write(examSchedule.GetExamSlots());
+
+            Scheduler examSchedule = new Scheduler(Globals.compressedTimes, Globals.timeConstraints);
+            examSchedule.Schedule();
+            Globals.examWeek = examSchedule.GetExams();
+            Debug.Write(examSchedule.GetExamSlots());
 
 
         }
@@ -413,7 +422,20 @@ namespace LIFES.UserInterfaces
         */ 
         private void SwapButton_Click(object sender, EventArgs e)
         {
+            if (examTable.SelectedRows.Count == 2)
+            {
+                string firstIndex = examTable.SelectedRows[0].Cells[1].Value.ToString();
+                string secondIndex = examTable.SelectedRows[1].Cells[1].Value.ToString();
+                string tmpString = firstIndex;
 
+                examTable.SelectedRows[0].Cells[1].Value = secondIndex;
+                examTable.SelectedRows[1].Cells[1].Value = tmpString;        
+            }
+
+            else
+            {
+                MessageBox.Show("Must have 2 selected rows");
+            }
         }
 
         /*
@@ -440,6 +462,28 @@ namespace LIFES.UserInterfaces
 
         }
 
+        /*
+       * Method: examTable_SelectionChanged
+       * Paramters: object Sender, EventArgs e
+       * Output: N/A
+       * Created By: Riley Smith
+       * Date: 5/1/2015
+       * Modified By: Riley Smith
+       * 
+       * Description: Event handler for when the selected row 
+       *    in examTable changes.
+       *    Limits the number of selected rows to two.
+       */
+        private void ExamTable_SelectionChanged(object sender, EventArgs e)
+        {
+            if (examTable.SelectedRows.Count > 2)
+            {
+                for (int i = 2; i < examTable.SelectedRows.Count; i++)
+                {
+                    examTable.SelectedRows[i].Selected = false;
+                }
+            }
+        }
     }
 }
 
