@@ -120,6 +120,7 @@ namespace LIFES.UserInterfaces
                 System.Drawing.Brushes.Black, 10, 10);
         }
 
+
         /*
          * Method: EnrollmentButton_Click
          * Parameters: object sender, EventArgs e

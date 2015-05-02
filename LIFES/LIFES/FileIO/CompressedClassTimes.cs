@@ -105,7 +105,7 @@ namespace LIFES.FileIO
                             foreach (var c in dayOfTheWeek.ToCharArray())
                             {
                                 // Round class start time down to the hour of.
-                                int classStartTimeHour = classStartTime;
+                                int classStartTimeHour = classStartTime / 100;
                                 String key = c.ToString() + classStartTimeHour;
 
                                 // If tmpCompressedClassTimes does not have a 
