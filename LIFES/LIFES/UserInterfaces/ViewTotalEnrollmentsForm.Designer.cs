@@ -46,6 +46,7 @@
             this.TimesGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TimesGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.TimesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TimesGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dayCol,
@@ -54,7 +55,7 @@
             this.TimesGridView.Location = new System.Drawing.Point(35, 40);
             this.TimesGridView.Name = "TimesGridView";
             this.TimesGridView.ReadOnly = true;
-            this.TimesGridView.Size = new System.Drawing.Size(360, 175);
+            this.TimesGridView.Size = new System.Drawing.Size(560, 376);
             this.TimesGridView.TabIndex = 0;
             // 
             // dayCol
@@ -89,7 +90,7 @@
             this.panel1.Controls.Add(this.TimesGridView);
             this.panel1.Location = new System.Drawing.Point(75, 55);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(430, 250);
+            this.panel1.Size = new System.Drawing.Size(630, 451);
             this.panel1.TabIndex = 1;
             // 
             // ViewTotalEnrollmentsForm
@@ -97,7 +98,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
-            this.ClientSize = new System.Drawing.Size(584, 361);
+            this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewTotalEnrollmentsForm";

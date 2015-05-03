@@ -189,6 +189,33 @@ namespace LIFES.UserInterfaces
         }
 
         /*
+         * Method: MilitaryToDateTime
+         * Parameters: int (Military Time)
+         * Output: DateTime
+         * Created By: Riley Smith
+         * Date: 5/3/2015
+         * Modified By: Riley Smith
+         * 
+         * Description: Converts a MilitaryTime int to a standard DateTime.
+         * 
+         * Source:
+         * http://forums.asp.net/t/1503263.aspx?How+to+convert+integer+representing+military+time+into+DateTime+object
+         */
+         public static DateTime MilitaryToDateTime(int time)
+        {
+            int Hours = time / 100;
+            int Minutes = time - Hours * 100;
+            DateTime Result = DateTime.MinValue;
+
+
+            Result = Result.AddHours(Hours);
+            Result = Result.AddMinutes(Minutes);
+
+            
+            return Result;
+        }
+
+        /*
         * Method: PrintToolStripMenuItemClick 
         * Parameters: object sender, EventArgs e
         * Output: N/A
@@ -307,20 +334,45 @@ namespace LIFES.UserInterfaces
          */
         private void Schedule_Click(object sender, EventArgs e)
         {
-            examTable.Rows.Add();
-            examTable.Rows.Add();
-            //examTable.Rows[0].Cells[0].Value = "MWF";
-            //examTable.Rows[0].Cells[1].Value = "8:00";
-            //examTable.Rows[1].Cells[0].Value = "TR";
-            //examTable.Rows[1].Cells[1].Value = "9:00";
-            //examTable.Rows[2].Cells[0].Value = "MW";
-            //examTable.Rows[2].Cells[1].Value = "11:00";
-
-
             Scheduler examSchedule = new Scheduler(Globals.compressedTimes, Globals.timeConstraints);
             examSchedule.Schedule();
-           Globals.examWeek = examSchedule.GetExams();
+            Globals.examWeek = examSchedule.GetExams();
             Debug.Write(examSchedule.GetExamSlots());
+
+            int rowIndex = 0;
+            foreach (FinalExamDay ele in Globals.examWeek)
+            {
+                foreach (FinalExam exam in ele.GetExams())
+                {
+                    examTable.Rows.Add();
+                   
+
+                    string classTimes = "";
+
+                    CompressedClassTime compressedTime = exam.GetCompressedClasses();
+
+                    // Get group of compressed class times.
+                    foreach (ClassTime time in compressedTime.getClassTimes())
+                    {
+                        classTimes += time.getDayOfTheWeek() + " ";
+                        classTimes += MilitaryToDateTime(time.getClassStartTime()).
+                            ToString("hh:mm tt") + "-";
+                        classTimes += MilitaryToDateTime(time.getClassEndTime()).
+                            ToString("hh:mm tt") + "\n";
+                    }
+
+                    string examTimes = "";
+                    examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
+                        + "-" + MilitaryToDateTime(exam.GetEndTime()).ToString("hh:mm tt");
+                    
+                    examTable.Rows[rowIndex].Cells[0].Value = ele.GetDay();
+                    examTable.Rows[rowIndex].Cells[1].Value = classTimes;         
+                    examTable.Rows[rowIndex].Cells[2].Value = examTimes;
+
+                    rowIndex++;
+                }
+
+            }
 
 
         }

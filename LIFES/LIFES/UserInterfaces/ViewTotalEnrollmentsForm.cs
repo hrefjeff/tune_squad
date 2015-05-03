@@ -81,8 +81,10 @@ namespace LIFES.UserInterfaces
                     foreach (ClassTime time in ele.getClassTimes())
                     {
                         classTimes += time.getDayOfTheWeek() + " ";
-                        classTimes += time.getClassStartTime() + "-";
-                        classTimes += time.getClassEndTime() + "\n";
+                        classTimes += MilitaryToDateTime(time.getClassStartTime()).
+                            ToString("hh:mm tt") + "-";
+                        classTimes += MilitaryToDateTime(time.getClassEndTime()).
+                            ToString("hh:mm tt") + "\n";
                     }
 
                     TimesGridView.Rows.Add();
@@ -90,13 +92,39 @@ namespace LIFES.UserInterfaces
                         ele.getDayOfTheWeek();
                     TimesGridView.Rows[linenumber].Cells[1].Value =
                         classTimes;
-                        //ele.getClassTimeStartHour();
                     TimesGridView.Rows[linenumber].Cells[2].Value =
                         ele.getTotalStudentsEnrolled();
                     linenumber++;
                 }
             }
         }
-   
+
+        /*
+         * Method: MilitaryToDateTime
+         * Parameters: int (Military Time)
+         * Output: DateTime
+         * Created By: Riley Smith
+         * Date: 5/3/2015
+         * Modified By: Riley Smith
+         * 
+         * Description: Converts a MilitaryTime int to a standard DateTime.
+         * 
+         * Source:
+         * http://forums.asp.net/t/1503263.aspx?How+to+convert+integer+representing+military+time+into+DateTime+object
+         */        
+        public static DateTime MilitaryToDateTime(int time)
+        {
+            int Hours = time / 100;
+            int Minutes = time - Hours * 100;
+            DateTime Result = DateTime.MinValue;
+
+
+            Result = Result.AddHours(Hours);
+            Result = Result.AddMinutes(Minutes);
+
+            
+            return Result;
+        }
+
     }
 }
