@@ -113,14 +113,17 @@ namespace LIFES.Schedule
          * available on the exam day.
          * 
          */
-        public bool HasAvailableTime(int time)
+        public bool HasAvailableTime(int beginTime, int endTime)
         {
             if (finals.Count <= numberOfExams)
             {
 
                 foreach (FinalExam fe in finals)
                 {
-                    if ((fe.GetStartTime() < time) && (fe.GetEndTime() >time))
+                    if (((fe.GetStartTime() <= beginTime) &&
+                        (fe.GetEndTime() >= beginTime)) || 
+                        ((fe.GetStartTime() < endTime) && 
+                        (fe.GetEndTime() >= endTime)))
                     {
                         return false;
                     }
