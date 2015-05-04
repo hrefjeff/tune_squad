@@ -255,13 +255,51 @@ namespace LIFES.UserInterfaces
          * Output: N/A
          * Created By: Riley Smith
          * Date: 3/24/2015
-         * Modified By: Riley Smith
+         * Modified By: Scott Smoke
          * 
          * Description: Event handler for the button Reschedule.
          */
         private void Reschedule_Click(object sender, EventArgs e)
         {
-            
+            Scheduler examSchedule = new Scheduler(Globals.compressedTimes, Globals.timeConstraints);
+            examSchedule.ReSchedule();
+            Globals.examWeek = examSchedule.GetExams();
+            Debug.Write(examSchedule.GetExamSlots());
+
+            int rowIndex = 0;
+            foreach (FinalExamDay ele in Globals.examWeek)
+            {
+                foreach (FinalExam exam in ele.GetExams())
+                {
+                    examTable.Rows.Add();
+
+
+                    string classTimes = "";
+
+                    CompressedClassTime compressedTime = exam.GetCompressedClass();
+
+                    // Get group of compressed class times.
+                    foreach (ClassTime time in compressedTime.GetClassTimes())
+                    {
+                        classTimes += time.getDayOfTheWeek() + " ";
+                        classTimes += MilitaryToDateTime(time.getClassStartTime()).
+                            ToString("hh:mm tt") + "-";
+                        classTimes += MilitaryToDateTime(time.getClassEndTime()).
+                            ToString("hh:mm tt") + "\n";
+                    }
+
+                    string examTimes = "";
+                    examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
+                        + "-" + MilitaryToDateTime(exam.GetEndTime()).ToString("hh:mm tt");
+
+                    examTable.Rows[rowIndex].Cells[0].Value = ele.GetDay();
+                    examTable.Rows[rowIndex].Cells[1].Value = classTimes;
+                    examTable.Rows[rowIndex].Cells[2].Value = examTimes;
+
+                    rowIndex++;
+                }
+
+            }
         }
 
         /*
