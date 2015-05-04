@@ -121,12 +121,13 @@ namespace LIFES.Schedule
                 foreach (FinalExam fe in finals)
                 {
                     if (((fe.GetStartTime() <= beginTime) &&
-                        (fe.GetEndTime() >= beginTime)) || 
-                        ((fe.GetStartTime() < endTime) && 
-                        (fe.GetEndTime() >= endTime)))
+                        (fe.GetEndTime() >= beginTime)) ||
+                        ((fe.GetStartTime() < endTime) &&
+                        (fe.GetEndTime() > endTime)))
                     {
                         return false;
                     }
+                   
                 }
                 return true;
             }

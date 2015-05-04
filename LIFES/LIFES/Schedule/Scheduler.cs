@@ -43,7 +43,25 @@ namespace LIFES.Schedule
                 }
                 else
                 {
-                    
+                    //int newStartHour = tc.GetStartTime();
+                    startTime = tc.GetStartTime();
+                    endTime = startTime + MilitaryTime(tc.GetLengthOfExams() + tc.GetTimeBetweenExams());
+                    while (startTime < 1715)
+                    {
+                        if (fed.HasAvailableTime(startTime,endTime))
+                        {
+                            FinalExam fe = new FinalExam(ct);
+                            Debug.WriteLine("Class start hour " + ct.getClassTimeStartHour() * 100);
+                            fe.SetStartTime(startTime);
+                            fe.SetEndTime(endTime);
+                            fed.InsertExam(fe);
+                            //debugging info
+                            Debug.WriteLine("Day: " + fed.GetDay().ToString() + " " + fed.GetNumberOfExams());
+                            return;
+                        }
+                        startTime = startTime + MilitaryTime(tc.GetLengthOfExams() + tc.GetTimeBetweenExams());
+                        endTime = startTime + MilitaryTime(tc.GetLengthOfExams() + tc.GetTimeBetweenExams());
+                    }
                 }
             }
         }
