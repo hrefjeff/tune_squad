@@ -253,7 +253,7 @@ namespace LIFES.UserInterfaces
          * Output: N/A
          * Created By: Scott Smoke, Riley Smith
          * Date: 5/4/2015
-         * Modified By: Scott Smoke
+         * Modified By: Scott Smoke, Jordan Beck
          * 
          * Description: This displays the final exam
          * schedule to the table.
