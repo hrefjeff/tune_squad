@@ -153,7 +153,7 @@ namespace LIFES.FileIO
          * Modified by: Jordan Beck
          * Description: Getter for ClassTimes.
          */
-        public List<ClassTime> getClassTimes()
+        public List<ClassTime> GetClassTimes()
         {
             return this.classTimes;
         }
