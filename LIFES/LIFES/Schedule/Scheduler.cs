@@ -29,6 +29,7 @@ namespace LIFES.Schedule
         private FinalExamDay[] examWeek;
        //total number of exams that can be scheduled
         private int examSlots;
+        string error;
        /*
         * Method: FinaAvailableSlot
         * Parameters: FinalExamDay fed, CompressedClassTime ct,
@@ -184,7 +185,22 @@ namespace LIFES.Schedule
                     endTime = startTime + MilitaryTime(tc.GetLengthOfExams() + 
                         tc.GetTimeBetweenExams());
                     //if not then we check for any available start times on current day.
-                    FindAvailableSlot(fed, ct, startTime, endTime);
+                    while (startTime < Globals.END_OF_EXAM_DAY)
+                    {
+                        if (fed.HasAvailableTime(startTime, endTime))
+                        {
+                            InsertExam(fed, ct, startTime, endTime);
+                            return;
+                        }
+                        startTime = startTime +
+                            MilitaryTime(tc.GetLengthOfExams()
+                            + tc.GetTimeBetweenExams());
+
+                        endTime = startTime +
+                            MilitaryTime(tc.GetLengthOfExams()
+                               + tc.GetTimeBetweenExams());
+                    }
+                    
                 }
             }
         }
@@ -201,12 +217,53 @@ namespace LIFES.Schedule
          */ 
         private void Initialize()
         {
+           
             for (int i = 0; i < tc.GetNumberOfDays(); i++ )
             {
                 examWeek[i] = new FinalExamDay();
                 examWeek[i].SetDay(i+1);
-                examWeek[i].SetNumberOfExams(examSlots);
+                examWeek[i].SetNumberOfExams(AvailaibleTimeSlotsWithoutLp());
+                if (tc.GetLunchPeriod() != 0)
+                {
+                    FinalExam fe = new FinalExam(new CompressedClassTime("Lunch", 12));
+                    fe.SetStartTime(1200);
+                    fe.SetEndTime(1200 + MilitaryTime(tc.GetLunchPeriod()));
+                    examWeek[i].InsertExam(fe);
+                }
+                
             }
+        }
+       /*
+        * Method: AvailableTimeSlotsWithoutLp
+        * Parameters: N/A
+        * Output: N/A
+        * Created By: Scott Smoke
+        * Date: 5/4/2015
+        * Modified By: Scott Smoke
+        * 
+        * Description: This will return the number of exam
+        * slots without a lunch period.
+        * 
+        */
+        private int AvailaibleTimeSlotsWithoutLp()
+        {
+            ////time when exams cannot pass
+            int endTime = Globals.END_OF_EXAM_DAY;
+            //converting values to floats
+            float lP = tc.GetLunchPeriod();
+            float sT = tc.GetStartTime();
+            float eL = tc.GetLengthOfExams();
+            float b = tc.GetTimeBetweenExams();
+            //getting to total amount of exams + break time then converting it to hours
+            float toHours = (eL + b) / 60;
+            //getting the minute portion for the total time allocated for exam on a particular day
+            float decPortion = ((endTime - sT) % 100) / 60;
+            //getting the hour portion
+            int lengthOfExamDay = (int)(endTime - sT) / 100;
+            //adding the minute and hours portions
+            float totalLength = lengthOfExamDay + decPortion;
+            int slotsWithoutLP = (int)(totalLength / toHours);
+            return slotsWithoutLP;
         }
        /*
         * Method: RunScheduler
@@ -241,6 +298,8 @@ namespace LIFES.Schedule
                     //debugging info
                     //Debug.WriteLine("Bummer we can't schedule");
                     //report error to user
+                    error = "Please modify the time constraints to run the "+
+                        "scheduler";
                 }
             }
 
@@ -264,7 +323,7 @@ namespace LIFES.Schedule
                 if ((tc.GetLengthOfExams() != 0) && (tc.GetTimeBetweenExams() != 0))
                 {
                     //time when exams cannot pass
-                    int endTime = 1715;
+                    int endTime = Globals.END_OF_EXAM_DAY;
                     //converting values to floats
                     float lP = tc.GetLunchPeriod();
                     float sT = tc.GetStartTime();
@@ -314,6 +373,8 @@ namespace LIFES.Schedule
                 //debugging info
                 //Debug.WriteLine("Bummer we can't schedule");
                 //report error to user
+                error = "Please modify the time constraints to run the " +
+                        "scheduler";
             }
             //to do
         }
@@ -400,6 +461,11 @@ namespace LIFES.Schedule
         public FinalExamDay[] GetExams()
         {
             return examWeek;
-        } 
+        }
+
+        public string GetErrorMessage()
+        {
+            return error;
+        }
     }
 }
