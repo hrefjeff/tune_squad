@@ -185,7 +185,7 @@ namespace LIFES.FileIO
                     font = new XFont("Times New Roman", 12);
                     tf = new XTextFormatter(graph);
 
-                    yCord = 0;
+                    yCord = 36;
                 }
             }
  
