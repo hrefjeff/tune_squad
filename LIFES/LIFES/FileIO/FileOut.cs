@@ -43,7 +43,7 @@ namespace LIFES.FileIO
          * Output: Saved file of the pdf format
          * Created By: Scott Smoke
          * Date: 3/24/2015
-         * Modified By: Jordan Beck
+         * Modified By: Riley Smith
          * 
          * Description: This method will output the final exam 
          * schedule to a pdf. This method uses the open source 
@@ -64,24 +64,114 @@ namespace LIFES.FileIO
             XFont font = new XFont("Times New Roman", 12);
             XTextFormatter tf = new XTextFormatter(graph);
             //adding data to pdf
+
+            int yCord = 0;
+
             tf.DrawString(Globals.semester + " " + Globals.year, font,
-                XBrushes.Black, new XRect(40, 0, pdfPage.Width.Point,
+                XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
                     pdfPage.Height.Point), XStringFormats.TopLeft);
+
+            yCord += 12;
 
             tf.DrawString(Globals.totalEnrollemntsFileName, font,
-                XBrushes.Black, new XRect(40, 12, pdfPage.Width.Point,
+                XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
                     pdfPage.Height.Point), XStringFormats.TopLeft);
+
+            yCord += 12;
 
             tf.DrawString(Globals.timeConstraints.ToString(), font,
-                XBrushes.Black, new XRect(40, 24, pdfPage.Width.Point,
+                XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
                     pdfPage.Height.Point), XStringFormats.TopLeft);
+
+            yCord += 12 * 5;
+
+            // Blank line.
+            tf.DrawString(" ", font,
+                XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
+                    pdfPage.Height.Point), XStringFormats.TopLeft);
+
+            yCord += 12;
+
             //add schedule
-            
-     
+
+            foreach (FinalExamDay ele in Globals.examWeek)
+            {
+                tf.DrawString("Day Class Times Exam Time", font,
+                XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
+                    pdfPage.Height.Point), XStringFormats.TopLeft);
+
+                yCord += 12;
+
+                string header = "";
+                header += ele.GetDay();
+
+                foreach (FinalExam exam in ele.GetExams())
+                {
+                    string classTime = "";
+                    CompressedClassTime compressedTime = exam.GetCompressedClass();
+
+                    classTime += compressedTime.GetClassTimes().
+                        First().getDayOfTheWeek()
+                        + " ";
+                    classTime += MilitaryToDateTime(compressedTime.
+                        GetClassTimes().First().getClassStartTime()).
+                        ToString("hh:mm tt")
+                        + "-";
+                    classTime += MilitaryToDateTime(compressedTime.
+                        GetClassTimes().First().getClassEndTime()).
+                        ToString("hh:mm tt");
+
+                    header += " " + classTime + " ";
+
+                    string examTimes = "";
+                    examTimes += MilitaryToDateTime(exam.GetStartTime()).
+                        ToString("hh:mm tt")
+                        + "-" + MilitaryToDateTime(exam.GetEndTime()).
+                        ToString("hh:mm tt");
+
+                    header += " " + examTimes;
+
+                    tf.DrawString(header, font,
+                        XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
+                        pdfPage.Height.Point), XStringFormats.TopLeft);
+
+                    header = "";
+                    yCord += 12;
+
+                    foreach (ClassTime time in compressedTime.
+                        GetClassTimes())
+                    {
+                        if (time != compressedTime.GetClassTimes().First())
+                        {
+                            string classTimes = "";
+                            classTimes += time.getDayOfTheWeek() + " ";
+                            classTimes += MilitaryToDateTime(time.
+                                getClassStartTime()).
+                                ToString("hh:mm tt") + "-";
+                            classTimes += MilitaryToDateTime(time.
+                                getClassEndTime()).
+                                ToString("hh:mm tt");
+
+                      //      file.Write("\t\t" + classTimes + "\n");
+                        }
+                    }
+
+                    yCord += 12;
+    
+                }
+
+                graph.Dispose();
+                pdfPage = pdf.AddPage();
+                graph = XGraphics.FromPdfPage(pdfPage);
+                font = new XFont("Times New Roman", 12);
+                tf = new XTextFormatter(graph);
+
+                yCord = 0;
+            }
  
             pdf.Save(filename);
+}
 
-        }
         /*
          * Method: WriteToCSV
          * Parameters: N/A
@@ -109,13 +199,14 @@ namespace LIFES.FileIO
 
        
         }
+
         /*
          * Method: WriteToText
          * Parameters: N/A
          * Output: A saved file in plain text
          * Created By: Scott Smoke
          * Date: 3/24/2015
-         * Modified By: Jordan Beck
+         * Modified By: Riley Smith
          * 
          * Description: This will write the data that is returned from 
          * the scheduler to a plain text file.
@@ -130,12 +221,12 @@ namespace LIFES.FileIO
                 file.WriteLine(Globals.semester + " " +Globals.year);
                 file.WriteLine(Globals.totalEnrollemntsFileName);
                 file.WriteLine(Globals.timeConstraints.ToString());
-                file.WriteLine("\n");
+                file.WriteLine();
 
                 //place exam schedule
                 foreach (FinalExamDay ele in Globals.examWeek)
                 {
-                    file.WriteLine("Day\t Class Times\t\t\t\t Exam Time");
+                    file.WriteLine("Day\t Class Times\t\t\t\t\t\t Exam Time");
                     file.Write(ele.GetDay());
               
                     foreach (FinalExam exam in ele.GetExams())
@@ -187,9 +278,7 @@ namespace LIFES.FileIO
                 }
 
                 file.Close();
-            }
-            
-          
+            }  
         }
 
         /*
