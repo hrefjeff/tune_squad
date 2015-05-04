@@ -548,10 +548,10 @@ namespace LIFES.UserInterfaces
                 switch (openFile.FilterIndex)
                 {
                     case 1:
-                        inputFile.ReadFromTxt();
+                        inputFile.ReadFromTxt(openFile.FileName);
                         break;
                     case 2:
-                        inputFile.ReadFromCsv();
+                        inputFile.ReadFromCsv(openFile.FileName);
                         break;
                     default:
                         //error

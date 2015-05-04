@@ -227,7 +227,10 @@ namespace LIFES.FileIO
         * Description: Reads the data from an output CSV file
         *  
         */
-        public void ReadFromCsv(string filename) { }
+        public void ReadFromCsv(string filename)
+        {
+            return;
+        }
 
         /*
         * Method: ReadFromTxt
