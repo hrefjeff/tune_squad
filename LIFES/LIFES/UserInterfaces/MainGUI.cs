@@ -449,13 +449,15 @@ namespace LIFES.UserInterfaces
          * Output: N/A
          * Created By: Riley Smith
          * Date: 4/8/2015
-         * Modified By: Riley Smith
+         * Modified By: Jordan Beck
          * 
-         * Description: Event handler for the menu button View Total Enrollments.
+         * Description: Event handler for the menu
+         *  button View Total Enrollments.
          */
         private void ViewTotalEnrollments_Click(object sender, EventArgs e)
         {
-            ViewTotalEnrollmentsForm totalEnrollmentForm = new ViewTotalEnrollmentsForm();
+            ViewTotalEnrollmentsForm totalEnrollmentForm = 
+                new ViewTotalEnrollmentsForm();
             totalEnrollmentForm.Owner = this;
 
             totalEnrollmentForm.StartPosition = FormStartPosition.CenterScreen;
@@ -468,7 +470,7 @@ namespace LIFES.UserInterfaces
          * Output: N/A
          * Created By: Jeffrey Allen
          * Date: 4/13/2015
-         * Modified By: Jeffrey Allen
+         * Modified By: Jordan Beck
          * 
          * Description: Event handler for the menu button Open User Guide.
          */
@@ -484,7 +486,8 @@ namespace LIFES.UserInterfaces
         * Date: 4/21/2015
         * Modified By: Scott Smoke
         * 
-        * Description: This will launch the log in form when the application launches.
+        * Description: This will launch the log in form when 
+        *  the application launches.
         */ 
         private void MainGUI_Load(object sender, EventArgs e)
         {
@@ -501,7 +504,7 @@ namespace LIFES.UserInterfaces
         * Output: N/A
         * Created By: Jeffrey Allen
         * Date: 4/30/2015
-        * Modified By: 
+        * Modified By: Jordan Beck
         * 
         * Description: This button will swap two exam periods within
         *              the main window
@@ -510,8 +513,10 @@ namespace LIFES.UserInterfaces
         {
             if (examTable.SelectedRows.Count == 2)
             {
-                string firstIndex = examTable.SelectedRows[0].Cells[1].Value.ToString();
-                string secondIndex = examTable.SelectedRows[1].Cells[1].Value.ToString();
+                string firstIndex = 
+                    examTable.SelectedRows[0].Cells[1].Value.ToString();
+                string secondIndex = 
+                    examTable.SelectedRows[1].Cells[1].Value.ToString();
                 string tmpString = firstIndex;
 
                 examTable.SelectedRows[0].Cells[1].Value = secondIndex;
@@ -532,7 +537,8 @@ namespace LIFES.UserInterfaces
         * Date: 5/1/2015
         * Modified By: Riley Smith
         * 
-        * Description: When this button is clicked an open file dialog will open and allow
+        * Description: When this button is clicked 
+        *   an open file dialog will open and allow
         *   the user to enter a file name or select a file.
         * Sources: msdn.Microsoft.com
         */
