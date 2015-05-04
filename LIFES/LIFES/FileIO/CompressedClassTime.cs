@@ -38,7 +38,7 @@ namespace LIFES.FileIO
          * Modified by: Jordan Beck
          * Description: Adds in a class time.
          */
-        public void addClassTime(ClassTime c)
+        public void AddClassTime(ClassTime c)
         {
             this.classTimes.Add(c);
         }
@@ -49,7 +49,7 @@ namespace LIFES.FileIO
          * Modified by: Jordan Beck
          * Description: Marks the classe time as proccessed.
          */
-        public void markProccessed()
+        public void MarkProccessed()
         {
             this.isProccessed = true;
             foreach (var c in classTimes)
@@ -84,16 +84,16 @@ namespace LIFES.FileIO
         {
             int returnValue;
 
-            if (this.getTotalStudentsEnrolled() < c.getTotalStudentsEnrolled())
+            if (this.GetTotalStudentsEnrolled() < c.GetTotalStudentsEnrolled())
             {
                 returnValue = 1;
             }
-            else if (this.getTotalStudentsEnrolled() > 
-                c.getTotalStudentsEnrolled())
+            else if (this.GetTotalStudentsEnrolled() > 
+                c.GetTotalStudentsEnrolled())
             {
                 returnValue = -1;
             }
-            else if (this.getIsProccessed() && !c.getIsProccessed())
+            else if (this.GetIsProccessed() && !c.GetIsProccessed())
             {
                 returnValue = -1;
             }
@@ -121,7 +121,7 @@ namespace LIFES.FileIO
          * Modified by: Jordan Beck
          * Description:  Getter for ClassTimeStartHour.
          */
-        public int getClassTimeStartHour()
+        public int GetClassTimeStartHour()
         {
             return this.classTimeStartHour;
         }
@@ -132,7 +132,7 @@ namespace LIFES.FileIO
          * Modified by: Jordan Beck
          * Description: Getter for TotalStudentsEnrolled.
          */
-        public int getTotalStudentsEnrolled()
+        public int GetTotalStudentsEnrolled()
         {
             int totalStudentsEnrolled = 0;
             foreach (var c in classTimes)
@@ -158,13 +158,13 @@ namespace LIFES.FileIO
             return this.classTimes;
         }
 
-        /* getIsProccessed
+        /* GetIsProccessed
          * Author: Joshua Ford.
          * Date: 3/28/15
          * Modified by: Jordan Beck
          * Description: Getter for IsProccessed.
          */
-        public Boolean getIsProccessed()
+        public Boolean GetIsProccessed()
         {
             return isProccessed;
         }

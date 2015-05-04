@@ -119,7 +119,7 @@ namespace LIFES.FileIO
                                 // Add the class time to 
                                 // tmpCompressedClassTimes.
                                 tmpCompressedClassTimes[key].
-                                    addClassTime(classTime);
+                                    AddClassTime(classTime);
                             }
 
                         }
@@ -163,18 +163,18 @@ namespace LIFES.FileIO
             compressedClassTimes.Sort();
             for (int i = 0; i < compressedClassTimes.Count; i++)
             {
-                compressedClassTimes[i].markProccessed();
+                compressedClassTimes[i].MarkProccessed();
                 compressedClassTimes.Sort();
             }
             // Cleans up any classes that got zeroed out during the sorting and
             // ranking.
             compressedClassTimes.RemoveAll(c => 
-                c.getTotalStudentsEnrolled() == 0);
+                c.GetTotalStudentsEnrolled() == 0);
 
         }
         
         /*
-         * Method Name: getCompressedClassTimes
+         * Method Name: GetCompressedClassTimes
          * Parameters:  None
          * Return:      compressedClassTimes - Gets class variable. 
          * Author:      Joshua Ford
@@ -182,13 +182,13 @@ namespace LIFES.FileIO
          * Modified by: Joshua Ford
          * Description: Accessor for compressedClassTimes variable.
          */
-        public List<CompressedClassTime> getCompressedClassTimes()
+        public List<CompressedClassTime> GetCompressedClassTimes()
         {
             return compressedClassTimes;
         }
 
         /*
-         * Method Name: getErrorList
+         * Method Name: GetErrorList
          * Parameters:  None.
          * Return:      errorList   - Gets class variable, errorList.
          * Author:      Joshua Ford
@@ -196,13 +196,13 @@ namespace LIFES.FileIO
          * Modified by: Joshua Ford
          * Description: Accessor for errorList variable.
          */
-        public ArrayList getErrorList()
+        public ArrayList GetErrorList()
         {
             return errorList;
         }
 
         /*
-         * Method Name: getWarningList
+         * Method Name: GetWarningList
          * Parameters:  None
          * Return:      warningList - Gets class variable, warningList. 
          * Author:      Joshua Ford
@@ -210,7 +210,7 @@ namespace LIFES.FileIO
          * Modified by: Joshua Ford
          * Description: Accessor for warningList variable.
          */
-        public ArrayList getWarningList()
+        public ArrayList GetWarningList()
         {
             return warningList;
         }

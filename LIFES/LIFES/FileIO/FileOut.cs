@@ -96,32 +96,46 @@ namespace LIFES.FileIO
 
             foreach (FinalExamDay ele in Globals.examWeek)
             {
-                tf.DrawString("Day Class Times Exam Time", font,
+
+                // Add Header. 
+                tf.DrawString("Day", font,
                 XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
                     pdfPage.Height.Point), XStringFormats.TopLeft);
 
-                yCord += 12;
+                tf.DrawString("Class Times", font,
+                XBrushes.Black, new XRect(80, yCord, pdfPage.Width.Point,
+                    pdfPage.Height.Point), XStringFormats.TopLeft);
 
-                string header = "";
-                header += ele.GetDay();
+                tf.DrawString("Exam Time", font,
+                XBrushes.Black, new XRect(250, yCord, pdfPage.Width.Point,
+                    pdfPage.Height.Point), XStringFormats.TopLeft);
+
+                yCord += 12;
+                
+                tf.DrawString(ele.GetDay().ToString(), font,
+                    XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
+                    pdfPage.Height.Point), XStringFormats.TopLeft);
 
                 foreach (FinalExam exam in ele.GetExams())
                 {
+                    
                     string classTime = "";
                     CompressedClassTime compressedTime = exam.GetCompressedClass();
 
-                    classTime += compressedTime.GetClassTimes().
-                        First().GetDayOfTheWeek()
-                        + " ";
+                    classTime = compressedTime.GetClassTimes().
+                        First().GetDayOfTheWeek() + " ";
+
                     classTime += MilitaryToDateTime(compressedTime.
                         GetClassTimes().First().GetClassStartTime()).
-                        ToString("hh:mm tt")
-                        + "-";
+                        ToString("hh:mm tt") + "-";
+
                     classTime += MilitaryToDateTime(compressedTime.
                         GetClassTimes().First().GetClassEndTime()).
                         ToString("hh:mm tt");
 
-                    header += " " + classTime + " ";
+                    tf.DrawString(classTime, font,
+                       XBrushes.Black, new XRect(80, yCord, pdfPage.Width.Point,
+                       pdfPage.Height.Point), XStringFormats.TopLeft);
 
                     string examTimes = "";
                     examTimes += MilitaryToDateTime(exam.GetStartTime()).
@@ -129,13 +143,10 @@ namespace LIFES.FileIO
                         + "-" + MilitaryToDateTime(exam.GetEndTime()).
                         ToString("hh:mm tt");
 
-                    header += " " + examTimes;
-
-                    tf.DrawString(header, font,
-                        XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
+                    tf.DrawString(examTimes, font,
+                        XBrushes.Black, new XRect(250, yCord, pdfPage.Width.Point,
                         pdfPage.Height.Point), XStringFormats.TopLeft);
 
-                    header = "";
                     yCord += 12;
 
                     foreach (ClassTime time in compressedTime.
@@ -152,7 +163,12 @@ namespace LIFES.FileIO
                                 GetClassEndTime()).
                                 ToString("hh:mm tt");
 
-                      //      file.Write("\t\t" + classTimes + "\n");
+                            tf.DrawString(classTimes, font,
+                                XBrushes.Black, new XRect(80, yCord, pdfPage.Width.Point,
+                                pdfPage.Height.Point), XStringFormats.TopLeft);
+
+                            yCord += 12;
+
                         }
                     }
 
@@ -161,16 +177,20 @@ namespace LIFES.FileIO
                 }
 
                 graph.Dispose();
-                pdfPage = pdf.AddPage();
-                graph = XGraphics.FromPdfPage(pdfPage);
-                font = new XFont("Times New Roman", 12);
-                tf = new XTextFormatter(graph);
 
-                yCord = 0;
+                if (ele != Globals.examWeek.Last())
+                {
+                    pdfPage = pdf.AddPage();
+                    graph = XGraphics.FromPdfPage(pdfPage);
+                    font = new XFont("Times New Roman", 12);
+                    tf = new XTextFormatter(graph);
+
+                    yCord = 0;
+                }
             }
  
             pdf.Save(filename);
-}
+        }
 
         /*
          * Method: WriteToCSV
@@ -301,7 +321,7 @@ namespace LIFES.FileIO
 
                         classTime +=  compressedTime.GetClassTimes().
                             First().GetDayOfTheWeek()
-                            + " ";
+                            ;
                         classTime += MilitaryToDateTime(compressedTime.
                             GetClassTimes().First().GetClassStartTime()).
                             ToString("hh:mm tt")

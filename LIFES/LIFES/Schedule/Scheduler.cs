@@ -82,8 +82,8 @@ namespace LIFES.Schedule
             //checks the nearest time slots to the compressed class times start time.
             foreach (FinalExamDay fed in examWeek)
             {
-                //correcting for CompressedClassTime getClassTimeStartHour only returning a 2 digit integer
-                int startTime = ct.getClassTimeStartHour() * 100;
+                //correcting for CompressedClassTime GetClassTimeStartHour only returning a 2 digit integer
+                int startTime = ct.GetClassTimeStartHour() * 100;
                 int endTime = startTime + MilitaryTime(tc.GetLengthOfExams() +
                     tc.GetTimeBetweenExams());
 
@@ -142,7 +142,7 @@ namespace LIFES.Schedule
             int startTime, int endTime)
         {
             FinalExam fe = new FinalExam(ct);
-            Debug.WriteLine("Class start hour " + ct.getClassTimeStartHour() * 100);
+            Debug.WriteLine("Class start hour " + ct.GetClassTimeStartHour() * 100);
             fe.SetStartTime(startTime);
             fe.SetEndTime(endTime);
             fed.InsertExam(fe);
@@ -169,8 +169,8 @@ namespace LIFES.Schedule
         {
             foreach (FinalExamDay fed in examWeek)
             {
-                //correcting for CompressedClassTime getClassTimeStartHour only returning a 2 digit integer
-                int startTime = ct.getClassTimeStartHour()*100;
+                //correcting for CompressedClassTime GetClassTimeStartHour only returning a 2 digit integer
+                int startTime = ct.GetClassTimeStartHour()*100;
                 int endTime = startTime + MilitaryTime( tc.GetLengthOfExams() +
                     tc.GetTimeBetweenExams());
                 //cheecks the nearest slot available to compressed class start time

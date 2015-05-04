@@ -35,7 +35,7 @@ namespace LIFES.FileIO
         {
             if (File.Exists(fileName))
             {
-                setLines(System.IO.File.ReadAllLines(fileName));
+                SetLines(System.IO.File.ReadAllLines(fileName));
                 IsValidConstraintsFile();
             }
 
@@ -67,7 +67,7 @@ namespace LIFES.FileIO
 
                 for (int i = 0; i < lines.Length; i++)
                 {
-                    if (!isFileAllDigit(i))
+                    if (!IsFileAllDigit(i))
                     {
                         good = false;
                     }
@@ -128,7 +128,7 @@ namespace LIFES.FileIO
         }
 
         /*
-         * Name:        isFileAllDigit
+         * Name:        IsFileAllDigit
          * Author(s):   Joshua Ford
          * Created:     4/1/15
          * Modified by: Scott Smoke
@@ -139,7 +139,7 @@ namespace LIFES.FileIO
          *              digit form.
          */
 
-        private bool isFileAllDigit(int lineNum)
+        private bool IsFileAllDigit(int lineNum)
         {
             int numVal = -1;
             bool digit = true;
@@ -157,7 +157,7 @@ namespace LIFES.FileIO
         }
 
         /*
-         * Name:        setLines
+         * Name:        SetLines
          * Author:      Joshua Ford
          * Created:     3/25/15
          * Modified by: Joshua Ford
@@ -167,7 +167,7 @@ namespace LIFES.FileIO
          * Purpose: Acts as the setter for this class 
          * (Purpose should be pretty transparant).
          */
-        public void setLines(string[] lines)
+        public void SetLines(string[] lines)
         {
             if (lines.Length == 5)
             {
@@ -227,9 +227,54 @@ namespace LIFES.FileIO
         * Description: Reads the data from an output CSV file
         *  
         */
-        public void ReadFromCsv(string filename)
+        public void ReadOutput(string filename)
         {
-            return;
+
+            if (filename != "")
+            {
+                System.IO.StreamReader file =
+                    new System.IO.StreamReader(filename);
+
+                string[] splitFileName = filename.Split('.');
+                string extention = splitFileName[1];
+                string[] semesterAndYear;
+
+                string semesterAndYearLine = file.ReadLine();
+
+                if (extention == "csv")
+                {
+                    semesterAndYear = semesterAndYearLine.Split(',');
+                }
+                else
+                {
+                    semesterAndYear = semesterAndYearLine.Split(' ');
+                }
+
+                Globals.semester = semesterAndYear[0];
+                Globals.year = semesterAndYear[1];
+
+                // read enrollments file name
+                Globals.totalEnrollemntsFileName = file.ReadLine();
+                CompressedClassTimes ct = new CompressedClassTimes(Globals.totalEnrollemntsFileName);
+                Globals.compressedTimes = ct.GetCompressedClassTimes();
+
+                // read time constraints
+                string days = file.ReadLine();
+                string starttime = file.ReadLine();
+                string lengthofexam = file.ReadLine();
+                string btwclass = file.ReadLine();
+                string lunchtime = file.ReadLine();
+
+                TimeConstraints readConstraints = new TimeConstraints(Convert.ToInt32(days),
+                                                    Convert.ToInt32(starttime), Convert.ToInt32(lengthofexam),
+                                                    Convert.ToInt32(btwclass), Convert.ToInt32(lunchtime));
+
+                Globals.timeConstraints = readConstraints;
+
+                // read adminApproved
+                string adminApp = file.ReadLine();
+                Globals.adminApproved = Convert.ToBoolean(adminApp);
+            }
         }
 
         /*
@@ -249,29 +294,38 @@ namespace LIFES.FileIO
         if (filename != "")
             {
 
-                List<string> lines = null;
-
                 System.IO.StreamReader file = 
                     new System.IO.StreamReader(filename);
 
-                lines.Add(file.ReadLine());
-                lines.Add(file.ReadLine());
+                // read semester + year
+                string firstLine = file.ReadLine();
+                string[] s = firstLine.Split(' ');
+                Globals.semester = s[0];
+                Globals.year = s[1];
+
+                // read enrollments file name
+                Globals.totalEnrollemntsFileName = file.ReadLine();
+
+                // read time constraints
+                string days = file.ReadLine();
+                string starttime = file.ReadLine();
+                string lengthofexam = file.ReadLine();
+                string btwclass = file.ReadLine();
+                string lunchtime = file.ReadLine();
+
+                TimeConstraints readConstraints = new TimeConstraints(Convert.ToInt32(days),
+                                                    Convert.ToInt32(starttime), Convert.ToInt32(lengthofexam), 
+                                                    Convert.ToInt32(btwclass), Convert.ToInt32(lunchtime));
+
+                Globals.timeConstraints = readConstraints;
+
+                // read adminApproved
+                string adminApp = file.ReadLine();
+                Globals.adminApproved = Convert.ToBoolean(adminApp);
                 
 
                 /*
-                file.ReadLine(Globals.semester + " " +Globals.year);
-                file.ReadLine(Globals.totalEnrollemntsFileName);
-                file.Line(Globals.timeConstraints.ToString());
-                if (Globals.adminApproved)
-                {
-                    file.WriteLine("0");
-                }
-                else
-                {
-                    file.WriteLine("1");
-                }
-                file.WriteLine("\n");
-
+                
                 //place exam schedule
                 foreach (FinalExamDay ele in Globals.examWeek)
                 {

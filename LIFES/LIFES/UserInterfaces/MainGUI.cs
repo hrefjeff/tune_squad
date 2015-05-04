@@ -551,20 +551,8 @@ namespace LIFES.UserInterfaces
             if (File.Exists(filename))
             {
                 FileIn inputFile = new FileIn(filename);
-
-                //getting the extention the user selected from the menu
-                switch (openFile.FilterIndex)
-                {
-                    case 1:
-                        inputFile.ReadFromTxt(openFile.FileName);
-                        break;
-                    case 2:
-                        inputFile.ReadFromCsv(openFile.FileName);
-                        break;
-                    default:
-                        //error
-                        break;
-                }
+    
+                inputFile.ReadOutput(openFile.FileName);
             }
 
 
