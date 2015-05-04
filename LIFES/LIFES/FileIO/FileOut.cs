@@ -111,14 +111,14 @@ namespace LIFES.FileIO
                     CompressedClassTime compressedTime = exam.GetCompressedClass();
 
                     classTime += compressedTime.GetClassTimes().
-                        First().getDayOfTheWeek()
+                        First().GetDayOfTheWeek()
                         + " ";
                     classTime += MilitaryToDateTime(compressedTime.
-                        GetClassTimes().First().getClassStartTime()).
+                        GetClassTimes().First().GetClassStartTime()).
                         ToString("hh:mm tt")
                         + "-";
                     classTime += MilitaryToDateTime(compressedTime.
-                        GetClassTimes().First().getClassEndTime()).
+                        GetClassTimes().First().GetClassEndTime()).
                         ToString("hh:mm tt");
 
                     header += " " + classTime + " ";
@@ -144,12 +144,12 @@ namespace LIFES.FileIO
                         if (time != compressedTime.GetClassTimes().First())
                         {
                             string classTimes = "";
-                            classTimes += time.getDayOfTheWeek() + " ";
+                            classTimes += time.GetDayOfTheWeek() + " ";
                             classTimes += MilitaryToDateTime(time.
-                                getClassStartTime()).
+                                GetClassStartTime()).
                                 ToString("hh:mm tt") + "-";
                             classTimes += MilitaryToDateTime(time.
-                                getClassEndTime()).
+                                GetClassEndTime()).
                                 ToString("hh:mm tt");
 
                       //      file.Write("\t\t" + classTimes + "\n");
