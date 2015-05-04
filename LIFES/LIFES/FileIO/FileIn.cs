@@ -35,7 +35,7 @@ namespace LIFES.FileIO
         {
             if (File.Exists(fileName))
             {
-                setLines(System.IO.File.ReadAllLines(fileName));
+                SetLines(System.IO.File.ReadAllLines(fileName));
                 IsValidConstraintsFile();
             }
 
@@ -67,7 +67,7 @@ namespace LIFES.FileIO
 
                 for (int i = 0; i < lines.Length; i++)
                 {
-                    if (!isFileAllDigit(i))
+                    if (!IsFileAllDigit(i))
                     {
                         good = false;
                     }
@@ -128,7 +128,7 @@ namespace LIFES.FileIO
         }
 
         /*
-         * Name:        isFileAllDigit
+         * Name:        IsFileAllDigit
          * Author(s):   Joshua Ford
          * Created:     4/1/15
          * Modified by: Scott Smoke
@@ -139,7 +139,7 @@ namespace LIFES.FileIO
          *              digit form.
          */
 
-        private bool isFileAllDigit(int lineNum)
+        private bool IsFileAllDigit(int lineNum)
         {
             int numVal = -1;
             bool digit = true;
@@ -157,7 +157,7 @@ namespace LIFES.FileIO
         }
 
         /*
-         * Name:        setLines
+         * Name:        SetLines
          * Author:      Joshua Ford
          * Created:     3/25/15
          * Modified by: Joshua Ford
@@ -167,7 +167,7 @@ namespace LIFES.FileIO
          * Purpose: Acts as the setter for this class 
          * (Purpose should be pretty transparant).
          */
-        public void setLines(string[] lines)
+        public void SetLines(string[] lines)
         {
             if (lines.Length == 5)
             {
