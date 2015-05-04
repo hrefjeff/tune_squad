@@ -97,14 +97,14 @@ namespace LIFES.FileIO
 
                     else if (i == 2)
                     {
-						if (Convert.ToInt16(lines[i]) < 75 ||
-							Convert.ToInt16(lines[i]) > 300)
-						{
+                        if (Convert.ToInt16(lines[i]) < 75 ||
+                            Convert.ToInt16(lines[i]) > 300)
+                        {
 
-							errors.Add("Error on line 3: Incorrect exam"
-							+ " time.");
-							good = false;
-						}
+                            errors.Add("Error on line 3: Incorrect exam"
+                            + " time.");
+                            good = false;
+                        }
                     }
 
                     else if (i == 3)
@@ -227,7 +227,7 @@ namespace LIFES.FileIO
         * Description: Reads the data from an output CSV file
         *  
         */
-        public void ReadFromCsv() { }
+        public void ReadFromCsv(string filename) { }
 
         /*
         * Method: ReadFromTxt
@@ -240,7 +240,88 @@ namespace LIFES.FileIO
         * Description: Reads the data from an output text file
         *
         */
-        public void ReadFromTxt() { }
+        public void ReadFromTxt(string filename)
+        { 
+        
+        if (filename != "")
+            {
+
+                List<string> lines = null;
+
+                System.IO.StreamReader file = 
+                    new System.IO.StreamReader(filename);
+                //code to write goes here
+                /*
+                file.ReadLine(Globals.semester + " " +Globals.year);
+                file.ReadLine(Globals.totalEnrollemntsFileName);
+                file.Line(Globals.timeConstraints.ToString());
+                if (Globals.adminApproved)
+                {
+                    file.WriteLine("0");
+                }
+                else
+                {
+                    file.WriteLine("1");
+                }
+                file.WriteLine("\n");
+
+                //place exam schedule
+                foreach (FinalExamDay ele in Globals.examWeek)
+                {
+                    file.WriteLine("Day\t Class Times\t\t\t\t Exam Time");
+                    file.Write(ele.GetDay());
+              
+                    foreach (FinalExam exam in ele.GetExams())
+                    {
+                        string classTime = "";
+                        CompressedClassTime compressedTime = exam.GetCompressedClass();
+
+                        classTime +=  compressedTime.GetClassTimes().
+                            First().getDayOfTheWeek()
+                            + " ";
+                        classTime += MilitaryToDateTime(compressedTime.
+                            GetClassTimes().First().getClassStartTime()).
+                            ToString("hh:mm tt")
+                            + "-";
+                            classTime += MilitaryToDateTime(compressedTime.
+                                GetClassTimes().First().getClassEndTime()).
+                                ToString("hh:mm tt");
+
+                        file.Write("\t\t" + classTime + "\t\t\t");
+
+                        string examTimes = "";
+                        examTimes += MilitaryToDateTime(exam.GetStartTime()).
+                            ToString("hh:mm tt")
+                            + "-" + MilitaryToDateTime(exam.GetEndTime()).
+                            ToString("hh:mm tt");
+
+                        file.Write("\t" + examTimes + "\n");
+
+                        foreach (ClassTime time in compressedTime.
+                            GetClassTimes())
+                        {
+                            if (time != compressedTime.GetClassTimes().First())
+                            {
+                                string classTimes = "";
+                                classTimes += time.getDayOfTheWeek() + " ";
+                                classTimes += MilitaryToDateTime(time.
+                                    getClassStartTime()).
+                                    ToString("hh:mm tt") + "-";
+                                classTimes += MilitaryToDateTime(time.
+                                    getClassEndTime()).
+                                    ToString("hh:mm tt");
+
+                                file.Write("\t\t" + classTimes + "\n");
+                            }
+                        }
+
+                        file.Write("\n");
+                    }
+                 */
+                }
+
+                //file.Close();
+        }
     }
 
 
