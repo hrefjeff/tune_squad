@@ -45,7 +45,7 @@ namespace LIFES.Schedule
         private void FindAvailableSlot(FinalExamDay fed, CompressedClassTime ct,
             int startTime, int endTime)
         {
-             while (startTime < 1715)
+             while (startTime < Globals.END_OF_EXAM_DAY)
                 {
                     if (fed.HasAvailableTime(startTime, endTime))
                     {
