@@ -232,18 +232,23 @@ namespace LIFES.FileIO
                     {
                         string classTime = "";
                         CompressedClassTime compressedTime = exam.GetCompressedClass();
+                        if (compressedTime.GetDayOfTheWeek() == "Lunch")
+                        {
+                            file.Write("\t\t" + "Lunch");
+                        }
+                        else
+                        {
+                            classTime += compressedTime.GetClassTimes().
 
-                        classTime +=  compressedTime.GetClassTimes().
-
-							First().GetDayOfTheWeek() + ",";
-                        classTime += MilitaryToDateTime(compressedTime.
-                            GetClassTimes().First().GetClassStartTime()).
-                            ToString("hh:mm tt")
-                            + "-";
+                                First().GetDayOfTheWeek() + ",";
+                            classTime += MilitaryToDateTime(compressedTime.
+                                GetClassTimes().First().GetClassStartTime()).
+                                ToString("hh:mm tt")
+                                + "-";
                             classTime += MilitaryToDateTime(compressedTime.
                                 GetClassTimes().First().GetClassEndTime()).
                                 ToString("hh:mm tt");
-
+                        }
                         file.Write(classTime + ",");
 
                         string examTimes = "";
