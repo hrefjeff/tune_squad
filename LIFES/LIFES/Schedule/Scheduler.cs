@@ -279,8 +279,8 @@ namespace LIFES.Schedule
         */ 
         private void RunScheduler()
         {
-           
-            if (compressedClassTime != null)
+
+            if (compressedClassTime != null && tc != null)
             {
                 //checking pigeon hole principle
                 if ((examSlots * tc.GetNumberOfDays()) >= compressedClassTime.Count())
@@ -357,7 +357,7 @@ namespace LIFES.Schedule
         */
         private void RunReScheduler()
         {
-            if (compressedClassTime != null)
+            if (compressedClassTime != null && tc != null)
             {
                 if ((examSlots * tc.GetNumberOfDays()) >= compressedClassTime.Count())
                 {
