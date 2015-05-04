@@ -112,15 +112,15 @@ namespace LIFES.UserInterfaces
             string printPath = System.Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             fileToPrint = new System.IO.StreamReader(printPath + @"\test.txt");
             printFont = new System.Drawing.Font("Arial", 10);
-            printDocument1.Print();
+            //printDocument1.Print();
             fileToPrint.Close();
 
             // The following code will render a simple 
             // message on the printed document. 
             //testing
             string text = "<==============3";
-            System.Drawing.Font printFont = new System.Drawing.Font
-                ("Arial", 35, System.Drawing.FontStyle.Regular);
+            //System.Drawing.Font printFont = new System.Drawing.Font
+              //  ("Arial", 35, System.Drawing.FontStyle.Regular);
 
             // Draw the content.
             e.Graphics.DrawString(text, printFont,

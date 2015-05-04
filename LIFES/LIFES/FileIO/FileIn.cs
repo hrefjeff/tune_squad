@@ -250,7 +250,11 @@ namespace LIFES.FileIO
 
                 System.IO.StreamReader file = 
                     new System.IO.StreamReader(filename);
-                //code to write goes here
+
+                lines.Add(file.ReadLine());
+                lines.Add(file.ReadLine());
+                
+
                 /*
                 file.ReadLine(Globals.semester + " " +Globals.year);
                 file.ReadLine(Globals.totalEnrollemntsFileName);
