@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using LIFES.FileIO;
+using System.Diagnostics;
 
 namespace LIFES.UserInterfaces
 {
@@ -171,6 +172,18 @@ namespace LIFES.UserInterfaces
                 {
                     Globals.compressedTimes = compressedClassTimes.getCompressedClassTimes();
                     MessageBox.Show("Enrollment File Accepted");
+                }
+                if (compressedClassTimes.getWarningList().Count !=0)
+                {
+                    string errorMsg = "";
+                    foreach (string ele in compressedClassTimes.getWarningList())
+                    {
+                        errorMsg = errorMsg + ele + "\n";
+                        //debuging info
+                       // Debug.WriteLine(errorMsg);
+                    }
+
+                    MessageBox.Show(errorMsg, "Warning");
                 }
 
                 else

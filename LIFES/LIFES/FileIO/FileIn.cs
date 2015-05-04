@@ -214,7 +214,36 @@ namespace LIFES.FileIO
         {
             return errors;
         }
+
+
+        /*
+        * Method: ReadFromCSV
+        * Parameters: N/A
+        * Output: Saved file in the CSV format
+        * Created By: Jeffrey Allen
+        * Date: 5/4/2015
+        * Modified By: 
+        * 
+        * Description: Reads the data from an output CSV file
+        *  
+        */
+        public void ReadFromCsv() { }
+
+        /*
+        * Method: ReadFromTxt
+        * Parameters: N/A
+        * Output: Saved file in the CSV format
+        * Created By: Jeffrey Allen
+        * Date: 5/4/2015
+        * Modified By: 
+        * 
+        * Description: Reads the data from an output text file
+        *
+        */
+        public void ReadFromTxt() { }
     }
+
+
 
     // This was stubbed in for the purpose of testing. :)
     //class Program

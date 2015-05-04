@@ -144,7 +144,7 @@ namespace LIFES.UserInterfaces
             {
                 Globals.year = enrollmentGUI.GetYear();
             }
-            //this.Show();
+          
         }
 
         /*
@@ -152,19 +152,14 @@ namespace LIFES.UserInterfaces
          * Parameters: object sender, EventArgs e
          * Output: N/A
          * Created By: Riley Smith
-         * Date: 4/1/2015
-         * Modified By: Riley Smith
+         * Date: 5/3/2015
+         * Modified By: Jeffrey Allen
          * 
          * Description: Event handler for the Admin menu button Finalize. 
          */
         private void FinalizeScheduleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //
-       
-           
-               
-            
-            // Needs to be added
+            Globals.adminApproved = true;
         }
 
        
@@ -206,8 +201,6 @@ namespace LIFES.UserInterfaces
             int Hours = time / 100;
             int Minutes = time - Hours * 100;
             DateTime Result = DateTime.MinValue;
-
-
             Result = Result.AddHours(Hours);
             Result = Result.AddMinutes(Minutes);
 
@@ -248,6 +241,50 @@ namespace LIFES.UserInterfaces
                 docToPrint.Print();
             }
         }
+        /*
+         * Method: DisplaySchedule
+         * Parameters: FinalExam[] exams
+         * Output: N/A
+         * Created By: Scott Smoke, Riley Smith
+         * Date: 5/4/2015
+         * Modified By: Scott Smoke
+         * 
+         * Description: This displays the final exam
+         * schedule to the table.
+         * 
+         */ 
+        private void DisplaySchedule(FinalExamDay[] exams)
+        {
+            examTable.Rows.Clear();
+            int rowIndex = 0;
+            foreach (FinalExamDay ele in Globals.examWeek)
+            {
+                foreach (FinalExam exam in ele.GetExams())
+                {
+                  
+                    examTable.Rows.Add();
+                    string classTimes = "";
+                    CompressedClassTime compressedTime = exam.GetCompressedClass();
+                    // Get group of compressed class times.
+                    foreach (ClassTime time in compressedTime.GetClassTimes())
+                    {
+                        classTimes += time.getDayOfTheWeek() + " ";
+                        classTimes += MilitaryToDateTime(time.getClassStartTime()).
+                            ToString("hh:mm tt") + "-";
+                        classTimes += MilitaryToDateTime(time.getClassEndTime()).
+                            ToString("hh:mm tt") + "\n";
+                    }
+                    string examTimes = "";
+                    examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
+                        + "-" + MilitaryToDateTime(exam.GetEndTime()).ToString("hh:mm tt");
+                    examTable.Rows[rowIndex].Cells[0].Value = ele.GetDay();
+                    examTable.Rows[rowIndex].Cells[1].Value = classTimes;
+                    examTable.Rows[rowIndex].Cells[2].Value = examTimes;
+                    rowIndex++;
+                }
+
+            }
+        }
 
         /*
          * Method: Reschedule_Click
@@ -265,40 +302,13 @@ namespace LIFES.UserInterfaces
             examSchedule.ReSchedule();
             Globals.examWeek = examSchedule.GetExams();
             Debug.Write(examSchedule.GetExamSlots());
-
-            int rowIndex = 0;
-            foreach (FinalExamDay ele in Globals.examWeek)
+            if (Globals.examWeek != null)
             {
-                foreach (FinalExam exam in ele.GetExams())
-                {
-                    examTable.Rows.Add();
-
-
-                    string classTimes = "";
-
-                    CompressedClassTime compressedTime = exam.GetCompressedClass();
-
-                    // Get group of compressed class times.
-                    foreach (ClassTime time in compressedTime.GetClassTimes())
-                    {
-                        classTimes += time.getDayOfTheWeek() + " ";
-                        classTimes += MilitaryToDateTime(time.getClassStartTime()).
-                            ToString("hh:mm tt") + "-";
-                        classTimes += MilitaryToDateTime(time.getClassEndTime()).
-                            ToString("hh:mm tt") + "\n";
-                    }
-
-                    string examTimes = "";
-                    examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
-                        + "-" + MilitaryToDateTime(exam.GetEndTime()).ToString("hh:mm tt");
-
-                    examTable.Rows[rowIndex].Cells[0].Value = ele.GetDay();
-                    examTable.Rows[rowIndex].Cells[1].Value = classTimes;
-                    examTable.Rows[rowIndex].Cells[2].Value = examTimes;
-
-                    rowIndex++;
-                }
-
+                DisplaySchedule(Globals.examWeek);
+            }
+            if (examSchedule.GetErrorMessage() != null)
+            {
+                MessageBox.Show(examSchedule.GetErrorMessage());
             }
         }
 
@@ -375,43 +385,14 @@ namespace LIFES.UserInterfaces
             examSchedule.Schedule();
             Globals.examWeek = examSchedule.GetExams();
             Debug.Write(examSchedule.GetExamSlots());
-
-            int rowIndex = 0;
-            foreach (FinalExamDay ele in Globals.examWeek)
+            if (Globals.examWeek != null)
             {
-                foreach (FinalExam exam in ele.GetExams())
-                {
-                    examTable.Rows.Add();
-                   
-
-                    string classTimes = "";
-
-                    CompressedClassTime compressedTime = exam.GetCompressedClass();
-
-                    // Get group of compressed class times.
-                    foreach (ClassTime time in compressedTime.GetClassTimes())
-                    {
-                        classTimes += time.getDayOfTheWeek() + " ";
-                        classTimes += MilitaryToDateTime(time.getClassStartTime()).
-                            ToString("hh:mm tt") + "-";
-                        classTimes += MilitaryToDateTime(time.getClassEndTime()).
-                            ToString("hh:mm tt") + "\n";
-                    }
-
-                    string examTimes = "";
-                    examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
-                        + "-" + MilitaryToDateTime(exam.GetEndTime()).ToString("hh:mm tt");
-                    
-                    examTable.Rows[rowIndex].Cells[0].Value = ele.GetDay();
-                    examTable.Rows[rowIndex].Cells[1].Value = classTimes;         
-                    examTable.Rows[rowIndex].Cells[2].Value = examTimes;
-
-                    rowIndex++;
-                }
-
+                DisplaySchedule(Globals.examWeek);
             }
-
-
+            if (examSchedule.GetErrorMessage() != null)
+            {
+                MessageBox.Show(examSchedule.GetErrorMessage());
+            }
         }
         
         /*
@@ -535,7 +516,7 @@ namespace LIFES.UserInterfaces
         * Output: N/A
         * Created By: Riley Smith
         * Date: 5/1/2015
-        * Modified By: Riley Smith
+        * Modified By: Jeffrey Allen
         * 
         * Description: When this button is clicked 
         *   an open file dialog will open and allow
@@ -551,6 +532,27 @@ namespace LIFES.UserInterfaces
             openFile.Title = "Open an Exam Schedule";
             openFile.ShowDialog();
             string filename = openFile.FileName;
+
+            // Check if file exists
+            if (File.Exists(filename))
+            {
+                FileIn inputFile = new FileIn(filename);
+
+                //getting the extention the user selected from the menu
+                switch (openFile.FilterIndex)
+                {
+                    case 1:
+                        inputFile.ReadFromTxt();
+                        break;
+                    case 2:
+                        inputFile.ReadFromCsv();
+                        break;
+                    default:
+                        //error
+                        break;
+                }
+            }
+
 
         }
 
@@ -575,6 +577,13 @@ namespace LIFES.UserInterfaces
                     examTable.SelectedRows[i].Selected = false;
                 }
             }
+        }
+
+        
+
+        private void viewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
