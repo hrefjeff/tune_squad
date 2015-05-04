@@ -29,7 +29,7 @@ namespace LIFES
         //final exam schedule
         public static FinalExamDay[] examWeek;
         //end of the exam day in military time
-        public static const int END_OF_EXAM_DAY = 1715;
+        public const int END_OF_EXAM_DAY = 1715;
         //Save file if applicable
     }
 }
