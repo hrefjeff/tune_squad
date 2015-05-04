@@ -29,26 +29,27 @@ namespace LIFES.Schedule
         private FinalExamDay[] examWeek;
        //total number of exams that can be scheduled
         private int examSlots;
+     
        /*
-        * Method: MilitaryTime
-        * Parameters: int time
-        * Output: int
+        * Method: ReSchedule
+        * Parameters: CompressedClassTime ct
+        * Output: N/A
         * Created By: Scott Smoke
-        * Date: 5/1/2015
+        * Date: 5/4/2015
         * Modified By: Scott Smoke
         * 
-        * Description: This method takes in a
-        * integer value that represents time then it convers
-        * it to military time. Note this does not take in standard
-        * time. It refers to the time that I am using in my Schedule method.
+        * Description: This takes a breath first approach by inserting
+        * an exam in the first day near the time of the start time of the compressed class time.
+        * Once there are no more slots at the time of the compressed class it then moves onto checking
+        * if there are any more slots avalable for each day.
         * 
-        */
-
+        */ 
         private void ReSchedule(CompressedClassTime ct)
         {
-
+            //checks the nearest time slots to the compressed class times start time.
             foreach (FinalExamDay fed in examWeek)
             {
+                //correcting for CompressedClassTime getClassTimeStartHour only returning a 2 digit integer
                 int startTime = ct.getClassTimeStartHour() * 100;
                 int endTime = startTime + MilitaryTime(tc.GetLengthOfExams() +
                     tc.GetTimeBetweenExams());
@@ -60,7 +61,7 @@ namespace LIFES.Schedule
                 }
                 
             }
-
+            //if there were not any start times avaialable near the start time of the compressed time.
             foreach (FinalExamDay fed in examWeek)
             {
                 int startTime = tc.GetStartTime();
@@ -86,6 +87,20 @@ namespace LIFES.Schedule
 
             
         }
+       /*
+       * Method: MilitaryTime
+       * Parameters: int time
+       * Output: int
+       * Created By: Scott Smoke
+       * Date: 5/1/2015
+       * Modified By: Scott Smoke
+       * 
+       * Description: This method takes in a
+       * integer value that represents time then it convers
+       * it to military time. Note this does not take in standard
+       * time. It refers to the time that I am using in my Schedule method.
+       * 
+       */
         private int MilitaryTime(int time)
         {
             int hour = time / 60;
@@ -93,7 +108,19 @@ namespace LIFES.Schedule
             int militaryTime = (hour * 100) + min;
             return militaryTime;
         }
-
+       /*
+        * Method: InsertExam
+        * Parameters: FinalExamDay fed, CompressedClassTime ct, int startTime, int endTime
+        * Output: N/A
+        * Created By: Scott Smoke
+        * Date: 5/3/2015
+        * Modified By: Scott Smoke
+        * 
+        * Description: This inserts an exam into the specified
+        * exam day with the specified start and end times.Notes this adds the
+        * break time to the length of the exam.
+        * 
+        */ 
         private void InsertExam(FinalExamDay fed, CompressedClassTime ct, 
             int startTime, int endTime)
         {
@@ -106,14 +133,30 @@ namespace LIFES.Schedule
             Debug.WriteLine("Day: " + fed.GetDay().ToString() + " " 
                 + fed.GetNumberOfExams());
         }
+       /*
+        * Method: Schedule
+        * Parameters: CompressedClassTime ct
+        * Output: N/A
+        * Created By: Scott Smoke
+        * Date: 5/3/2015
+        * Modified By: Scott Smoke
+        * 
+        * Description: This takes a depth first approach and fills up
+        * each day before moving onto the second. In more specific terms, it takes in
+        * a compressed class time and sees if it will fit into the first exam day, nearest the start time of
+        * the compressed class time, if not
+        * then it sees if there are any available time slots for that day left. If there are 
+        * no more exam slots for that day then it moves onto the next.
+        */ 
         private void Schedule(CompressedClassTime ct)
         {
             foreach (FinalExamDay fed in examWeek)
             {
+                //correcting for CompressedClassTime getClassTimeStartHour only returning a 2 digit integer
                 int startTime = ct.getClassTimeStartHour()*100;
                 int endTime = startTime + MilitaryTime( tc.GetLengthOfExams() +
                     tc.GetTimeBetweenExams());
-
+                //cheecks the nearest slot available to compressed class start time
                 if(fed.HasAvailableTime(startTime,endTime))
                 {
                     InsertExam(fed, ct, startTime, endTime);
@@ -124,7 +167,7 @@ namespace LIFES.Schedule
                     startTime = tc.GetStartTime();
                     endTime = startTime + MilitaryTime(tc.GetLengthOfExams() + 
                         tc.GetTimeBetweenExams());
-
+                    //if not then we check for any available start times on current day.
                     while (startTime < 1715)
                     {
                         if (fed.HasAvailableTime(startTime,endTime))
