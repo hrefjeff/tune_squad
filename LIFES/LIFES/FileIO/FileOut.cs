@@ -101,12 +101,14 @@ namespace LIFES.FileIO
                     pdfPage.Height.Point), XStringFormats.TopLeft);
 
                 yCord += 12;
-
-                string header = "";
-                header += ele.GetDay();
+                
+                tf.DrawString(ele.GetDay().ToString(), font,
+                    XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
+                    pdfPage.Height.Point), XStringFormats.TopLeft);
 
                 foreach (FinalExam exam in ele.GetExams())
                 {
+                    string header = "";
                     string classTime = "";
                     CompressedClassTime compressedTime = exam.GetCompressedClass();
 
@@ -132,10 +134,9 @@ namespace LIFES.FileIO
                     header += " " + examTimes;
 
                     tf.DrawString(header, font,
-                        XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
+                        XBrushes.Black, new XRect(80, yCord, pdfPage.Width.Point,
                         pdfPage.Height.Point), XStringFormats.TopLeft);
 
-                    header = "";
                     yCord += 12;
 
                     foreach (ClassTime time in compressedTime.
@@ -152,7 +153,12 @@ namespace LIFES.FileIO
                                 GetClassEndTime()).
                                 ToString("hh:mm tt");
 
-                      //      file.Write("\t\t" + classTimes + "\n");
+                            tf.DrawString(classTimes, font,
+                                XBrushes.Black, new XRect(80, yCord, pdfPage.Width.Point,
+                                pdfPage.Height.Point), XStringFormats.TopLeft);
+
+                            yCord += 12;
+
                         }
                     }
 

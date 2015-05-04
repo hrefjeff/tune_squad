@@ -93,7 +93,7 @@ namespace LIFES.UserInterfaces
                     TimesGridView.Rows[linenumber].Cells[1].Value =
                         classTimes;
                     TimesGridView.Rows[linenumber].Cells[2].Value =
-                        ele.getTotalStudentsEnrolled();
+                        ele.GetTotalStudentsEnrolled();
                     linenumber++;
                 }
             }
