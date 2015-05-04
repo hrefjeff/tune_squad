@@ -348,10 +348,10 @@ namespace LIFES.UserInterfaces
 
                     string classTimes = "";
 
-                    CompressedClassTime compressedTime = exam.GetCompressedClasses();
+                    CompressedClassTime compressedTime = exam.GetCompressedClass();
 
                     // Get group of compressed class times.
-                    foreach (ClassTime time in compressedTime.getClassTimes())
+                    foreach (ClassTime time in compressedTime.GetClassTimes())
                     {
                         classTimes += time.getDayOfTheWeek() + " ";
                         classTimes += MilitaryToDateTime(time.getClassStartTime()).
