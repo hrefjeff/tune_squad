@@ -19,13 +19,17 @@ namespace LIFES
     {
         public static string timeConstraintsFileName = "";
         public static string totalEnrollemntsFileName = "";
+        //constraints for the scheduler
         public static TimeConstraints timeConstraints = 
             new TimeConstraints(0,0,0,0,0);
         public static string semester = "";
         public static string year = "0";
+        //data from the total enrollements file
         public static List<CompressedClassTime> compressedTimes;
-        public static FinalExamDay[] examWeek;
-        //Save file if applicable
         //final exam schedule
+        public static FinalExamDay[] examWeek;
+        //end of the exam day in military time
+        public static const int END_OF_EXAM_DAY = 1715;
+        //Save file if applicable
     }
 }
