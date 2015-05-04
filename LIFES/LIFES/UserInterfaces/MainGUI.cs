@@ -144,7 +144,7 @@ namespace LIFES.UserInterfaces
             {
                 Globals.year = enrollmentGUI.GetYear();
             }
-            //this.Show();
+          
         }
 
         /*
@@ -206,8 +206,6 @@ namespace LIFES.UserInterfaces
             int Hours = time / 100;
             int Minutes = time - Hours * 100;
             DateTime Result = DateTime.MinValue;
-
-
             Result = Result.AddHours(Hours);
             Result = Result.AddMinutes(Minutes);
 
@@ -248,7 +246,18 @@ namespace LIFES.UserInterfaces
                 docToPrint.Print();
             }
         }
-
+        /*
+         * Method: DisplaySchedule
+         * Parameters: FinalExam[] exams
+         * Output: N/A
+         * Created By: Scott Smoke, Riley Smith
+         * Date: 5/4/2015
+         * Modified By: Scott Smoke
+         * 
+         * Description: This displays the final exam
+         * schedule to the table.
+         * 
+         */ 
         private void DisplaySchedule(FinalExamDay[] exams)
         {
             examTable.Rows.Clear();
@@ -257,6 +266,7 @@ namespace LIFES.UserInterfaces
             {
                 foreach (FinalExam exam in ele.GetExams())
                 {
+                  
                     examTable.Rows.Add();
                     string classTimes = "";
                     CompressedClassTime compressedTime = exam.GetCompressedClass();
@@ -300,7 +310,11 @@ namespace LIFES.UserInterfaces
             if (Globals.examWeek != null)
             {
                 DisplaySchedule(Globals.examWeek);
-            }   
+            }
+            if (examSchedule.GetErrorMessage() != null)
+            {
+                MessageBox.Show(examSchedule.GetErrorMessage());
+            }
         }
 
         /*
@@ -379,6 +393,10 @@ namespace LIFES.UserInterfaces
             if (Globals.examWeek != null)
             {
                 DisplaySchedule(Globals.examWeek);
+            }
+            if (examSchedule.GetErrorMessage() != null)
+            {
+                MessageBox.Show(examSchedule.GetErrorMessage());
             }
         }
         
@@ -543,6 +561,13 @@ namespace LIFES.UserInterfaces
                     examTable.SelectedRows[i].Selected = false;
                 }
             }
+        }
+
+        
+
+        private void viewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
