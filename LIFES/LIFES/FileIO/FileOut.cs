@@ -257,7 +257,6 @@ namespace LIFES.FileIO
                 file.Close();
             } 
         }
-        }
 
         /*
          * Method: WriteToText
