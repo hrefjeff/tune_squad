@@ -261,8 +261,7 @@ namespace LIFES.UserInterfaces
          */
         private void Reschedule_Click(object sender, EventArgs e)
         {
-            examTable.Rows[0].Cells[0].Value = "Rescheduled First Class Time";
-            examTable.Rows[0].Cells[1].Value = "Rescheduled First Exam Time";
+            
         }
 
         /*
