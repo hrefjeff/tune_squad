@@ -106,13 +106,19 @@ namespace LIFES.UserInterfaces
             System.Drawing.Printing.PrintPageEventArgs e)
         {
             //print schedule
-            // Insert code to render the page here. 
-            // This code will be called when the control is drawn. 
+            System.IO.StreamReader fileToPrint;
+            System.Drawing.Font printFont;
+
+            string printPath = System.Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            fileToPrint = new System.IO.StreamReader(printPath + @"\test.txt");
+            printFont = new System.Drawing.Font("Arial", 10);
+            printDocument1.Print();
+            fileToPrint.Close();
 
             // The following code will render a simple 
             // message on the printed document. 
             //testing
-            string text = "In DocumentPrintPage method.";
+            string text = "<==============3";
             System.Drawing.Font printFont = new System.Drawing.Font
                 ("Arial", 35, System.Drawing.FontStyle.Regular);
 
