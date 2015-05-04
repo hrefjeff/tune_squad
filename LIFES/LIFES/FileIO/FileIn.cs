@@ -74,7 +74,8 @@ namespace LIFES.FileIO
 
                     else if (i == 0)
                     {
-                        if (lines[i] != "3" && lines[i] != "4" && lines[i] != "5")
+                        if (lines[i] != "3" && lines[i] != "4" && lines[i] 
+                            != "5")
                         {
 
                             errors.Add("Error on line 1: Incorrect number"
@@ -163,7 +164,8 @@ namespace LIFES.FileIO
          * Parameters:  lines - An array of all lines in the file which was
          *                      opened.
          * Output: No explicit output.
-         * Purpose: Acts as the setter for this class (Purpose should be pretty transparant).
+         * Purpose: Acts as the setter for this class 
+         * (Purpose should be pretty transparant).
          */
         public void setLines(string[] lines)
         {
@@ -222,7 +224,9 @@ namespace LIFES.FileIO
     //        string filename;
     //        Console.WriteLine("Enter the file name: ");
     //        filename = Console.ReadLine();
-    //        filename = "C:\\Users\\Josh Ford\\Documents\\GitHub\\tune_squad\\tune_squad\\Test\\CsharpSandbox\\JoshSandbox\\testConstraints.txt";
+    //        filename = "C:\\Users\\Josh Ford\\Documents\\
+    //        GitHub\\tune_squad\\tune_squad\\Test\\CsharpSandbox\\
+    //        JoshSandbox\\testConstraints.txt";
     //        FileIn myFile = new FileIn(filename);
     //        foreach (string val in myFile.getLines())
     //        {

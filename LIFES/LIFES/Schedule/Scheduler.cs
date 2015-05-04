@@ -23,44 +23,64 @@ namespace LIFES.Schedule
             int militaryTime = (hour * 100) + min;
             return militaryTime;
         }
+
+        /*
+          * Method: GetNumberOfExams
+          * Parameters: N/A
+          * Output: int
+          * Created By: Scott Smoke
+          * Date: 5/3/2015
+          * Modified By: Jordan Beck
+          * 
+          * Description: Scedules the Exams
+          * 
+          */
         private void Schedule(CompressedClassTime ct)
         {
             int i = 0;
             foreach (FinalExamDay fed in examWeek)
             {
                 int startTime = ct.getClassTimeStartHour()*100;
-                int endTime = startTime + MilitaryTime( tc.GetLengthOfExams() + tc.GetTimeBetweenExams());
+                int endTime = startTime + MilitaryTime( tc.GetLengthOfExams()
+                    + tc.GetTimeBetweenExams());
                 if(fed.HasAvailableTime(startTime,endTime))
                 {
                     FinalExam fe = new FinalExam(ct);
-                    Debug.WriteLine("Class start hour " + ct.getClassTimeStartHour()*100);
+                    Debug.WriteLine("Class start hour " + ct.
+                        getClassTimeStartHour()*100);
                     fe.SetStartTime(startTime);
                     fe.SetEndTime(endTime);
                     fed.InsertExam(fe);
                     //debugging info
-                    Debug.WriteLine("Day: " + fed.GetDay().ToString() + " " + fed.GetNumberOfExams());
+                    Debug.WriteLine("Day: " + fed.GetDay().ToString() + " " + 
+                        fed.GetNumberOfExams());
                     return;
                 }
                 else
                 {
                     //int newStartHour = tc.GetStartTime();
                     startTime = tc.GetStartTime();
-                    endTime = startTime + MilitaryTime(tc.GetLengthOfExams() + tc.GetTimeBetweenExams());
+                    endTime = startTime + MilitaryTime(tc.GetLengthOfExams() + 
+                        tc.GetTimeBetweenExams());
                     while (startTime < 1715)
                     {
                         if (fed.HasAvailableTime(startTime,endTime))
                         {
                             FinalExam fe = new FinalExam(ct);
-                            Debug.WriteLine("Class start hour " + ct.getClassTimeStartHour() * 100);
+                            Debug.WriteLine("Class start hour " + 
+                                ct.getClassTimeStartHour() * 100);
                             fe.SetStartTime(startTime);
                             fe.SetEndTime(endTime);
                             fed.InsertExam(fe);
                             //debugging info
-                            Debug.WriteLine("Day: " + fed.GetDay().ToString() + " " + fed.GetNumberOfExams());
+                            Debug.WriteLine("Day: " + fed.GetDay().ToString() 
+                                + " " + fed.GetNumberOfExams());
                             return;
                         }
-                        startTime = startTime + MilitaryTime(tc.GetLengthOfExams() + tc.GetTimeBetweenExams());
-                        endTime = startTime + MilitaryTime(tc.GetLengthOfExams() + tc.GetTimeBetweenExams());
+                        startTime = startTime + MilitaryTime(tc.
+                            GetLengthOfExams() + tc.GetTimeBetweenExams());
+                        endTime = startTime + MilitaryTime(tc.
+                            GetLengthOfExams() + tc.GetTimeBetweenExams());
                     }
                 }
             }
@@ -91,11 +111,13 @@ namespace LIFES.Schedule
             if (compressedClassTime != null)
             {
                 //checking pigeon hole principle
-                if ((examSlots * tc.GetNumberOfDays()) >= compressedClassTime.Count())
+                if ((examSlots * tc.GetNumberOfDays()) >= 
+                    compressedClassTime.Count())
                 {
                     //debugging info
                     //Debug.WriteLine("Yay we get to schedule");
-                    Debug.WriteLine("Size of compressedClassTimes " + compressedClassTime.Count);
+                    Debug.WriteLine("Size of compressedClassTimes " + 
+                        compressedClassTime.Count);
                     foreach (CompressedClassTime ct in compressedClassTime)
                     {
                         Schedule(ct);
@@ -115,7 +137,7 @@ namespace LIFES.Schedule
          * Output: N/A
          * Created By: Scott Smoke
          * Date: 4/30/2015
-         * Modified By: Scott Smoke
+         * Modified By: Jordan Beck
          * 
          * Description: This will calculate the total number
          * of exam slots that are available per day
@@ -125,7 +147,8 @@ namespace LIFES.Schedule
         {
             if (tc != null)
             {
-                if ((tc.GetLengthOfExams() != 0) && (tc.GetTimeBetweenExams() != 0))
+                if ((tc.GetLengthOfExams() != 0) && 
+                    (tc.GetTimeBetweenExams() != 0))
                 {
                     //time when exams cannot pass
                     int endTime = 1715;
@@ -134,9 +157,11 @@ namespace LIFES.Schedule
                     float sT = tc.GetStartTime();
                     float eL = tc.GetLengthOfExams();
                     float b = tc.GetTimeBetweenExams();
-                    //getting to total amount of exams + break time then converting it to hours
+                    //getting to total amount of exams + break time 
+                    // then converting it to hours
                     float toHours = (eL + b) / 60;
-                    //getting the minute portion for the total time allocated for exam on a particular day
+                    //getting the minute portion for the total time 
+                    // allocated for exam on a particular day
                     float decPortion = ((endTime - lP - sT) % 100) / 60;
                     //getting the hour portion
                     int lengthOfExamDay = (int)(endTime - lP - sT) / 100;
@@ -145,7 +170,8 @@ namespace LIFES.Schedule
                     //total slots available for exams on a single day
                     examSlots = (int)(totalLength / toHours);
                     //debugging stuff
-                    Debug.WriteLine("Number of exam slots: " + examSlots.ToString());
+                    Debug.WriteLine("Number of exam slots: " + 
+                        examSlots.ToString());
                 }
             }
  
@@ -190,7 +216,7 @@ namespace LIFES.Schedule
          * Output: N/A
          * Created By: Scott Smoke
          * Date: 4/30/2015
-         * Modified By: Scott Smoke
+         * Modified By: Jordan Beck
          * 
          * Description: Calls the Scheduler.
          * 
@@ -204,16 +230,41 @@ namespace LIFES.Schedule
                 totalExams = totalExams + fed.GetNumberOfExams();
                 foreach (FinalExam fe in fed.GetExams())
                 {
-                    Debug.WriteLine("Day " + fed.GetDay() + " " + "Group " + fe.GetCompressedClasses().getDayOfTheWeek() + " "+ "Start Time " + fe.GetStartTime() + " " + "End Time " + fe.GetEndTime());
+                    Debug.WriteLine("Day " + fed.GetDay() + " " + "Group " + 
+                        fe.GetCompressedClasses().getDayOfTheWeek() + " "+
+                        "Start Time " + fe.GetStartTime() + " " + "End Time " +
+                        fe.GetEndTime());
                 }
             }
             Debug.WriteLine("Total Exams "+ totalExams);
         }
+
+        /*
+          * Method: GetExam SLots
+          * Parameters: N/A
+          * Output: int
+          * Created By: Scott Smoke
+          * Date: 5/3/2015
+          * Modified By: Jordan Beck
+          * 
+          * Description: Getter for Exam Slots
+          * 
+          */
         public int GetExamSlots()
         {
             return examSlots;
         }
 
+        /*
+          * Method: GetNumberOfExams
+          * Parameters: N/A
+          * Output: int
+          * Created By: Scott Smoke
+          * Date: 5/3/2015
+          * Modified By: Jordan Beck
+          * 
+          * Description: Getter for exam week
+          */
         public FinalExamDay[] GetExams()
         {
             return examWeek;

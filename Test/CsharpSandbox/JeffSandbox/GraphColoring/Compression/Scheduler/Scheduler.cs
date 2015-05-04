@@ -46,7 +46,7 @@ namespace Compression.Scheduler
     * Class Name: Course
     * Author: Jeffrey Allen
     * Date: 4/8/2015
-    * Modified by: Jeffrey Allen
+    * Modified by: Jordan Beck
     * This class is the final exam times that
     * are constructed after the scheduler has ran.
     */
@@ -58,7 +58,8 @@ namespace Compression.Scheduler
         private int _enrollment;
         private int _color;
 
-        public Course(string someDay, string someStartTime, string someEndTime, int enrollment)
+        public Course(string someDay, string someStartTime, 
+            string someEndTime, int enrollment)
         {
             _meetingDay = someDay;
             _startTime = Convert.ToInt32(someStartTime);

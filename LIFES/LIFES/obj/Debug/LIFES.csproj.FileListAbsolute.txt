@@ -136,3 +136,4 @@ C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterface
 C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.DeleteUserForm.resources
 C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.ResetPasswordForm.resources
 C:\Users\R\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.ViewTotalEnrollmentsForm.resources
+C:\Users\Jordan\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\LIFES.exe.config

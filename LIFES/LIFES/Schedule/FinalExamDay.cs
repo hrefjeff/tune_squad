@@ -87,15 +87,49 @@ namespace LIFES.Schedule
             this.day = day;
         }
 
+        /*
+         * Method: GetDay
+         * Parameters: N/A
+         * Output: int
+         * Created By: Scott Smoke
+         * Date: 5/1/2015
+         * Modified By: Jordan Beck
+         * 
+         * Description: Getter for the day.
+         * 
+         */
         public int GetDay()
         {
             return day;
         }
 
+        /*
+         * Method: GetNumberOfExams
+         * Parameters: N/A
+         * Output: int
+         * Created By: Scott Smoke
+         * Date: 5/1/2015
+         * Modified By: Jordan Beck
+         * 
+         * Description: Getter for number of exams.
+         * 
+         */
         public int GetNumberOfExams()
         {
             return finals.Count;
         }
+
+        /*
+         * Method: SetNumberOfExams
+         * Parameters: int
+         * Output: N?A
+         * Created By: Scott Smoke
+         * Date: 5/1/2015
+         * Modified By: Jordan Beck
+         * 
+         * Description: Sets number of exams.
+         * 
+         */
         public void setNumberOfExams(int num)
         {
             numberOfExams = num;
