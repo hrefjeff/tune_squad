@@ -256,7 +256,7 @@ namespace LIFES.FileIO
                 // read enrollments file name
                 Globals.totalEnrollemntsFileName = file.ReadLine();
                 CompressedClassTimes ct = new CompressedClassTimes(Globals.totalEnrollemntsFileName);
-                Globals.compressedTimes = ct.getCompressedClassTimes();
+                Globals.compressedTimes = ct.GetCompressedClassTimes();
 
                 // read time constraints
                 string days = file.ReadLine();
@@ -293,8 +293,6 @@ namespace LIFES.FileIO
         
         if (filename != "")
             {
-
-                List<string> lines = null;
 
                 System.IO.StreamReader file = 
                     new System.IO.StreamReader(filename);
