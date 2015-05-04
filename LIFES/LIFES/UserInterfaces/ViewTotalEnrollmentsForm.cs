@@ -78,7 +78,7 @@ namespace LIFES.UserInterfaces
                 {
                     string classTimes = "";
 
-                    foreach (ClassTime time in ele.getClassTimes())
+                    foreach (ClassTime time in ele.GetClassTimes())
                     {
                         classTimes += time.getDayOfTheWeek() + " ";
                         classTimes += MilitaryToDateTime(time.getClassStartTime()).
