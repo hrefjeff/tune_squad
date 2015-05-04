@@ -584,7 +584,7 @@ namespace Compression
             }
 
 
-            public int getClassEndTime()
+            public int GetClassEndTime()
             {
                 return endTime;
             }
@@ -602,7 +602,7 @@ namespace Compression
                 }
             }
 
-            public int getStudentsEnrolled()
+            public int GetStudentsEnrolled()
             {
                 return enrollment;
             }

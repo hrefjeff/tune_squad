@@ -82,7 +82,7 @@ namespace LIFES.FileIO
         }
 
         /*
-         * Method Name: setOwnedBy
+         * Method Name: SetOwnedBy
 		 * Parameters:  ownedBy	- Class variable, ownedBy.
 		 * Return:      None
 		 * Author:      Joshua Ford
@@ -90,13 +90,13 @@ namespace LIFES.FileIO
 		 * Modified by: Joshua Ford
 		 * Description: Mutator for the class variable, ownedBy.
 		 */
-        public void setOwnedBy(String ownedBy)
+        public void SetOwnedBy(String ownedBy)
         {
             this.ownedBy = ownedBy;
         }
 
 		/*
-		 * Method Name: getDayOfTheWeek
+		 * Method Name: GetDayOfTheWeek
 		 * Parameters:  None
 		 * Return:      dayOfTheWeek	- Gets class variable, dayOfTheWeek. 
 		 * Author:      Joshua Ford
@@ -104,13 +104,13 @@ namespace LIFES.FileIO
 		 * Modified by: Joshua Ford
 		 * Description: Accessor for class variable, dayOfTheWeek.
 		 */
-        public String getDayOfTheWeek()
+        public String GetDayOfTheWeek()
         {
             return dayOfTheWeek;
         }
 
 		/*
-		 * Method Name: getClassStartTime
+		 * Method Name: GetClassStartTime
 		 * Parameters:  None
 		 * Return:      classStartTime	- Gets class variable, classStartTime. 
 		 * Author:      Joshua Ford
@@ -118,13 +118,13 @@ namespace LIFES.FileIO
 		 * Modified by: Joshua Ford
 		 * Description: Accessor for class variable, classStartTime.
 		 */
-        public int getClassStartTime()
+        public int GetClassStartTime()
         {
             return classStartTime;
         }
 
 		/*
-		 * Method Name: getClassEndTime
+		 * Method Name: GetClassEndTime
 		 * Parameters:  None
 		 * Return:      classEndTime	- Gets class variable, classEndTime. 
 		 * Author:      Joshua Ford
@@ -132,13 +132,13 @@ namespace LIFES.FileIO
 		 * Modified by: Joshua Ford
 		 * Description: Accessor for class variable, classEndTime.
 		 */
-        public int getClassEndTime()
+        public int GetClassEndTime()
         {
             return classEndTime;
         }
 
 		/*
-		 * Method Name: getStudentsEnrolled
+		 * Method Name: GetStudentsEnrolled
 		 * Parameters:  None
 		 * Return:      studentsEnrolled	- Gets class variable, studentsEnrolled. 
 		 * Author:      Joshua Ford
@@ -146,7 +146,7 @@ namespace LIFES.FileIO
 		 * Modified by: Joshua Ford
 		 * Description: Accessor for class variable, studentsEnrolled.
 		 */
-        public int getStudentsEnrolled()
+        public int GetStudentsEnrolled()
         {
             return studentsEnrolled;
         }
@@ -160,7 +160,7 @@ namespace LIFES.FileIO
 		 * Modified by: Joshua Ford
 		 * Description: Accessor for class variable, ownedBy.
 		 */
-        public String getOwnedBy()
+        public String GetOwnedBy()
         {
             return ownedBy;
         }
