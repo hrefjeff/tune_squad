@@ -42,7 +42,50 @@ namespace LIFES.Schedule
         * it to military time. Note this does not take in standard
         * time. It refers to the time that I am using in my Schedule method.
         * 
-        */ 
+        */
+
+        private void ReSchedule(CompressedClassTime ct)
+        {
+
+            foreach (FinalExamDay fed in examWeek)
+            {
+                int startTime = ct.getClassTimeStartHour() * 100;
+                int endTime = startTime + MilitaryTime(tc.GetLengthOfExams() +
+                    tc.GetTimeBetweenExams());
+
+                if (fed.HasAvailableTime(startTime, endTime))
+                {
+                    InsertExam(fed, ct, startTime, endTime);
+                    return;
+                }
+                
+            }
+
+            foreach (FinalExamDay fed in examWeek)
+            {
+                int startTime = tc.GetStartTime();
+                int endTime = startTime + MilitaryTime(tc.GetLengthOfExams() +
+                    tc.GetTimeBetweenExams());
+
+                while (startTime < 1715)
+                {
+                    if (fed.HasAvailableTime(startTime, endTime))
+                    {
+                        InsertExam(fed, ct, startTime, endTime);
+                        return;
+                    }
+                    startTime = startTime +
+                        MilitaryTime(tc.GetLengthOfExams()
+                        + tc.GetTimeBetweenExams());
+
+                    endTime = startTime +
+                        MilitaryTime(tc.GetLengthOfExams()
+                           + tc.GetTimeBetweenExams());
+                }
+            }
+
+            
+        }
         private int MilitaryTime(int time)
         {
             int hour = time / 60;
@@ -199,6 +242,38 @@ namespace LIFES.Schedule
  
         }
         /*
+        * Method: reSchedule
+        * Parameters: N/A
+        * OutPut: N/A
+        * Created By: Scott Smoke
+        * Date: 4/30/2015
+        * Modified By: Scott Smoke
+        * 
+        * Description: Calls the reScheduler
+        */
+        private void RunReScheduler()
+        {
+            //checking pigeon hole principle
+            if ((examSlots * tc.GetNumberOfDays()) >= compressedClassTime.Count())
+            {
+                //debugging info
+                //Debug.WriteLine("Yay we get to schedule");
+                //Debug.WriteLine("Size of compressedClassTimes " + compressedClassTime.Count);
+                foreach (CompressedClassTime ct in compressedClassTime)
+                {
+                    ReSchedule(ct);
+                }
+            }
+            else
+            {
+                //debugging info
+                //Debug.WriteLine("Bummer we can't schedule");
+                //report error to user
+            }
+            //to do
+        }
+
+        /*
          * Method: Scheduler
          * Parameters: List<CompressedClassTime> ct, TimeConstraints t
          * OutPut: N/A
@@ -217,21 +292,6 @@ namespace LIFES.Schedule
             Initialize();
             //to do 
         }
-        /*
-         * Method: reSchedule
-         * Parameters: N/A
-         * OutPut: N/A
-         * Created By: Scott Smoke
-         * Date: 4/30/2015
-         * Modified By: Scott Smoke
-         * 
-         * Description: Calls the reScheduler
-         */
-        public void ReSchedule()
-        {
-            //to do
-        }
-
         /*
          * Method: scheduler
          * Parameters: N/A
@@ -259,6 +319,10 @@ namespace LIFES.Schedule
                 }
             }
             Debug.WriteLine("Total Exams "+ totalExams);*/
+        }
+        public void ReSchedule()
+        {
+            RunReScheduler();
         }
        /*
         * Method: GetExamSlots
