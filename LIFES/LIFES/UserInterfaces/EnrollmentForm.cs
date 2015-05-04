@@ -168,15 +168,15 @@ namespace LIFES.UserInterfaces
                 CompressedClassTimes compressedClassTimes = 
                     new CompressedClassTimes(Globals.totalEnrollemntsFileName);
 
-                if (compressedClassTimes.getErrorList().Count == 0)
+                if (compressedClassTimes.GetErrorList().Count == 0)
                 {
-                    Globals.compressedTimes = compressedClassTimes.getCompressedClassTimes();
+                    Globals.compressedTimes = compressedClassTimes.GetCompressedClassTimes();
                     MessageBox.Show("Enrollment File Accepted");
                 }
-                if (compressedClassTimes.getWarningList().Count !=0)
+                if (compressedClassTimes.GetWarningList().Count !=0)
                 {
                     string errorMsg = "";
-                    foreach (string ele in compressedClassTimes.getWarningList())
+                    foreach (string ele in compressedClassTimes.GetWarningList())
                     {
                         errorMsg = errorMsg + ele + "\n";
                         //debuging info
@@ -189,7 +189,7 @@ namespace LIFES.UserInterfaces
                 else
                 {
                     string errorMsg = "";
-                    foreach (string ele in compressedClassTimes.getErrorList())
+                    foreach (string ele in compressedClassTimes.GetErrorList())
                     {
                         errorMsg = errorMsg + ele + "\n";
                     }
