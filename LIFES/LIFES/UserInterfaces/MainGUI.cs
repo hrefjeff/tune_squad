@@ -516,7 +516,7 @@ namespace LIFES.UserInterfaces
         * Output: N/A
         * Created By: Riley Smith
         * Date: 5/1/2015
-        * Modified By: Riley Smith
+        * Modified By: Jeffrey Allen
         * 
         * Description: When this button is clicked 
         *   an open file dialog will open and allow
