@@ -104,7 +104,7 @@ namespace LIFES.FileIO
             return returnValue;
         }
 
-        /* getDayofTheWeek
+        /* GetDayOfTheWeek
          * Author: Joshua Ford.
          * Date: 3/28/15
          * Modified by: Jordan Beck
@@ -115,7 +115,7 @@ namespace LIFES.FileIO
             return this.dayOfTheWeek;
         }
 
-        /* getDayofTheWeek
+        /* GetDayOfTheWeek
          * Author: Joshua Ford.
          * Date: 3/28/15
          * Modified by: Jordan Beck
