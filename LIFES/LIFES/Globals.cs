@@ -31,5 +31,7 @@ namespace LIFES
         //end of the exam day in military time
         public const int END_OF_EXAM_DAY = 1715;
         //Save file if applicable
+        //schedule status
+        public static bool adminApproved = false;
     }
 }

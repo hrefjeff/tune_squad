@@ -5,6 +5,7 @@ fall2014TotalEnrollments.csv
 105
 15
 105
+0
 
 Day 1 			Exam Time
 mwf 7:00-7:15	7:00-8:45 a.m.
