@@ -319,19 +319,27 @@ namespace LIFES.FileIO
                         string classTime = "";
                         CompressedClassTime compressedTime = exam.GetCompressedClass();
 
-                        classTime +=  compressedTime.GetClassTimes().
-                            First().GetDayOfTheWeek()
-                            ;
-                        classTime += MilitaryToDateTime(compressedTime.
-                            GetClassTimes().First().GetClassStartTime()).
-                            ToString("hh:mm tt")
-                            + "-";
+                        if (compressedTime.GetDayOfTheWeek() == "Lunch")
+                        {
+                            file.Write("\t\t" + "Lunch" + "\t\t\t");
+                        }
+                        else
+                        {
+
+
+                            classTime += compressedTime.GetClassTimes().
+                                First().GetDayOfTheWeek()
+                                ;
+                            classTime += MilitaryToDateTime(compressedTime.
+                                GetClassTimes().First().GetClassStartTime()).
+                                ToString("hh:mm tt")
+                                + "-";
                             classTime += MilitaryToDateTime(compressedTime.
                                 GetClassTimes().First().GetClassEndTime()).
                                 ToString("hh:mm tt");
 
-                        file.Write("\t\t" + classTime + "\t\t\t");
-
+                            file.Write("\t\t" + classTime + "\t\t\t");
+                        }
                         string examTimes = "";
                         examTimes += MilitaryToDateTime(exam.GetStartTime()).
                             ToString("hh:mm tt")
