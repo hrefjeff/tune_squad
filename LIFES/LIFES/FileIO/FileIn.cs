@@ -97,14 +97,14 @@ namespace LIFES.FileIO
 
                     else if (i == 2)
                     {
-						if (Convert.ToInt16(lines[i]) < 75 ||
-							Convert.ToInt16(lines[i]) > 300)
-						{
+                        if (Convert.ToInt16(lines[i]) < 75 ||
+                            Convert.ToInt16(lines[i]) > 300)
+                        {
 
-							errors.Add("Error on line 3: Incorrect exam"
-							+ " time.");
-							good = false;
-						}
+                            errors.Add("Error on line 3: Incorrect exam"
+                            + " time.");
+                            good = false;
+                        }
                     }
 
                     else if (i == 3)
@@ -251,6 +251,7 @@ namespace LIFES.FileIO
                 System.IO.StreamReader file = 
                     new System.IO.StreamReader(filename);
                 //code to write goes here
+                /*
                 file.ReadLine(Globals.semester + " " +Globals.year);
                 file.ReadLine(Globals.totalEnrollemntsFileName);
                 file.Line(Globals.timeConstraints.ToString());
@@ -316,9 +317,10 @@ namespace LIFES.FileIO
 
                         file.Write("\n");
                     }
+                 */
                 }
 
-                file.Close();
+                //file.Close();
         }
     }
 
