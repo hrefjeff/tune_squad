@@ -227,9 +227,54 @@ namespace LIFES.FileIO
         * Description: Reads the data from an output CSV file
         *  
         */
-        public void ReadFromCsv(string filename)
+        public void ReadOutput(string filename)
         {
-            return;
+
+            if (filename != "")
+            {
+                System.IO.StreamReader file =
+                    new System.IO.StreamReader(filename);
+
+                string[] splitFileName = filename.Split('.');
+                string extention = splitFileName[1];
+                string[] semesterAndYear;
+
+                string semesterAndYearLine = file.ReadLine();
+
+                if (extention == "csv")
+                {
+                    semesterAndYear = semesterAndYearLine.Split(',');
+                }
+                else
+                {
+                    semesterAndYear = semesterAndYearLine.Split(' ');
+                }
+
+                Globals.semester = semesterAndYear[0];
+                Globals.year = semesterAndYear[1];
+
+                // read enrollments file name
+                Globals.totalEnrollemntsFileName = file.ReadLine();
+                CompressedClassTimes ct = new CompressedClassTimes(Globals.totalEnrollemntsFileName);
+                Globals.compressedTimes = ct.getCompressedClassTimes();
+
+                // read time constraints
+                string days = file.ReadLine();
+                string starttime = file.ReadLine();
+                string lengthofexam = file.ReadLine();
+                string btwclass = file.ReadLine();
+                string lunchtime = file.ReadLine();
+
+                TimeConstraints readConstraints = new TimeConstraints(Convert.ToInt32(days),
+                                                    Convert.ToInt32(starttime), Convert.ToInt32(lengthofexam),
+                                                    Convert.ToInt32(btwclass), Convert.ToInt32(lunchtime));
+
+                Globals.timeConstraints = readConstraints;
+
+                // read adminApproved
+                string adminApp = file.ReadLine();
+                Globals.adminApproved = Convert.ToBoolean(adminApp);
+            }
         }
 
         /*
@@ -254,24 +299,35 @@ namespace LIFES.FileIO
                 System.IO.StreamReader file = 
                     new System.IO.StreamReader(filename);
 
-                lines.Add(file.ReadLine());
-                lines.Add(file.ReadLine());
+                // read semester + year
+                string firstLine = file.ReadLine();
+                string[] s = firstLine.Split(' ');
+                Globals.semester = s[0];
+                Globals.year = s[1];
+
+                // read enrollments file name
+                Globals.totalEnrollemntsFileName = file.ReadLine();
+
+                // read time constraints
+                string days = file.ReadLine();
+                string starttime = file.ReadLine();
+                string lengthofexam = file.ReadLine();
+                string btwclass = file.ReadLine();
+                string lunchtime = file.ReadLine();
+
+                TimeConstraints readConstraints = new TimeConstraints(Convert.ToInt32(days),
+                                                    Convert.ToInt32(starttime), Convert.ToInt32(lengthofexam), 
+                                                    Convert.ToInt32(btwclass), Convert.ToInt32(lunchtime));
+
+                Globals.timeConstraints = readConstraints;
+
+                // read adminApproved
+                string adminApp = file.ReadLine();
+                Globals.adminApproved = Convert.ToBoolean(adminApp);
                 
 
                 /*
-                file.ReadLine(Globals.semester + " " +Globals.year);
-                file.ReadLine(Globals.totalEnrollemntsFileName);
-                file.Line(Globals.timeConstraints.ToString());
-                if (Globals.adminApproved)
-                {
-                    file.WriteLine("0");
-                }
-                else
-                {
-                    file.WriteLine("1");
-                }
-                file.WriteLine("\n");
-
+                
                 //place exam schedule
                 foreach (FinalExamDay ele in Globals.examWeek)
                 {

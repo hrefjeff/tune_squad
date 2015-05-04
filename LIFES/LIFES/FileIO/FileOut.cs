@@ -301,7 +301,7 @@ namespace LIFES.FileIO
 
                         classTime +=  compressedTime.GetClassTimes().
                             First().GetDayOfTheWeek()
-                            + " ";
+                            ;
                         classTime += MilitaryToDateTime(compressedTime.
                             GetClassTimes().First().GetClassStartTime()).
                             ToString("hh:mm tt")
