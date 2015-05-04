@@ -82,7 +82,7 @@ namespace LIFES.Schedule
             {
                 examWeek[i] = new FinalExamDay();
                 examWeek[i].SetDay(i+1);
-                examWeek[i].setNumberOfExams(examSlots);
+                examWeek[i].SetNumberOfExams(examSlots);
             }
         }
         private void runScheduler()
@@ -204,7 +204,7 @@ namespace LIFES.Schedule
                 totalExams = totalExams + fed.GetNumberOfExams();
                 foreach (FinalExam fe in fed.GetExams())
                 {
-                    Debug.WriteLine("Day " + fed.GetDay() + " " + "Group " + fe.GetCompressedClasses().getDayOfTheWeek() + " "+ "Start Time " + fe.GetStartTime() + " " + "End Time " + fe.GetEndTime());
+                    Debug.WriteLine("Day " + fed.GetDay() + " " + "Group " + fe.GetCompressedClass().getDayOfTheWeek() + " "+ "Start Time " + fe.GetStartTime() + " " + "End Time " + fe.GetEndTime());
                 }
             }
             Debug.WriteLine("Total Exams "+ totalExams);
