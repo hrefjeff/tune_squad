@@ -54,12 +54,12 @@ namespace LIFES.FileIO
             this.isProccessed = true;
             foreach (var c in classTimes)
             {
-                if (c.getOwnedBy() == "NA")
+                if (c.GetOwnedBy() == "NA")
                 {
-                    c.setOwnedBy(dayOfTheWeek + classTimeStartHour);
+                    c.SetOwnedBy(dayOfTheWeek + classTimeStartHour);
                 }
             }
-            classTimes.RemoveAll(c => !c.getOwnedBy().Equals(dayOfTheWeek 
+            classTimes.RemoveAll(c => !c.GetOwnedBy().Equals(dayOfTheWeek 
                 + classTimeStartHour));
         }
 
@@ -110,7 +110,7 @@ namespace LIFES.FileIO
          * Modified by: Jordan Beck
          * Description: Getter for DayOfTheWeek.
          */
-        public String getDayOfTheWeek()
+        public String GetDayOfTheWeek()
         {
             return this.dayOfTheWeek;
         }
@@ -137,10 +137,10 @@ namespace LIFES.FileIO
             int totalStudentsEnrolled = 0;
             foreach (var c in classTimes)
             {
-                if (c.getOwnedBy().Equals(dayOfTheWeek 
-                    + classTimeStartHour) || c.getOwnedBy().Equals("NA"))
+                if (c.GetOwnedBy().Equals(dayOfTheWeek 
+                    + classTimeStartHour) || c.GetOwnedBy().Equals("NA"))
                 {
-                    totalStudentsEnrolled += c.getStudentsEnrolled();
+                    totalStudentsEnrolled += c.GetStudentsEnrolled();
                 }
 
             }

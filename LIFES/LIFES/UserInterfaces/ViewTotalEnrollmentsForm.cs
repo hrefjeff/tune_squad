@@ -80,16 +80,16 @@ namespace LIFES.UserInterfaces
 
                     foreach (ClassTime time in ele.GetClassTimes())
                     {
-                        classTimes += time.getDayOfTheWeek() + " ";
-                        classTimes += MilitaryToDateTime(time.getClassStartTime()).
+                        classTimes += time.GetDayOfTheWeek() + " ";
+                        classTimes += MilitaryToDateTime(time.GetClassStartTime()).
                             ToString("hh:mm tt") + "-";
-                        classTimes += MilitaryToDateTime(time.getClassEndTime()).
+                        classTimes += MilitaryToDateTime(time.GetClassEndTime()).
                             ToString("hh:mm tt") + "\n";
                     }
 
                     TimesGridView.Rows.Add();
                     TimesGridView.Rows[linenumber].Cells[0].Value = 
-                        ele.getDayOfTheWeek();
+                        ele.GetDayOfTheWeek();
                     TimesGridView.Rows[linenumber].Cells[1].Value =
                         classTimes;
                     TimesGridView.Rows[linenumber].Cells[2].Value =
