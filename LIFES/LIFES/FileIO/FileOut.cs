@@ -103,6 +103,14 @@ namespace LIFES.FileIO
                 file.WriteLine(Globals.semester + " " + Globals.year);
                 file.WriteLine(Globals.totalEnrollemntsFileName);
                 file.WriteLine(Globals.timeConstraints.ToString());
+                if (Globals.adminApproved)
+                {
+                    file.WriteLine("0");
+                }
+                else
+                {
+                    file.WriteLine("1");
+                }
                 
 				//place exam schedule
                 foreach (FinalExamDay ele in Globals.examWeek)

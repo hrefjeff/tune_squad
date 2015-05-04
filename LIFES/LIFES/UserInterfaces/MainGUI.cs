@@ -152,19 +152,14 @@ namespace LIFES.UserInterfaces
          * Parameters: object sender, EventArgs e
          * Output: N/A
          * Created By: Riley Smith
-         * Date: 4/1/2015
-         * Modified By: Riley Smith
+         * Date: 5/3/2015
+         * Modified By: Jeffrey Allen
          * 
          * Description: Event handler for the Admin menu button Finalize. 
          */
         private void FinalizeScheduleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //
-       
-           
-               
-            
-            // Needs to be added
+            Globals.adminApproved = true;
         }
 
        
@@ -537,6 +532,27 @@ namespace LIFES.UserInterfaces
             openFile.Title = "Open an Exam Schedule";
             openFile.ShowDialog();
             string filename = openFile.FileName;
+
+            // Check if file exists
+            if (File.Exists(filename))
+            {
+                FileIn inputFile = new FileIn(filename);
+
+                //getting the extention the user selected from the menu
+                switch (openFile.FilterIndex)
+                {
+                    case 1:
+                        inputFile.ReadFromTxt();
+                        break;
+                    case 2:
+                        inputFile.ReadFromCsv();
+                        break;
+                    default:
+                        //error
+                        break;
+                }
+            }
+
 
         }
 
