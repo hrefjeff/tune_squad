@@ -57,139 +57,151 @@ namespace LIFES.FileIO
          */
         public void WriteToPDF()
         {
-            //to do use pdfsharp
-            PdfDocument pdf = new PdfDocument();
-            PdfPage pdfPage = pdf.AddPage();
-            XGraphics graph = XGraphics.FromPdfPage(pdfPage);
-            XFont font = new XFont("Times New Roman", 12);
-            XTextFormatter tf = new XTextFormatter(graph);
-            //adding data to pdf
-
-            int yCord = 0;
-
-            tf.DrawString(Globals.semester + " " + Globals.year, font,
-                XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
-                    pdfPage.Height.Point), XStringFormats.TopLeft);
-
-            yCord += 12;
-
-            tf.DrawString(Globals.totalEnrollemntsFileName, font,
-                XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
-                    pdfPage.Height.Point), XStringFormats.TopLeft);
-
-            yCord += 12;
-
-            tf.DrawString(Globals.timeConstraints.ToString(), font,
-                XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
-                    pdfPage.Height.Point), XStringFormats.TopLeft);
-
-            yCord += 12 * 5;
-
-            // Blank line.
-            tf.DrawString(" ", font,
-                XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
-                    pdfPage.Height.Point), XStringFormats.TopLeft);
-
-            yCord += 12;
-
-            //add schedule
-
-            foreach (FinalExamDay ele in Globals.examWeek)
+            if (filename != "" && Globals.examWeek != null)
             {
+                //to do use pdfsharp
+                PdfDocument pdf = new PdfDocument();
+                PdfPage pdfPage = pdf.AddPage();
+                XGraphics graph = XGraphics.FromPdfPage(pdfPage);
+                XFont font = new XFont("Times New Roman", 12);
+                XTextFormatter tf = new XTextFormatter(graph);
+                //adding data to pdf
 
-                // Add Header. 
-                tf.DrawString("Day", font,
-                XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
-                    pdfPage.Height.Point), XStringFormats.TopLeft);
+                int yCord = 0;
 
-                tf.DrawString("Class Times", font,
-                XBrushes.Black, new XRect(80, yCord, pdfPage.Width.Point,
-                    pdfPage.Height.Point), XStringFormats.TopLeft);
-
-                tf.DrawString("Exam Time", font,
-                XBrushes.Black, new XRect(250, yCord, pdfPage.Width.Point,
-                    pdfPage.Height.Point), XStringFormats.TopLeft);
+                tf.DrawString(Globals.semester + " " + Globals.year, font,
+                    XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
+                        pdfPage.Height.Point), XStringFormats.TopLeft);
 
                 yCord += 12;
-                
-                tf.DrawString(ele.GetDay().ToString(), font,
+
+                tf.DrawString(Globals.totalEnrollemntsFileName, font,
                     XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
-                    pdfPage.Height.Point), XStringFormats.TopLeft);
+                        pdfPage.Height.Point), XStringFormats.TopLeft);
 
-                foreach (FinalExam exam in ele.GetExams())
+                yCord += 12;
+
+                tf.DrawString(Globals.timeConstraints.ToString(), font,
+                    XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
+                        pdfPage.Height.Point), XStringFormats.TopLeft);
+
+                yCord += 12 * 5;
+
+                // Blank line.
+                tf.DrawString(" ", font,
+                    XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
+                        pdfPage.Height.Point), XStringFormats.TopLeft);
+
+                yCord += 12;
+
+                //add schedule
+
+                foreach (FinalExamDay ele in Globals.examWeek)
                 {
-                    
-                    string classTime = "";
-                    CompressedClassTime compressedTime = exam.GetCompressedClass();
 
-                    classTime = compressedTime.GetClassTimes().
-                        First().GetDayOfTheWeek() + " ";
+                    // Add Header. 
+                    tf.DrawString("Day", font,
+                    XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
+                        pdfPage.Height.Point), XStringFormats.TopLeft);
 
-                    classTime += MilitaryToDateTime(compressedTime.
-                        GetClassTimes().First().GetClassStartTime()).
-                        ToString("hh:mm tt") + "-";
+                    tf.DrawString("Class Times", font,
+                    XBrushes.Black, new XRect(80, yCord, pdfPage.Width.Point,
+                        pdfPage.Height.Point), XStringFormats.TopLeft);
 
-                    classTime += MilitaryToDateTime(compressedTime.
-                        GetClassTimes().First().GetClassEndTime()).
-                        ToString("hh:mm tt");
-
-                    tf.DrawString(classTime, font,
-                       XBrushes.Black, new XRect(80, yCord, pdfPage.Width.Point,
-                       pdfPage.Height.Point), XStringFormats.TopLeft);
-
-                    string examTimes = "";
-                    examTimes += MilitaryToDateTime(exam.GetStartTime()).
-                        ToString("hh:mm tt")
-                        + "-" + MilitaryToDateTime(exam.GetEndTime()).
-                        ToString("hh:mm tt");
-
-                    tf.DrawString(examTimes, font,
-                        XBrushes.Black, new XRect(250, yCord, pdfPage.Width.Point,
+                    tf.DrawString("Exam Time", font,
+                    XBrushes.Black, new XRect(250, yCord, pdfPage.Width.Point,
                         pdfPage.Height.Point), XStringFormats.TopLeft);
 
                     yCord += 12;
 
-                    foreach (ClassTime time in compressedTime.
-                        GetClassTimes())
+                    tf.DrawString(ele.GetDay().ToString(), font,
+                        XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
+                        pdfPage.Height.Point), XStringFormats.TopLeft);
+
+                    foreach (FinalExam exam in ele.GetExams())
                     {
-                        if (time != compressedTime.GetClassTimes().First())
+                        string classTime = "";
+                        CompressedClassTime compressedTime = exam.GetCompressedClass();
+
+                        if (compressedTime.GetDayOfTheWeek() == "Lunch")
                         {
-                            string classTimes = "";
-                            classTimes += time.GetDayOfTheWeek() + " ";
-                            classTimes += MilitaryToDateTime(time.
-                                GetClassStartTime()).
+                            tf.DrawString("Lunch", font,
+                               XBrushes.Black, new XRect(80, yCord, pdfPage.Width.Point,
+                               pdfPage.Height.Point), XStringFormats.TopLeft);
+                        }
+
+                        else
+                        {
+                            classTime = compressedTime.GetClassTimes().
+                                First().GetDayOfTheWeek() + " ";
+
+                            classTime += MilitaryToDateTime(compressedTime.
+                                GetClassTimes().First().GetClassStartTime()).
                                 ToString("hh:mm tt") + "-";
-                            classTimes += MilitaryToDateTime(time.
-                                GetClassEndTime()).
+
+                            classTime += MilitaryToDateTime(compressedTime.
+                                GetClassTimes().First().GetClassEndTime()).
                                 ToString("hh:mm tt");
 
-                            tf.DrawString(classTimes, font,
-                                XBrushes.Black, new XRect(80, yCord, pdfPage.Width.Point,
-                                pdfPage.Height.Point), XStringFormats.TopLeft);
-
-                            yCord += 12;
-
+                            tf.DrawString(classTime, font,
+                               XBrushes.Black, new XRect(80, yCord, pdfPage.Width.Point,
+                               pdfPage.Height.Point), XStringFormats.TopLeft);
                         }
+
+                        string examTimes = "";
+                        examTimes += MilitaryToDateTime(exam.GetStartTime()).
+                            ToString("hh:mm tt")
+                            + "-" + MilitaryToDateTime(exam.GetEndTime()).
+                            ToString("hh:mm tt");
+
+                        tf.DrawString(examTimes, font,
+                            XBrushes.Black, new XRect(250, yCord, pdfPage.Width.Point,
+                            pdfPage.Height.Point), XStringFormats.TopLeft);
+
+                        yCord += 12;
+
+                        foreach (ClassTime time in compressedTime.
+                            GetClassTimes())
+                        {
+                            if (time != compressedTime.GetClassTimes().First())
+                            {
+                                string classTimes = "";
+                                classTimes += time.GetDayOfTheWeek() + " ";
+                                classTimes += MilitaryToDateTime(time.
+                                    GetClassStartTime()).
+                                    ToString("hh:mm tt") + "-";
+                                classTimes += MilitaryToDateTime(time.
+                                    GetClassEndTime()).
+                                    ToString("hh:mm tt");
+
+                                tf.DrawString(classTimes, font,
+                                    XBrushes.Black, new XRect(80, yCord, pdfPage.Width.Point,
+                                    pdfPage.Height.Point), XStringFormats.TopLeft);
+
+                                yCord += 12;
+
+                            }
+                        }
+
+                        yCord += 12;
+
                     }
 
-                    yCord += 12;
-    
+                    graph.Dispose();
+
+                    if (ele != Globals.examWeek.Last())
+                    {
+                        pdfPage = pdf.AddPage();
+                        graph = XGraphics.FromPdfPage(pdfPage);
+                        font = new XFont("Times New Roman", 12);
+                        tf = new XTextFormatter(graph);
+
+                        yCord = 36;
+                    }
                 }
 
-                graph.Dispose();
-
-                if (ele != Globals.examWeek.Last())
-                {
-                    pdfPage = pdf.AddPage();
-                    graph = XGraphics.FromPdfPage(pdfPage);
-                    font = new XFont("Times New Roman", 12);
-                    tf = new XTextFormatter(graph);
-
-                    yCord = 36;
-                }
+                pdf.Save(filename);
             }
- 
-            pdf.Save(filename);
         }
 
         /*
@@ -205,7 +217,7 @@ namespace LIFES.FileIO
          */
         public void WriteToCSV()
         {
-            if (filename !="")
+            if (filename != "" && Globals.examWeek != null)
             {
                 System.IO.StreamWriter file = 
                     new System.IO.StreamWriter(filename);
@@ -234,7 +246,7 @@ namespace LIFES.FileIO
                         CompressedClassTime compressedTime = exam.GetCompressedClass();
                         if (compressedTime.GetDayOfTheWeek() == "Lunch")
                         {
-                            file.Write("\t\t" + "Lunch");
+                            file.Write("Lunch");
                         }
                         else
                         {
@@ -296,7 +308,7 @@ namespace LIFES.FileIO
          */
         public void WriteToText() 
         {
-            if (filename != "")
+            if (filename != "" && Globals.examWeek != null)
             {
                 System.IO.StreamWriter file = 
                     new System.IO.StreamWriter(filename);
