@@ -157,7 +157,7 @@ namespace LIFES.UserInterfaces
         * Output: N/A
         * Created By: Riley Smith
         * Date: 3/30/2015
-        * Modified By: Riley Smith
+        * Modified By: Joshua Ford
         * 
         *Description: This will run the compression.
         */
@@ -173,18 +173,24 @@ namespace LIFES.UserInterfaces
                     Globals.compressedTimes = compressedClassTimes.GetCompressedClassTimes();
                     MessageBox.Show("Enrollment File Accepted");
                 }
-                if (compressedClassTimes.GetWarningList().Count !=0)
+				if (compressedClassTimes.GetWarningLessThanOneStudents() != 0)
                 {
-                    string errorMsg = "";
-                    foreach (string ele in compressedClassTimes.GetWarningList())
-                    {
-                        errorMsg = errorMsg + ele + "\n";
-                        //debuging info
-                       // Debug.WriteLine(errorMsg);
-                    }
+					string enrollmentWarning = "Warning - There were " 
+						+ compressedClassTimes.GetWarningLessThanOneStudents() 
+						+ " class times flagged for less than 1 students enrolled";
+                    if (compressedClassTimes.GetWarningForOneDayClass() != 0)
+					{
+						string oneDayWarning = "Warning - There were "
+							+ compressedClassTimes.GetWarningForOneDayClass()
+							+ " class times flagged as night classes and/or " 
+							+ "one day classes that were " 
+							+ "less than 1 hour long and/or labs";
+						enrollmentWarning += "\n" + oneDayWarning;
+					}
 
-                    MessageBox.Show(errorMsg, "Warning");
+                    MessageBox.Show(enrollmentWarning, "Warning");
                 }
+				
 
                 else
                 {

@@ -23,7 +23,8 @@ namespace LIFES.FileIO
         private ArrayList errorList = new ArrayList();
         private ArrayList warningList = new ArrayList();
         private readonly List<CompressedClassTime> compressedClassTimes;
-
+		private int warningForOneDayClass = 0;
+		private int warningLessThanOneStudents = 0;
         /*
          * Method Name: CompressedClassTimes
          * Parameters: filename - The name of the file containing the data to 
@@ -42,7 +43,7 @@ namespace LIFES.FileIO
             // Creates a temparary Dict to hold the compressed day and time.
             var tmpCompressedClassTimes = new Dictionary<String, 
                 CompressedClassTime>();
-            int warning = 0;
+            
 
 
 
@@ -134,13 +135,18 @@ namespace LIFES.FileIO
                                     errorList.Add(e.Message
                                         + " on line " + lineCounter);
                                 }
-                                else
+                                else if(e.Message.StartsWith("Warning - This"))
                                 {
-                                    warning++;
-                                    
+                                    warningForOneDayClass++;    
                                     warningList.Add(e.Message
                                         + " on line " + lineCounter);
                                 }
+								else
+								{
+									warningLessThanOneStudents++;
+									warningList.Add(e.Message
+										+ " on line " + lineCounter);
+								}
                             }
                         }
                     }
@@ -214,6 +220,34 @@ namespace LIFES.FileIO
         {
             return warningList;
         }
+
+		/*
+         * Method Name: GetWarningForOneDayClass
+         * Parameters:  None
+         * Return:      warningForOneDayClass - Gets class variable. 
+         * Author:      Joshua Ford
+         * Date:        4/19/15
+         * Modified by: Joshua Ford
+         * Description: Accessor for warningForOneDayClass variable.
+         */
+		public int GetWarningForOneDayClass()
+		{
+			return warningForOneDayClass;
+		}
+
+		/*
+         * Method Name: GetWarningLessThanOneStudents
+         * Parameters:  None
+         * Return:      warningLessThanOneStudents - Gets class variable. 
+         * Author:      Joshua Ford
+         * Date:        4/19/15
+         * Modified by: Joshua Ford
+         * Description: Accessor for warningLessThanOneStudents variable.
+         */
+		public int GetWarningLessThanOneStudents()
+		{
+			return warningLessThanOneStudents;
+		}
     }
 }
 
