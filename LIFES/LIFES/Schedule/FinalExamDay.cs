@@ -59,7 +59,8 @@ namespace LIFES.Schedule
          * Date: 4/30/2015
          * Modified By: Scott Smoke
          * 
-         * Description: This inserts a final exam into the list.
+         * Description: This inserts a final exam into the list and sorts
+         * it afterwards.
          * 
          */
         public void InsertExam(FinalExam exam)
@@ -67,6 +68,7 @@ namespace LIFES.Schedule
             if (numberOfExams > finals.Count)
             {
                 finals.Add(exam);
+                finals.Sort();
             }
             
         }
@@ -86,17 +88,51 @@ namespace LIFES.Schedule
         {
             this.day = day;
         }
-
+        /*
+         * Method: GetDay
+         * Parameters: N/A
+         * Output: int
+         * Created By: Scott Smoke
+         * Date: 5/1/2015
+         * Modified By: Scott Smoke
+         * 
+         * Description: This returns the day. Since we are
+         * using generic day 1, day 2...etc. It returns an integer
+         * instead of a char.
+         */ 
         public int GetDay()
         {
             return day;
         }
-
+        /*
+         * Method: GetNumberOfExams
+         * Parameters: N/A
+         * Output: int
+         * Created By: Scott Smoke
+         * Date: 5/1/2015
+         * Modified By: Scott Smoke
+         * 
+         * Description: This returns the number of exams
+         * that are currently scheduled for this day.
+         * 
+         */ 
         public int GetNumberOfExams()
         {
             return finals.Count;
         }
-        public void setNumberOfExams(int num)
+        /*
+         * Method: SetNumberOfExams
+         * Parameters: int num
+         * Output: N/A
+         * Created By: Scott Smoke
+         * Date: 5/1/2015
+         * Modified By: Scott Smoke
+         * 
+         * Description: This sets the number
+         * of exams that are to be scheduled on this day.
+         * 
+         */ 
+        public void SetNumberOfExams(int num)
         {
             numberOfExams = num;
         }
@@ -110,20 +146,38 @@ namespace LIFES.Schedule
          * Modified By: Scott Smoke
          * 
          * Description: This returns whether or not the time slot is 
-         * available on the exam day.
+         * available on the exam day. This algorithm searches all
+         * exams that are scheduled for this day.
          * 
          */
-        public bool HasAvailableTime(int time)
+        public bool HasAvailableTime(int beginTime, int endTime)
         {
-            if (finals.Count <= numberOfExams)
+            //makes sure there cannot be exams scheduled on this day 
+            // then is what is allowed
+            if (finals.Count < numberOfExams)
             {
 
                 foreach (FinalExam fe in finals)
                 {
-                    if ((fe.GetStartTime() < time) && (fe.GetEndTime() >time))
+                    //I could have combined these but thought it made it more
+                    //readable in this form.
+                    if ((beginTime > fe.GetStartTime()) && (beginTime < fe.GetEndTime()))
                     {
                         return false;
                     }
+                    if ((endTime > fe.GetStartTime()) && (endTime < fe.GetEndTime()))
+                    {
+                        return false;
+                    }
+                    if (beginTime == fe.GetStartTime())
+                    {
+                        return false;
+                    }
+                    if (endTime == fe.GetEndTime())
+                    {
+                        return false;
+                    }
+                   
                 }
                 return true;
             }

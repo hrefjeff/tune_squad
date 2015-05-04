@@ -189,6 +189,33 @@ namespace LIFES.UserInterfaces
         }
 
         /*
+         * Method: MilitaryToDateTime
+         * Parameters: int (Military Time)
+         * Output: DateTime
+         * Created By: Riley Smith
+         * Date: 5/3/2015
+         * Modified By: Riley Smith
+         * 
+         * Description: Converts a MilitaryTime int to a standard DateTime.
+         * 
+         * Source:
+         * http://forums.asp.net/t/1503263.aspx?How+to+convert+integer+representing+military+time+into+DateTime+object
+         */
+         public static DateTime MilitaryToDateTime(int time)
+        {
+            int Hours = time / 100;
+            int Minutes = time - Hours * 100;
+            DateTime Result = DateTime.MinValue;
+
+
+            Result = Result.AddHours(Hours);
+            Result = Result.AddMinutes(Minutes);
+
+            
+            return Result;
+        }
+
+        /*
         * Method: PrintToolStripMenuItemClick 
         * Parameters: object sender, EventArgs e
         * Output: N/A
@@ -228,14 +255,51 @@ namespace LIFES.UserInterfaces
          * Output: N/A
          * Created By: Riley Smith
          * Date: 3/24/2015
-         * Modified By: Riley Smith
+         * Modified By: Scott Smoke
          * 
          * Description: Event handler for the button Reschedule.
          */
         private void Reschedule_Click(object sender, EventArgs e)
         {
-            examTable.Rows[0].Cells[0].Value = "Rescheduled First Class Time";
-            examTable.Rows[0].Cells[1].Value = "Rescheduled First Exam Time";
+            Scheduler examSchedule = new Scheduler(Globals.compressedTimes, Globals.timeConstraints);
+            examSchedule.ReSchedule();
+            Globals.examWeek = examSchedule.GetExams();
+            Debug.Write(examSchedule.GetExamSlots());
+
+            int rowIndex = 0;
+            foreach (FinalExamDay ele in Globals.examWeek)
+            {
+                foreach (FinalExam exam in ele.GetExams())
+                {
+                    examTable.Rows.Add();
+
+
+                    string classTimes = "";
+
+                    CompressedClassTime compressedTime = exam.GetCompressedClass();
+
+                    // Get group of compressed class times.
+                    foreach (ClassTime time in compressedTime.GetClassTimes())
+                    {
+                        classTimes += time.getDayOfTheWeek() + " ";
+                        classTimes += MilitaryToDateTime(time.getClassStartTime()).
+                            ToString("hh:mm tt") + "-";
+                        classTimes += MilitaryToDateTime(time.getClassEndTime()).
+                            ToString("hh:mm tt") + "\n";
+                    }
+
+                    string examTimes = "";
+                    examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
+                        + "-" + MilitaryToDateTime(exam.GetEndTime()).ToString("hh:mm tt");
+
+                    examTable.Rows[rowIndex].Cells[0].Value = ele.GetDay();
+                    examTable.Rows[rowIndex].Cells[1].Value = classTimes;
+                    examTable.Rows[rowIndex].Cells[2].Value = examTimes;
+
+                    rowIndex++;
+                }
+
+            }
         }
 
         /*
@@ -307,20 +371,45 @@ namespace LIFES.UserInterfaces
          */
         private void Schedule_Click(object sender, EventArgs e)
         {
-            examTable.Rows.Add();
-            examTable.Rows.Add();
-            //examTable.Rows[0].Cells[0].Value = "MWF";
-            //examTable.Rows[0].Cells[1].Value = "8:00";
-            //examTable.Rows[1].Cells[0].Value = "TR";
-            //examTable.Rows[1].Cells[1].Value = "9:00";
-            //examTable.Rows[2].Cells[0].Value = "MW";
-            //examTable.Rows[2].Cells[1].Value = "11:00";
-
-
             Scheduler examSchedule = new Scheduler(Globals.compressedTimes, Globals.timeConstraints);
             examSchedule.Schedule();
-           Globals.examWeek = examSchedule.GetExams();
+            Globals.examWeek = examSchedule.GetExams();
             Debug.Write(examSchedule.GetExamSlots());
+
+            int rowIndex = 0;
+            foreach (FinalExamDay ele in Globals.examWeek)
+            {
+                foreach (FinalExam exam in ele.GetExams())
+                {
+                    examTable.Rows.Add();
+                   
+
+                    string classTimes = "";
+
+                    CompressedClassTime compressedTime = exam.GetCompressedClass();
+
+                    // Get group of compressed class times.
+                    foreach (ClassTime time in compressedTime.GetClassTimes())
+                    {
+                        classTimes += time.getDayOfTheWeek() + " ";
+                        classTimes += MilitaryToDateTime(time.getClassStartTime()).
+                            ToString("hh:mm tt") + "-";
+                        classTimes += MilitaryToDateTime(time.getClassEndTime()).
+                            ToString("hh:mm tt") + "\n";
+                    }
+
+                    string examTimes = "";
+                    examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
+                        + "-" + MilitaryToDateTime(exam.GetEndTime()).ToString("hh:mm tt");
+                    
+                    examTable.Rows[rowIndex].Cells[0].Value = ele.GetDay();
+                    examTable.Rows[rowIndex].Cells[1].Value = classTimes;         
+                    examTable.Rows[rowIndex].Cells[2].Value = examTimes;
+
+                    rowIndex++;
+                }
+
+            }
 
 
         }
@@ -360,13 +449,15 @@ namespace LIFES.UserInterfaces
          * Output: N/A
          * Created By: Riley Smith
          * Date: 4/8/2015
-         * Modified By: Riley Smith
+         * Modified By: Jordan Beck
          * 
-         * Description: Event handler for the menu button View Total Enrollments.
+         * Description: Event handler for the menu
+         *  button View Total Enrollments.
          */
         private void ViewTotalEnrollments_Click(object sender, EventArgs e)
         {
-            ViewTotalEnrollmentsForm totalEnrollmentForm = new ViewTotalEnrollmentsForm();
+            ViewTotalEnrollmentsForm totalEnrollmentForm = 
+                new ViewTotalEnrollmentsForm();
             totalEnrollmentForm.Owner = this;
 
             totalEnrollmentForm.StartPosition = FormStartPosition.CenterScreen;
@@ -379,7 +470,7 @@ namespace LIFES.UserInterfaces
          * Output: N/A
          * Created By: Jeffrey Allen
          * Date: 4/13/2015
-         * Modified By: Jeffrey Allen
+         * Modified By: Jordan Beck
          * 
          * Description: Event handler for the menu button Open User Guide.
          */
@@ -395,7 +486,8 @@ namespace LIFES.UserInterfaces
         * Date: 4/21/2015
         * Modified By: Scott Smoke
         * 
-        * Description: This will launch the log in form when the application launches.
+        * Description: This will launch the log in form when 
+        *  the application launches.
         */ 
         private void MainGUI_Load(object sender, EventArgs e)
         {
@@ -412,7 +504,7 @@ namespace LIFES.UserInterfaces
         * Output: N/A
         * Created By: Jeffrey Allen
         * Date: 4/30/2015
-        * Modified By: 
+        * Modified By: Jordan Beck
         * 
         * Description: This button will swap two exam periods within
         *              the main window
@@ -421,8 +513,10 @@ namespace LIFES.UserInterfaces
         {
             if (examTable.SelectedRows.Count == 2)
             {
-                string firstIndex = examTable.SelectedRows[0].Cells[1].Value.ToString();
-                string secondIndex = examTable.SelectedRows[1].Cells[1].Value.ToString();
+                string firstIndex = 
+                    examTable.SelectedRows[0].Cells[1].Value.ToString();
+                string secondIndex = 
+                    examTable.SelectedRows[1].Cells[1].Value.ToString();
                 string tmpString = firstIndex;
 
                 examTable.SelectedRows[0].Cells[1].Value = secondIndex;
@@ -443,7 +537,8 @@ namespace LIFES.UserInterfaces
         * Date: 5/1/2015
         * Modified By: Riley Smith
         * 
-        * Description: When this button is clicked an open file dialog will open and allow
+        * Description: When this button is clicked 
+        *   an open file dialog will open and allow
         *   the user to enter a file name or select a file.
         * Sources: msdn.Microsoft.com
         */

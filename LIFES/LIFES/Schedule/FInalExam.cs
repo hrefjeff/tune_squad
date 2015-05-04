@@ -15,7 +15,8 @@ namespace LIFES.Schedule
      * 
      * Description: This class represents a single
      * final exam for the day. It implements the IComparable interface
-     * that allows this class to be sorted.
+     * that allows this class to be sorted. This also serves as
+     * a wrapper for the CompressedClassTime class.
      * 
      */ 
     public class FinalExam : IComparable<FinalExam>
@@ -37,7 +38,6 @@ namespace LIFES.Schedule
         public FinalExam(CompressedClassTime ct)
         {
             compressedClass = ct;
-            
             endTime = 0;
         }
         /*
@@ -100,8 +100,19 @@ namespace LIFES.Schedule
         {
             return startTime;
         }
-
-        public CompressedClassTime GetCompressedClasses()
+        /*
+         * Method: GetCompressClass.
+         * Parameters: N/A
+         * Output: CompressedClassTime
+         * Created By: Scott Smoke
+         * Date: 4/30/2015
+         * Modified By: Scott Smoke
+         * 
+         * Description: This returns the CompressedClassTime
+         * that this exam is for.
+         * 
+         */ 
+        public CompressedClassTime GetCompressedClass()
         {
             return compressedClass;
         }
@@ -147,7 +158,7 @@ namespace LIFES.Schedule
             }
             else
             {
-                return 0;
+                return 1;
             }
         }
     }

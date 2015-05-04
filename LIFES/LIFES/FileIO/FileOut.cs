@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using PdfSharp.Pdf;
 using PdfSharp.Drawing;
 using PdfSharp.Drawing.Layout;
+using LIFES.Schedule;
 
 namespace LIFES.FileIO
 {
@@ -13,10 +14,10 @@ namespace LIFES.FileIO
      * Class Name: FileOut.cs
      * Created By: Scott Smoke
      * Date: 3/24/2015
-     * Modified by: Scott Smoke
+     * Modified by: Jordan Beck
      * 
-     * Description: This class will output the created final exam in the requested
-     * format.
+     * Description: This class will output the created final exam in
+     * the requested format.
      */
     class FileOut
     {
@@ -42,13 +43,14 @@ namespace LIFES.FileIO
          * Output: Saved file of the pdf format
          * Created By: Scott Smoke
          * Date: 3/24/2015
-         * Modified By: Scott Smoke
+         * Modified By: Jordan Beck
          * 
-         * Description: This method will output the final exam schedule to a pdf. 
-         * This method uses the open source PDFSharp library by MigraDoc Foundation
-         * nore information here: http://www.pdfsharp.net/.
-         * This will read the data structure returned from the schedule
-         * function and insert the data into a pdf.
+         * Description: This method will output the final exam 
+         * schedule to a pdf. This method uses the open source 
+         * PDFSharp library by MigraDoc Foundation more information 
+         * here: http://www.pdfsharp.net/. This will read the data 
+         * structure returned from the schedule function and insert 
+         * the data into a pdf.
          * 
          * Sources: http://csharp.net-informations.com/file/create-pdf.htm
          *          http://www.pdfsharp.net/wiki/TextLayout-sample.ashx?AspxAutoDetectCookieSupport=1
@@ -86,10 +88,10 @@ namespace LIFES.FileIO
          * Output: Saved file in the CSV format
          * Created By: Scott Smoke
          * Date: 3/24/2015
-         * Modified By: Scott Smoke
+         * Modified By: Jordan Beck
          * 
-         * Description: This will write the data that is returned from the scheduler
-         * to a file in the CSV format.
+         * Description: This will write the data that is returned from the 
+         * scheduler to a file in the CSV format.
          */
         public void WriteToCSV()
         {
@@ -113,10 +115,10 @@ namespace LIFES.FileIO
          * Output: A saved file in plain text
          * Created By: Scott Smoke
          * Date: 3/24/2015
-         * Modified By: Scott Smoke
+         * Modified By: Jordan Beck
          * 
-         * Description: This will write the data that is returned from the scheduler
-         * to a plain text file.
+         * Description: This will write the data that is returned from 
+         * the scheduler to a plain text file.
          */
         public void WriteToText() 
         {
@@ -128,11 +130,93 @@ namespace LIFES.FileIO
                 file.WriteLine(Globals.semester + " " +Globals.year);
                 file.WriteLine(Globals.totalEnrollemntsFileName);
                 file.WriteLine(Globals.timeConstraints.ToString());
+                file.WriteLine("\n");
+
                 //place exam schedule
+                foreach (FinalExamDay ele in Globals.examWeek)
+                {
+                    file.WriteLine("Day\t Class Times\t\t\t\t Exam Time");
+                    file.Write(ele.GetDay());
+              
+                    foreach (FinalExam exam in ele.GetExams())
+                    {
+                        string classTime = "";
+                        CompressedClassTime compressedTime = exam.GetCompressedClass();
+
+                        classTime +=  compressedTime.GetClassTimes().
+                            First().getDayOfTheWeek()
+                            + " ";
+                        classTime += MilitaryToDateTime(compressedTime.
+                            GetClassTimes().First().getClassStartTime()).
+                            ToString("hh:mm tt")
+                            + "-";
+                            classTime += MilitaryToDateTime(compressedTime.
+                                GetClassTimes().First().getClassEndTime()).
+                                ToString("hh:mm tt");
+
+                        file.Write("\t\t" + classTime + "\t\t\t");
+
+                        string examTimes = "";
+                        examTimes += MilitaryToDateTime(exam.GetStartTime()).
+                            ToString("hh:mm tt")
+                            + "-" + MilitaryToDateTime(exam.GetEndTime()).
+                            ToString("hh:mm tt");
+
+                        file.Write("\t" + examTimes + "\n");
+
+                        foreach (ClassTime time in compressedTime.
+                            GetClassTimes())
+                        {
+                            if (time != compressedTime.GetClassTimes().First())
+                            {
+                                string classTimes = "";
+                                classTimes += time.getDayOfTheWeek() + " ";
+                                classTimes += MilitaryToDateTime(time.
+                                    getClassStartTime()).
+                                    ToString("hh:mm tt") + "-";
+                                classTimes += MilitaryToDateTime(time.
+                                    getClassEndTime()).
+                                    ToString("hh:mm tt");
+
+                                file.Write("\t\t" + classTimes + "\n");
+                            }
+                        }
+
+                        file.Write("\n");
+                    }
+                }
+
                 file.Close();
             }
             
           
+        }
+
+        /*
+        * Method: MilitaryToDateTime
+        * Parameters: int (Military Time)
+        * Output: DateTime
+        * Created By: Riley Smith
+        * Date: 5/3/2015
+        * Modified By: Riley Smith
+        * 
+        * Description: Converts a MilitaryTime int to a standard DateTime.
+        * 
+        * Source:
+        * http://forums.asp.net/t/1503263.aspx?How+to+convert+integer+representing+military+time+into+DateTime+object
+        */
+        public static DateTime MilitaryToDateTime(int time)
+        {
+            int Hours = time / 100;
+            int Minutes = time - Hours * 100;
+            DateTime Result = DateTime.MinValue;
+
+
+            Result = Result.AddHours(Hours);
+            Result = Result.AddMinutes(Minutes);
+
+
+            return Result;
         }
 
     }

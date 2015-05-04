@@ -9,13 +9,113 @@ using LIFES.FileIO;
 using System.Diagnostics;
 namespace LIFES.Schedule
 {
+    /*
+     * Class Name: Scheduler
+     * Created By: Scott Smoke
+     * Date: 5/1/2015
+     * Modified By: Scott Smoke
+     * 
+     * Description: This class schedules the final
+     * exams.
+     * 
+     */ 
    public class Scheduler
     {
+       //Scheduler constrains
         private TimeConstraints tc;
+       //Totals enrollments data
         private List<CompressedClassTime> compressedClassTime;
+       //final exam week
         private FinalExamDay[] examWeek;
+       //total number of exams that can be scheduled
         private int examSlots;
+       /*
+        * Method: FinaAvailableSlot
+        * Parameters: FinalExamDay fed, CompressedClassTime ct,
+        *             int startTime, int endTime
+        * Output: N/A
+        * Created By: Scott Smoke
+        * Date: 5/4/2015
+        * Modified By: Scott Smoke
+        * 
+        * Description: This method finds an available time slot
+        * and inserts the exam into it.
+        * 
+        */ 
+        private void FindAvailableSlot(FinalExamDay fed, CompressedClassTime ct,
+            int startTime, int endTime)
+        {
+             while (startTime < Globals.END_OF_EXAM_DAY)
+                {
+                    if (fed.HasAvailableTime(startTime, endTime))
+                    {
+                        InsertExam(fed, ct, startTime, endTime);
+                        return;
+                    }
+                    startTime = startTime +
+                        MilitaryTime(tc.GetLengthOfExams()
+                        + tc.GetTimeBetweenExams());
 
+                    endTime = startTime +
+                        MilitaryTime(tc.GetLengthOfExams()
+                           + tc.GetTimeBetweenExams());
+                }
+
+        }
+       /*
+        * Method: ReSchedule
+        * Parameters: CompressedClassTime ct
+        * Output: N/A
+        * Created By: Scott Smoke
+        * Date: 5/4/2015
+        * Modified By: Scott Smoke
+        * 
+        * Description: This takes a breath first approach by inserting
+        * an exam in the first day near the time of the start time of the compressed class time.
+        * Once there are no more slots at the time of the compressed class it then moves onto checking
+        * if there are any more slots avalable for each day.
+        * 
+        */ 
+        private void ReSchedule(CompressedClassTime ct)
+        {
+            //checks the nearest time slots to the compressed class times start time.
+            foreach (FinalExamDay fed in examWeek)
+            {
+                //correcting for CompressedClassTime getClassTimeStartHour only returning a 2 digit integer
+                int startTime = ct.getClassTimeStartHour() * 100;
+                int endTime = startTime + MilitaryTime(tc.GetLengthOfExams() +
+                    tc.GetTimeBetweenExams());
+
+                if (fed.HasAvailableTime(startTime, endTime))
+                {
+                    InsertExam(fed, ct, startTime, endTime);
+                    return;
+                }
+                
+            }
+            //if there were not any start times avaialable near the start time of the compressed time.
+            foreach (FinalExamDay fed in examWeek)
+            {
+                int startTime = tc.GetStartTime();
+                int endTime = startTime + MilitaryTime(tc.GetLengthOfExams() +
+                    tc.GetTimeBetweenExams());
+                FindAvailableSlot(fed, ct, startTime, endTime);
+            } 
+        }
+       /*
+       * Method: MilitaryTime
+       * Parameters: int time
+       * Output: int
+       * Created By: Scott Smoke
+       * Date: 5/1/2015
+       * Modified By: Scott Smoke
+       * 
+       * Description: This method takes in a
+       * integer value that represents time then it convers
+       * it to military time. Note this does not take in standard
+       * time. It refers to the time that I am using in my Schedule method.
+       * 
+       */
         private int MilitaryTime(int time)
         {
             int hour = time / 60;
@@ -23,42 +123,68 @@ namespace LIFES.Schedule
             int militaryTime = (hour * 100) + min;
             return militaryTime;
         }
+       /*
+        * Method: InsertExam
+        * Parameters: FinalExamDay fed, CompressedClassTime ct, 
+        *             int startTime, int endTime
+        * Output: N/A
+        * Created By: Scott Smoke
+        * Date: 5/3/2015
+        * Modified By: Scott Smoke
+        * 
+        * Description: This inserts an exam into the specified
+        * exam day with the specified start and end times.Notes this adds the
+        * break time to the length of the exam.
+        * 
+        */ 
+        private void InsertExam(FinalExamDay fed, CompressedClassTime ct, 
+            int startTime, int endTime)
+        {
+            FinalExam fe = new FinalExam(ct);
+            Debug.WriteLine("Class start hour " + ct.getClassTimeStartHour() * 100);
+            fe.SetStartTime(startTime);
+            fe.SetEndTime(endTime);
+            fed.InsertExam(fe);
+            //debugging info
+            Debug.WriteLine("Day: " + fed.GetDay().ToString() + " " 
+                + fed.GetNumberOfExams());
+        }
+       /*
+        * Method: Schedule
+        * Parameters: CompressedClassTime ct
+        * Output: N/A
+        * Created By: Scott Smoke
+        * Date: 5/3/2015
+        * Modified By: Scott Smoke
+        * 
+        * Description: This takes a depth first approach and fills up
+        * each day before moving onto the second. In more specific terms, it takes in
+        * a compressed class time and sees if it will fit into the first exam day, nearest the start time of
+        * the compressed class time, if not
+        * then it sees if there are any available time slots for that day left. If there are 
+        * no more exam slots for that day then it moves onto the next.
+        */ 
         private void Schedule(CompressedClassTime ct)
         {
-            int i = 0;
             foreach (FinalExamDay fed in examWeek)
             {
-                if(fed.HasAvailableTime(ct.getClassTimeStartHour()*100))
+                //correcting for CompressedClassTime getClassTimeStartHour only returning a 2 digit integer
+                int startTime = ct.getClassTimeStartHour()*100;
+                int endTime = startTime + MilitaryTime( tc.GetLengthOfExams() +
+                    tc.GetTimeBetweenExams());
+                //cheecks the nearest slot available to compressed class start time
+                if(fed.HasAvailableTime(startTime,endTime))
                 {
-                    FinalExam fe = new FinalExam(ct);
-                    Debug.WriteLine("Class start hour " + ct.getClassTimeStartHour()*100);
-                    int militaryTime = MilitaryTime(tc.GetLengthOfExams()+tc.GetTimeBetweenExams());
-                    int endTime = (ct.getClassTimeStartHour()*100 + militaryTime);
-                    fe.SetStartTime(ct.getClassTimeStartHour()*100);
-                    fe.SetEndTime(endTime);
-                    fed.InsertExam(fe);
-                    //debugging info
-                    Debug.WriteLine("Day: " + fed.GetDay().ToString() + " " + fed.GetNumberOfExams());
+                    InsertExam(fed, ct, startTime, endTime);
                     return;
                 }
                 else
                 {
-                    //Debug.WriteLine("Inside the else");
-                    //int newStartTime = ct.getClassTimeStartHour()*100 + MilitaryTime(tc.GetLengthOfExams() + tc.GetTimeBetweenExams());
-                    //while (newStartTime < 1515)
-                    //{
-                    //    if (fed.HasAvailableTime(newStartTime))
-                    //    {
-                    //        FinalExam fe = new FinalExam(ct);
-                    //        fe.SetStartTime(ct.getClassTimeStartHour()*100 + newStartTime);
-                    //        int endTime = newStartTime + MilitaryTime(tc.GetLengthOfExams() + tc.GetTimeBetweenExams());
-                    //        fe.SetEndTime(endTime);
-                    //        fed.InsertExam(fe);
-                    //        return;
-                    //    }
-                    //    newStartTime = newStartTime + ct.getClassTimeStartHour()*100 + MilitaryTime(tc.GetLengthOfExams() + tc.GetTimeBetweenExams());
-                    //}
-
+                    startTime = tc.GetStartTime();
+                    endTime = startTime + MilitaryTime(tc.GetLengthOfExams() + 
+                        tc.GetTimeBetweenExams());
+                    //if not then we check for any available start times on current day.
+                    FindAvailableSlot(fed, ct, startTime, endTime);
                 }
             }
         }
@@ -78,11 +204,23 @@ namespace LIFES.Schedule
             for (int i = 0; i < tc.GetNumberOfDays(); i++ )
             {
                 examWeek[i] = new FinalExamDay();
-                examWeek[i].SetDay(i);
-                examWeek[i].setNumberOfExams(examSlots);
+                examWeek[i].SetDay(i+1);
+                examWeek[i].SetNumberOfExams(examSlots);
             }
         }
-        private void runScheduler()
+       /*
+        * Method: RunScheduler
+        * Parameters: N/A
+        * Output: N/A
+        * Created By: Scott Smoke
+        * Modified By: Scott Smoke
+        * 
+        * Description: This will initiate the
+        * Schedule method if it passes the 
+        * pigeon hole principle.
+        * 
+        */ 
+        private void RunScheduler()
         {
            
             if (compressedClassTime != null)
@@ -92,7 +230,7 @@ namespace LIFES.Schedule
                 {
                     //debugging info
                     //Debug.WriteLine("Yay we get to schedule");
-                    Debug.WriteLine("Size of compressedClassTimes " + compressedClassTime.Count);
+                    //Debug.WriteLine("Size of compressedClassTimes " + compressedClassTime.Count);
                     foreach (CompressedClassTime ct in compressedClassTime)
                     {
                         Schedule(ct);
@@ -100,7 +238,8 @@ namespace LIFES.Schedule
                 }
                 else
                 {
-                    Debug.WriteLine("Bummer we can't schedule");
+                    //debugging info
+                    //Debug.WriteLine("Bummer we can't schedule");
                     //report error to user
                 }
             }
@@ -142,11 +281,43 @@ namespace LIFES.Schedule
                     //total slots available for exams on a single day
                     examSlots = (int)(totalLength / toHours);
                     //debugging stuff
-                    Debug.WriteLine("Number of exam slots: " + examSlots.ToString());
+                   // Debug.WriteLine("Number of exam slots: " + examSlots.ToString());
                 }
             }
  
         }
+        /*
+        * Method: reSchedule
+        * Parameters: N/A
+        * OutPut: N/A
+        * Created By: Scott Smoke
+        * Date: 4/30/2015
+        * Modified By: Scott Smoke
+        * 
+        * Description: Calls the reScheduler
+        */
+        private void RunReScheduler()
+        {
+            //checking pigeon hole principle
+            if ((examSlots * tc.GetNumberOfDays()) >= compressedClassTime.Count())
+            {
+                //debugging info
+                //Debug.WriteLine("Yay we get to schedule");
+                //Debug.WriteLine("Size of compressedClassTimes " + compressedClassTime.Count);
+                foreach (CompressedClassTime ct in compressedClassTime)
+                {
+                    ReSchedule(ct);
+                }
+            }
+            else
+            {
+                //debugging info
+                //Debug.WriteLine("Bummer we can't schedule");
+                //report error to user
+            }
+            //to do
+        }
+
         /*
          * Method: Scheduler
          * Parameters: List<CompressedClassTime> ct, TimeConstraints t
@@ -167,21 +338,6 @@ namespace LIFES.Schedule
             //to do 
         }
         /*
-         * Method: reSchedule
-         * Parameters: N/A
-         * OutPut: N/A
-         * Created By: Scott Smoke
-         * Date: 4/30/2015
-         * Modified By: Scott Smoke
-         * 
-         * Description: Calls the reScheduler
-         */
-        public void ReSchedule()
-        {
-            //to do
-        }
-
-        /*
          * Method: scheduler
          * Parameters: N/A
          * Output: N/A
@@ -189,34 +345,61 @@ namespace LIFES.Schedule
          * Date: 4/30/2015
          * Modified By: Scott Smoke
          * 
-         * Description: Calls the Scheduler.
+         * Description: Calls the RunSchedule method.Served as a testing
+         * method during testing.
          * 
          */ 
         public void Schedule()
         {
-            runScheduler();
+            RunScheduler();
+
+            /* For debugging purposes
             int totalExams=0;
             foreach (FinalExamDay fed in examWeek)
             {
                 totalExams = totalExams + fed.GetNumberOfExams();
                 foreach (FinalExam fe in fed.GetExams())
                 {
-                    Debug.WriteLine("Group " + fe.GetCompressedClasses().getDayOfTheWeek() + " " + "Start Time " + fe.GetStartTime() + " " + "End Time " + fe.GetEndTime());
+                    Debug.WriteLine("Day " + fed.GetDay() + " " + "Group " + fe.GetCompressedClass().getDayOfTheWeek() + " "+ "Start Time " + fe.GetStartTime() + " " + "End Time " + fe.GetEndTime());
                 }
             }
-            Debug.WriteLine("Total Exams "+ totalExams);
+            Debug.WriteLine("Total Exams "+ totalExams);*/
         }
+        public void ReSchedule()
+        {
+            RunReScheduler();
+        }
+       /*
+        * Method: GetExamSlots
+        * Parameters; N/A
+        * Output: int
+        * Created By: Scott Smoke
+        * Date: 5/1/2015
+        * Modified By: Scott Smoke
+        * 
+        * Description: This returns the total number
+        * of exams that can be scheduled.
+        * 
+        */ 
         public int GetExamSlots()
         {
             return examSlots;
         }
-
+       /*
+        * Method: GetExams
+        * Parameters: N/A
+        * Output: FinalExams[]
+        * Created By: Scott Smoke
+        * Date: 5/1/2015
+        * Modified By: Scott Smoke
+        * 
+        * Description: This returns an array of final exam days for
+        * which the exams have been scheduled.
+        * 
+        */ 
         public FinalExamDay[] GetExams()
         {
             return examWeek;
         } 
-
-
-
     }
 }

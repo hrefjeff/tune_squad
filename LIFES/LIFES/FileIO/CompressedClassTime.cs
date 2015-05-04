@@ -19,8 +19,11 @@ namespace LIFES.FileIO
         private Boolean isProccessed;
 
         /* CompressedClassTime.
-         * 
-         */ 
+         * Author: Joshua Ford.
+         * Date: 3/28/15
+         * Modified by: Jordan Beck
+         * Description: Compresses classes together.
+         */
         public CompressedClassTime(String dayOfTheWeek, int classTimeStartHour)
         {
             this.dayOfTheWeek = dayOfTheWeek;
@@ -29,11 +32,23 @@ namespace LIFES.FileIO
             isProccessed = false;
         }
 
+        /* AddClassTime
+         * Author: Joshua Ford.
+         * Date: 3/28/15
+         * Modified by: Jordan Beck
+         * Description: Adds in a class time.
+         */
         public void addClassTime(ClassTime c)
         {
             this.classTimes.Add(c);
         }
 
+        /* MarkProccessed
+         * Author: Joshua Ford.
+         * Date: 3/28/15
+         * Modified by: Jordan Beck
+         * Description: Marks the classe time as proccessed.
+         */
         public void markProccessed()
         {
             this.isProccessed = true;
@@ -89,19 +104,34 @@ namespace LIFES.FileIO
             return returnValue;
         }
 
-        // Getter for DayOfTheWeek.
+        /* getDayofTheWeek
+         * Author: Joshua Ford.
+         * Date: 3/28/15
+         * Modified by: Jordan Beck
+         * Description: Getter for DayOfTheWeek.
+         */
         public String getDayOfTheWeek()
         {
             return this.dayOfTheWeek;
         }
 
-        // Getter for ClassTimeStartHour.
+        /* getDayofTheWeek
+         * Author: Joshua Ford.
+         * Date: 3/28/15
+         * Modified by: Jordan Beck
+         * Description:  Getter for ClassTimeStartHour.
+         */
         public int getClassTimeStartHour()
         {
             return this.classTimeStartHour;
         }
 
-        // Getter for TotalStudentsEnrolled.
+        /* getTotalStudentEnrolled
+         * Author: Joshua Ford.
+         * Date: 3/28/15
+         * Modified by: Jordan Beck
+         * Description: Getter for TotalStudentsEnrolled.
+         */
         public int getTotalStudentsEnrolled()
         {
             int totalStudentsEnrolled = 0;
@@ -117,13 +147,23 @@ namespace LIFES.FileIO
             return totalStudentsEnrolled;
         }
 
-        // Getter for ClassTimes.
-        public List<ClassTime> getClassTimes()
+        /* getClassTimes
+         * Author: Joshua Ford.
+         * Date: 3/28/15
+         * Modified by: Jordan Beck
+         * Description: Getter for ClassTimes.
+         */
+        public List<ClassTime> GetClassTimes()
         {
             return this.classTimes;
         }
 
-        // Getter for IsProccessed.
+        /* getIsProccessed
+         * Author: Joshua Ford.
+         * Date: 3/28/15
+         * Modified by: Jordan Beck
+         * Description: Getter for IsProccessed.
+         */
         public Boolean getIsProccessed()
         {
             return isProccessed;
