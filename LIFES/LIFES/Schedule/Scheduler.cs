@@ -147,8 +147,8 @@ namespace LIFES.Schedule
             fe.SetEndTime(endTime);
             fed.InsertExam(fe);
             //debugging info
-            Debug.WriteLine("Day: " + fed.GetDay().ToString() + " " 
-                + fed.GetNumberOfExams());
+            //Debug.WriteLine("Day: " + fed.GetDay().ToString() + " " 
+            //    + fed.GetNumberOfExams());
         }
        /*
         * Method: Schedule
@@ -229,6 +229,7 @@ namespace LIFES.Schedule
                     fe.SetStartTime(1200);
                     fe.SetEndTime(1200 + MilitaryTime(tc.GetLunchPeriod()));
                     examWeek[i].InsertExam(fe);
+                   // Debug.WriteLine(fe.GetCompressedClass().GetDayOfTheWeek());
                 }
                 
             }
