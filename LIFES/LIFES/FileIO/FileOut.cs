@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using PdfSharp.Pdf;
 using PdfSharp.Drawing;
 using PdfSharp.Drawing.Layout;
+using LIFES.Schedule;
 
 namespace LIFES.FileIO
 {
@@ -128,11 +129,84 @@ namespace LIFES.FileIO
                 file.WriteLine(Globals.semester + " " +Globals.year);
                 file.WriteLine(Globals.totalEnrollemntsFileName);
                 file.WriteLine(Globals.timeConstraints.ToString());
+                file.WriteLine("\n");
+
                 //place exam schedule
+                foreach (FinalExamDay ele in Globals.examWeek)
+                {
+                    file.WriteLine("Day\t Class Times\t\t\t\t Exam Time");
+                    file.Write(ele.GetDay());
+              
+                    foreach (FinalExam exam in ele.GetExams())
+                    {
+                        string classTime = "";
+                        CompressedClassTime compressedTime = exam.GetCompressedClasses();
+
+                        classTime +=  compressedTime.getClassTimes().
+                            First().getDayOfTheWeek()
+                            + " ";
+                        classTime += MilitaryToDateTime(compressedTime.getClassTimes().First().getClassStartTime()).ToString("hh:mm tt")
+                            + "-";
+                            classTime += MilitaryToDateTime(compressedTime.getClassTimes().First().getClassEndTime()).ToString("hh:mm tt");
+
+                        file.Write("\t\t" + classTime + "\t\t\t");
+
+                        string examTimes = "";
+                        examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
+                            + "-" + MilitaryToDateTime(exam.GetEndTime()).ToString("hh:mm tt");
+
+                        file.Write("\t" + examTimes + "\n");
+
+                        foreach (ClassTime time in compressedTime.getClassTimes())
+                        {
+                            if (time != compressedTime.getClassTimes().First())
+                            {
+                                string classTimes = "";
+                                classTimes += time.getDayOfTheWeek() + " ";
+                                classTimes += MilitaryToDateTime(time.getClassStartTime()).
+                                    ToString("hh:mm tt") + "-";
+                                classTimes += MilitaryToDateTime(time.getClassEndTime()).
+                                    ToString("hh:mm tt");
+
+                                file.Write("\t\t" + classTimes + "\n");
+                            }
+                        }
+
+                        file.Write("\n");
+                    }
+                }
+
                 file.Close();
             }
             
           
+        }
+
+        /*
+        * Method: MilitaryToDateTime
+        * Parameters: int (Military Time)
+        * Output: DateTime
+        * Created By: Riley Smith
+        * Date: 5/3/2015
+        * Modified By: Riley Smith
+        * 
+        * Description: Converts a MilitaryTime int to a standard DateTime.
+        * 
+        * Source:
+        * http://forums.asp.net/t/1503263.aspx?How+to+convert+integer+representing+military+time+into+DateTime+object
+        */
+        public static DateTime MilitaryToDateTime(int time)
+        {
+            int Hours = time / 100;
+            int Minutes = time - Hours * 100;
+            DateTime Result = DateTime.MinValue;
+
+
+            Result = Result.AddHours(Hours);
+            Result = Result.AddMinutes(Minutes);
+
+
+            return Result;
         }
 
     }
