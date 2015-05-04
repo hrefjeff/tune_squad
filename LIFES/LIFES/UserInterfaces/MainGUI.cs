@@ -272,13 +272,21 @@ namespace LIFES.UserInterfaces
                     string classTimes = "";
                     CompressedClassTime compressedTime = exam.GetCompressedClass();
                     // Get group of compressed class times.
+                    CompressedClassTime lunchCompress = exam.GetCompressedClass();
+
+                    if (lunchCompress.GetDayOfTheWeek() == "Lunch")
+                    {
+                        classTimes += "Lunch";
+                    }
                     foreach (ClassTime time in compressedTime.GetClassTimes())
                     {
-                        classTimes += time.GetDayOfTheWeek() + " ";
-                        classTimes += MilitaryToDateTime(time.GetClassStartTime()).
-                            ToString("hh:mm tt") + "-";
-                        classTimes += MilitaryToDateTime(time.GetClassEndTime()).
-                            ToString("hh:mm tt") + "\n";
+                       
+                            classTimes += time.GetDayOfTheWeek() + " ";
+                            classTimes += MilitaryToDateTime(time.GetClassStartTime()).
+                                ToString("hh:mm tt") + "-";
+                            classTimes += MilitaryToDateTime(time.GetClassEndTime()).
+                                ToString("hh:mm tt") + "\n";
+                        
                     }
                     string examTimes = "";
                     examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
