@@ -29,7 +29,39 @@ namespace LIFES.Schedule
         private FinalExamDay[] examWeek;
        //total number of exams that can be scheduled
         private int examSlots;
-     
+       /*
+        * Method: FinaAvailableSlot
+        * Parameters: FinalExamDay fed, CompressedClassTime ct,
+        *             int startTime, int endTime
+        * Output: N/A
+        * Created By: Scott Smoke
+        * Date: 5/4/2015
+        * Modified By: Scott Smoke
+        * 
+        * Description: This method finds an available time slot
+        * and inserts the exam into it.
+        * 
+        */ 
+        private void FindAvailableSlot(FinalExamDay fed, CompressedClassTime ct,
+            int startTime, int endTime)
+        {
+             while (startTime < 1715)
+                {
+                    if (fed.HasAvailableTime(startTime, endTime))
+                    {
+                        InsertExam(fed, ct, startTime, endTime);
+                        return;
+                    }
+                    startTime = startTime +
+                        MilitaryTime(tc.GetLengthOfExams()
+                        + tc.GetTimeBetweenExams());
+
+                    endTime = startTime +
+                        MilitaryTime(tc.GetLengthOfExams()
+                           + tc.GetTimeBetweenExams());
+                }
+
+        }
        /*
         * Method: ReSchedule
         * Parameters: CompressedClassTime ct
@@ -67,25 +99,8 @@ namespace LIFES.Schedule
                 int startTime = tc.GetStartTime();
                 int endTime = startTime + MilitaryTime(tc.GetLengthOfExams() +
                     tc.GetTimeBetweenExams());
-
-                while (startTime < 1715)
-                {
-                    if (fed.HasAvailableTime(startTime, endTime))
-                    {
-                        InsertExam(fed, ct, startTime, endTime);
-                        return;
-                    }
-                    startTime = startTime +
-                        MilitaryTime(tc.GetLengthOfExams()
-                        + tc.GetTimeBetweenExams());
-
-                    endTime = startTime +
-                        MilitaryTime(tc.GetLengthOfExams()
-                           + tc.GetTimeBetweenExams());
-                }
-            }
-
-            
+                FindAvailableSlot(fed, ct, startTime, endTime);
+            } 
         }
        /*
        * Method: MilitaryTime
@@ -110,7 +125,8 @@ namespace LIFES.Schedule
         }
        /*
         * Method: InsertExam
-        * Parameters: FinalExamDay fed, CompressedClassTime ct, int startTime, int endTime
+        * Parameters: FinalExamDay fed, CompressedClassTime ct, 
+        *             int startTime, int endTime
         * Output: N/A
         * Created By: Scott Smoke
         * Date: 5/3/2015
@@ -168,21 +184,7 @@ namespace LIFES.Schedule
                     endTime = startTime + MilitaryTime(tc.GetLengthOfExams() + 
                         tc.GetTimeBetweenExams());
                     //if not then we check for any available start times on current day.
-                    while (startTime < 1715)
-                    {
-                        if (fed.HasAvailableTime(startTime,endTime))
-                        {
-                            InsertExam(fed, ct, startTime, endTime);
-                            return;
-                        }
-                        startTime = startTime + 
-                            MilitaryTime(tc.GetLengthOfExams() 
-                            + tc.GetTimeBetweenExams());
-
-                        endTime = startTime + 
-                            MilitaryTime(tc.GetLengthOfExams() 
-                               + tc.GetTimeBetweenExams());
-                    }
+                    FindAvailableSlot(fed, ct, startTime, endTime);
                 }
             }
         }
@@ -399,8 +401,5 @@ namespace LIFES.Schedule
         {
             return examWeek;
         } 
-
-
-
     }
 }
