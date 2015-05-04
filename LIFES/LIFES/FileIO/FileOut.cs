@@ -88,7 +88,7 @@ namespace LIFES.FileIO
          * Output: Saved file in the CSV format
          * Created By: Scott Smoke
          * Date: 3/24/2015
-         * Modified By: Jordan Beck
+         * Modified By: Joshua Ford
          * 
          * Description: This will write the data that is returned from the 
          * scheduler to a file in the CSV format.
@@ -103,12 +103,63 @@ namespace LIFES.FileIO
                 file.WriteLine(Globals.semester + " " + Globals.year);
                 file.WriteLine(Globals.totalEnrollemntsFileName);
                 file.WriteLine(Globals.timeConstraints.ToString());
-                //place exam schedule
+                
+				//place exam schedule
+                foreach (FinalExamDay ele in Globals.examWeek)
+                {
+                    file.WriteLine("Day,Class Times,Exam Time");
+                    file.Write(ele.GetDay() + ",");
+              
+                    foreach (FinalExam exam in ele.GetExams())
+                    {
+                        string classTime = "";
+                        CompressedClassTime compressedTime = exam.GetCompressedClass();
+
+                        classTime +=  compressedTime.GetClassTimes().
+                            First().getDayOfTheWeek() + ",";
+                        classTime += MilitaryToDateTime(compressedTime.
+                            GetClassTimes().First().getClassStartTime()).
+                            ToString("hh:mm tt")
+                            + "-";
+                            classTime += MilitaryToDateTime(compressedTime.
+                                GetClassTimes().First().getClassEndTime()).
+                                ToString("hh:mm tt");
+
+                        file.Write(classTime + ",");
+
+                        string examTimes = "";
+                        examTimes += MilitaryToDateTime(exam.GetStartTime()).
+                            ToString("hh:mm tt")
+                            + "-" + MilitaryToDateTime(exam.GetEndTime()).
+                            ToString("hh:mm tt");
+
+                        file.Write(examTimes + "\n");
+
+                        foreach (ClassTime time in compressedTime.
+                            GetClassTimes())
+                        {
+                            if (time != compressedTime.GetClassTimes().First())
+                            {
+                                string classTimes = "";
+                                classTimes += time.getDayOfTheWeek() + ",";
+                                classTimes += MilitaryToDateTime(time.
+                                    getClassStartTime()).
+                                    ToString("hh:mm tt") + "-";
+                                classTimes += MilitaryToDateTime(time.
+                                    getClassEndTime()).
+                                    ToString("hh:mm tt");
+
+                                file.Write(classTimes + "\n");
+                            }
+                        }
+                        file.Write("\n");
+                    }
+                }
                 file.Close();
-            }
+            } 
+        }
 
        
-        }
         /*
          * Method: WriteToText
          * Parameters: N/A
