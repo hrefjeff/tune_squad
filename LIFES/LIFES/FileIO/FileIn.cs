@@ -323,26 +323,4 @@ namespace LIFES.FileIO
                 //file.Close();
         }
     }
-
-
-
-    // This was stubbed in for the purpose of testing. :)
-    //class Program
-    //{
-    //    static void Main(string[] args)
-    //    {
-    //        string filename;
-    //        Console.WriteLine("Enter the file name: ");
-    //        filename = Console.ReadLine();
-    //        filename = "C:\\Users\\Josh Ford\\Documents\\
-    //        GitHub\\tune_squad\\tune_squad\\Test\\CsharpSandbox\\
-    //        JoshSandbox\\testConstraints.txt";
-    //        FileIn myFile = new FileIn(filename);
-    //        foreach (string val in myFile.getLines())
-    //        {
-    //            Console.WriteLine(val);
-    //        }
-    //        Console.ReadLine();
-    //    }
-    //}
 }
