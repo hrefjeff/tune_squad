@@ -357,24 +357,26 @@ namespace LIFES.Schedule
         */
         private void RunReScheduler()
         {
-            //checking pigeon hole principle
-            if ((examSlots * tc.GetNumberOfDays()) >= compressedClassTime.Count())
+            if (compressedClassTime != null)
             {
-                //debugging info
-                //Debug.WriteLine("Yay we get to schedule");
-                //Debug.WriteLine("Size of compressedClassTimes " + compressedClassTime.Count);
-                foreach (CompressedClassTime ct in compressedClassTime)
+                if ((examSlots * tc.GetNumberOfDays()) >= compressedClassTime.Count())
                 {
-                    ReSchedule(ct);
+                    //debugging info
+                    //Debug.WriteLine("Yay we get to schedule");
+                    //Debug.WriteLine("Size of compressedClassTimes " + compressedClassTime.Count);
+                    foreach (CompressedClassTime ct in compressedClassTime)
+                    {
+                        ReSchedule(ct);
+                    }
                 }
-            }
-            else
-            {
-                //debugging info
-                //Debug.WriteLine("Bummer we can't schedule");
-                //report error to user
-                error = "Please modify the time constraints to run the " +
-                        "scheduler";
+                else
+                {
+                    //debugging info
+                    //Debug.WriteLine("Bummer we can't schedule");
+                    //report error to user
+                    error = "Please modify the time constraints to run the " +
+                            "scheduler";
+                }
             }
             //to do
         }
