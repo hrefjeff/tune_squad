@@ -141,18 +141,17 @@ namespace LIFES.FileIO
                     foreach (FinalExam exam in ele.GetExams())
                     {
                         string classTime = "";
-                        CompressedClassTime compressedTime = exam.
-                            GetCompressedClasses();
+                        CompressedClassTime compressedTime = exam.GetCompressedClass();
 
-                        classTime +=  compressedTime.getClassTimes().
+                        classTime +=  compressedTime.GetClassTimes().
                             First().getDayOfTheWeek()
                             + " ";
                         classTime += MilitaryToDateTime(compressedTime.
-                            getClassTimes().First().getClassStartTime()).
+                            GetClassTimes().First().getClassStartTime()).
                             ToString("hh:mm tt")
                             + "-";
                             classTime += MilitaryToDateTime(compressedTime.
-                                getClassTimes().First().getClassEndTime()).
+                                GetClassTimes().First().getClassEndTime()).
                                 ToString("hh:mm tt");
 
                         file.Write("\t\t" + classTime + "\t\t\t");
@@ -166,9 +165,9 @@ namespace LIFES.FileIO
                         file.Write("\t" + examTimes + "\n");
 
                         foreach (ClassTime time in compressedTime.
-                            getClassTimes())
+                            GetClassTimes())
                         {
-                            if (time != compressedTime.getClassTimes().First())
+                            if (time != compressedTime.GetClassTimes().First())
                             {
                                 string classTimes = "";
                                 classTimes += time.getDayOfTheWeek() + " ";
