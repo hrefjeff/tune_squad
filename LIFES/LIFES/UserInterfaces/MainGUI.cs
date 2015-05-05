@@ -123,99 +123,94 @@ namespace LIFES.UserInterfaces
             string line = null;
             float linesPerPage = e.MarginBounds.Height / printFont.GetHeight(e.Graphics);
 
-
-            foreach (FinalExamDay day in Globals.examWeek)
+            if (Globals.examWeek != null)
             {
-                // draw header
-                string headerString = "Day\tClass Times\tExam Time";
-
-                yPos = topMargin + count * printFont.GetHeight(e.Graphics);
-                e.Graphics.DrawString(headerString, printFont, Brushes.Black, leftMargin, yPos, new StringFormat());
-                count++;
-
-
-                foreach (FinalExam exam in day.GetExams())
+                foreach (FinalExamDay day in Globals.examWeek)
                 {
-                    CompressedClassTime compressedTime = exam.GetCompressedClass();
-
-                    if (compressedTime.GetDayOfTheWeek() == "Lunch")
-                    {
-                        yPos = topMargin + count * printFont.GetHeight(e.Graphics);
-                        e.Graphics.DrawString("Lunch", printFont, Brushes.Black, leftMargin, yPos, new StringFormat());
-                        count++;
-                    }
-                    else
-                    {
-                        string classLine = "";
-
-                        if (compressedTime.GetClassTimes().First().GetDayOfTheWeek() != "")
-                        {
-                            classLine = compressedTime.GetClassTimes().
-                                    First().GetDayOfTheWeek() + " ";
-
-                            classLine += MilitaryToDateTime(compressedTime.
-                                    GetClassTimes().First().GetClassStartTime()).
-                                    ToString("hh:mm tt") + "-";
-
-                            classLine += MilitaryToDateTime(compressedTime.
-                                    GetClassTimes().First().GetClassEndTime()).
-                                    ToString("hh:mm tt");
-                        }
-                        else 
-                        {
-                            
-                        }
-
-                        yPos = topMargin + count * printFont.GetHeight(e.Graphics);
-                        e.Graphics.DrawString(classLine, printFont, Brushes.Black, leftMargin, yPos, new StringFormat());
-                        count++;
-                    }
-
-                    string examTimes = "";
-                    examTimes += MilitaryToDateTime(exam.GetStartTime()).
-                        ToString("hh:mm tt")
-                        + "-" + MilitaryToDateTime(exam.GetEndTime()).
-                        ToString("hh:mm tt");
+                    // draw header
+                    string headerString = "Day\tClass Times\tExam Time";
 
                     yPos = topMargin + count * printFont.GetHeight(e.Graphics);
-                    e.Graphics.DrawString(examTimes, printFont, Brushes.Black, leftMargin, yPos, new StringFormat());
+                    e.Graphics.DrawString(headerString, printFont, Brushes.Black, leftMargin, yPos, new StringFormat());
                     count++;
 
-                    foreach (ClassTime time in compressedTime.
-                            GetClassTimes())
+
+                    foreach (FinalExam exam in day.GetExams())
                     {
-                        if (time != compressedTime.GetClassTimes().First())
+                        CompressedClassTime compressedTime = exam.GetCompressedClass();
+
+                        if (compressedTime.GetDayOfTheWeek() == "Lunch")
                         {
-                            string classTimes = "";
-                            classTimes += time.GetDayOfTheWeek() + " ";
-                            classTimes += MilitaryToDateTime(time.
-                                GetClassStartTime()).
-                                ToString("hh:mm tt") + "-";
-                            classTimes += MilitaryToDateTime(time.
-                                GetClassEndTime()).
-                                ToString("hh:mm tt");
+                            yPos = topMargin + count * printFont.GetHeight(e.Graphics);
+                            e.Graphics.DrawString("Lunch", printFont, Brushes.Black, leftMargin, yPos, new StringFormat());
+                            count++;
+                        }
+                        else
+                        {
+                            string classLine = "";
+
+                            if (compressedTime.GetClassTimes().First().GetDayOfTheWeek() != "")
+                            {
+                                classLine = compressedTime.GetClassTimes().
+                                        First().GetDayOfTheWeek() + " ";
+
+                                classLine += MilitaryToDateTime(compressedTime.
+                                        GetClassTimes().First().GetClassStartTime()).
+                                        ToString("hh:mm tt") + "-";
+
+                                classLine += MilitaryToDateTime(compressedTime.
+                                        GetClassTimes().First().GetClassEndTime()).
+                                        ToString("hh:mm tt");
+                            }
+                            else 
+                            {
+                            
+                            }
 
                             yPos = topMargin + count * printFont.GetHeight(e.Graphics);
-                            e.Graphics.DrawString(classTimes, printFont, Brushes.Black, leftMargin, yPos, new StringFormat());
+                            e.Graphics.DrawString(classLine, printFont, Brushes.Black, leftMargin, yPos, new StringFormat());
                             count++;
+                        }
+
+                        string examTimes = "";
+                        examTimes += MilitaryToDateTime(exam.GetStartTime()).
+                            ToString("hh:mm tt")
+                            + "-" + MilitaryToDateTime(exam.GetEndTime()).
+                            ToString("hh:mm tt");
+
+                        yPos = topMargin + count * printFont.GetHeight(e.Graphics);
+                        e.Graphics.DrawString(examTimes, printFont, Brushes.Black, leftMargin, yPos, new StringFormat());
+                        count++;
+
+                        foreach (ClassTime time in compressedTime.
+                                GetClassTimes())
+                        {
+                            if (time != compressedTime.GetClassTimes().First())
+                            {
+                                string classTimes = "";
+                                classTimes += time.GetDayOfTheWeek() + " ";
+                                classTimes += MilitaryToDateTime(time.
+                                    GetClassStartTime()).
+                                    ToString("hh:mm tt") + "-";
+                                classTimes += MilitaryToDateTime(time.
+                                    GetClassEndTime()).
+                                    ToString("hh:mm tt");
+
+                                yPos = topMargin + count * printFont.GetHeight(e.Graphics);
+                                e.Graphics.DrawString(classTimes, printFont, Brushes.Black, leftMargin, yPos, new StringFormat());
+                                count++;
+
+                            }
+                        }
+
+                        if (day != Globals.examWeek.Last())
+                        {
 
                         }
                     }
 
-                    if (day != Globals.examWeek.Last())
-                    {
-
-                    }
                 }
-
             }
-
-            //System.Drawing.Font printFont = new System.Drawing.Font
-              //  ("Arial", 35, System.Drawing.FontStyle.Regular);
-
-            // Draw the content.
-            //e.Graphics.DrawString(text, printFont,
-            //    System.Drawing.Brushes.Black, 10, 10);
         }
 
 
@@ -696,6 +691,8 @@ namespace LIFES.UserInterfaces
                 FileIn inputFile = new FileIn(filename);
     
                 inputFile.ReadOutput(openFile.FileName);
+
+				DisplaySchedule(Globals.examWeek);
             }
 
 
