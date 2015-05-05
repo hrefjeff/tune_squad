@@ -111,20 +111,105 @@ namespace LIFES.UserInterfaces
 
             string printPath = System.Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             fileToPrint = new System.IO.StreamReader(printPath + @"\test.txt");
-            printFont = new System.Drawing.Font("Arial", 10);
+            printFont = new System.Drawing.Font("Times New Roman", 12);
             //printDocument1.Print();
             fileToPrint.Close();
 
-            // The following code will render a simple 
-            // message on the printed document. 
-            //testing
-            string text = "<==============3";
+            float yPos = 0f;
+            // count is for line counter
+            int count = 0;
+            float leftMargin = e.MarginBounds.Left;
+            float topMargin = e.MarginBounds.Top;
+            string line = null;
+            float linesPerPage = e.MarginBounds.Height / printFont.GetHeight(e.Graphics);
+
+
+            foreach (FinalExamDay day in Globals.examWeek)
+            {
+                // draw header
+                string headerString = "Day\tClass Times\tExam Time";
+
+                yPos = topMargin + count * printFont.GetHeight(e.Graphics);
+                e.Graphics.DrawString(headerString, printFont, Brushes.Black, leftMargin, yPos, new StringFormat());
+                count++;
+
+
+                foreach (FinalExam exam in day.GetExams())
+                {
+                    string classTime = "";
+                    CompressedClassTime compressedTime = exam.GetCompressedClass();
+
+                    if (compressedTime.GetDayOfTheWeek() == "Lunch")
+                    {
+                        yPos = topMargin + count * printFont.GetHeight(e.Graphics);
+                        e.Graphics.DrawString("Lunch", printFont, Brushes.Black, leftMargin, yPos, new StringFormat());
+                        count++;
+                    }
+                    else
+                    {
+                        string classLine = "";
+
+                        classLine = compressedTime.GetClassTimes().
+                                First().GetDayOfTheWeek() + " ";
+
+                        classLine += MilitaryToDateTime(compressedTime.
+                                GetClassTimes().First().GetClassStartTime()).
+                                ToString("hh:mm tt") + "-";
+
+                        classLine += MilitaryToDateTime(compressedTime.
+                                GetClassTimes().First().GetClassEndTime()).
+                                ToString("hh:mm tt");
+
+                        yPos = topMargin + count * printFont.GetHeight(e.Graphics);
+                        e.Graphics.DrawString(classLine, printFont, Brushes.Black, leftMargin, yPos, new StringFormat());
+                        count++;
+                    }
+
+                    string examTimes = "";
+                    examTimes += MilitaryToDateTime(exam.GetStartTime()).
+                        ToString("hh:mm tt")
+                        + "-" + MilitaryToDateTime(exam.GetEndTime()).
+                        ToString("hh:mm tt");
+
+                    yPos = topMargin + count * printFont.GetHeight(e.Graphics);
+                    e.Graphics.DrawString(examTimes, printFont, Brushes.Black, leftMargin, yPos, new StringFormat());
+                    count++;
+
+                    foreach (ClassTime time in compressedTime.
+                            GetClassTimes())
+                    {
+                        if (time != compressedTime.GetClassTimes().First())
+                        {
+                            string classTimes = "";
+                            classTimes += time.GetDayOfTheWeek() + " ";
+                            classTimes += MilitaryToDateTime(time.
+                                GetClassStartTime()).
+                                ToString("hh:mm tt") + "-";
+                            classTimes += MilitaryToDateTime(time.
+                                GetClassEndTime()).
+                                ToString("hh:mm tt");
+
+                            yPos = topMargin + count * printFont.GetHeight(e.Graphics);
+                            e.Graphics.DrawString(classTimes, printFont, Brushes.Black, leftMargin, yPos, new StringFormat());
+                            count++;
+
+                        }
+                    }
+
+                    if (day != Globals.examWeek.Last())
+                    {
+
+                    }
+                }
+
+            }
+
             //System.Drawing.Font printFont = new System.Drawing.Font
               //  ("Arial", 35, System.Drawing.FontStyle.Regular);
 
             // Draw the content.
-            e.Graphics.DrawString(text, printFont,
-                System.Drawing.Brushes.Black, 10, 10);
+            //e.Graphics.DrawString(text, printFont,
+            //    System.Drawing.Brushes.Black, 10, 10);
         }
 
 

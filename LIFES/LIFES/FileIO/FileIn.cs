@@ -326,6 +326,7 @@ namespace LIFES.FileIO
                 string adminApp = file.ReadLine();
                 Globals.adminApproved = Convert.ToBoolean(adminApp);
 
+                /*
                 //Have to build the final exam time 
                 //to build with a group of exam schedules
                 for (build a way for everyone to GetErrors the exam schedules)
@@ -339,7 +340,7 @@ namespace LIFES.FileIO
 
                 // lunch time is read here
 
-                
+                */
 
                 /*
                 
