@@ -165,34 +165,10 @@ namespace LIFES.UserInterfaces
         {
             if (Globals.totalEnrollemntsFileName != "")
             {
-                CompressedClassTimes compressedClassTimes = 
+                CompressedClassTimes compressedClassTimes =
                     new CompressedClassTimes(Globals.totalEnrollemntsFileName);
 
-                if (compressedClassTimes.GetErrorList().Count == 0)
-                {
-                    Globals.compressedTimes = compressedClassTimes.GetCompressedClassTimes();
-                    MessageBox.Show("Enrollment File Accepted");
-                }
-				if (compressedClassTimes.GetWarningLessThanOneStudents() != 0)
-                {
-					string enrollmentWarning = "Warning - There were " 
-						+ compressedClassTimes.GetWarningLessThanOneStudents() 
-						+ " class times flagged for less than 1 students enrolled";
-                    if (compressedClassTimes.GetWarningForOneDayClass() != 0)
-					{
-						string oneDayWarning = "Warning - There were "
-							+ compressedClassTimes.GetWarningForOneDayClass()
-							+ " class times flagged as night classes and/or " 
-							+ "one day classes that were " 
-							+ "less than 1 hour long and/or labs";
-						enrollmentWarning += "\n" + oneDayWarning;
-					}
-
-                    MessageBox.Show(enrollmentWarning, "Warning");
-                }
-				
-
-                else
+                if (compressedClassTimes.GetErrorList().Count != 0)
                 {
                     string errorMsg = "";
                     foreach (string ele in compressedClassTimes.GetErrorList())
@@ -203,12 +179,28 @@ namespace LIFES.UserInterfaces
                     MessageBox.Show(errorMsg, "ERROR");
                     Globals.compressedTimes = null;
                 }
-            }
+                if (compressedClassTimes.GetWarningLessThanOneStudents() != 0)
+                {
+                    string enrollmentWarning = "Warning - There were "
+                        + compressedClassTimes.GetWarningLessThanOneStudents()
+                        + " class times flagged for less than 1 students enrolled";
+                    if (compressedClassTimes.GetWarningForOneDayClass() != 0)
+                    {
+                        string oneDayWarning = "Warning - There were "
+                            + compressedClassTimes.GetWarningForOneDayClass()
+                            + " class times flagged as night classes and/or "
+                            + "one day classes that were "
+                            + "less than 1 hour long and/or labs";
+                        enrollmentWarning += "\n" + oneDayWarning;
+                    }
 
-            else
-            {
-                Globals.compressedTimes = null;
+                    MessageBox.Show(enrollmentWarning, "Warning");
+                }
+
+                Globals.compressedTimes = compressedClassTimes.GetCompressedClassTimes();
+                MessageBox.Show("Enrollment File Accepted");
             }
+           
         }
         
         private void Button1_Click(object sender, EventArgs e)
