@@ -514,8 +514,18 @@ namespace LIFES.UserInterfaces
                     examTable.SelectedRows[1].Cells[1].Value.ToString();
                 string tmpString = firstIndex;
 
-                examTable.SelectedRows[0].Cells[1].Value = secondIndex;
-                examTable.SelectedRows[1].Cells[1].Value = tmpString;        
+                if (firstIndex == "Lunch" || secondIndex == "Lunch")
+                {
+
+                    MessageBox.Show("Cannot Swap a Lunch Period", "Error");
+                }
+
+                else
+                {
+                    examTable.SelectedRows[0].Cells[1].Value = secondIndex;
+                    examTable.SelectedRows[1].Cells[1].Value = tmpString; 
+                }
+                       
             }
 
             else
@@ -574,16 +584,44 @@ namespace LIFES.UserInterfaces
         {
             if (examTable.SelectedRows.Count > 2)
             {
-                for (int i = 2; i < examTable.SelectedRows.Count; i++)
-                {
-                    examTable.SelectedRows[i].Selected = false;
-                }
+                
+
+
             }
         }
 
-        
 
-        private void viewToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Day1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Globals.timeConstraints.GetNumberOfDays() > 1 
+                && Globals.examWeek != null)
+            {
+                (examTable.DataSource as DataTable).DefaultView.RowFilter =
+                    string.Format("dayCol = '{0}'", 1);
+            }
+        }
+
+        private void Day2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Day3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Day4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Day5ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainGUI_Click(object sender, EventArgs e)
         {
 
         }
