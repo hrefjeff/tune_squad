@@ -568,7 +568,7 @@ namespace LIFES.UserInterfaces
 
         }
 
-        /*
+      /*
        * Method: examTable_SelectionChanged
        * Paramters: object Sender, EventArgs e
        * Output: N/A
@@ -584,47 +584,185 @@ namespace LIFES.UserInterfaces
         {
             if (examTable.SelectedRows.Count > 2)
             {
-                
+                for (int i = 2; i < examTable.SelectedRows.Count; i++)
+                {
+                    examTable.SelectedRows[i].Selected = false;
 
-
+                }
             }
         }
 
+        /*
+         * Method: DisplaySingleDay
+         * Paramters: int 
+         * Output: N/A
+         * Created By: Riley Smith
+         * Date: 5/4/2015
+         * Modified By: Riley Smith
+         * 
+         * Description: Display only the exams on the day that was 
+         *      sent in as a parameter.
+         */
+        private void DisplaySingleDay(int day)
+        {
+            examTable.Rows.Clear();
+            int rowIndex = 0;
+            foreach (FinalExamDay ele in Globals.examWeek)
+            {
+                if (ele.GetDay() == day)
+                {
+                    foreach (FinalExam exam in ele.GetExams())
+                    {
+                        examTable.Rows.Add();
+                        string classTimes = "";
+                        CompressedClassTime compressedTime = exam.GetCompressedClass();
+                        // Get group of compressed class times.
+                        CompressedClassTime lunchCompress = exam.GetCompressedClass();
 
+                        if (lunchCompress.GetDayOfTheWeek() == "Lunch")
+                        {
+                            classTimes += "Lunch";
+                        }
+                        foreach (ClassTime time in compressedTime.GetClassTimes())
+                        {
+
+                            classTimes += time.GetDayOfTheWeek() + " ";
+                            classTimes += MilitaryToDateTime(time.GetClassStartTime()).
+                                ToString("hh:mm tt") + "-";
+                            classTimes += MilitaryToDateTime(time.GetClassEndTime()).
+                                ToString("hh:mm tt") + "\n";
+
+                        }
+                        string examTimes = "";
+                        examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
+                            + "-" + MilitaryToDateTime(exam.GetEndTime()).ToString("hh:mm tt");
+                        examTable.Rows[rowIndex].Cells[0].Value = ele.GetDay();
+                        examTable.Rows[rowIndex].Cells[1].Value = classTimes;
+                        examTable.Rows[rowIndex].Cells[2].Value = examTimes;
+                        rowIndex++;
+                    }
+                }
+            }
+        }
+
+       /*
+        * Method: Day1ToolStripMenuItem_Click
+        * Paramters: object sender, EventArgs e
+        * Output: N/A
+        * Created By: Riley Smith
+        * Date: 5/4/2015
+        * Modified By: Riley Smith
+        * 
+        * Description: Event handler for View -> Single Exam Day -> Day 1
+        * 
+        */
         private void Day1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Globals.timeConstraints.GetNumberOfDays() > 1 
+            if (Globals.timeConstraints.GetNumberOfDays() >= 1
                 && Globals.examWeek != null)
             {
-                (examTable.DataSource as DataTable).DefaultView.RowFilter =
-                    string.Format("dayCol = '{0}'", 1);
+                DisplaySingleDay(1);
             }
         }
 
+        /*
+        * Method: Day1ToolStripMenuItem_Click
+        * Paramters: object sender, EventArgs e
+        * Output: N/A
+        * Created By: Riley Smith
+        * Date: 5/4/2015
+        * Modified By: Riley Smith
+        * 
+        * Description: Event handler for View -> Single Exam Day -> Day 1
+        * 
+        */
         private void Day2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (Globals.timeConstraints.GetNumberOfDays() >= 2
+                && Globals.examWeek != null)
+            {
+                DisplaySingleDay(2);
+            }
         }
 
+        /*
+        * Method: Day1ToolStripMenuItem_Click
+        * Paramters: object sender, EventArgs e
+        * Output: N/A
+        * Created By: Riley Smith
+        * Date: 5/4/2015
+        * Modified By: Riley Smith
+        * 
+        * Description: Event handler for View -> Single Exam Day -> Day 1
+        * 
+        */
         private void Day3ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (Globals.timeConstraints.GetNumberOfDays() >= 3
+                && Globals.examWeek != null)
+            {
+                DisplaySingleDay(3);
+            }
         }
 
+        /*
+        * Method: Day1ToolStripMenuItem_Click
+        * Paramters: object sender, EventArgs e
+        * Output: N/A
+        * Created By: Riley Smith
+        * Date: 5/4/2015
+        * Modified By: Riley Smith
+        * 
+        * Description: Event handler for View -> Single Exam Day -> Day 1
+        * 
+        */
         private void Day4ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (Globals.timeConstraints.GetNumberOfDays() >= 4
+                && Globals.examWeek != null)
+            {
+                DisplaySingleDay(4);
+            }
         }
 
+        /*
+        * Method: Day1ToolStripMenuItem_Click
+        * Paramters: object sender, EventArgs e
+        * Output: N/A
+        * Created By: Riley Smith
+        * Date: 5/4/2015
+        * Modified By: Riley Smith
+        * 
+        * Description: Event handler for View -> Single Exam Day -> Day 1
+        * 
+        */
         private void Day5ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (Globals.timeConstraints.GetNumberOfDays() >= 5
+                && Globals.examWeek != null)
+            {
+                DisplaySingleDay(5);
+            }
         }
 
-        private void MainGUI_Click(object sender, EventArgs e)
+        /*
+         * Method: FullExamWeekToolStripMenuItem_Click
+         * Paramters: object sender, EventArgs e
+         * Output: N/A
+         * Created By: Riley Smith
+         * Date: 5/4/2015
+         * Modified By: Riley Smith
+         * 
+         * Description: Event handler for View -> Full Exam Week.
+         *      Displays the exam schedule for the entire week.
+         * 
+         */
+        private void FullExamWeekToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            DisplaySchedule(Globals.examWeek);
         }
+
+
     }
 }
 
