@@ -235,6 +235,8 @@ namespace LIFES.FileIO
                 System.IO.StreamReader file =
                     new System.IO.StreamReader(filename);
 
+                Globals.totalEnrollemntsFileName = filename;
+
                 string[] splitFileName = filename.Split('.');
                 string extention = splitFileName[1];
                 string[] semesterAndYear;
@@ -273,7 +275,8 @@ namespace LIFES.FileIO
 
                 // read adminApproved
                 string adminApp = file.ReadLine();
-                Globals.adminApproved = Convert.ToBoolean(adminApp);
+                
+                Globals.adminApproved = Convert.ToBoolean(Convert.ToInt32(adminApp));
             }
         }
 

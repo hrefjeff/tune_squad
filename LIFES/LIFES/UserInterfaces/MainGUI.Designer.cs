@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainGUI));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,6 +42,11 @@
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.singleExamDayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.day1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.day2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.day3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.day4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.day5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fullExamWeekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewTotalEnrollmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -162,16 +168,67 @@
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(51, 21);
             this.viewToolStripMenuItem.Text = "View";
-            this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
+           
             // 
             // singleExamDayToolStripMenuItem
             // 
             this.singleExamDayToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
+            this.singleExamDayToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.day1ToolStripMenuItem,
+            this.day2ToolStripMenuItem,
+            this.day3ToolStripMenuItem,
+            this.day4ToolStripMenuItem,
+            this.day5ToolStripMenuItem});
             this.singleExamDayToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.singleExamDayToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
             this.singleExamDayToolStripMenuItem.Name = "singleExamDayToolStripMenuItem";
             this.singleExamDayToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.singleExamDayToolStripMenuItem.Text = "Single Exam Day";
+            // 
+            // day1ToolStripMenuItem
+            // 
+            this.day1ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
+            this.day1ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
+            this.day1ToolStripMenuItem.Name = "day1ToolStripMenuItem";
+            this.day1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.day1ToolStripMenuItem.Text = "Day 1";
+            this.day1ToolStripMenuItem.Click += new System.EventHandler(this.Day1ToolStripMenuItem_Click);
+            // 
+            // day2ToolStripMenuItem
+            // 
+            this.day2ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
+            this.day2ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
+            this.day2ToolStripMenuItem.Name = "day2ToolStripMenuItem";
+            this.day2ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.day2ToolStripMenuItem.Text = "Day 2";
+            this.day2ToolStripMenuItem.Click += new System.EventHandler(this.Day2ToolStripMenuItem_Click);
+            // 
+            // day3ToolStripMenuItem
+            // 
+            this.day3ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
+            this.day3ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
+            this.day3ToolStripMenuItem.Name = "day3ToolStripMenuItem";
+            this.day3ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.day3ToolStripMenuItem.Text = "Day 3";
+            this.day3ToolStripMenuItem.Click += new System.EventHandler(this.Day3ToolStripMenuItem_Click);
+            // 
+            // day4ToolStripMenuItem
+            // 
+            this.day4ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
+            this.day4ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
+            this.day4ToolStripMenuItem.Name = "day4ToolStripMenuItem";
+            this.day4ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.day4ToolStripMenuItem.Text = "Day 4";
+            this.day4ToolStripMenuItem.Click += new System.EventHandler(this.Day4ToolStripMenuItem_Click);
+            // 
+            // day5ToolStripMenuItem
+            // 
+            this.day5ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
+            this.day5ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
+            this.day5ToolStripMenuItem.Name = "day5ToolStripMenuItem";
+            this.day5ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.day5ToolStripMenuItem.Text = "Day 5";
+            this.day5ToolStripMenuItem.Click += new System.EventHandler(this.Day5ToolStripMenuItem_Click);
             // 
             // fullExamWeekToolStripMenuItem
             // 
@@ -334,6 +391,8 @@
             // 
             // dayCol
             // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dayCol.DefaultCellStyle = dataGridViewCellStyle1;
             this.dayCol.HeaderText = "Day";
             this.dayCol.Name = "dayCol";
             this.dayCol.ReadOnly = true;
@@ -341,9 +400,9 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column1.HeaderText = "Class Time";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -351,8 +410,8 @@
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column2.HeaderText = "Exam Time";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -414,6 +473,7 @@
             this.Name = "MainGUI";
             this.Text = "LIons Final Exam Scheduler";
             this.Load += new System.EventHandler(this.MainGUI_Load);
+            this.Click += new System.EventHandler(this.MainGUI_Click);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.examTable)).EndInit();
@@ -456,5 +516,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dayCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.ToolStripMenuItem day1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem day2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem day3ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem day4ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem day5ToolStripMenuItem;
     }
 }
