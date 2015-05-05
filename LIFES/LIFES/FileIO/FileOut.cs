@@ -233,12 +233,12 @@ namespace LIFES.FileIO
                 {
                     file.WriteLine("0");
                 }
-                
+                file.WriteLine("\n");
 				//place exam schedule
                 foreach (FinalExamDay ele in Globals.examWeek)
                 {
                     file.WriteLine("Day,Class Times,Exam Time");
-                    file.Write(ele.GetDay() + ",");
+                    file.Write(ele.GetDay() + "\n");
               
                     foreach (FinalExam exam in ele.GetExams())
                     {
@@ -330,6 +330,7 @@ namespace LIFES.FileIO
                 {
                     file.WriteLine("Day\t Class Times\t\t\t\t\t\t Exam Time");
                     file.Write(ele.GetDay());
+                    file.WriteLine("\n");
               
                     foreach (FinalExam exam in ele.GetExams())
                     {
@@ -342,7 +343,6 @@ namespace LIFES.FileIO
                         }
                         else
                         {
-
 
                             classTime += compressedTime.GetClassTimes().
                                 First().GetDayOfTheWeek()

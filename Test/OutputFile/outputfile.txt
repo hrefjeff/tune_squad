@@ -9,7 +9,9 @@ C:\Users\elJeffeh\Documents\GitHub\tune_squad\Test\Spring 2015 Total Enrollments
 
 
 Day	 Class Times						 Exam Time
-1		MTWR11:00 AM-11:50 AM				07:00 AM-09:00 AM
+1
+
+		MTWR11:00 AM-11:50 AM				07:00 AM-09:00 AM
 		TR 11:00 AM-01:40 PM
 		MTWRF 11:00 AM-11:50 AM
 		TR 11:00 AM-11:50 AM
@@ -42,7 +44,9 @@ Day	 Class Times						 Exam Time
 		MWF 10:00 AM-10:50 AM
 
 Day	 Class Times						 Exam Time
-2		MW11:00 AM-11:50 AM				07:00 AM-09:00 AM
+2
+
+		MW11:00 AM-11:50 AM				07:00 AM-09:00 AM
 		MW 11:00 AM-12:15 PM
 		MW 11:00 AM-01:45 PM
 		MWF 11:00 AM-11:50 AM
@@ -71,7 +75,9 @@ Day	 Class Times						 Exam Time
 		MWF 12:00 PM-12:50 PM
 
 Day	 Class Times						 Exam Time
-3		MF08:00 AM-09:15 AM				08:00 AM-10:00 AM
+3
+
+		MF08:00 AM-09:15 AM				08:00 AM-10:00 AM
 		MW 08:00 AM-10:40 AM
 		MW 08:00 AM-08:50 AM
 		MW 08:00 AM-09:15 AM
@@ -102,7 +108,9 @@ Day	 Class Times						 Exam Time
 		MWF 02:00 PM-02:50 PM
 
 Day	 Class Times						 Exam Time
-4		TR03:30 PM-05:40 PM				07:00 AM-09:00 AM
+4
+
+		TR03:30 PM-05:40 PM				07:00 AM-09:00 AM
 		TR 03:30 PM-04:45 PM
 		TR 03:30 PM-05:00 PM
 
@@ -119,7 +127,9 @@ Day	 Class Times						 Exam Time
 		MW 03:30 PM-05:00 PM
 
 Day	 Class Times						 Exam Time
-5		MWF07:00 AM-07:50 AM				07:00 AM-09:00 AM
+5
+
+		MWF07:00 AM-07:50 AM				07:00 AM-09:00 AM
 
 		TR10:00 AM-10:50 AM				10:00 AM-12:00 PM
 

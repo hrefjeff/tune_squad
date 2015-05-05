@@ -1,0 +1,21 @@
+=====Class Header Template====
+
+/*
+ * Class Name:  [INSERT CLASS NAME] 
+ * Author:      [INSERT NAME]
+ * Date:        [INSERT DATE]
+ * Modified by: [INSERT NAME]
+ * Description: [NEEDS DESCRIPTION]
+ */
+
+
+=====Method Header Template====
+/*
+* Method Name: [INSERT METHOD NAME]
+* Parameters:  [INSERT PARMS OR SPECIFY NONE]
+* Return:      [INSERT OUPUT OR SPECIFY NONE] 
+* Author:      [INSERT NAME]
+* Date:        [INSERT DATE]
+* Modified by: [INSERT NAME]
+* Description: [DESCRIPTION NEEDED]
+*/

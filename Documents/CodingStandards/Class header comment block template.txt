@@ -1,7 +1,0 @@
-    /*
-     * Class Name:  [INSERT CLASS NAME] 
-     * Author:      [INSERT NAME]
-     * Date:        [INSERT DATE]
-     * Modified by: [INSERT NAME]
-     * Description: [NEEDS DESCRIPTION]
-     */
