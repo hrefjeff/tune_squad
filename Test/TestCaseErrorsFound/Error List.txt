@@ -1,3 +1,6 @@
+Error Log 
+5/5/2015
+
 Fixed-Program doesnt close when the exit button is selected in the login page.
 Jordan Beck
 

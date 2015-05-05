@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Diagnostics;
 using System.Collections;
+using LIFES.Schedule;
 namespace LIFES.FileIO
 {
     /*
@@ -287,29 +288,32 @@ namespace LIFES.FileIO
                 {
                     Globals.adminApproved = false;
                 }
+				Scheduler schedule = new Scheduler(Globals.compressedTimes, Globals.timeConstraints);
+				schedule.Schedule();
+				Globals.examWeek = schedule.GetExams();
 
-                string nextLine = file.ReadLine();
+				//string nextLine = file.ReadLine();
 
-                while (nextLine != "")
-                {
-                    nextLine = file.ReadLine();
-                }
+				//while (nextLine != "")
+				//{
+				//	nextLine = file.ReadLine();
+				//}
 
-                // Read and display lines from the file until the end of
-                // the file is reached.
-                while ((nextLine = file.ReadLine()) != null)
-                {
-                    // if header, discard and get next line
-                    if (nextLine[0] == 'D')
-                        nextLine = file.ReadLine();
+				//// Read and display lines from the file until the end of
+				//// the file is reached.
+				//while ((nextLine = file.ReadLine()) != null)
+				//{
+				//	// if header, discard and get next line
+				//	if (nextLine[0] == 'D')
+				//		nextLine = file.ReadLine();
 
-                    // if line has single digit, then increment day
-                    if (nextLine[0] == ' ')
-                        continue;
+				//	// if line has single digit, then increment day
+				//	if (nextLine[0] == ' ')
+				//		continue;
                     
 
-                    // if line has two exam times, 
-                }
+				//	// if line has two exam times, 
+				//}
 
             }
         }

@@ -590,7 +590,7 @@ namespace LIFES.UserInterfaces
          */
         private void OpenUserGuide_Click(object sender, EventArgs e)
         {
-            Process.Start(@"C:\\Users\\eljeffeh\\UserManualLIFESV2test.pdf");
+            Process.Start(@"UserManualLIFESV2.pdf");
         }
        /*
         * Method: MainGUI_Load
@@ -691,6 +691,8 @@ namespace LIFES.UserInterfaces
                 FileIn inputFile = new FileIn(filename);
     
                 inputFile.ReadOutput(openFile.FileName);
+
+				DisplaySchedule(Globals.examWeek);
             }
 
 
