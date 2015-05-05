@@ -10,7 +10,7 @@ Riley Smith
 Fixed-Seperated spelt incorectly in the open and save menus.
 Jordan Beck
 
-GUI with the help button crashes program.
+Fixed-GUI with the help button crashes program.
 Jordan Beck
 
 Should not be able to open a pdf.
