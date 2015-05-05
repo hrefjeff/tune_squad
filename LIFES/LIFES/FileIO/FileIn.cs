@@ -335,6 +335,12 @@ namespace LIFES.FileIO
                 CompressedClassTime.getClassStartTimes().First().getClassStartTime()).
                             ToString("hh:mm tt");
 
+                // newline character is being read here
+
+                // lunch time is read here
+
+                
+
                 /*
                 
                 //place exam schedule
