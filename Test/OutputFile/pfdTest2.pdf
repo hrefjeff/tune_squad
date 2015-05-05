@@ -1,0 +1,806 @@
+%PDF-1.4
+%”ÙÃ·
+% PDFsharp Version 1.32.2608.0 (verbose mode)
+% Creation date: 5/5/2015 10:48:49 AM            
+% Creation time: 0.184 seconds                   
+% File size: 18409 bytes                         
+% Pages: 5                                       
+% Objects: 16                                    
+%--------------------------------------------------------------------------------------------------
+1 0 obj   % PdfSharp.Pdf.PdfDocumentInformation
+<<
+  /CreationDate (D:20150505104849-05'00')
+  /Creator (PDFsharp 1.32.2608-g \(www.pdfsharp.net\))
+  /Producer (PDFsharp 1.32.2608-g \(www.pdfsharp.net\))
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+2 0 obj   % PdfSharp.Pdf.Advanced.PdfCatalog
+<<
+  /Pages 3 0 R
+  /Type /Catalog
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+3 0 obj   % PdfSharp.Pdf.PdfPages
+<<
+  /Count 5
+  /Kids [4 0 R 9 0 R 11 0 R 13 0 R 15 0 R]
+  /Type /Pages
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+4 0 obj   % PdfSharp.Pdf.PdfPage
+<<
+  /Contents 5 0 R
+  /Group
+  <<
+    /CS /DeviceRGB
+    /I false
+    /K false
+    /S /Transparency
+  >>
+  /MediaBox [0 0 612 792]
+  /Parent 3 0 R
+  /Resources
+  <<
+    /ExtGState
+    <<
+      /GS0 6 0 R
+    >>
+    /Font
+    <<
+      /F0 8 0 R
+    >>
+    /ProcSet [/PDF/Text/ImageB/ImageC/ImageI]
+  >>
+  /Type /Page
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+5 0 obj   % PdfSharp.Pdf.Advanced.PdfContent
+<<
+  /Length 3482
+>>
+stream
+q
+1 0 0 -1 0 792 cm -100 Tz
+q
+BT
+/GS0 gs
+/F0 -12 Tf
+40 10.6934 Td (fall) Tj
+18.9902 0 Td (2017) Tj
+-18.9902 12 Td (C:\\Users\\Riley\\Documents\\GitHub\\tune_squad\\Test\\Fall) Tj
+275.6426 0 Td (2014) Tj
+27 0 Td (Total) Tj
+28.3242 0 Td (Enrollments) Tj
+61.6582 0 Td (by) Tj
+15 0 Td (Meeting) Tj
+42.9902 0 Td (times.csv) Tj
+-450.6152 12 Td (5) Tj
+0 13.7988 Td (0700) Tj
+0 13.7988 Td (105) Tj
+0 13.7988 Td (15) Tj
+0 13.7988 Td (30) Tj
+0 4.8047 Td ( ) Tj
+0 12 Td (Day) Tj
+40 0 Td (Class) Tj
+29.0039 0 Td (Times) Tj
+140.9961 0 Td (Exam) Tj
+30.9902 0 Td (Time) Tj
+-240.9902 12 Td (1) Tj
+40 0 Td (MTWR) Tj
+40.3301 0 Td (11:00) Tj
+30.334 0 Td (AM-11:50) Tj
+53.666 0 Td (AM) Tj
+45.6699 0 Td (07:00) Tj
+30.334 0 Td (AM-08:45) Tj
+53.666 0 Td (AM) Tj
+-254 12 Td (MW) Tj
+24.9961 0 Td (11:00) Tj
+30.334 0 Td (AM-12:30) Tj
+53.666 0 Td (PM) Tj
+-108.9961 12 Td (MWRF) Tj
+39.6738 0 Td (11:00) Tj
+30.334 0 Td (AM-11:50) Tj
+53.666 0 Td (AM) Tj
+-123.6738 12 Td (MTWRF) Tj
+47.0039 0 Td (11:00) Tj
+30.334 0 Td (AM-11:50) Tj
+53.666 0 Td (AM) Tj
+-131.0039 12 Td (MW) Tj
+24.9961 0 Td (11:00) Tj
+30.334 0 Td (AM-11:50) Tj
+53.666 0 Td (AM) Tj
+-108.9961 12 Td (MW) Tj
+24.9961 0 Td (11:00) Tj
+30.334 0 Td (AM-12:15) Tj
+53.666 0 Td (PM) Tj
+-108.9961 12 Td (MW) Tj
+24.9961 0 Td (11:00) Tj
+30.334 0 Td (AM-01:45) Tj
+53.666 0 Td (PM) Tj
+-108.9961 12 Td (MWF) Tj
+31.6699 0 Td (11:00) Tj
+30.334 0 Td (AM-11:50) Tj
+53.666 0 Td (AM) Tj
+-115.6699 24 Td (TR) Tj
+18.334 0 Td (09:00) Tj
+30.334 0 Td (AM-09:50) Tj
+53.666 0 Td (AM) Tj
+67.666 0 Td (09:00) Tj
+30.334 0 Td (AM-10:45) Tj
+53.666 0 Td (AM) Tj
+-254 12 Td (TR) Tj
+18.334 0 Td (09:00) Tj
+30.334 0 Td (AM-10:15) Tj
+53.666 0 Td (AM) Tj
+-102.334 12 Td (TR) Tj
+18.334 0 Td (09:00) Tj
+30.334 0 Td (AM-10:50) Tj
+53.666 0 Td (AM) Tj
+-102.334 12 Td (TR) Tj
+18.334 0 Td (09:30) Tj
+30.334 0 Td (AM-10:20) Tj
+53.666 0 Td (AM) Tj
+-102.334 12 Td (MTWR) Tj
+40.3301 0 Td (09:00) Tj
+30.334 0 Td (AM-09:50) Tj
+53.666 0 Td (AM) Tj
+-124.3301 12 Td (MTWRF) Tj
+47.0039 0 Td (09:00) Tj
+30.334 0 Td (AM-09:50) Tj
+53.666 0 Td (AM) Tj
+-131.0039 12 Td (TR) Tj
+18.334 0 Td (09:30) Tj
+30.334 0 Td (AM-10:45) Tj
+53.666 0 Td (AM) Tj
+-102.334 24 Td (Lunch) Tj
+170 0 Td (12:00) Tj
+30.334 0 Td (PM-12:30) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 24 Td (TR) Tj
+18.334 0 Td (11:00) Tj
+30.334 0 Td (AM-01:40) Tj
+53.666 0 Td (PM) Tj
+67.666 0 Td (01:00) Tj
+30.334 0 Td (PM-02:45) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (TR) Tj
+18.334 0 Td (11:00) Tj
+30.334 0 Td (AM-11:50) Tj
+53.666 0 Td (AM) Tj
+-102.334 12 Td (TR) Tj
+18.334 0 Td (11:00) Tj
+30.334 0 Td (AM-12:15) Tj
+53.666 0 Td (PM) Tj
+-102.334 12 Td (TR) Tj
+18.334 0 Td (11:00) Tj
+30.334 0 Td (AM-01:45) Tj
+53.666 0 Td (PM) Tj
+-102.334 24 Td (MW) Tj
+24.9961 0 Td (10:00) Tj
+30.334 0 Td (AM-11:15) Tj
+53.666 0 Td (AM) Tj
+61.0039 0 Td (03:00) Tj
+30.334 0 Td (PM-04:45) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (MW) Tj
+24.9961 0 Td (10:00) Tj
+30.334 0 Td (AM-11:50) Tj
+53.666 0 Td (AM) Tj
+-108.9961 12 Td (MTWR) Tj
+40.3301 0 Td (10:00) Tj
+30.334 0 Td (AM-10:50) Tj
+53.666 0 Td (AM) Tj
+-124.3301 12 Td (MTWRF) Tj
+47.0039 0 Td (10:00) Tj
+30.334 0 Td (AM-10:50) Tj
+53.666 0 Td (AM) Tj
+-131.0039 12 Td (MW) Tj
+24.9961 0 Td (10:00) Tj
+30.334 0 Td (AM-10:50) Tj
+53.666 0 Td (AM) Tj
+-108.9961 12 Td (MWRF) Tj
+39.6738 0 Td (10:00) Tj
+30.334 0 Td (AM-10:50) Tj
+53.666 0 Td (AM) Tj
+-123.6738 12 Td (MWF) Tj
+31.6699 0 Td (10:00) Tj
+30.334 0 Td (AM-10:50) Tj
+53.666 0 Td (AM) Tj
+-115.6699 12 Td (WF) Tj
+21 0 Td (10:00) Tj
+30.334 0 Td (AM-10:50) Tj
+53.666 0 Td (AM) Tj
+ET
+Q
+Q
+endstream
+endobj
+%--------------------------------------------------------------------------------------------------
+6 0 obj   % PdfSharp.Pdf.Advanced.PdfExtGState
+<<
+  /ca 1
+  /Type /ExtGState
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+7 0 obj   % PdfSharp.Pdf.Advanced.PdfFontDescriptor
+<<
+  /Ascent 891
+  /CapHeight 662
+  /Descent -216
+  /Flags 32
+  /FontBBox [-568 -307 2000 1007]
+  /FontName /TimesNewRoman
+  /ItalicAngle 0
+  /StemV 0
+  /Type /FontDescriptor
+  /XHeight 447
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+8 0 obj   % PdfSharp.Pdf.Advanced.PdfTrueTypeFont
+<<
+  /BaseFont /TimesNewRoman
+  /Encoding /WinAnsiEncoding
+  /FirstChar 0
+  /FontDescriptor 7 0 R
+  /LastChar 255
+  /Subtype /TrueType
+  /Type /Font
+  /Widths [777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 250 333 408 500 500 833 777 180 333 333 500 563 250 333 250 277 500 500 500 500 500 500 500 500 500 500 277 277 563 563 563 443 920 722 666 666 722 610 556 722 722 333 389 722 610 889 722 722 556 722 666 556 610 722 722 943 722 722 610 333 277 333 469 500 333 443 500 443 500 443 333 500 500 277 277 500 277 777 500 500 500 500 333 389 277 500 500 722 500 500 443 479 200 479 541 777 500 777 333 500 443 1000 500 500 333 1000 556 333 889 777 610 777 777 333 333 443 443 350 500 1000 333 979 389 333 722 777 443 722 250 333 500 500 500 500 200 500 333 759 275 500 563 333 759 500 399 548 299 299 333 576 453 333 333 299 310 500 750 750 750 443 722 722 722 722 722 722 889 666 610 610 610 610 333 333 333 333 722 722 722 722 722 722 722 563 722 722 722 722 722 722 556 500 443 443 443 443 443 443 666 443 443 443 443 443 277 277 277 277 500 500 500 500 500 500 500 548 500 500 500 500 500 500 500 500]
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+9 0 obj   % PdfSharp.Pdf.PdfPage
+<<
+  /Contents 10 0 R
+  /Group
+  <<
+    /CS /DeviceRGB
+    /I false
+    /K false
+    /S /Transparency
+  >>
+  /MediaBox [0 0 612 792]
+  /Parent 3 0 R
+  /Resources
+  <<
+    /ExtGState
+    <<
+      /GS0 6 0 R
+    >>
+    /Font
+    <<
+      /F0 8 0 R
+    >>
+    /ProcSet [/PDF/Text/ImageB/ImageC/ImageI]
+  >>
+  /Type /Page
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+10 0 obj   % PdfSharp.Pdf.Advanced.PdfContent
+<<
+  /Length 2621
+>>
+stream
+q
+1 0 0 -1 0 792 cm -100 Tz
+q
+BT
+/GS0 gs
+/F0 -12 Tf
+40 46.6934 Td (Day) Tj
+40 0 Td (Class) Tj
+29.0039 0 Td (Times) Tj
+140.9961 0 Td (Exam) Tj
+30.9902 0 Td (Time) Tj
+-240.9902 12 Td (2) Tj
+40 0 Td (MTWR) Tj
+40.3301 0 Td (12:00) Tj
+30.334 0 Td (PM-12:50) Tj
+51.6738 0 Td (PM) Tj
+47.6621 0 Td (07:00) Tj
+30.334 0 Td (AM-08:45) Tj
+53.666 0 Td (AM) Tj
+-254 12 Td (TR) Tj
+18.334 0 Td (12:30) Tj
+30.334 0 Td (PM-03:15) Tj
+51.6738 0 Td (PM) Tj
+-100.3418 12 Td (TR) Tj
+18.334 0 Td (12:30) Tj
+30.334 0 Td (PM-01:20) Tj
+51.6738 0 Td (PM) Tj
+-100.3418 12 Td (TR) Tj
+18.334 0 Td (12:30) Tj
+30.334 0 Td (PM-01:45) Tj
+51.6738 0 Td (PM) Tj
+-100.3418 24 Td (MF) Tj
+20.3438 0 Td (09:00) Tj
+30.334 0 Td (AM-09:50) Tj
+53.666 0 Td (AM) Tj
+65.6563 0 Td (09:00) Tj
+30.334 0 Td (AM-10:45) Tj
+53.666 0 Td (AM) Tj
+-254 12 Td (MW) Tj
+24.9961 0 Td (09:00) Tj
+30.334 0 Td (AM-10:30) Tj
+53.666 0 Td (AM) Tj
+-108.9961 12 Td (MW) Tj
+24.9961 0 Td (09:00) Tj
+30.334 0 Td (AM-10:50) Tj
+53.666 0 Td (AM) Tj
+-108.9961 12 Td (MW) Tj
+24.9961 0 Td (09:00) Tj
+30.334 0 Td (AM-09:50) Tj
+53.666 0 Td (AM) Tj
+-108.9961 12 Td (MW) Tj
+24.9961 0 Td (09:30) Tj
+30.334 0 Td (AM-10:45) Tj
+53.666 0 Td (AM) Tj
+-108.9961 12 Td (MWF) Tj
+31.6699 0 Td (09:00) Tj
+30.334 0 Td (AM-09:50) Tj
+53.666 0 Td (AM) Tj
+-115.6699 24 Td (Lunch) Tj
+170 0 Td (12:00) Tj
+30.334 0 Td (PM-12:30) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 24 Td (MTWF) Tj
+39 0 Td (08:00) Tj
+30.334 0 Td (AM-08:50) Tj
+53.666 0 Td (AM) Tj
+47 0 Td (01:00) Tj
+30.334 0 Td (PM-02:45) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (MTWR) Tj
+40.3301 0 Td (08:00) Tj
+30.334 0 Td (AM-08:50) Tj
+53.666 0 Td (AM) Tj
+-124.3301 12 Td (TR) Tj
+18.334 0 Td (08:00) Tj
+30.334 0 Td (AM-08:50) Tj
+53.666 0 Td (AM) Tj
+-102.334 12 Td (TR) Tj
+18.334 0 Td (08:00) Tj
+30.334 0 Td (AM-09:15) Tj
+53.666 0 Td (AM) Tj
+-102.334 12 Td (TR) Tj
+18.334 0 Td (08:00) Tj
+30.334 0 Td (AM-10:40) Tj
+53.666 0 Td (AM) Tj
+-102.334 12 Td (TR) Tj
+18.334 0 Td (08:00) Tj
+30.334 0 Td (AM-10:45) Tj
+53.666 0 Td (AM) Tj
+-102.334 24 Td (MW) Tj
+24.9961 0 Td (01:30) Tj
+30.334 0 Td (PM-04:10) Tj
+51.6738 0 Td (PM) Tj
+62.9961 0 Td (03:00) Tj
+30.334 0 Td (PM-04:45) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (MTWRF) Tj
+47.0039 0 Td (01:00) Tj
+30.334 0 Td (PM-01:50) Tj
+51.6738 0 Td (PM) Tj
+-129.0117 12 Td (MW) Tj
+24.9961 0 Td (01:00) Tj
+30.334 0 Td (PM-01:50) Tj
+51.6738 0 Td (PM) Tj
+-107.0039 12 Td (MW) Tj
+24.9961 0 Td (01:00) Tj
+30.334 0 Td (PM-02:15) Tj
+51.6738 0 Td (PM) Tj
+-107.0039 12 Td (MW) Tj
+24.9961 0 Td (01:30) Tj
+30.334 0 Td (PM-02:45) Tj
+51.6738 0 Td (PM) Tj
+-107.0039 12 Td (MWF) Tj
+31.6699 0 Td (01:00) Tj
+30.334 0 Td (PM-01:50) Tj
+51.6738 0 Td (PM) Tj
+ET
+Q
+Q
+endstream
+endobj
+%--------------------------------------------------------------------------------------------------
+11 0 obj   % PdfSharp.Pdf.PdfPage
+<<
+  /Contents 12 0 R
+  /Group
+  <<
+    /CS /DeviceRGB
+    /I false
+    /K false
+    /S /Transparency
+  >>
+  /MediaBox [0 0 612 792]
+  /Parent 3 0 R
+  /Resources
+  <<
+    /ExtGState
+    <<
+      /GS0 6 0 R
+    >>
+    /Font
+    <<
+      /F0 8 0 R
+    >>
+    /ProcSet [/PDF/Text/ImageB/ImageC/ImageI]
+  >>
+  /Type /Page
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+12 0 obj   % PdfSharp.Pdf.Advanced.PdfContent
+<<
+  /Length 2637
+>>
+stream
+q
+1 0 0 -1 0 792 cm -100 Tz
+q
+BT
+/GS0 gs
+/F0 -12 Tf
+40 46.6934 Td (Day) Tj
+40 0 Td (Class) Tj
+29.0039 0 Td (Times) Tj
+140.9961 0 Td (Exam) Tj
+30.9902 0 Td (Time) Tj
+-240.9902 12 Td (3) Tj
+40 0 Td (MW) Tj
+24.9961 0 Td (12:00) Tj
+30.334 0 Td (PM-12:50) Tj
+51.6738 0 Td (PM) Tj
+62.9961 0 Td (07:00) Tj
+30.334 0 Td (AM-08:45) Tj
+53.666 0 Td (AM) Tj
+-254 12 Td (MW) Tj
+24.9961 0 Td (12:00) Tj
+30.334 0 Td (PM-01:15) Tj
+51.6738 0 Td (PM) Tj
+-107.0039 12 Td (MW) Tj
+24.9961 0 Td (12:00) Tj
+30.334 0 Td (PM-01:45) Tj
+51.6738 0 Td (PM) Tj
+-107.0039 12 Td (MW) Tj
+24.9961 0 Td (12:30) Tj
+30.334 0 Td (PM-01:45) Tj
+51.6738 0 Td (PM) Tj
+-107.0039 12 Td (MWF) Tj
+31.6699 0 Td (12:00) Tj
+30.334 0 Td (PM-12:50) Tj
+51.6738 0 Td (PM) Tj
+-113.6777 24 Td (MW) Tj
+24.9961 0 Td (08:30) Tj
+30.334 0 Td (AM-10:30) Tj
+53.666 0 Td (AM) Tj
+61.0039 0 Td (09:00) Tj
+30.334 0 Td (AM-10:45) Tj
+53.666 0 Td (AM) Tj
+-254 12 Td (MW) Tj
+24.9961 0 Td (08:35) Tj
+30.334 0 Td (AM-09:50) Tj
+53.666 0 Td (AM) Tj
+-108.9961 12 Td (MW) Tj
+24.9961 0 Td (08:00) Tj
+30.334 0 Td (AM-08:50) Tj
+53.666 0 Td (AM) Tj
+-108.9961 12 Td (MW) Tj
+24.9961 0 Td (08:00) Tj
+30.334 0 Td (AM-09:15) Tj
+53.666 0 Td (AM) Tj
+-108.9961 12 Td (MW) Tj
+24.9961 0 Td (08:00) Tj
+30.334 0 Td (AM-09:40) Tj
+53.666 0 Td (AM) Tj
+-108.9961 12 Td (MW) Tj
+24.9961 0 Td (08:00) Tj
+30.334 0 Td (AM-10:45) Tj
+53.666 0 Td (AM) Tj
+-108.9961 12 Td (MWF) Tj
+31.6699 0 Td (08:00) Tj
+30.334 0 Td (AM-08:50) Tj
+53.666 0 Td (AM) Tj
+-115.6699 24 Td (Lunch) Tj
+170 0 Td (12:00) Tj
+30.334 0 Td (PM-12:30) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 24 Td (TR) Tj
+18.334 0 Td (02:00) Tj
+30.334 0 Td (PM-02:50) Tj
+51.6738 0 Td (PM) Tj
+69.6582 0 Td (02:00) Tj
+30.334 0 Td (PM-03:45) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (TR) Tj
+18.334 0 Td (02:00) Tj
+30.334 0 Td (PM-04:40) Tj
+51.6738 0 Td (PM) Tj
+-100.3418 12 Td (TR) Tj
+18.334 0 Td (02:40) Tj
+30.334 0 Td (PM-03:55) Tj
+51.6738 0 Td (PM) Tj
+-100.3418 12 Td (MTWRF) Tj
+47.0039 0 Td (02:00) Tj
+30.334 0 Td (PM-02:50) Tj
+51.6738 0 Td (PM) Tj
+-129.0117 12 Td (TR) Tj
+18.334 0 Td (02:00) Tj
+30.334 0 Td (PM-03:15) Tj
+51.6738 0 Td (PM) Tj
+-100.3418 12 Td (TR) Tj
+18.334 0 Td (02:00) Tj
+30.334 0 Td (PM-04:45) Tj
+51.6738 0 Td (PM) Tj
+-100.3418 24 Td (MF) Tj
+20.3438 0 Td (02:00) Tj
+30.334 0 Td (PM-03:15) Tj
+51.6738 0 Td (PM) Tj
+67.6484 0 Td (05:00) Tj
+30.334 0 Td (PM-06:45) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (MW) Tj
+24.9961 0 Td (02:00) Tj
+30.334 0 Td (PM-03:15) Tj
+51.6738 0 Td (PM) Tj
+-107.0039 12 Td (MW) Tj
+24.9961 0 Td (02:00) Tj
+30.334 0 Td (PM-04:45) Tj
+51.6738 0 Td (PM) Tj
+-107.0039 12 Td (MWF) Tj
+31.6699 0 Td (02:00) Tj
+30.334 0 Td (PM-02:50) Tj
+51.6738 0 Td (PM) Tj
+ET
+Q
+Q
+endstream
+endobj
+%--------------------------------------------------------------------------------------------------
+13 0 obj   % PdfSharp.Pdf.PdfPage
+<<
+  /Contents 14 0 R
+  /Group
+  <<
+    /CS /DeviceRGB
+    /I false
+    /K false
+    /S /Transparency
+  >>
+  /MediaBox [0 0 612 792]
+  /Parent 3 0 R
+  /Resources
+  <<
+    /ExtGState
+    <<
+      /GS0 6 0 R
+    >>
+    /Font
+    <<
+      /F0 8 0 R
+    >>
+    /ProcSet [/PDF/Text/ImageB/ImageC/ImageI]
+  >>
+  /Type /Page
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+14 0 obj   % PdfSharp.Pdf.Advanced.PdfContent
+<<
+  /Length 1684
+>>
+stream
+q
+1 0 0 -1 0 792 cm -100 Tz
+q
+BT
+/GS0 gs
+/F0 -12 Tf
+40 46.6934 Td (Day) Tj
+40 0 Td (Class) Tj
+29.0039 0 Td (Times) Tj
+140.9961 0 Td (Exam) Tj
+30.9902 0 Td (Time) Tj
+-240.9902 12 Td (4) Tj
+40 0 Td (MW) Tj
+24.9961 0 Td (03:30) Tj
+30.334 0 Td (PM-04:45) Tj
+51.6738 0 Td (PM) Tj
+62.9961 0 Td (07:00) Tj
+30.334 0 Td (AM-08:45) Tj
+53.666 0 Td (AM) Tj
+-254 12 Td (MW) Tj
+24.9961 0 Td (03:00) Tj
+30.334 0 Td (PM-04:15) Tj
+51.6738 0 Td (PM) Tj
+-107.0039 24 Td (TR) Tj
+18.334 0 Td (10:00) Tj
+30.334 0 Td (AM-11:30) Tj
+53.666 0 Td (AM) Tj
+67.666 0 Td (10:00) Tj
+30.334 0 Td (AM-11:45) Tj
+53.666 0 Td (AM) Tj
+-254 12 Td (TR) Tj
+18.334 0 Td (10:00) Tj
+30.334 0 Td (AM-11:50) Tj
+53.666 0 Td (AM) Tj
+-102.334 12 Td (TR) Tj
+18.334 0 Td (10:00) Tj
+30.334 0 Td (AM-10:50) Tj
+53.666 0 Td (AM) Tj
+-102.334 24 Td (Lunch) Tj
+170 0 Td (12:00) Tj
+30.334 0 Td (PM-12:30) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 24 Td (TR) Tj
+18.334 0 Td (01:00) Tj
+30.334 0 Td (PM-01:50) Tj
+51.6738 0 Td (PM) Tj
+69.6582 0 Td (01:00) Tj
+30.334 0 Td (PM-02:45) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 24 Td (TR) Tj
+18.334 0 Td (03:00) Tj
+30.334 0 Td (PM-04:15) Tj
+51.6738 0 Td (PM) Tj
+69.6582 0 Td (03:00) Tj
+30.334 0 Td (PM-04:45) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (TR) Tj
+18.334 0 Td (03:00) Tj
+30.334 0 Td (PM-05:30) Tj
+51.6738 0 Td (PM) Tj
+-100.3418 12 Td (MTWRF) Tj
+47.0039 0 Td (03:00) Tj
+30.334 0 Td (PM-04:15) Tj
+51.6738 0 Td (PM) Tj
+-129.0117 12 Td (TR) Tj
+18.334 0 Td (03:30) Tj
+30.334 0 Td (PM-04:45) Tj
+51.6738 0 Td (PM) Tj
+-100.3418 12 Td (TRF) Tj
+25.0078 0 Td (03:30) Tj
+30.334 0 Td (PM-04:45) Tj
+51.6738 0 Td (PM) Tj
+-107.0156 12 Td (WR) Tj
+22.3301 0 Td (03:30) Tj
+30.334 0 Td (PM-05:00) Tj
+51.6738 0 Td (PM) Tj
+ET
+Q
+Q
+endstream
+endobj
+%--------------------------------------------------------------------------------------------------
+15 0 obj   % PdfSharp.Pdf.PdfPage
+<<
+  /Contents 16 0 R
+  /Group
+  <<
+    /CS /DeviceRGB
+    /I false
+    /K false
+    /S /Transparency
+  >>
+  /MediaBox [0 0 612 792]
+  /Parent 3 0 R
+  /Resources
+  <<
+    /ExtGState
+    <<
+      /GS0 6 0 R
+    >>
+    /Font
+    <<
+      /F0 8 0 R
+    >>
+    /ProcSet [/PDF/Text/ImageB/ImageC/ImageI]
+  >>
+  /Type /Page
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+16 0 obj   % PdfSharp.Pdf.Advanced.PdfContent
+<<
+  /Length 1204
+>>
+stream
+q
+1 0 0 -1 0 792 cm -100 Tz
+q
+BT
+/GS0 gs
+/F0 -12 Tf
+40 46.6934 Td (Day) Tj
+40 0 Td (Class) Tj
+29.0039 0 Td (Times) Tj
+140.9961 0 Td (Exam) Tj
+30.9902 0 Td (Time) Tj
+-240.9902 12 Td (5) Tj
+40 0 Td (TR) Tj
+18.334 0 Td (04:30) Tj
+30.334 0 Td (PM-05:45) Tj
+51.6738 0 Td (PM) Tj
+69.6582 0 Td (07:00) Tj
+30.334 0 Td (AM-08:45) Tj
+53.666 0 Td (AM) Tj
+-254 12 Td (TR) Tj
+18.334 0 Td (04:45) Tj
+30.334 0 Td (PM-05:30) Tj
+51.6738 0 Td (PM) Tj
+-100.3418 12 Td (TR) Tj
+18.334 0 Td (04:00) Tj
+30.334 0 Td (PM-05:15) Tj
+51.6738 0 Td (PM) Tj
+-100.3418 24 Td (MWF) Tj
+31.6699 0 Td (07:00) Tj
+30.334 0 Td (AM-07:50) Tj
+53.666 0 Td (AM) Tj
+54.3301 0 Td (09:00) Tj
+30.334 0 Td (AM-10:45) Tj
+53.666 0 Td (AM) Tj
+-254 24 Td (Lunch) Tj
+170 0 Td (12:00) Tj
+30.334 0 Td (PM-12:30) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 24 Td (WF) Tj
+21 0 Td (09:00) Tj
+30.334 0 Td (AM-09:50) Tj
+53.666 0 Td (AM) Tj
+65 0 Td (01:00) Tj
+30.334 0 Td (PM-02:45) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 24 Td (MW) Tj
+24.9961 0 Td (04:00) Tj
+30.334 0 Td (PM-05:15) Tj
+51.6738 0 Td (PM) Tj
+62.9961 0 Td (04:00) Tj
+30.334 0 Td (PM-05:45) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (MW) Tj
+24.9961 0 Td (04:30) Tj
+30.334 0 Td (PM-05:45) Tj
+51.6738 0 Td (PM) Tj
+ET
+Q
+Q
+endstream
+endobj
+%--------------------------------------------------------------------------------------------------
+xref
+0 17
+0000000000 65535 f 
+0000000411 00000 n 
+0000000725 00000 n 
+0000000915 00000 n 
+0000001131 00000 n 
+0000001591 00000 n 
+0000005263 00000 n 
+0000005450 00000 n 
+0000005802 00000 n 
+0000007150 00000 n 
+0000007611 00000 n 
+0000010423 00000 n 
+0000010885 00000 n 
+0000013713 00000 n 
+0000014175 00000 n 
+0000016050 00000 n 
+0000016512 00000 n 
+trailer
+<<
+  /ID [<C787DC9859995A4FAA3265D899853293><C787DC9859995A4FAA3265D899853293>]
+  /Info 1 0 R
+  /Root 2 0 R
+  /Size 17
+>>
+startxref
+17907
+%%EOF

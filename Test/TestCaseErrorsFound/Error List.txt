@@ -1,0 +1,32 @@
+Fixed-Program doesnt close when the exit button is selected in the login page.
+Jordan Beck
+
+Program crashes when reseting a password.
+Jeffery Allen
+
+Fixed-Lunch not displaying in the main gui(the big elephant).
+Riley Smith
+
+Fixed-Seperated spelt incorectly in the open and save menus.
+Jordan Beck
+
+Fixed-GUI with the help button crashes program.
+Jordan Beck
+
+Should not be able to open a pdf.
+Jordan Beck
+
+Fixed-Should not be able to swap a lunch and a exam.
+Riley Smith
+
+Csv output is hard to read, can we fix that?(Exam time is hidden under class time).
+Jordan Beck
+
+Output for the txt looks terrible...unless you open it in Notepad++.
+Jordan Beck
+
+Fixed-No notification if Finalize does anything.
+Jordan Beck
+
+When an error is found, user should be told what we do with invalid lines.(ex. "Lines 472 and 235 were ignored.").
+Jordan Beck
