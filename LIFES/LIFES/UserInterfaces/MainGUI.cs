@@ -630,31 +630,40 @@ namespace LIFES.UserInterfaces
         */ 
         private void SwapButton_Click(object sender, EventArgs e)
         {
-            if (examTable.SelectedRows.Count == 2)
+            if (!Globals.adminApproved)
             {
-                string firstIndex = 
-                    examTable.SelectedRows[0].Cells[1].Value.ToString();
-                string secondIndex = 
-                    examTable.SelectedRows[1].Cells[1].Value.ToString();
-                string tmpString = firstIndex;
 
-                if (firstIndex == "Lunch" || secondIndex == "Lunch")
+
+                if (examTable.SelectedRows.Count == 2)
                 {
+                    string firstIndex =
+                        examTable.SelectedRows[0].Cells[1].Value.ToString();
+                    string secondIndex =
+                        examTable.SelectedRows[1].Cells[1].Value.ToString();
+                    string tmpString = firstIndex;
 
-                    MessageBox.Show("Cannot Swap a Lunch Period", "Error");
+                    if (firstIndex == "Lunch" || secondIndex == "Lunch")
+                    {
+
+                        MessageBox.Show("Cannot Swap a Lunch Period", "Error");
+                    }
+
+                    else
+                    {
+                        examTable.SelectedRows[0].Cells[1].Value = secondIndex;
+                        examTable.SelectedRows[1].Cells[1].Value = tmpString;
+                    }
+
                 }
 
                 else
                 {
-                    examTable.SelectedRows[0].Cells[1].Value = secondIndex;
-                    examTable.SelectedRows[1].Cells[1].Value = tmpString; 
+                    MessageBox.Show("Must have 2 selected rows");
                 }
-                       
             }
-
             else
             {
-                MessageBox.Show("Must have 2 selected rows");
+                MessageBox.Show("Exam schedule is finalized");
             }
         }
 
