@@ -327,17 +327,25 @@ namespace LIFES.UserInterfaces
          */
         private void Reschedule_Click(object sender, EventArgs e)
         {
-            Scheduler examSchedule = new Scheduler(Globals.compressedTimes, Globals.timeConstraints);
-            examSchedule.ReSchedule();
-            Globals.examWeek = examSchedule.GetExams();
-            Debug.Write(examSchedule.GetExamSlots());
-            if (Globals.examWeek != null && Globals.timeConstraints != null && Globals.compressedTimes != null)
+            if (Globals.compressedTimes != null)
             {
-                DisplaySchedule(Globals.examWeek);
+                Scheduler examSchedule = new Scheduler(Globals.compressedTimes, Globals.timeConstraints);
+                examSchedule.ReSchedule();
+                Globals.examWeek = examSchedule.GetExams();
+                Debug.Write(examSchedule.GetExamSlots());
+                if (Globals.examWeek != null && Globals.timeConstraints != null && Globals.compressedTimes != null)
+                {
+                    DisplaySchedule(Globals.examWeek);
+                }
+                if (examSchedule.GetErrorMessage() != null)
+                {
+                    MessageBox.Show(examSchedule.GetErrorMessage());
+                }
             }
-            if (examSchedule.GetErrorMessage() != null)
+
+            else
             {
-                MessageBox.Show(examSchedule.GetErrorMessage());
+                MessageBox.Show("Enter an Enrollment File");
             }
         }
 
@@ -410,17 +418,25 @@ namespace LIFES.UserInterfaces
          */
         private void Schedule_Click(object sender, EventArgs e)
         {
-            Scheduler examSchedule = new Scheduler(Globals.compressedTimes, Globals.timeConstraints);
-            examSchedule.Schedule();
-            Globals.examWeek = examSchedule.GetExams();
-            Debug.Write(examSchedule.GetExamSlots());
-            if (Globals.examWeek != null && Globals.timeConstraints !=null && Globals.compressedTimes !=null)
+            if (Globals.compressedTimes != null)
             {
-                DisplaySchedule(Globals.examWeek);
+                Scheduler examSchedule = new Scheduler(Globals.compressedTimes, Globals.timeConstraints);
+                examSchedule.Schedule();
+                Globals.examWeek = examSchedule.GetExams();
+                Debug.Write(examSchedule.GetExamSlots());
+                if (Globals.examWeek != null && Globals.timeConstraints != null && Globals.compressedTimes != null)
+                {
+                    DisplaySchedule(Globals.examWeek);
+                }
+                if (examSchedule.GetErrorMessage() != null)
+                {
+                    MessageBox.Show(examSchedule.GetErrorMessage());
+                }
             }
-            if (examSchedule.GetErrorMessage() != null)
+
+            else
             {
-                MessageBox.Show(examSchedule.GetErrorMessage());
+                MessageBox.Show("Enter an Enrollment File");
             }
         }
         

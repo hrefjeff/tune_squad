@@ -71,6 +71,7 @@
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(130, 57);
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
             this.passwordTextBox.TabIndex = 3;
             // 
@@ -132,6 +133,7 @@
             // 
             this.confirmTextBox.Location = new System.Drawing.Point(130, 94);
             this.confirmTextBox.Name = "confirmTextBox";
+            this.confirmTextBox.PasswordChar = '*';
             this.confirmTextBox.Size = new System.Drawing.Size(100, 20);
             this.confirmTextBox.TabIndex = 5;
             this.confirmTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ConfirmTextBox_KeyDown);
