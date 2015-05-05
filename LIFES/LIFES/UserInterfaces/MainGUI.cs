@@ -136,7 +136,6 @@ namespace LIFES.UserInterfaces
 
                 foreach (FinalExam exam in day.GetExams())
                 {
-                    string classTime = "";
                     CompressedClassTime compressedTime = exam.GetCompressedClass();
 
                     if (compressedTime.GetDayOfTheWeek() == "Lunch")
@@ -149,16 +148,23 @@ namespace LIFES.UserInterfaces
                     {
                         string classLine = "";
 
-                        classLine = compressedTime.GetClassTimes().
-                                First().GetDayOfTheWeek() + " ";
+                        if (compressedTime.GetClassTimes().First().GetDayOfTheWeek() != "")
+                        {
+                            classLine = compressedTime.GetClassTimes().
+                                    First().GetDayOfTheWeek() + " ";
 
-                        classLine += MilitaryToDateTime(compressedTime.
-                                GetClassTimes().First().GetClassStartTime()).
-                                ToString("hh:mm tt") + "-";
+                            classLine += MilitaryToDateTime(compressedTime.
+                                    GetClassTimes().First().GetClassStartTime()).
+                                    ToString("hh:mm tt") + "-";
 
-                        classLine += MilitaryToDateTime(compressedTime.
-                                GetClassTimes().First().GetClassEndTime()).
-                                ToString("hh:mm tt");
+                            classLine += MilitaryToDateTime(compressedTime.
+                                    GetClassTimes().First().GetClassEndTime()).
+                                    ToString("hh:mm tt");
+                        }
+                        else 
+                        {
+                            
+                        }
 
                         yPos = topMargin + count * printFont.GetHeight(e.Graphics);
                         e.Graphics.DrawString(classLine, printFont, Brushes.Black, leftMargin, yPos, new StringFormat());
