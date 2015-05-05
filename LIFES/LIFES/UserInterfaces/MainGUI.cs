@@ -907,6 +907,18 @@ namespace LIFES.UserInterfaces
             }
         }
 
+       
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Globals.timeConstraints = new TimeConstraints(0, 0, 0, 0, 0);
+            Globals.examWeek = null;
+            Globals.timeConstraintsFileName = "";
+            Globals.totalEnrollemntsFileName = "";
+
+            examTable.Rows.Clear();
+        }
+
 
     }
 }
