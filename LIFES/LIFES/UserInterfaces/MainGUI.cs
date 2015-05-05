@@ -679,7 +679,7 @@ namespace LIFES.UserInterfaces
         {
 
             OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Filter = "txt files (*.txt)| *.txt|";
+            openFile.Filter = "txt files (*.txt)| *.txt";
             openFile.Title = "Open an Exam Schedule";
             openFile.ShowDialog();
             string filename = openFile.FileName;
