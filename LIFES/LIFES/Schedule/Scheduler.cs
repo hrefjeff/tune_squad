@@ -142,7 +142,7 @@ namespace LIFES.Schedule
             int startTime, int endTime)
         {
             FinalExam fe = new FinalExam(ct);
-            Debug.WriteLine("Class start hour " + ct.GetClassTimeStartHour() * 100);
+           // Debug.WriteLine("Class start hour " + ct.GetClassTimeStartHour() * 100);
             fe.SetStartTime(startTime);
             fe.SetEndTime(endTime);
             fed.InsertExam(fe);
@@ -395,20 +395,20 @@ namespace LIFES.Schedule
          */
         public Scheduler(List<CompressedClassTime> ct, TimeConstraints t)
         {
-            AvailableExamSlots();
+
             tc = t;
             compressedClassTime = ct;
             examWeek = new FinalExamDay[tc.GetNumberOfDays()];
+            AvailableExamSlots();
             if (((examSlots * tc.GetNumberOfDays()) >= compressedClassTime.Count()))
             {
-             
                 Initialize();
             }
             else
             {
                 examWeek = null;
             }
-            //to do 
+            Debug.WriteLine(ct.Count);
         }
         /*
          * Method: scheduler
