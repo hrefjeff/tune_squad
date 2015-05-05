@@ -745,7 +745,19 @@ namespace LIFES.UserInterfaces
             }
         }
 
-        private void FullExamWeekToolStripMenuItem_Click_1(object sender, EventArgs e)
+        /*
+         * Method: FullExamWeekToolStripMenuItem_Click
+         * Paramters: object sender, EventArgs e
+         * Output: N/A
+         * Created By: Riley Smith
+         * Date: 5/4/2015
+         * Modified By: Riley Smith
+         * 
+         * Description: Event handler for View -> Full Exam Week.
+         *      Displays the exam schedule for the entire week.
+         * 
+         */
+        private void FullExamWeekToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DisplaySchedule(Globals.examWeek);
         }
