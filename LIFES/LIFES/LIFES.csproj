@@ -186,6 +186,9 @@
     <EmbeddedResource Include="UserInterfaces\EnrollmentForm.resx">
       <DependentUpon>EnrollmentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserInterfaces\GetNewPasswordForm.resx">
+      <DependentUpon>GetNewPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInterfaces\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
