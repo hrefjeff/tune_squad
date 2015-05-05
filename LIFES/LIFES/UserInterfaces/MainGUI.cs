@@ -595,7 +595,7 @@ namespace LIFES.UserInterfaces
          */
         private void OpenUserGuide_Click(object sender, EventArgs e)
         {
-            Process.Start(@"C:\\Users\\eljeffeh\\UserManualLIFESV2test.pdf");
+            Process.Start(@"UserManualLIFESV2.pdf");
         }
        /*
         * Method: MainGUI_Load
