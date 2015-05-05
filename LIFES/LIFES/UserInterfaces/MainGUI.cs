@@ -253,7 +253,7 @@ namespace LIFES.UserInterfaces
          * Output: N/A
          * Created By: Scott Smoke, Riley Smith
          * Date: 5/4/2015
-         * Modified By: Scott Smoke, Jordan Beck
+         * Modified By: Scott Smoke, Jordan Beck, Riley Smith
          * 
          * Description: This displays the final exam
          * schedule to the table.
@@ -278,9 +278,10 @@ namespace LIFES.UserInterfaces
                     {
                         classTimes += "Lunch";
                     }
+
                     foreach (ClassTime time in compressedTime.GetClassTimes())
                     {
-                       
+              
                             classTimes += time.GetDayOfTheWeek() + " ";
                             classTimes += MilitaryToDateTime(time.GetClassStartTime()).
                                 ToString("hh:mm tt") + "-";
@@ -289,8 +290,22 @@ namespace LIFES.UserInterfaces
                         
                     }
                     string examTimes = "";
-                    examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
-                        + "-" + MilitaryToDateTime(exam.GetEndTime()).ToString("hh:mm tt");
+
+                    if (lunchCompress.GetDayOfTheWeek() == "Lunch")
+                    {
+                        examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
+                       + "-" + MilitaryToDateTime
+                       (exam.GetEndTime()).ToString("hh:mm tt");
+                    }
+
+                    else
+                    {
+                        int hours = (Globals.timeConstraints.GetLengthOfExams() / 60) * 100;
+                        int min = Globals.timeConstraints.GetLengthOfExams() % 60;
+                        examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
+                            + "-" + MilitaryToDateTime
+                            ((exam.GetStartTime() + hours + min)).ToString("hh:mm tt");
+                    }
                     examTable.Rows[rowIndex].Cells[0].Value = ele.GetDay();
                     examTable.Rows[rowIndex].Cells[1].Value = classTimes;
                     examTable.Rows[rowIndex].Cells[2].Value = examTimes;
@@ -629,13 +644,28 @@ namespace LIFES.UserInterfaces
                             classTimes += time.GetDayOfTheWeek() + " ";
                             classTimes += MilitaryToDateTime(time.GetClassStartTime()).
                                 ToString("hh:mm tt") + "-";
-                            classTimes += MilitaryToDateTime(time.GetClassEndTime()).
+                            classTimes += MilitaryToDateTime(time.GetClassEndTime()-
+                                (60 - Globals.timeConstraints.GetTimeBetweenExams())).
                                 ToString("hh:mm tt") + "\n";
 
                         }
                         string examTimes = "";
-                        examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
-                            + "-" + MilitaryToDateTime(exam.GetEndTime()).ToString("hh:mm tt");
+
+                        if (lunchCompress.GetDayOfTheWeek() == "Lunch")
+                        {
+                            examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
+                           + "-" + MilitaryToDateTime
+                           (exam.GetEndTime()).ToString("hh:mm tt");
+                        }
+
+                        else
+                        {
+                            int hours = (Globals.timeConstraints.GetLengthOfExams() / 60) * 100;
+                            int min = Globals.timeConstraints.GetLengthOfExams() % 60;
+                            examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
+                                + "-" + MilitaryToDateTime
+                                ((exam.GetStartTime() + hours + min)).ToString("hh:mm tt");
+                        }
                         examTable.Rows[rowIndex].Cells[0].Value = ele.GetDay();
                         examTable.Rows[rowIndex].Cells[1].Value = classTimes;
                         examTable.Rows[rowIndex].Cells[2].Value = examTimes;
