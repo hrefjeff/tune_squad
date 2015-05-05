@@ -97,7 +97,7 @@ namespace LIFES.UserInterfaces
          * Output: A printed document
          * Created By: Scott Smoke
          * Date: 3/26/2015
-         * Modified By: Scott Smoke
+         * Modified By: Jeffrey Allen
          * 
          * Description: This will print a document.
          * Sources: msdn.microsoft.com
