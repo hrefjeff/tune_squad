@@ -242,14 +242,18 @@ namespace LIFES.FileIO
                 string[] semesterAndYear;
 
                 string semesterAndYearLine = file.ReadLine();
+                char delimitingFactor = '0';
 
                 if (extention == "csv")
                 {
-                    semesterAndYear = semesterAndYearLine.Split(',');
+                    delimitingFactor = ',';
+                    semesterAndYear = semesterAndYearLine.Split(delimitingFactor);
+                    
                 }
                 else
                 {
-                    semesterAndYear = semesterAndYearLine.Split(' ');
+                    delimitingFactor = ' ';
+                    semesterAndYear = semesterAndYearLine.Split(delimitingFactor);
                 }
 
                 Globals.semester = semesterAndYear[0];
@@ -275,131 +279,40 @@ namespace LIFES.FileIO
 
                 // read adminApproved
                 string adminApp = file.ReadLine();
-                
-                Globals.adminApproved = Convert.ToBoolean(Convert.ToInt32(adminApp));
+                if (adminApp[0] == 'S')
+                {
+                    Globals.adminApproved = true;
+                } 
+                else
+                {
+                    Globals.adminApproved = false;
+                }
+
+                string nextLine = file.ReadLine();
+
+                while (nextLine != "")
+                {
+                    nextLine = file.ReadLine();
+                }
+
+                // Read and display lines from the file until the end of
+                // the file is reached.
+                while ((nextLine = file.ReadLine()) != null)
+                {
+                    // if header, discard and get next line
+                    if (nextLine[0] == 'D')
+                        nextLine = file.ReadLine();
+
+                    // if line has single digit, then increment day
+                    if (nextLine[0] == ' ')
+                        continue;
+                    
+
+                    // if line has two exam times, 
+                }
+
             }
         }
-
-        /*
-        * Method: ReadFromTxt
-        * Parameters: N/A
-        * Output: Saved file in the CSV format
-        * Created By: Jeffrey Allen
-        * Date: 5/4/2015
-        * Modified By: 
-        * 
-        * Description: Reads the data from an output text file
-        *
-        */
-        public void ReadFromTxt(string filename)
-        { 
         
-        if (filename != "")
-            {
-
-                System.IO.StreamReader file = 
-                    new System.IO.StreamReader(filename);
-
-                // read semester + year
-                string firstLine = file.ReadLine();
-                string[] s = firstLine.Split(' ');
-                Globals.semester = s[0];
-                Globals.year = s[1];
-
-                // read enrollments file name
-                Globals.totalEnrollemntsFileName = file.ReadLine();
-
-                // read time constraints
-                string days = file.ReadLine();
-                string starttime = file.ReadLine();
-                string lengthofexam = file.ReadLine();
-                string btwclass = file.ReadLine();
-                string lunchtime = file.ReadLine();
-
-                TimeConstraints readConstraints = new TimeConstraints(Convert.ToInt32(days),
-                                                    Convert.ToInt32(starttime), Convert.ToInt32(lengthofexam), 
-                                                    Convert.ToInt32(btwclass), Convert.ToInt32(lunchtime));
-
-                Globals.timeConstraints = readConstraints;
-
-                // read adminApproved
-                string adminApp = file.ReadLine();
-                Globals.adminApproved = Convert.ToBoolean(adminApp);
-
-                /*
-                //Have to build the final exam time 
-                //to build with a group of exam schedules
-                for (build a way for everyone to GetErrors the exam schedules)
-                {
-                }
-
-                CompressedClassTime.getClassStartTimes().First().getClassStartTime()).
-                            ToString("hh:mm tt");
-
-                // newline character is being read here
-
-                // lunch time is read here
-
-                */
-
-                /*
-                
-                //place exam schedule
-                foreach (FinalExamDay ele in Globals.examWeek)
-                {
-                    file.WriteLine("Day\t Class Times\t\t\t\t Exam Time");
-                    file.Write(ele.GetDay());
-              
-                    foreach (FinalExam exam in ele.GetExams())
-                    {
-                        string classTime = "";
-                        CompressedClassTime compressedTime = exam.GetCompressedClass();
-
-                        classTime +=  compressedTime.GetClassTimes().
-                            First().getDayOfTheWeek()
-                            + " ";
-                        classTime += MilitaryToDateTime(compressedTime.
-                            GetClassTimes().First().getClassStartTime()).
-                            ToString("hh:mm tt")
-                            + "-";
-                            classTime += MilitaryToDateTime(compressedTime.
-                                GetClassTimes().First().getClassEndTime()).
-                                ToString("hh:mm tt");
-
-                        file.Write("\t\t" + classTime + "\t\t\t");
-
-                        string examTimes = "";
-                        examTimes += MilitaryToDateTime(exam.GetStartTime()).
-                            ToString("hh:mm tt")
-                            + "-" + MilitaryToDateTime(exam.GetEndTime()).
-                            ToString("hh:mm tt");
-
-                        file.Write("\t" + examTimes + "\n");
-
-                        foreach (ClassTime time in compressedTime.
-                            GetClassTimes())
-                        {
-                            if (time != compressedTime.GetClassTimes().First())
-                            {
-                                string classTimes = "";
-                                classTimes += time.getDayOfTheWeek() + " ";
-                                classTimes += MilitaryToDateTime(time.
-                                    getClassStartTime()).
-                                    ToString("hh:mm tt") + "-";
-                                classTimes += MilitaryToDateTime(time.
-                                    getClassEndTime()).
-                                    ToString("hh:mm tt");
-
-                                file.Write("\t\t" + classTimes + "\n");
-                            }
-                        }
-
-                        file.Write("\n");
-                    }
-                 */
-                }
-
-                //file.Close();
-        }
     }
 }

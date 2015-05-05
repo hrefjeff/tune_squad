@@ -210,12 +210,6 @@ namespace LIFES.UserInterfaces
 
             }
 
-            //System.Drawing.Font printFont = new System.Drawing.Font
-              //  ("Arial", 35, System.Drawing.FontStyle.Regular);
-
-            // Draw the content.
-            //e.Graphics.DrawString(text, printFont,
-            //    System.Drawing.Brushes.Black, 10, 10);
         }
 
 
