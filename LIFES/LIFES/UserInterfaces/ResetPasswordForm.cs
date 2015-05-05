@@ -123,6 +123,11 @@ namespace LIFES.UserInterfaces
                 }
             }
         }
+
+        private void ResetPasswordForm_Load(object sender, EventArgs e)
+        {
+
+        }
  
     }
 }
