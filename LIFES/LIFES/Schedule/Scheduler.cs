@@ -218,6 +218,7 @@ namespace LIFES.Schedule
         private void Initialize()
         {
            
+            
             for (int i = 0; i < tc.GetNumberOfDays(); i++ )
             {
                 examWeek[i] = new FinalExamDay();
@@ -394,11 +395,19 @@ namespace LIFES.Schedule
          */
         public Scheduler(List<CompressedClassTime> ct, TimeConstraints t)
         {
+            AvailableExamSlots();
             tc = t;
             compressedClassTime = ct;
             examWeek = new FinalExamDay[tc.GetNumberOfDays()];
-            AvailableExamSlots();
-            Initialize();
+            if (((examSlots * tc.GetNumberOfDays()) >= compressedClassTime.Count()))
+            {
+             
+                Initialize();
+            }
+            else
+            {
+                examWeek = null;
+            }
             //to do 
         }
         /*
