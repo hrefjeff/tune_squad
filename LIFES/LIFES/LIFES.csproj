@@ -195,9 +195,6 @@
     <EmbeddedResource Include="UserInterfaces\MainGUI.resx">
       <DependentUpon>MainGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserInterfaces\ResetPasswordForm.resx">
-      <DependentUpon>ResetPasswordForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserInterfaces\TimeConstraintsForm.resx">
       <DependentUpon>TimeConstraintsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,7 +239,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Icon.ico" />
+    <Content Include="Icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
