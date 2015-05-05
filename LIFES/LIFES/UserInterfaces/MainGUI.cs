@@ -316,7 +316,7 @@ namespace LIFES.UserInterfaces
             examSchedule.ReSchedule();
             Globals.examWeek = examSchedule.GetExams();
             Debug.Write(examSchedule.GetExamSlots());
-            if (Globals.examWeek != null)
+            if (Globals.examWeek != null && Globals.timeConstraints != null && Globals.compressedTimes != null)
             {
                 DisplaySchedule(Globals.examWeek);
             }
@@ -399,7 +399,7 @@ namespace LIFES.UserInterfaces
             examSchedule.Schedule();
             Globals.examWeek = examSchedule.GetExams();
             Debug.Write(examSchedule.GetExamSlots());
-            if (Globals.examWeek != null)
+            if (Globals.examWeek != null && Globals.timeConstraints !=null && Globals.compressedTimes !=null)
             {
                 DisplaySchedule(Globals.examWeek);
             }
