@@ -691,6 +691,8 @@ namespace LIFES.UserInterfaces
                 FileIn inputFile = new FileIn(filename);
     
                 inputFile.ReadOutput(openFile.FileName);
+
+				DisplaySchedule(Globals.examWeek);
             }
 
 
