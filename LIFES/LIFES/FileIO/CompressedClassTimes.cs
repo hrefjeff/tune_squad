@@ -44,9 +44,6 @@ namespace LIFES.FileIO
             var tmpCompressedClassTimes = new Dictionary<String, 
                 CompressedClassTime>();
             
-
-
-
             // Read in the file line by line.
             using (var sr = new StreamReader(filename))
             {
@@ -122,7 +119,6 @@ namespace LIFES.FileIO
                                 tmpCompressedClassTimes[key].
                                     AddClassTime(classTime);
                             }
-
                         }
                         // Raise an error if any of the portions of the line 
                         // were not correct.
@@ -176,7 +172,6 @@ namespace LIFES.FileIO
             // ranking.
             compressedClassTimes.RemoveAll(c => 
                 c.GetTotalStudentsEnrolled() == 0);
-
         }
         
         /*
@@ -250,4 +245,3 @@ namespace LIFES.FileIO
 		}
     }
 }
-
