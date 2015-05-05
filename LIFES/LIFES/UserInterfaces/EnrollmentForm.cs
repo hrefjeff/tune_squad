@@ -115,7 +115,6 @@ namespace LIFES.UserInterfaces
             if (springButton.Checked)
             {
                 Globals.semester = "spring";
-
             }
         }
 
@@ -163,6 +162,9 @@ namespace LIFES.UserInterfaces
         */
         public void RunCompression()
         {
+			string enrollmentWarning = "";
+			string oneDayWarning = "";
+
             if (Globals.totalEnrollemntsFileName != "")
             {
                 CompressedClassTimes compressedClassTimes =
@@ -181,23 +183,31 @@ namespace LIFES.UserInterfaces
                 }
                 if (compressedClassTimes.GetWarningLessThanOneStudents() != 0)
                 {
-                    string enrollmentWarning = "Warning - There were "
+                    enrollmentWarning = "Warning - There were "
                         + compressedClassTimes.GetWarningLessThanOneStudents()
-                        + " class times flagged for less than 1 students enrolled";
-                    if (compressedClassTimes.GetWarningForOneDayClass() != 0)
-                    {
-                        string oneDayWarning = "Warning - There were "
-                            + compressedClassTimes.GetWarningForOneDayClass()
-                            + " class times flagged as night classes and/or "
-                            + "one day classes that were "
-                            + "less than 1 hour long and/or labs";
-                        enrollmentWarning += "\n" + oneDayWarning;
-                    }
-
-                    MessageBox.Show(enrollmentWarning, "Warning");
+                        + " class times flagged for less than 1 students " + 
+						"enrolled";       
                 }
+				if (compressedClassTimes.GetWarningForOneDayClass() != 0)
+                {
+                    oneDayWarning = "Warning - There were "
+                        + compressedClassTimes.GetWarningForOneDayClass()
+                        + " class times flagged as night classes and/or "
+                        + "one day classes that were "
+                        + "less than 1 hour long and/or labs";
+					if (enrollmentWarning == "")
+					{
+						MessageBox.Show(oneDayWarning, "Warning");
+					}
+                }
+				if (enrollmentWarning != "" && oneDayWarning != "")
+				{
+					enrollmentWarning += "\n" + oneDayWarning;
+					MessageBox.Show(enrollmentWarning, "Warning");
+				}
 
-                Globals.compressedTimes = compressedClassTimes.GetCompressedClassTimes();
+                Globals.compressedTimes = 
+					compressedClassTimes.GetCompressedClassTimes();
                 MessageBox.Show("Enrollment File Accepted");
             }
            
@@ -212,9 +222,7 @@ namespace LIFES.UserInterfaces
             else
             {
                 Close();
-            }
-          
+            }  
         }
-
     }
 }
