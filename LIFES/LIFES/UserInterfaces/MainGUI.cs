@@ -676,7 +676,7 @@ namespace LIFES.UserInterfaces
 
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Filter = "txt files (*.txt)| *.txt|" +
-            "Comma Separated Values (*.csv) |*.csv| pdf (*.pdf) |*.pdf";
+            "Comma Separated Values (*.csv) |*.csv";
             openFile.Title = "Open an Exam Schedule";
             openFile.ShowDialog();
             string filename = openFile.FileName;
