@@ -177,6 +177,10 @@ namespace LIFES.Schedule
                     {
                         return false;
                     }
+                    if (beginTime < fe.GetStartTime() && endTime > fe.GetEndTime())
+                    {
+                        return false;
+                    }
                    
                 }
                 return true;
