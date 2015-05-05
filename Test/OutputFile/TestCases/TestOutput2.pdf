@@ -1,0 +1,1433 @@
+%PDF-1.4
+%”ÙÃ·
+% PDFsharp Version 1.32.2608.0 (verbose mode)
+% Creation date: 5/5/2015 11:36:30 AM            
+% Creation time: 0.156 seconds                   
+% File size: 33018 bytes                         
+% Pages: 5                                       
+% Objects: 16                                    
+%--------------------------------------------------------------------------------------------------
+1 0 obj   % PdfSharp.Pdf.PdfDocumentInformation
+<<
+  /CreationDate (D:20150505113630-05'00')
+  /Creator (PDFsharp 1.32.2608-g \(www.pdfsharp.net\))
+  /Producer (PDFsharp 1.32.2608-g \(www.pdfsharp.net\))
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+2 0 obj   % PdfSharp.Pdf.Advanced.PdfCatalog
+<<
+  /Pages 3 0 R
+  /Type /Catalog
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+3 0 obj   % PdfSharp.Pdf.PdfPages
+<<
+  /Count 5
+  /Kids [4 0 R 9 0 R 11 0 R 13 0 R 15 0 R]
+  /Type /Pages
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+4 0 obj   % PdfSharp.Pdf.PdfPage
+<<
+  /Contents 5 0 R
+  /Group
+  <<
+    /CS /DeviceRGB
+    /I false
+    /K false
+    /S /Transparency
+  >>
+  /MediaBox [0 0 612 792]
+  /Parent 3 0 R
+  /Resources
+  <<
+    /ExtGState
+    <<
+      /GS0 6 0 R
+    >>
+    /Font
+    <<
+      /F0 8 0 R
+    >>
+    /ProcSet [/PDF/Text/ImageB/ImageC/ImageI]
+  >>
+  /Type /Page
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+5 0 obj   % PdfSharp.Pdf.Advanced.PdfContent
+<<
+  /Length 10674
+>>
+stream
+q
+1 0 0 -1 0 792 cm -100 Tz
+q
+BT
+/GS0 gs
+/F0 -12 Tf
+40 10.6934 Td (fall) Tj
+18.9902 0 Td (2017) Tj
+-18.9902 12 Td (C:\\Users\\Jordan\\Documents\\GitHub\\tune_squad\\Test\\Enrollment) Tj
+316.957 0 Td (Files\\File2\\TestCase1.csv) Tj
+-316.957 12 Td (5) Tj
+0 13.7988 Td (0700) Tj
+0 13.7988 Td (90) Tj
+0 13.7988 Td (10) Tj
+0 13.7988 Td (30) Tj
+0 4.8047 Td ( ) Tj
+0 12 Td (Day) Tj
+40 0 Td (Class) Tj
+29.0039 0 Td (Times) Tj
+140.9961 0 Td (Exam) Tj
+30.9902 0 Td (Time) Tj
+-240.9902 12 Td (1) Tj
+40 0 Td (MTR) Tj
+29.0039 0 Td (12:15) Tj
+30.334 0 Td (PM-02:10) Tj
+51.6738 0 Td (PM) Tj
+58.9883 0 Td (07:00) Tj
+30.334 0 Td (AM-08:30) Tj
+53.666 0 Td (AM) Tj
+-254 12 Td (MWF) Tj
+31.6699 0 Td (12:15) Tj
+30.334 0 Td (PM-01:20) Tj
+51.6738 0 Td (PM) Tj
+-113.6777 12 Td (MTR) Tj
+29.0039 0 Td (12:15) Tj
+30.334 0 Td (PM-02:20) Tj
+51.6738 0 Td (PM) Tj
+-111.0117 12 Td (MT) Tj
+21 0 Td (12:15) Tj
+30.334 0 Td (PM-02:10) Tj
+51.6738 0 Td (PM) Tj
+-103.0078 12 Td (MT) Tj
+21 0 Td (12:15) Tj
+30.334 0 Td (PM-01:05) Tj
+51.6738 0 Td (PM) Tj
+-103.0078 12 Td (MWR) Tj
+33 0 Td (12:15) Tj
+30.334 0 Td (PM-02:20) Tj
+51.6738 0 Td (PM) Tj
+-115.0078 12 Td (MTR) Tj
+29.0039 0 Td (12:15) Tj
+30.334 0 Td (PM-01:45) Tj
+51.6738 0 Td (PM) Tj
+-111.0117 12 Td (MTF) Tj
+27.6738 0 Td (12:15) Tj
+30.334 0 Td (PM-01:25) Tj
+51.6738 0 Td (PM) Tj
+-109.6816 12 Td (MR) Tj
+21.6738 0 Td (12:15) Tj
+30.334 0 Td (PM-02:55) Tj
+51.6738 0 Td (PM) Tj
+-103.6816 12 Td (MWF) Tj
+31.6699 0 Td (12:15) Tj
+30.334 0 Td (PM-01:45) Tj
+51.6738 0 Td (PM) Tj
+-113.6777 12 Td (MTR) Tj
+29.0039 0 Td (12:15) Tj
+30.334 0 Td (PM-02:25) Tj
+51.6738 0 Td (PM) Tj
+-111.0117 12 Td (MR) Tj
+21.6738 0 Td (12:15) Tj
+30.334 0 Td (PM-02:25) Tj
+51.6738 0 Td (PM) Tj
+-103.6816 12 Td (MRF) Tj
+28.3477 0 Td (12:15) Tj
+30.334 0 Td (PM-01:05) Tj
+51.6738 0 Td (PM) Tj
+-110.3555 12 Td (MT) Tj
+21 0 Td (12:15) Tj
+30.334 0 Td (PM-01:20) Tj
+51.6738 0 Td (PM) Tj
+-103.0078 12 Td (MTWRF) Tj
+47.0039 0 Td (12:15) Tj
+30.334 0 Td (PM-02:20) Tj
+51.6738 0 Td (PM) Tj
+-129.0117 12 Td (MT) Tj
+21 0 Td (12:15) Tj
+30.334 0 Td (PM-02:10) Tj
+51.6738 0 Td (PM) Tj
+-103.0078 12 Td (MT) Tj
+21 0 Td (12:15) Tj
+30.334 0 Td (PM-01:05) Tj
+51.6738 0 Td (PM) Tj
+-103.0078 12 Td (MWR) Tj
+33 0 Td (12:15) Tj
+30.334 0 Td (PM-02:20) Tj
+51.6738 0 Td (PM) Tj
+-115.0078 12 Td (MTR) Tj
+29.0039 0 Td (12:15) Tj
+30.334 0 Td (PM-01:45) Tj
+51.6738 0 Td (PM) Tj
+-111.0117 12 Td (MTF) Tj
+27.6738 0 Td (12:15) Tj
+30.334 0 Td (PM-01:25) Tj
+51.6738 0 Td (PM) Tj
+-109.6816 24 Td (TW) Tj
+21.6563 0 Td (09:15) Tj
+30.334 0 Td (AM-10:25) Tj
+53.666 0 Td (AM) Tj
+64.3438 0 Td (09:00) Tj
+30.334 0 Td (AM-10:30) Tj
+53.666 0 Td (AM) Tj
+-254 12 Td (TF) Tj
+17.0039 0 Td (09:15) Tj
+30.334 0 Td (AM-11:10) Tj
+53.666 0 Td (AM) Tj
+-101.0039 12 Td (TWR) Tj
+29.6602 0 Td (09:15) Tj
+30.334 0 Td (AM-11:55) Tj
+53.666 0 Td (AM) Tj
+-113.6602 12 Td (TRF) Tj
+25.0078 0 Td (09:15) Tj
+30.334 0 Td (AM-11:05) Tj
+53.666 0 Td (AM) Tj
+-109.0078 12 Td (TR) Tj
+18.334 0 Td (09:15) Tj
+30.334 0 Td (AM-11:05) Tj
+53.666 0 Td (AM) Tj
+-102.334 12 Td (TRF) Tj
+25.0078 0 Td (09:15) Tj
+30.334 0 Td (AM-10:05) Tj
+53.666 0 Td (AM) Tj
+-109.0078 12 Td (MT) Tj
+21 0 Td (09:15) Tj
+30.334 0 Td (AM-10:55) Tj
+53.666 0 Td (AM) Tj
+-105 12 Td (TW) Tj
+21.6563 0 Td (09:15) Tj
+30.334 0 Td (AM-11:20) Tj
+53.666 0 Td (AM) Tj
+-105.6563 12 Td (TRF) Tj
+25.0078 0 Td (09:15) Tj
+30.334 0 Td (AM-11:05) Tj
+53.666 0 Td (AM) Tj
+-109.0078 12 Td (TF) Tj
+17.0039 0 Td (09:15) Tj
+30.334 0 Td (AM-11:05) Tj
+53.666 0 Td (AM) Tj
+-101.0039 12 Td (MT) Tj
+21 0 Td (09:15) Tj
+30.334 0 Td (AM-10:45) Tj
+53.666 0 Td (AM) Tj
+-105 12 Td (TWR) Tj
+29.6602 0 Td (09:15) Tj
+30.334 0 Td (AM-10:05) Tj
+53.666 0 Td (AM) Tj
+-113.6602 12 Td (MTWRF) Tj
+47.0039 0 Td (09:15) Tj
+30.334 0 Td (AM-11:55) Tj
+53.666 0 Td (AM) Tj
+-131.0039 12 Td (MTR) Tj
+29.0039 0 Td (09:15) Tj
+30.334 0 Td (AM-10:10) Tj
+53.666 0 Td (AM) Tj
+-113.0039 12 Td (TR) Tj
+18.334 0 Td (09:15) Tj
+30.334 0 Td (AM-11:10) Tj
+53.666 0 Td (AM) Tj
+-102.334 12 Td (TR) Tj
+18.334 0 Td (09:15) Tj
+30.334 0 Td (AM-10:25) Tj
+53.666 0 Td (AM) Tj
+-102.334 12 Td (MT) Tj
+21 0 Td (09:15) Tj
+30.334 0 Td (AM-10:45) Tj
+53.666 0 Td (AM) Tj
+-105 12 Td (TF) Tj
+17.0039 0 Td (09:15) Tj
+30.334 0 Td (AM-11:25) Tj
+53.666 0 Td (AM) Tj
+-101.0039 12 Td (TWF) Tj
+28.3301 0 Td (09:15) Tj
+30.334 0 Td (AM-10:20) Tj
+53.666 0 Td (AM) Tj
+-112.3301 12 Td (MTR) Tj
+29.0039 0 Td (09:15) Tj
+30.334 0 Td (AM-11:55) Tj
+53.666 0 Td (AM) Tj
+-113.0039 12 Td (TRF) Tj
+25.0078 0 Td (09:15) Tj
+30.334 0 Td (AM-10:05) Tj
+53.666 0 Td (AM) Tj
+-109.0078 12 Td (MT) Tj
+21 0 Td (09:15) Tj
+30.334 0 Td (AM-10:55) Tj
+53.666 0 Td (AM) Tj
+-105 12 Td (TW) Tj
+21.6563 0 Td (09:15) Tj
+30.334 0 Td (AM-11:20) Tj
+53.666 0 Td (AM) Tj
+-105.6563 12 Td (TRF) Tj
+25.0078 0 Td (09:15) Tj
+30.334 0 Td (AM-11:05) Tj
+53.666 0 Td (AM) Tj
+-109.0078 12 Td (TF) Tj
+17.0039 0 Td (09:15) Tj
+30.334 0 Td (AM-11:05) Tj
+53.666 0 Td (AM) Tj
+-101.0039 12 Td (MT) Tj
+21 0 Td (09:15) Tj
+30.334 0 Td (AM-10:45) Tj
+53.666 0 Td (AM) Tj
+-105 24 Td (Lunch) Tj
+170 0 Td (12:00) Tj
+30.334 0 Td (PM-12:30) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 24 Td (MTWRF) Tj
+47.0039 0 Td (07:15) Tj
+30.334 0 Td (AM-09:20) Tj
+53.666 0 Td (AM) Tj
+38.9961 0 Td (01:00) Tj
+30.334 0 Td (PM-02:30) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (MTF) Tj
+27.6738 0 Td (07:15) Tj
+30.334 0 Td (AM-08:05) Tj
+53.666 0 Td (AM) Tj
+-111.6738 12 Td (TWF) Tj
+28.3301 0 Td (07:15) Tj
+30.334 0 Td (AM-09:55) Tj
+53.666 0 Td (AM) Tj
+-112.3301 12 Td (MTW) Tj
+32.3262 0 Td (07:15) Tj
+30.334 0 Td (AM-09:05) Tj
+53.666 0 Td (AM) Tj
+-116.3262 12 Td (TW) Tj
+21.6563 0 Td (07:15) Tj
+30.334 0 Td (AM-08:05) Tj
+53.666 0 Td (AM) Tj
+-105.6563 12 Td (TWF) Tj
+28.3301 0 Td (07:15) Tj
+30.334 0 Td (AM-08:05) Tj
+53.666 0 Td (AM) Tj
+-112.3301 12 Td (TWR) Tj
+29.6602 0 Td (07:15) Tj
+30.334 0 Td (AM-09:05) Tj
+53.666 0 Td (AM) Tj
+-113.6602 12 Td (TR) Tj
+18.334 0 Td (07:15) Tj
+30.334 0 Td (AM-09:05) Tj
+53.666 0 Td (AM) Tj
+-102.334 12 Td (TR) Tj
+18.334 0 Td (07:15) Tj
+30.334 0 Td (AM-09:55) Tj
+53.666 0 Td (AM) Tj
+-102.334 12 Td (MTR) Tj
+29.0039 0 Td (07:15) Tj
+30.334 0 Td (AM-08:45) Tj
+53.666 0 Td (AM) Tj
+-113.0039 12 Td (TWR) Tj
+29.6602 0 Td (07:15) Tj
+30.334 0 Td (AM-08:05) Tj
+53.666 0 Td (AM) Tj
+-113.6602 12 Td (TF) Tj
+17.0039 0 Td (07:15) Tj
+30.334 0 Td (AM-09:05) Tj
+53.666 0 Td (AM) Tj
+-101.0039 12 Td (TF) Tj
+17.0039 0 Td (07:15) Tj
+30.334 0 Td (AM-08:05) Tj
+53.666 0 Td (AM) Tj
+-101.0039 12 Td (TR) Tj
+18.334 0 Td (07:15) Tj
+30.334 0 Td (AM-08:05) Tj
+53.666 0 Td (AM) Tj
+-102.334 12 Td (TRF) Tj
+25.0078 0 Td (07:15) Tj
+30.334 0 Td (AM-08:05) Tj
+53.666 0 Td (AM) Tj
+-109.0078 12 Td (TF) Tj
+17.0039 0 Td (07:15) Tj
+30.334 0 Td (AM-08:20) Tj
+53.666 0 Td (AM) Tj
+-101.0039 12 Td (MTF) Tj
+27.6738 0 Td (07:15) Tj
+30.334 0 Td (AM-09:25) Tj
+53.666 0 Td (AM) Tj
+-111.6738 12 Td (TR) Tj
+18.334 0 Td (07:15) Tj
+30.334 0 Td (AM-09:20) Tj
+53.666 0 Td (AM) Tj
+-102.334 12 Td (MTWRF) Tj
+47.0039 0 Td (07:15) Tj
+30.334 0 Td (AM-09:20) Tj
+53.666 0 Td (AM) Tj
+-131.0039 12 Td (MTF) Tj
+27.6738 0 Td (07:15) Tj
+30.334 0 Td (AM-08:05) Tj
+53.666 0 Td (AM) Tj
+-111.6738 12 Td (TWF) Tj
+28.3301 0 Td (07:15) Tj
+30.334 0 Td (AM-09:55) Tj
+53.666 0 Td (AM) Tj
+-112.3301 12 Td (MTW) Tj
+32.3262 0 Td (07:15) Tj
+30.334 0 Td (AM-09:05) Tj
+53.666 0 Td (AM) Tj
+-116.3262 12 Td (TW) Tj
+21.6563 0 Td (07:15) Tj
+30.334 0 Td (AM-08:05) Tj
+53.666 0 Td (AM) Tj
+-105.6563 12 Td (TWF) Tj
+28.3301 0 Td (07:15) Tj
+30.334 0 Td (AM-08:05) Tj
+53.666 0 Td (AM) Tj
+-112.3301 12 Td (TWR) Tj
+29.6602 0 Td (07:15) Tj
+30.334 0 Td (AM-09:05) Tj
+53.666 0 Td (AM) Tj
+-113.6602 12 Td (TR) Tj
+18.334 0 Td (07:15) Tj
+30.334 0 Td (AM-09:05) Tj
+53.666 0 Td (AM) Tj
+-102.334 24 Td (MT) Tj
+21 0 Td (02:15) Tj
+30.334 0 Td (PM-03:05) Tj
+51.6738 0 Td (PM) Tj
+66.9922 0 Td (02:00) Tj
+30.334 0 Td (PM-03:30) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (TR) Tj
+18.334 0 Td (02:15) Tj
+30.334 0 Td (PM-03:05) Tj
+51.6738 0 Td (PM) Tj
+-100.3418 12 Td (MTF) Tj
+27.6738 0 Td (02:15) Tj
+30.334 0 Td (PM-04:45) Tj
+51.6738 0 Td (PM) Tj
+-109.6816 12 Td (TR) Tj
+18.334 0 Td (02:15) Tj
+30.334 0 Td (PM-03:05) Tj
+51.6738 0 Td (PM) Tj
+-100.3418 12 Td (MT) Tj
+21 0 Td (02:15) Tj
+30.334 0 Td (PM-04:25) Tj
+51.6738 0 Td (PM) Tj
+-103.0078 12 Td (TW) Tj
+21.6563 0 Td (02:15) Tj
+30.334 0 Td (PM-04:20) Tj
+51.6738 0 Td (PM) Tj
+-103.6641 12 Td (TR) Tj
+18.334 0 Td (02:15) Tj
+30.334 0 Td (PM-03:20) Tj
+51.6738 0 Td (PM) Tj
+-100.3418 12 Td (TR) Tj
+18.334 0 Td (02:15) Tj
+30.334 0 Td (PM-04:55) Tj
+51.6738 0 Td (PM) Tj
+-100.3418 12 Td (MTWRF) Tj
+47.0039 0 Td (02:15) Tj
+30.334 0 Td (PM-03:55) Tj
+51.6738 0 Td (PM) Tj
+-129.0117 12 Td (TF) Tj
+17.0039 0 Td (02:15) Tj
+30.334 0 Td (PM-04:10) Tj
+51.6738 0 Td (PM) Tj
+-99.0117 12 Td (MT) Tj
+21 0 Td (02:15) Tj
+30.334 0 Td (PM-03:45) Tj
+51.6738 0 Td (PM) Tj
+-103.0078 12 Td (TR) Tj
+18.334 0 Td (02:15) Tj
+30.334 0 Td (PM-04:10) Tj
+51.6738 0 Td (PM) Tj
+-100.3418 12 Td (MTWRF) Tj
+47.0039 0 Td (02:15) Tj
+30.334 0 Td (PM-04:10) Tj
+51.6738 0 Td (PM) Tj
+-129.0117 12 Td (TR) Tj
+18.334 0 Td (02:15) Tj
+30.334 0 Td (PM-03:05) Tj
+51.6738 0 Td (PM) Tj
+-100.3418 12 Td (MT) Tj
+21 0 Td (02:15) Tj
+30.334 0 Td (PM-04:25) Tj
+51.6738 0 Td (PM) Tj
+-103.0078 12 Td (TW) Tj
+21.6563 0 Td (02:15) Tj
+30.334 0 Td (PM-04:20) Tj
+51.6738 0 Td (PM) Tj
+-103.6641 12 Td (TR) Tj
+18.334 0 Td (02:15) Tj
+30.334 0 Td (PM-03:20) Tj
+51.6738 0 Td (PM) Tj
+-100.3418 24 Td (MTF) Tj
+27.6738 0 Td (01:15) Tj
+30.334 0 Td (PM-03:45) Tj
+51.6738 0 Td (PM) Tj
+60.3184 0 Td (03:40) Tj
+30.334 0 Td (PM-05:10) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (TRF) Tj
+25.0078 0 Td (01:15) Tj
+30.334 0 Td (PM-03:05) Tj
+51.6738 0 Td (PM) Tj
+-107.0156 12 Td (TF) Tj
+17.0039 0 Td (01:15) Tj
+30.334 0 Td (PM-03:25) Tj
+51.6738 0 Td (PM) Tj
+-99.0117 12 Td (MTF) Tj
+27.6738 0 Td (01:15) Tj
+30.334 0 Td (PM-02:55) Tj
+51.6738 0 Td (PM) Tj
+-109.6816 12 Td (TWR) Tj
+29.6602 0 Td (01:15) Tj
+30.334 0 Td (PM-03:05) Tj
+51.6738 0 Td (PM) Tj
+-111.668 12 Td (TWF) Tj
+28.3301 0 Td (01:15) Tj
+30.334 0 Td (PM-02:45) Tj
+51.6738 0 Td (PM) Tj
+-110.3379 12 Td (TR) Tj
+18.334 0 Td (01:15) Tj
+30.334 0 Td (PM-03:10) Tj
+51.6738 0 Td (PM) Tj
+-100.3418 12 Td (TWF) Tj
+28.3301 0 Td (01:15) Tj
+30.334 0 Td (PM-03:55) Tj
+51.6738 0 Td (PM) Tj
+-110.3379 12 Td (TF) Tj
+17.0039 0 Td (01:15) Tj
+30.334 0 Td (PM-03:45) Tj
+51.6738 0 Td (PM) Tj
+-99.0117 12 Td (MT) Tj
+21 0 Td (01:15) Tj
+30.334 0 Td (PM-02:25) Tj
+51.6738 0 Td (PM) Tj
+-103.0078 12 Td (MT) Tj
+21 0 Td (01:15) Tj
+30.334 0 Td (PM-03:05) Tj
+51.6738 0 Td (PM) Tj
+-103.0078 12 Td (MTF) Tj
+27.6738 0 Td (01:15) Tj
+30.334 0 Td (PM-02:10) Tj
+51.6738 0 Td (PM) Tj
+-109.6816 12 Td (MTF) Tj
+27.6738 0 Td (01:15) Tj
+30.334 0 Td (PM-02:55) Tj
+51.6738 0 Td (PM) Tj
+-109.6816 12 Td (TWR) Tj
+29.6602 0 Td (01:15) Tj
+30.334 0 Td (PM-03:05) Tj
+51.6738 0 Td (PM) Tj
+-111.668 12 Td (TWF) Tj
+28.3301 0 Td (01:15) Tj
+30.334 0 Td (PM-02:45) Tj
+51.6738 0 Td (PM) Tj
+ET
+Q
+Q
+endstream
+endobj
+%--------------------------------------------------------------------------------------------------
+6 0 obj   % PdfSharp.Pdf.Advanced.PdfExtGState
+<<
+  /ca 1
+  /Type /ExtGState
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+7 0 obj   % PdfSharp.Pdf.Advanced.PdfFontDescriptor
+<<
+  /Ascent 891
+  /CapHeight 662
+  /Descent -216
+  /Flags 32
+  /FontBBox [-568 -307 2000 1007]
+  /FontName /TimesNewRoman
+  /ItalicAngle 0
+  /StemV 0
+  /Type /FontDescriptor
+  /XHeight 447
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+8 0 obj   % PdfSharp.Pdf.Advanced.PdfTrueTypeFont
+<<
+  /BaseFont /TimesNewRoman
+  /Encoding /WinAnsiEncoding
+  /FirstChar 0
+  /FontDescriptor 7 0 R
+  /LastChar 255
+  /Subtype /TrueType
+  /Type /Font
+  /Widths [777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 777 250 333 408 500 500 833 777 180 333 333 500 563 250 333 250 277 500 500 500 500 500 500 500 500 500 500 277 277 563 563 563 443 920 722 666 666 722 610 556 722 722 333 389 722 610 889 722 722 556 722 666 556 610 722 722 943 722 722 610 333 277 333 469 500 333 443 500 443 500 443 333 500 500 277 277 500 277 777 500 500 500 500 333 389 277 500 500 722 500 500 443 479 200 479 541 777 500 777 333 500 443 1000 500 500 333 1000 556 333 889 777 610 777 777 333 333 443 443 350 500 1000 333 979 389 333 722 777 443 722 250 333 500 500 500 500 200 500 333 759 275 500 563 333 759 500 399 548 299 299 333 576 453 333 333 299 310 500 750 750 750 443 722 722 722 722 722 722 889 666 610 610 610 610 333 333 333 333 722 722 722 722 722 722 722 563 722 722 722 722 722 722 556 500 443 443 443 443 443 443 666 443 443 443 443 443 277 277 277 277 500 500 500 500 500 500 500 548 500 500 500 500 500 500 500 500]
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+9 0 obj   % PdfSharp.Pdf.PdfPage
+<<
+  /Contents 10 0 R
+  /Group
+  <<
+    /CS /DeviceRGB
+    /I false
+    /K false
+    /S /Transparency
+  >>
+  /MediaBox [0 0 612 792]
+  /Parent 3 0 R
+  /Resources
+  <<
+    /ExtGState
+    <<
+      /GS0 6 0 R
+    >>
+    /Font
+    <<
+      /F0 8 0 R
+    >>
+    /ProcSet [/PDF/Text/ImageB/ImageC/ImageI]
+  >>
+  /Type /Page
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+10 0 obj   % PdfSharp.Pdf.Advanced.PdfContent
+<<
+  /Length 7126
+>>
+stream
+q
+1 0 0 -1 0 792 cm -100 Tz
+q
+BT
+/GS0 gs
+/F0 -12 Tf
+40 46.6934 Td (Day) Tj
+40 0 Td (Class) Tj
+29.0039 0 Td (Times) Tj
+140.9961 0 Td (Exam) Tj
+30.9902 0 Td (Time) Tj
+-240.9902 12 Td (2) Tj
+40 0 Td (MWR) Tj
+33 0 Td (08:15) Tj
+30.334 0 Td (AM-09:05) Tj
+53.666 0 Td (AM) Tj
+53 0 Td (08:00) Tj
+30.334 0 Td (AM-09:30) Tj
+53.666 0 Td (AM) Tj
+-254 12 Td (MRF) Tj
+28.3477 0 Td (08:15) Tj
+30.334 0 Td (AM-10:55) Tj
+53.666 0 Td (AM) Tj
+-112.3477 12 Td (WRF) Tj
+29.0039 0 Td (08:15) Tj
+30.334 0 Td (AM-09:25) Tj
+53.666 0 Td (AM) Tj
+-113.0039 12 Td (TRF) Tj
+25.0078 0 Td (08:15) Tj
+30.334 0 Td (AM-09:45) Tj
+53.666 0 Td (AM) Tj
+-109.0078 12 Td (MWR) Tj
+33 0 Td (08:15) Tj
+30.334 0 Td (AM-10:45) Tj
+53.666 0 Td (AM) Tj
+-117 12 Td (WR) Tj
+22.3301 0 Td (08:15) Tj
+30.334 0 Td (AM-10:05) Tj
+53.666 0 Td (AM) Tj
+-106.3301 12 Td (TR) Tj
+18.334 0 Td (08:15) Tj
+30.334 0 Td (AM-10:55) Tj
+53.666 0 Td (AM) Tj
+-102.334 12 Td (MR) Tj
+21.6738 0 Td (08:15) Tj
+30.334 0 Td (AM-09:20) Tj
+53.666 0 Td (AM) Tj
+-105.6738 12 Td (TRF) Tj
+25.0078 0 Td (08:15) Tj
+30.334 0 Td (AM-10:25) Tj
+53.666 0 Td (AM) Tj
+-109.0078 12 Td (WRF) Tj
+29.0039 0 Td (08:15) Tj
+30.334 0 Td (AM-10:05) Tj
+53.666 0 Td (AM) Tj
+-113.0039 12 Td (TRF) Tj
+25.0078 0 Td (08:15) Tj
+30.334 0 Td (AM-10:20) Tj
+53.666 0 Td (AM) Tj
+-109.0078 12 Td (WRF) Tj
+29.0039 0 Td (08:15) Tj
+30.334 0 Td (AM-09:25) Tj
+53.666 0 Td (AM) Tj
+-113.0039 12 Td (TRF) Tj
+25.0078 0 Td (08:15) Tj
+30.334 0 Td (AM-09:45) Tj
+53.666 0 Td (AM) Tj
+-109.0078 12 Td (MWR) Tj
+33 0 Td (08:15) Tj
+30.334 0 Td (AM-10:45) Tj
+53.666 0 Td (AM) Tj
+-117 12 Td (WR) Tj
+22.3301 0 Td (08:15) Tj
+30.334 0 Td (AM-10:05) Tj
+53.666 0 Td (AM) Tj
+-106.3301 24 Td (MTF) Tj
+27.6738 0 Td (10:15) Tj
+30.334 0 Td (AM-11:55) Tj
+53.666 0 Td (AM) Tj
+58.3262 0 Td (10:00) Tj
+30.334 0 Td (AM-11:30) Tj
+53.666 0 Td (AM) Tj
+-254 12 Td (MRF) Tj
+28.3477 0 Td (10:15) Tj
+30.334 0 Td (AM-11:05) Tj
+53.666 0 Td (AM) Tj
+-112.3477 12 Td (MT) Tj
+21 0 Td (10:15) Tj
+30.334 0 Td (AM-12:10) Tj
+53.666 0 Td (PM) Tj
+-105 12 Td (MT) Tj
+21 0 Td (10:15) Tj
+30.334 0 Td (AM-11:25) Tj
+53.666 0 Td (AM) Tj
+-105 12 Td (MW) Tj
+24.9961 0 Td (10:15) Tj
+30.334 0 Td (AM-12:20) Tj
+53.666 0 Td (PM) Tj
+-108.9961 12 Td (MTW) Tj
+32.3262 0 Td (10:15) Tj
+30.334 0 Td (AM-12:05) Tj
+53.666 0 Td (PM) Tj
+-116.3262 12 Td (MTR) Tj
+29.0039 0 Td (10:15) Tj
+30.334 0 Td (AM-12:25) Tj
+53.666 0 Td (PM) Tj
+-113.0039 12 Td (MTWRF) Tj
+47.0039 0 Td (10:15) Tj
+30.334 0 Td (AM-11:55) Tj
+53.666 0 Td (AM) Tj
+-131.0039 12 Td (MRF) Tj
+28.3477 0 Td (10:15) Tj
+30.334 0 Td (AM-11:20) Tj
+53.666 0 Td (AM) Tj
+-112.3477 12 Td (MTR) Tj
+29.0039 0 Td (10:15) Tj
+30.334 0 Td (AM-12:25) Tj
+53.666 0 Td (PM) Tj
+-113.0039 12 Td (MT) Tj
+21 0 Td (10:15) Tj
+30.334 0 Td (AM-11:10) Tj
+53.666 0 Td (AM) Tj
+-105 12 Td (MR) Tj
+21.6738 0 Td (10:15) Tj
+30.334 0 Td (AM-11:05) Tj
+53.666 0 Td (AM) Tj
+-105.6738 12 Td (MRF) Tj
+28.3477 0 Td (10:15) Tj
+30.334 0 Td (AM-11:05) Tj
+53.666 0 Td (AM) Tj
+-112.3477 12 Td (MT) Tj
+21 0 Td (10:15) Tj
+30.334 0 Td (AM-12:10) Tj
+53.666 0 Td (PM) Tj
+-105 12 Td (MT) Tj
+21 0 Td (10:15) Tj
+30.334 0 Td (AM-11:25) Tj
+53.666 0 Td (AM) Tj
+-105 12 Td (MW) Tj
+24.9961 0 Td (10:15) Tj
+30.334 0 Td (AM-12:20) Tj
+53.666 0 Td (PM) Tj
+-108.9961 24 Td (Lunch) Tj
+170 0 Td (12:00) Tj
+30.334 0 Td (PM-12:30) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 24 Td (TR) Tj
+18.334 0 Td (11:15) Tj
+30.334 0 Td (AM-12:25) Tj
+53.666 0 Td (PM) Tj
+67.666 0 Td (01:00) Tj
+30.334 0 Td (PM-02:30) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (TR) Tj
+18.334 0 Td (11:15) Tj
+30.334 0 Td (AM-01:45) Tj
+53.666 0 Td (PM) Tj
+-102.334 12 Td (TF) Tj
+17.0039 0 Td (11:15) Tj
+30.334 0 Td (AM-01:25) Tj
+53.666 0 Td (PM) Tj
+-101.0039 12 Td (TF) Tj
+17.0039 0 Td (11:15) Tj
+30.334 0 Td (AM-12:20) Tj
+53.666 0 Td (PM) Tj
+-101.0039 12 Td (MT) Tj
+21 0 Td (11:15) Tj
+30.334 0 Td (AM-01:20) Tj
+53.666 0 Td (PM) Tj
+-105 12 Td (MT) Tj
+21 0 Td (11:15) Tj
+30.334 0 Td (AM-12:10) Tj
+53.666 0 Td (PM) Tj
+-105 12 Td (MTW) Tj
+32.3262 0 Td (11:15) Tj
+30.334 0 Td (AM-01:20) Tj
+53.666 0 Td (PM) Tj
+-116.3262 12 Td (MTWRF) Tj
+47.0039 0 Td (11:15) Tj
+30.334 0 Td (AM-01:05) Tj
+53.666 0 Td (PM) Tj
+-131.0039 12 Td (MT) Tj
+21 0 Td (11:15) Tj
+30.334 0 Td (AM-12:10) Tj
+53.666 0 Td (PM) Tj
+-105 12 Td (TRF) Tj
+25.0078 0 Td (11:15) Tj
+30.334 0 Td (AM-12:10) Tj
+53.666 0 Td (PM) Tj
+-109.0078 12 Td (TR) Tj
+18.334 0 Td (11:15) Tj
+30.334 0 Td (AM-01:45) Tj
+53.666 0 Td (PM) Tj
+-102.334 12 Td (TF) Tj
+17.0039 0 Td (11:15) Tj
+30.334 0 Td (AM-01:25) Tj
+53.666 0 Td (PM) Tj
+-101.0039 12 Td (TF) Tj
+17.0039 0 Td (11:15) Tj
+30.334 0 Td (AM-12:20) Tj
+53.666 0 Td (PM) Tj
+-101.0039 24 Td (TF) Tj
+17.0039 0 Td (03:15) Tj
+30.334 0 Td (PM-04:05) Tj
+51.6738 0 Td (PM) Tj
+70.9883 0 Td (03:00) Tj
+30.334 0 Td (PM-04:30) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (MTF) Tj
+27.6738 0 Td (03:15) Tj
+30.334 0 Td (PM-05:20) Tj
+51.6738 0 Td (PM) Tj
+-109.6816 12 Td (MWF) Tj
+31.6699 0 Td (03:15) Tj
+30.334 0 Td (PM-04:45) Tj
+51.6738 0 Td (PM) Tj
+-113.6777 12 Td (WF) Tj
+21 0 Td (03:15) Tj
+30.334 0 Td (PM-05:05) Tj
+51.6738 0 Td (PM) Tj
+-103.0078 12 Td (MRF) Tj
+28.3477 0 Td (03:15) Tj
+30.334 0 Td (PM-04:20) Tj
+51.6738 0 Td (PM) Tj
+-110.3555 12 Td (TF) Tj
+17.0039 0 Td (03:15) Tj
+30.334 0 Td (PM-04:05) Tj
+51.6738 0 Td (PM) Tj
+-99.0117 12 Td (TF) Tj
+17.0039 0 Td (03:15) Tj
+30.334 0 Td (PM-04:20) Tj
+51.6738 0 Td (PM) Tj
+-99.0117 12 Td (MF) Tj
+20.3438 0 Td (03:15) Tj
+30.334 0 Td (PM-04:45) Tj
+51.6738 0 Td (PM) Tj
+-102.3516 12 Td (WRF) Tj
+29.0039 0 Td (03:15) Tj
+30.334 0 Td (PM-05:10) Tj
+51.6738 0 Td (PM) Tj
+-111.0117 12 Td (MRF) Tj
+28.3477 0 Td (03:15) Tj
+30.334 0 Td (PM-04:10) Tj
+51.6738 0 Td (PM) Tj
+-110.3555 12 Td (TF) Tj
+17.0039 0 Td (03:15) Tj
+30.334 0 Td (PM-04:10) Tj
+51.6738 0 Td (PM) Tj
+-99.0117 12 Td (MF) Tj
+20.3438 0 Td (03:15) Tj
+30.334 0 Td (PM-04:05) Tj
+51.6738 0 Td (PM) Tj
+-102.3516 12 Td (MWF) Tj
+31.6699 0 Td (03:15) Tj
+30.334 0 Td (PM-04:45) Tj
+51.6738 0 Td (PM) Tj
+-113.6777 12 Td (WF) Tj
+21 0 Td (03:15) Tj
+30.334 0 Td (PM-05:05) Tj
+51.6738 0 Td (PM) Tj
+-103.0078 12 Td (MRF) Tj
+28.3477 0 Td (03:15) Tj
+30.334 0 Td (PM-04:20) Tj
+51.6738 0 Td (PM) Tj
+-110.3555 24 Td (MW) Tj
+24.9961 0 Td (04:15) Tj
+30.334 0 Td (PM-05:55) Tj
+51.6738 0 Td (PM) Tj
+62.9961 0 Td (05:20) Tj
+30.334 0 Td (PM-06:10) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (TW) Tj
+21.6563 0 Td (04:15) Tj
+30.334 0 Td (PM-05:10) Tj
+51.6738 0 Td (PM) Tj
+-103.6641 12 Td (TWF) Tj
+28.3301 0 Td (04:15) Tj
+30.334 0 Td (PM-05:20) Tj
+51.6738 0 Td (PM) Tj
+-110.3379 12 Td (MW) Tj
+24.9961 0 Td (04:15) Tj
+30.334 0 Td (PM-05:20) Tj
+51.6738 0 Td (PM) Tj
+-107.0039 12 Td (WRF) Tj
+29.0039 0 Td (04:15) Tj
+30.334 0 Td (PM-05:55) Tj
+51.6738 0 Td (PM) Tj
+-111.0117 12 Td (WF) Tj
+21 0 Td (04:15) Tj
+30.334 0 Td (PM-05:25) Tj
+51.6738 0 Td (PM) Tj
+-103.0078 12 Td (WF) Tj
+21 0 Td (04:15) Tj
+30.334 0 Td (PM-05:05) Tj
+51.6738 0 Td (PM) Tj
+-103.0078 12 Td (TWR) Tj
+29.6602 0 Td (04:15) Tj
+30.334 0 Td (PM-05:10) Tj
+51.6738 0 Td (PM) Tj
+-111.668 12 Td (TWF) Tj
+28.3301 0 Td (04:15) Tj
+30.334 0 Td (PM-05:20) Tj
+51.6738 0 Td (PM) Tj
+-110.3379 12 Td (MW) Tj
+24.9961 0 Td (04:15) Tj
+30.334 0 Td (PM-05:20) Tj
+51.6738 0 Td (PM) Tj
+-107.0039 12 Td (WRF) Tj
+29.0039 0 Td (04:15) Tj
+30.334 0 Td (PM-05:55) Tj
+51.6738 0 Td (PM) Tj
+ET
+Q
+Q
+endstream
+endobj
+%--------------------------------------------------------------------------------------------------
+11 0 obj   % PdfSharp.Pdf.PdfPage
+<<
+  /Contents 12 0 R
+  /Group
+  <<
+    /CS /DeviceRGB
+    /I false
+    /K false
+    /S /Transparency
+  >>
+  /MediaBox [0 0 612 792]
+  /Parent 3 0 R
+  /Resources
+  <<
+    /ExtGState
+    <<
+      /GS0 6 0 R
+    >>
+    /Font
+    <<
+      /F0 8 0 R
+    >>
+    /ProcSet [/PDF/Text/ImageB/ImageC/ImageI]
+  >>
+  /Type /Page
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+12 0 obj   % PdfSharp.Pdf.Advanced.PdfContent
+<<
+  /Length 3600
+>>
+stream
+q
+1 0 0 -1 0 792 cm -100 Tz
+q
+BT
+/GS0 gs
+/F0 -12 Tf
+40 46.6934 Td (Day) Tj
+40 0 Td (Class) Tj
+29.0039 0 Td (Times) Tj
+140.9961 0 Td (Exam) Tj
+30.9902 0 Td (Time) Tj
+-240.9902 12 Td (3) Tj
+40 0 Td (MRF) Tj
+28.3477 0 Td (02:15) Tj
+30.334 0 Td (PM-04:55) Tj
+51.6738 0 Td (PM) Tj
+59.6445 0 Td (07:00) Tj
+30.334 0 Td (AM-08:30) Tj
+53.666 0 Td (AM) Tj
+-254 12 Td (WRF) Tj
+29.0039 0 Td (02:15) Tj
+30.334 0 Td (PM-04:20) Tj
+51.6738 0 Td (PM) Tj
+-111.0117 12 Td (WF) Tj
+21 0 Td (02:15) Tj
+30.334 0 Td (PM-03:05) Tj
+51.6738 0 Td (PM) Tj
+-103.0078 12 Td (MWF) Tj
+31.6699 0 Td (02:15) Tj
+30.334 0 Td (PM-03:10) Tj
+51.6738 0 Td (PM) Tj
+-113.6777 12 Td (WRF) Tj
+29.0039 0 Td (02:15) Tj
+30.334 0 Td (PM-04:20) Tj
+51.6738 0 Td (PM) Tj
+-111.0117 24 Td (MWR) Tj
+33 0 Td (09:15) Tj
+30.334 0 Td (AM-10:20) Tj
+53.666 0 Td (AM) Tj
+53 0 Td (09:00) Tj
+30.334 0 Td (AM-10:30) Tj
+53.666 0 Td (AM) Tj
+-254 12 Td (MWR) Tj
+33 0 Td (09:15) Tj
+30.334 0 Td (AM-11:10) Tj
+53.666 0 Td (AM) Tj
+-117 12 Td (MF) Tj
+20.3438 0 Td (09:15) Tj
+30.334 0 Td (AM-10:25) Tj
+53.666 0 Td (AM) Tj
+-104.3438 12 Td (MW) Tj
+24.9961 0 Td (09:15) Tj
+30.334 0 Td (AM-10:10) Tj
+53.666 0 Td (AM) Tj
+-108.9961 12 Td (MRF) Tj
+28.3477 0 Td (09:15) Tj
+30.334 0 Td (AM-10:25) Tj
+53.666 0 Td (AM) Tj
+-112.3477 12 Td (MWR) Tj
+33 0 Td (09:15) Tj
+30.334 0 Td (AM-10:20) Tj
+53.666 0 Td (AM) Tj
+-117 12 Td (MF) Tj
+20.3438 0 Td (09:15) Tj
+30.334 0 Td (AM-10:25) Tj
+53.666 0 Td (AM) Tj
+-104.3438 12 Td (MW) Tj
+24.9961 0 Td (09:15) Tj
+30.334 0 Td (AM-10:10) Tj
+53.666 0 Td (AM) Tj
+-108.9961 24 Td (Lunch) Tj
+170 0 Td (12:00) Tj
+30.334 0 Td (PM-12:30) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 24 Td (WR) Tj
+22.3301 0 Td (07:15) Tj
+30.334 0 Td (AM-08:10) Tj
+53.666 0 Td (AM) Tj
+63.6699 0 Td (01:00) Tj
+30.334 0 Td (PM-02:30) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (MRF) Tj
+28.3477 0 Td (07:15) Tj
+30.334 0 Td (AM-09:45) Tj
+53.666 0 Td (AM) Tj
+-112.3477 12 Td (WR) Tj
+22.3301 0 Td (07:15) Tj
+30.334 0 Td (AM-08:55) Tj
+53.666 0 Td (AM) Tj
+-106.3301 12 Td (MR) Tj
+21.6738 0 Td (07:15) Tj
+30.334 0 Td (AM-09:20) Tj
+53.666 0 Td (AM) Tj
+-105.6738 12 Td (WR) Tj
+22.3301 0 Td (07:15) Tj
+30.334 0 Td (AM-08:10) Tj
+53.666 0 Td (AM) Tj
+-106.3301 24 Td (MW) Tj
+24.9961 0 Td (03:15) Tj
+30.334 0 Td (PM-04:20) Tj
+51.6738 0 Td (PM) Tj
+62.9961 0 Td (03:00) Tj
+30.334 0 Td (PM-04:30) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (WR) Tj
+22.3301 0 Td (03:15) Tj
+30.334 0 Td (PM-04:25) Tj
+51.6738 0 Td (PM) Tj
+-104.3379 12 Td (MTW) Tj
+32.3262 0 Td (03:15) Tj
+30.334 0 Td (PM-04:05) Tj
+51.6738 0 Td (PM) Tj
+-114.334 12 Td (WR) Tj
+22.3301 0 Td (03:15) Tj
+30.334 0 Td (PM-04:05) Tj
+51.6738 0 Td (PM) Tj
+-104.3379 12 Td (WR) Tj
+22.3301 0 Td (03:15) Tj
+30.334 0 Td (PM-05:10) Tj
+51.6738 0 Td (PM) Tj
+-104.3379 12 Td (WR) Tj
+22.3301 0 Td (03:15) Tj
+30.334 0 Td (PM-04:25) Tj
+51.6738 0 Td (PM) Tj
+-104.3379 12 Td (MTW) Tj
+32.3262 0 Td (03:15) Tj
+30.334 0 Td (PM-04:05) Tj
+51.6738 0 Td (PM) Tj
+-114.334 24 Td (MRF) Tj
+28.3477 0 Td (11:15) Tj
+30.334 0 Td (AM-12:25) Tj
+53.666 0 Td (PM) Tj
+57.6523 0 Td (05:20) Tj
+30.334 0 Td (PM-06:10) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (MWR) Tj
+33 0 Td (11:15) Tj
+30.334 0 Td (AM-01:45) Tj
+53.666 0 Td (PM) Tj
+-117 12 Td (MWR) Tj
+33 0 Td (11:15) Tj
+30.334 0 Td (AM-12:45) Tj
+53.666 0 Td (PM) Tj
+-117 12 Td (WRF) Tj
+29.0039 0 Td (11:15) Tj
+30.334 0 Td (AM-01:25) Tj
+53.666 0 Td (PM) Tj
+-113.0039 12 Td (MRF) Tj
+28.3477 0 Td (11:15) Tj
+30.334 0 Td (AM-12:20) Tj
+53.666 0 Td (PM) Tj
+-112.3477 12 Td (MRF) Tj
+28.3477 0 Td (11:15) Tj
+30.334 0 Td (AM-12:25) Tj
+53.666 0 Td (PM) Tj
+-112.3477 12 Td (MWR) Tj
+33 0 Td (11:15) Tj
+30.334 0 Td (AM-01:45) Tj
+53.666 0 Td (PM) Tj
+ET
+Q
+Q
+endstream
+endobj
+%--------------------------------------------------------------------------------------------------
+13 0 obj   % PdfSharp.Pdf.PdfPage
+<<
+  /Contents 14 0 R
+  /Group
+  <<
+    /CS /DeviceRGB
+    /I false
+    /K false
+    /S /Transparency
+  >>
+  /MediaBox [0 0 612 792]
+  /Parent 3 0 R
+  /Resources
+  <<
+    /ExtGState
+    <<
+      /GS0 6 0 R
+    >>
+    /Font
+    <<
+      /F0 8 0 R
+    >>
+    /ProcSet [/PDF/Text/ImageB/ImageC/ImageI]
+  >>
+  /Type /Page
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+14 0 obj   % PdfSharp.Pdf.Advanced.PdfContent
+<<
+  /Length 2900
+>>
+stream
+q
+1 0 0 -1 0 792 cm -100 Tz
+q
+BT
+/GS0 gs
+/F0 -12 Tf
+40 46.6934 Td (Day) Tj
+40 0 Td (Class) Tj
+29.0039 0 Td (Times) Tj
+140.9961 0 Td (Exam) Tj
+30.9902 0 Td (Time) Tj
+-240.9902 12 Td (4) Tj
+40 0 Td (TF) Tj
+17.0039 0 Td (08:15) Tj
+30.334 0 Td (AM-10:05) Tj
+53.666 0 Td (AM) Tj
+68.9961 0 Td (08:00) Tj
+30.334 0 Td (AM-09:30) Tj
+53.666 0 Td (AM) Tj
+-254 12 Td (TF) Tj
+17.0039 0 Td (08:15) Tj
+30.334 0 Td (AM-09:05) Tj
+53.666 0 Td (AM) Tj
+-101.0039 12 Td (TF) Tj
+17.0039 0 Td (08:15) Tj
+30.334 0 Td (AM-10:05) Tj
+53.666 0 Td (AM) Tj
+-101.0039 12 Td (TF) Tj
+17.0039 0 Td (08:15) Tj
+30.334 0 Td (AM-10:55) Tj
+53.666 0 Td (AM) Tj
+-101.0039 12 Td (MTW) Tj
+32.3262 0 Td (08:15) Tj
+30.334 0 Td (AM-10:55) Tj
+53.666 0 Td (AM) Tj
+-116.3262 12 Td (TF) Tj
+17.0039 0 Td (08:15) Tj
+30.334 0 Td (AM-10:05) Tj
+53.666 0 Td (AM) Tj
+-101.0039 12 Td (TF) Tj
+17.0039 0 Td (08:15) Tj
+30.334 0 Td (AM-10:55) Tj
+53.666 0 Td (AM) Tj
+-101.0039 24 Td (TR) Tj
+18.334 0 Td (10:15) Tj
+30.334 0 Td (AM-12:25) Tj
+53.666 0 Td (PM) Tj
+67.666 0 Td (10:00) Tj
+30.334 0 Td (AM-11:30) Tj
+53.666 0 Td (AM) Tj
+-254 12 Td (TR) Tj
+18.334 0 Td (10:15) Tj
+30.334 0 Td (AM-11:20) Tj
+53.666 0 Td (AM) Tj
+-102.334 12 Td (WR) Tj
+22.3301 0 Td (10:15) Tj
+30.334 0 Td (AM-12:20) Tj
+53.666 0 Td (PM) Tj
+-106.3301 12 Td (TWR) Tj
+29.6602 0 Td (10:15) Tj
+30.334 0 Td (AM-11:10) Tj
+53.666 0 Td (AM) Tj
+-113.6602 12 Td (WR) Tj
+22.3301 0 Td (10:15) Tj
+30.334 0 Td (AM-12:10) Tj
+53.666 0 Td (PM) Tj
+-106.3301 12 Td (WR) Tj
+22.3301 0 Td (10:15) Tj
+30.334 0 Td (AM-12:20) Tj
+53.666 0 Td (PM) Tj
+-106.3301 24 Td (Lunch) Tj
+170 0 Td (12:00) Tj
+30.334 0 Td (PM-12:30) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 24 Td (MF) Tj
+20.3438 0 Td (01:15) Tj
+30.334 0 Td (PM-02:25) Tj
+51.6738 0 Td (PM) Tj
+67.6484 0 Td (01:00) Tj
+30.334 0 Td (PM-02:30) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (MWR) Tj
+33 0 Td (01:15) Tj
+30.334 0 Td (PM-03:55) Tj
+51.6738 0 Td (PM) Tj
+-115.0078 12 Td (MRF) Tj
+28.3477 0 Td (01:15) Tj
+30.334 0 Td (PM-03:20) Tj
+51.6738 0 Td (PM) Tj
+-110.3555 12 Td (MWR) Tj
+33 0 Td (01:15) Tj
+30.334 0 Td (PM-02:05) Tj
+51.6738 0 Td (PM) Tj
+-115.0078 12 Td (MWR) Tj
+33 0 Td (01:15) Tj
+30.334 0 Td (PM-03:45) Tj
+51.6738 0 Td (PM) Tj
+-115.0078 12 Td (MR) Tj
+21.6738 0 Td (01:15) Tj
+30.334 0 Td (PM-02:10) Tj
+51.6738 0 Td (PM) Tj
+-103.6816 12 Td (MWR) Tj
+33 0 Td (01:15) Tj
+30.334 0 Td (PM-02:05) Tj
+51.6738 0 Td (PM) Tj
+-115.0078 24 Td (MTF) Tj
+27.6738 0 Td (04:15) Tj
+30.334 0 Td (PM-05:20) Tj
+51.6738 0 Td (PM) Tj
+60.3184 0 Td (04:00) Tj
+30.334 0 Td (PM-05:30) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (TF) Tj
+17.0039 0 Td (04:15) Tj
+30.334 0 Td (PM-05:45) Tj
+51.6738 0 Td (PM) Tj
+-99.0117 12 Td (MRF) Tj
+28.3477 0 Td (04:15) Tj
+30.334 0 Td (PM-05:05) Tj
+51.6738 0 Td (PM) Tj
+-110.3555 12 Td (MTF) Tj
+27.6738 0 Td (04:15) Tj
+30.334 0 Td (PM-05:25) Tj
+51.6738 0 Td (PM) Tj
+-109.6816 12 Td (TF) Tj
+17.0039 0 Td (04:15) Tj
+30.334 0 Td (PM-05:45) Tj
+51.6738 0 Td (PM) Tj
+ET
+Q
+Q
+endstream
+endobj
+%--------------------------------------------------------------------------------------------------
+15 0 obj   % PdfSharp.Pdf.PdfPage
+<<
+  /Contents 16 0 R
+  /Group
+  <<
+    /CS /DeviceRGB
+    /I false
+    /K false
+    /S /Transparency
+  >>
+  /MediaBox [0 0 612 792]
+  /Parent 3 0 R
+  /Resources
+  <<
+    /ExtGState
+    <<
+      /GS0 6 0 R
+    >>
+    /Font
+    <<
+      /F0 8 0 R
+    >>
+    /ProcSet [/PDF/Text/ImageB/ImageC/ImageI]
+  >>
+  /Type /Page
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+16 0 obj   % PdfSharp.Pdf.Advanced.PdfContent
+<<
+  /Length 1936
+>>
+stream
+q
+1 0 0 -1 0 792 cm -100 Tz
+q
+BT
+/GS0 gs
+/F0 -12 Tf
+40 46.6934 Td (Day) Tj
+40 0 Td (Class) Tj
+29.0039 0 Td (Times) Tj
+140.9961 0 Td (Exam) Tj
+30.9902 0 Td (Time) Tj
+-240.9902 12 Td (5) Tj
+40 0 Td (TW) Tj
+21.6563 0 Td (12:15) Tj
+30.334 0 Td (PM-01:45) Tj
+51.6738 0 Td (PM) Tj
+66.3359 0 Td (07:00) Tj
+30.334 0 Td (AM-08:30) Tj
+53.666 0 Td (AM) Tj
+-254 12 Td (TF) Tj
+17.0039 0 Td (12:15) Tj
+30.334 0 Td (PM-02:20) Tj
+51.6738 0 Td (PM) Tj
+-99.0117 12 Td (TR) Tj
+18.334 0 Td (12:15) Tj
+30.334 0 Td (PM-01:20) Tj
+51.6738 0 Td (PM) Tj
+-100.3418 12 Td (TF) Tj
+17.0039 0 Td (12:15) Tj
+30.334 0 Td (PM-02:20) Tj
+51.6738 0 Td (PM) Tj
+-99.0117 12 Td (TW) Tj
+21.6563 0 Td (12:15) Tj
+30.334 0 Td (PM-01:45) Tj
+51.6738 0 Td (PM) Tj
+-103.6641 24 Td (MF) Tj
+20.3438 0 Td (07:15) Tj
+30.334 0 Td (AM-09:10) Tj
+53.666 0 Td (AM) Tj
+65.6563 0 Td (08:40) Tj
+30.334 0 Td (AM-10:10) Tj
+53.666 0 Td (AM) Tj
+-254 12 Td (MW) Tj
+24.9961 0 Td (07:15) Tj
+30.334 0 Td (AM-09:10) Tj
+53.666 0 Td (AM) Tj
+-108.9961 24 Td (MR) Tj
+21.6738 0 Td (02:15) Tj
+30.334 0 Td (PM-03:05) Tj
+51.6738 0 Td (PM) Tj
+66.3184 0 Td (10:20) Tj
+30.334 0 Td (AM-11:10) Tj
+53.666 0 Td (AM) Tj
+-254 12 Td (MW) Tj
+24.9961 0 Td (02:15) Tj
+30.334 0 Td (PM-03:55) Tj
+51.6738 0 Td (PM) Tj
+-107.0039 24 Td (Lunch) Tj
+170 0 Td (12:00) Tj
+30.334 0 Td (PM-12:30) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 24 Td (WR) Tj
+22.3301 0 Td (01:15) Tj
+30.334 0 Td (PM-02:20) Tj
+51.6738 0 Td (PM) Tj
+65.6621 0 Td (01:00) Tj
+30.334 0 Td (PM-02:30) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (WR) Tj
+22.3301 0 Td (01:15) Tj
+30.334 0 Td (PM-03:05) Tj
+51.6738 0 Td (PM) Tj
+-104.3379 12 Td (WF) Tj
+21 0 Td (01:15) Tj
+30.334 0 Td (PM-02:20) Tj
+51.6738 0 Td (PM) Tj
+-103.0078 24 Td (TF) Tj
+17.0039 0 Td (10:15) Tj
+30.334 0 Td (AM-12:20) Tj
+53.666 0 Td (PM) Tj
+68.9961 0 Td (03:40) Tj
+30.334 0 Td (PM-05:10) Tj
+51.6738 0 Td (PM) Tj
+-252.0078 12 Td (TW) Tj
+21.6563 0 Td (10:15) Tj
+30.334 0 Td (AM-11:55) Tj
+53.666 0 Td (AM) Tj
+ET
+Q
+Q
+endstream
+endobj
+%--------------------------------------------------------------------------------------------------
+xref
+0 17
+0000000000 65535 f 
+0000000411 00000 n 
+0000000725 00000 n 
+0000000915 00000 n 
+0000001131 00000 n 
+0000001591 00000 n 
+0000012456 00000 n 
+0000012643 00000 n 
+0000012995 00000 n 
+0000014343 00000 n 
+0000014804 00000 n 
+0000022121 00000 n 
+0000022583 00000 n 
+0000026374 00000 n 
+0000026836 00000 n 
+0000029927 00000 n 
+0000030389 00000 n 
+trailer
+<<
+  /ID [<A27B77A8E0A00341BF6F49A1E5762EC2><A27B77A8E0A00341BF6F49A1E5762EC2>]
+  /Info 1 0 R
+  /Root 2 0 R
+  /Size 17
+>>
+startxref
+32516
+%%EOF
