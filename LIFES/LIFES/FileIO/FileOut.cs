@@ -149,10 +149,22 @@ namespace LIFES.FileIO
                         }
 
                         string examTimes = "";
-                        examTimes += MilitaryToDateTime(exam.GetStartTime()).
-                            ToString("hh:mm tt")
-                            + "-" + MilitaryToDateTime(exam.GetEndTime()).
-                            ToString("hh:mm tt");
+
+                        if (compressedTime.GetDayOfTheWeek() == "Lunch")
+                        {
+                            examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
+                                + "-" + MilitaryToDateTime
+                                (exam.GetEndTime()).ToString("hh:mm tt");
+                        }
+
+                        else
+                        {
+                            int hours = (Globals.timeConstraints.GetLengthOfExams() / 60) * 100;
+                            int min = Globals.timeConstraints.GetLengthOfExams() % 60;
+                            examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
+                                + "-" + MilitaryToDateTime
+                                ((exam.GetStartTime() + hours + min)).ToString("hh:mm tt");
+                        }
 
                         tf.DrawString(examTimes, font,
                             XBrushes.Black, new XRect(250, yCord, pdfPage.Width.Point,
@@ -264,10 +276,22 @@ namespace LIFES.FileIO
                         file.Write(classTime + ",");
 
                         string examTimes = "";
-                        examTimes += MilitaryToDateTime(exam.GetStartTime()).
-                            ToString("hh:mm tt")
-                            + "-" + MilitaryToDateTime(exam.GetEndTime()).
-                            ToString("hh:mm tt");
+
+                        if (compressedTime.GetDayOfTheWeek() == "Lunch")
+                        {
+                            examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
+                                + "-" + MilitaryToDateTime
+                                (exam.GetEndTime()).ToString("hh:mm tt");
+                        }
+
+                        else
+                        {
+                            int hours = (Globals.timeConstraints.GetLengthOfExams() / 60) * 100;
+                            int min = Globals.timeConstraints.GetLengthOfExams() % 60;
+                            examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
+                                + "-" + MilitaryToDateTime
+                                ((exam.GetStartTime() + hours + min)).ToString("hh:mm tt");
+                        }
 
                         file.Write(examTimes + "\n");
 
@@ -339,14 +363,14 @@ namespace LIFES.FileIO
 
                         if (compressedTime.GetDayOfTheWeek() == "Lunch")
                         {
-                            file.Write("\t\t" + "Lunch" + "\t\t\t");
+                            file.Write("\t\t" + "Lunch" + "\t\t\t\t\t\t\t");
                         }
                         else
                         {
 
                             classTime += compressedTime.GetClassTimes().
                                 First().GetDayOfTheWeek()
-                                ;
+                                + " ";
                             classTime += MilitaryToDateTime(compressedTime.
                                 GetClassTimes().First().GetClassStartTime()).
                                 ToString("hh:mm tt")
@@ -358,10 +382,22 @@ namespace LIFES.FileIO
                             file.Write("\t\t" + classTime + "\t\t\t");
                         }
                         string examTimes = "";
-                        examTimes += MilitaryToDateTime(exam.GetStartTime()).
-                            ToString("hh:mm tt")
-                            + "-" + MilitaryToDateTime(exam.GetEndTime()).
-                            ToString("hh:mm tt");
+
+                        if (compressedTime.GetDayOfTheWeek() == "Lunch")
+                        {
+                            examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
+                                + "-" + MilitaryToDateTime
+                                (exam.GetEndTime()).ToString("hh:mm tt");
+                        }
+
+                        else
+                        {
+                            int hours = (Globals.timeConstraints.GetLengthOfExams() / 60) * 100;
+                            int min = Globals.timeConstraints.GetLengthOfExams() % 60;
+                            examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
+                                + "-" + MilitaryToDateTime
+                                ((exam.GetStartTime() + hours + min)).ToString("hh:mm tt");
+                        }
 
                         file.Write("\t" + examTimes + "\n");
 
