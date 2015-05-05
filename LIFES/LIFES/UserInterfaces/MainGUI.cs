@@ -761,6 +761,8 @@ namespace LIFES.UserInterfaces
         {
             DisplaySchedule(Globals.examWeek);
         }
+
+
     }
 }
 
