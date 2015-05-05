@@ -43,7 +43,6 @@ C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserI
 C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.EnrollmentForm.resources
 C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.LoginForm.resources
 C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.MainGUI.resources
-C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.ResetPasswordForm.resources
 C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.TimeConstraintsForm.resources
 C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.ViewTotalEnrollmentsForm.resources
 C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.csproj.GenerateResource.Cache
@@ -133,3 +132,5 @@ C:\Users\Riley\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.exe.manif
 C:\Users\Riley\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.application
 C:\Users\Riley\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.exe
 C:\Users\Riley\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.pdb
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\bin\Debug\Icon.ico
+C:\Users\Josh Ford\Documents\GitHub\tune_squad\LIFES\LIFES\obj\Debug\LIFES.UserInterfaces.GetNewPasswordForm.resources
