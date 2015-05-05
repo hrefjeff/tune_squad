@@ -94,10 +94,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
             this.ClientSize = new System.Drawing.Size(534, 361);
             this.Controls.Add(this.panel1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = new System.Drawing.Icon("Icon.ico");
             this.MinimumSize = new System.Drawing.Size(550, 400);
             this.Name = "ResetPasswordForm";
             this.Text = "Reset Password";
+            this.Load += new System.EventHandler(this.ResetPasswordForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usersGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
