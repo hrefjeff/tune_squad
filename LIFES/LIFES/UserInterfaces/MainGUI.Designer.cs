@@ -168,7 +168,6 @@
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(51, 21);
             this.viewToolStripMenuItem.Text = "View";
-           
             // 
             // singleExamDayToolStripMenuItem
             // 
@@ -190,7 +189,7 @@
             this.day1ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
             this.day1ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
             this.day1ToolStripMenuItem.Name = "day1ToolStripMenuItem";
-            this.day1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.day1ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.day1ToolStripMenuItem.Text = "Day 1";
             this.day1ToolStripMenuItem.Click += new System.EventHandler(this.Day1ToolStripMenuItem_Click);
             // 
@@ -199,7 +198,7 @@
             this.day2ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
             this.day2ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
             this.day2ToolStripMenuItem.Name = "day2ToolStripMenuItem";
-            this.day2ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.day2ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.day2ToolStripMenuItem.Text = "Day 2";
             this.day2ToolStripMenuItem.Click += new System.EventHandler(this.Day2ToolStripMenuItem_Click);
             // 
@@ -208,7 +207,7 @@
             this.day3ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
             this.day3ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
             this.day3ToolStripMenuItem.Name = "day3ToolStripMenuItem";
-            this.day3ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.day3ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.day3ToolStripMenuItem.Text = "Day 3";
             this.day3ToolStripMenuItem.Click += new System.EventHandler(this.Day3ToolStripMenuItem_Click);
             // 
@@ -217,7 +216,7 @@
             this.day4ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
             this.day4ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
             this.day4ToolStripMenuItem.Name = "day4ToolStripMenuItem";
-            this.day4ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.day4ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.day4ToolStripMenuItem.Text = "Day 4";
             this.day4ToolStripMenuItem.Click += new System.EventHandler(this.Day4ToolStripMenuItem_Click);
             // 
@@ -226,7 +225,7 @@
             this.day5ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(22)))), ((int)(((byte)(107)))));
             this.day5ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(159)))), ((int)(((byte)(17)))));
             this.day5ToolStripMenuItem.Name = "day5ToolStripMenuItem";
-            this.day5ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.day5ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.day5ToolStripMenuItem.Text = "Day 5";
             this.day5ToolStripMenuItem.Click += new System.EventHandler(this.Day5ToolStripMenuItem_Click);
             // 
@@ -238,6 +237,7 @@
             this.fullExamWeekToolStripMenuItem.Name = "fullExamWeekToolStripMenuItem";
             this.fullExamWeekToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.fullExamWeekToolStripMenuItem.Text = "Full Exam Week";
+            this.fullExamWeekToolStripMenuItem.Click += new System.EventHandler(this.FullExamWeekToolStripMenuItem_Click_1);
             // 
             // viewTotalEnrollmentsToolStripMenuItem
             // 
@@ -473,7 +473,6 @@
             this.Name = "MainGUI";
             this.Text = "LIons Final Exam Scheduler";
             this.Load += new System.EventHandler(this.MainGUI_Load);
-            this.Click += new System.EventHandler(this.MainGUI_Click);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.examTable)).EndInit();
