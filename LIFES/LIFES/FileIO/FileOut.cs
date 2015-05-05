@@ -85,7 +85,22 @@ namespace LIFES.FileIO
                     XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
                         pdfPage.Height.Point), XStringFormats.TopLeft);
 
-                yCord += 12 * 5;
+                yCord += 12 * 6;
+
+                if (Globals.adminApproved)
+                {
+                    tf.DrawString("Schedule Finalized", font,
+                        XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
+                        pdfPage.Height.Point), XStringFormats.TopLeft);
+                }
+                else
+                {
+                    tf.DrawString("Schedule Not Finalized", font,
+                        XBrushes.Black, new XRect(40, yCord, pdfPage.Width.Point,
+                        pdfPage.Height.Point), XStringFormats.TopLeft);
+                }
+
+                yCord += 12;
 
                 // Blank line.
                 tf.DrawString(" ", font,
@@ -237,14 +252,17 @@ namespace LIFES.FileIO
                 file.WriteLine(Globals.semester + " " + Globals.year);
                 file.WriteLine(Globals.totalEnrollemntsFileName);
                 file.WriteLine(Globals.timeConstraints.ToString());
+
                 if (Globals.adminApproved)
                 {
-                    file.WriteLine("1");
+                    file.WriteLine("Schedule Finalized");
                 }
+
                 else
                 {
-                    file.WriteLine("0");
+                    file.WriteLine("Schedule Not Finalized");
                 }
+
                 file.WriteLine("\n");
 				//place exam schedule
                 foreach (FinalExamDay ele in Globals.examWeek)
@@ -342,11 +360,11 @@ namespace LIFES.FileIO
                 file.WriteLine(Globals.timeConstraints.ToString());
                 if (Globals.adminApproved)
                 {
-                    file.WriteLine("1");
+                    file.WriteLine("Schedule Finalized");
                 }
                 else
                 {
-                    file.WriteLine("0");
+                    file.WriteLine("Schedule Not Finalized");
                 }
                 file.WriteLine("\n");
                 //place exam schedule
