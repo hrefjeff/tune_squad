@@ -621,55 +621,60 @@ namespace LIFES.UserInterfaces
         private void DisplaySingleDay(int day)
         {
             examTable.Rows.Clear();
-            int rowIndex = 0;
-            foreach (FinalExamDay ele in Globals.examWeek)
+            if (Globals.examWeek != null)
             {
-                if (ele.GetDay() == day)
+
+
+                int rowIndex = 0;
+                foreach (FinalExamDay ele in Globals.examWeek)
                 {
-                    foreach (FinalExam exam in ele.GetExams())
+                    if (ele.GetDay() == day)
                     {
-                        examTable.Rows.Add();
-                        string classTimes = "";
-                        CompressedClassTime compressedTime = exam.GetCompressedClass();
-                        // Get group of compressed class times.
-                        CompressedClassTime lunchCompress = exam.GetCompressedClass();
-
-                        if (lunchCompress.GetDayOfTheWeek() == "Lunch")
+                        foreach (FinalExam exam in ele.GetExams())
                         {
-                            classTimes += "Lunch";
-                        }
-                        foreach (ClassTime time in compressedTime.GetClassTimes())
-                        {
+                            examTable.Rows.Add();
+                            string classTimes = "";
+                            CompressedClassTime compressedTime = exam.GetCompressedClass();
+                            // Get group of compressed class times.
+                            CompressedClassTime lunchCompress = exam.GetCompressedClass();
 
-                            classTimes += time.GetDayOfTheWeek() + " ";
-                            classTimes += MilitaryToDateTime(time.GetClassStartTime()).
-                                ToString("hh:mm tt") + "-";
-                            classTimes += MilitaryToDateTime(time.GetClassEndTime()-
-                                (60 - Globals.timeConstraints.GetTimeBetweenExams())).
-                                ToString("hh:mm tt") + "\n";
+                            if (lunchCompress.GetDayOfTheWeek() == "Lunch")
+                            {
+                                classTimes += "Lunch";
+                            }
+                            foreach (ClassTime time in compressedTime.GetClassTimes())
+                            {
 
-                        }
-                        string examTimes = "";
+                                classTimes += time.GetDayOfTheWeek() + " ";
+                                classTimes += MilitaryToDateTime(time.GetClassStartTime()).
+                                    ToString("hh:mm tt") + "-";
+                                classTimes += MilitaryToDateTime(time.GetClassEndTime() -
+                                    (60 - Globals.timeConstraints.GetTimeBetweenExams())).
+                                    ToString("hh:mm tt") + "\n";
 
-                        if (lunchCompress.GetDayOfTheWeek() == "Lunch")
-                        {
-                            examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
-                           + "-" + MilitaryToDateTime
-                           (exam.GetEndTime()).ToString("hh:mm tt");
-                        }
+                            }
+                            string examTimes = "";
 
-                        else
-                        {
-                            int hours = (Globals.timeConstraints.GetLengthOfExams() / 60) * 100;
-                            int min = Globals.timeConstraints.GetLengthOfExams() % 60;
-                            examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
-                                + "-" + MilitaryToDateTime
-                                ((exam.GetStartTime() + hours + min)).ToString("hh:mm tt");
+                            if (lunchCompress.GetDayOfTheWeek() == "Lunch")
+                            {
+                                examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
+                               + "-" + MilitaryToDateTime
+                               (exam.GetEndTime()).ToString("hh:mm tt");
+                            }
+
+                            else
+                            {
+                                int hours = (Globals.timeConstraints.GetLengthOfExams() / 60) * 100;
+                                int min = Globals.timeConstraints.GetLengthOfExams() % 60;
+                                examTimes += MilitaryToDateTime(exam.GetStartTime()).ToString("hh:mm tt")
+                                    + "-" + MilitaryToDateTime
+                                    ((exam.GetStartTime() + hours + min)).ToString("hh:mm tt");
+                            }
+                            examTable.Rows[rowIndex].Cells[0].Value = ele.GetDay();
+                            examTable.Rows[rowIndex].Cells[1].Value = classTimes;
+                            examTable.Rows[rowIndex].Cells[2].Value = examTimes;
+                            rowIndex++;
                         }
-                        examTable.Rows[rowIndex].Cells[0].Value = ele.GetDay();
-                        examTable.Rows[rowIndex].Cells[1].Value = classTimes;
-                        examTable.Rows[rowIndex].Cells[2].Value = examTimes;
-                        rowIndex++;
                     }
                 }
             }
@@ -789,7 +794,10 @@ namespace LIFES.UserInterfaces
          */
         private void FullExamWeekToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DisplaySchedule(Globals.examWeek);
+            if (Globals.examWeek != null)
+            {
+                DisplaySchedule(Globals.examWeek);
+            }
         }
 
 
