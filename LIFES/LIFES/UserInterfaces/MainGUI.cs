@@ -250,10 +250,12 @@ namespace LIFES.UserInterfaces
          */
         private void FinalizeScheduleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Globals.adminApproved = true;
+            if (Globals.examWeek != null)
+            {
+                Globals.adminApproved = true;
+                MessageBox.Show("Exam Schedule Finalized");
+            }
         }
-
-       
 
         /*
          * Method: LoginToolStripMenuItem_Click
@@ -470,7 +472,7 @@ namespace LIFES.UserInterfaces
         {
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.Filter = "txt files (*.txt)| *.txt|" +
-            "Comma Sperateve Values (*.csv) |*.csv| pdf (*.pdf) |*.pdf";
+            "Comma Separated Values (*.csv) |*.csv| pdf (*.pdf) |*.pdf";
             saveFile.ShowDialog();
             FileOut outFile = new FileOut(saveFile.FileName);
             //getting the filter the user selected from the menu
@@ -724,8 +726,6 @@ namespace LIFES.UserInterfaces
             examTable.Rows.Clear();
             if (Globals.examWeek != null)
             {
-
-
                 int rowIndex = 0;
                 foreach (FinalExamDay ele in Globals.examWeek)
                 {
@@ -909,10 +909,10 @@ namespace LIFES.UserInterfaces
             Globals.examWeek = null;
             Globals.timeConstraintsFileName = "";
             Globals.totalEnrollemntsFileName = "";
+            Globals.adminApproved = false;
 
             examTable.Rows.Clear();
         }
-
 
     }
 }
