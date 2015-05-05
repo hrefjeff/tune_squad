@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LIFES.FileIO;
-using LIFES.Authentication;
 using LIFES.Schedule;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
@@ -49,46 +48,9 @@ namespace LIFES.UserInterfaces
             this.Close();
         }
 
-        /*
-         * Method: CreateUserToolStripMenuItem_Click
-         * Parameters: object sender, EventArgs e
-         * Output: N/A
-         * Created By: Riley Smith
-         * Date: 4/1/2015
-         * Modified By: Riley Smith
-         * 
-         * Description: Event handler for the Admin menu button Create User. 
-         */
-        private void CreateUserToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-         
-                //DO stuff
-                CreateUserForm createUser = new CreateUserForm();
-                createUser.Owner = this;
-                createUser.StartPosition = FormStartPosition.CenterScreen;
-                createUser.ShowDialog();
-       
-        }
 
-        /*
-        * Method: DeleteUserToolStripMenuItem_Click
-        * Parameters: object sender, EventArgs e
-        * Output: N/A
-        * Created By: Riley Smith
-        * Date: 4/1/2015
-        * Modified By: Riley Smith
-        * 
-        * Description: Event handler for the Admin menu button Delete User. 
-        */
-        private void DeleteUserToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-          
-                DeleteUserForm deleteUserForm = new DeleteUserForm();
-                deleteUserForm.Owner = this;
-                deleteUserForm.StartPosition = FormStartPosition.CenterScreen;
-                deleteUserForm.ShowDialog();
-          
-        }
+
+        
 
         /*
          * Method:  DocumentPrintPage
@@ -258,24 +220,7 @@ namespace LIFES.UserInterfaces
             }
         }
 
-        /*
-         * Method: LoginToolStripMenuItem_Click
-         * Parameters: object sender, EventArgs e
-         * Output: N/A
-         * Created By: Riley Smith
-         * Date: 3/26/2015
-         * Modified By: Scott Smoke
-         * 
-         * Description: Event handler for the menu button Login. 
-         */
-        private void LoginToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LoginForm loginGUI = new LoginForm(this, adminToolStripMenuItem);
-            this.Hide();
-            loginGUI.StartPosition = FormStartPosition.CenterScreen;
-            loginGUI.ShowDialog();
-            
-        }
+       
 
         /*
          * Method: MilitaryToDateTime
@@ -437,26 +382,7 @@ namespace LIFES.UserInterfaces
             }
         }
 
-        /*
-         * Method: ResetPasswordToolStripMenuItem_Click
-         * Parameters: object sender, EventArgs e
-         * Output: N/A
-         * Created By: Riley Smith
-         * Date: 4/1/2015
-         * Modified By: Riley Smith
-         * 
-         * Description: Event handler for the Admin menu button Reset Password. 
-         */
-        private void ResetPasswordToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-                ResetPasswordForm resetForm = new ResetPasswordForm();
-                resetForm.Owner = this;
-                resetForm.StartPosition = FormStartPosition.CenterScreen;
-                resetForm.ShowDialog();
-           
-        }
-
+        
         /*
          * Method: SaveAsToolStripMenuItem_Click
          * Parameters: object sender, EventArgs e
@@ -605,11 +531,11 @@ namespace LIFES.UserInterfaces
         */ 
         private void MainGUI_Load(object sender, EventArgs e)
         {
-            LoginForm loginGUI = new LoginForm(this,adminToolStripMenuItem);
+            //LoginForm loginGUI = new LoginForm(this,adminToolStripMenuItem);
             //hides the main interface
-            this.Hide();
-            loginGUI.StartPosition = FormStartPosition.CenterScreen;
-            loginGUI.ShowDialog();
+            //this.Hide();
+            //loginGUI.StartPosition = FormStartPosition.CenterScreen;
+            //loginGUI.ShowDialog();
         }
 
         /*
@@ -924,6 +850,11 @@ namespace LIFES.UserInterfaces
             Globals.adminApproved = false;
 
             examTable.Rows.Clear();
+        }
+
+        private void examTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
     }
